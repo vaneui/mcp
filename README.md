@@ -11,13 +11,23 @@ Docs come from two sibling repos and are bundled at build time:
 
 ## Local dev usage
 
-After cloning and building this package:
+The `resources/` folder (the bundled doc corpus) is **committed to git**, so a fresh clone already has everything the server needs to run. You only need to re-sync when you've edited the upstream doc sources.
+
+**Standalone build (for anyone who cloned or forked this repo):**
 
 ```bash
 cd C:/GitHub/vaneui-mcp
 npm install
-npm run build
+npm run build           # just tsc — uses the committed resources/
 ```
+
+**Full rebuild (for maintainers who also have `vaneui/` and `vaneui-web/` as sibling folders):**
+
+```bash
+npm run build:full      # re-sync resources/ from sibling repos, then tsc
+```
+
+The full rebuild needs `../vaneui/` and `../vaneui-web/` checked out next to this repo. Override the defaults with `VANEUI_PATH` / `VANEUI_WEB_PATH` env vars if they live elsewhere.
 
 Point your MCP client at the built server. For clients that consume a `mcp.json`-style config:
 
@@ -61,31 +71,34 @@ This package copies / extracts all three into `resources/` at build time.
 
 1. Edit the source markdown file in the appropriate repo.
 2. If you added a new file, register it in both `scripts/sync-docs.mjs` (in the right source list) and `src/resources.ts` (the `DOCS` array — each entry needs a slug, filename, display name, and description).
-3. `npm run build`.
-4. Restart your MCP client.
+3. `npm run build:full` (regenerates `resources/` then compiles).
+4. Commit the regenerated `resources/` changes along with the source edits.
+5. Restart your MCP client.
 
 ### Updating a per-component reference
 
 The per-component docs (`component-button.md`, `component-card.md`, …) are **generated**, not hand-written. To change what they contain, edit the source TSX example file.
 
 1. Edit `C:/GitHub/vaneui-web/app/docs/data/{category}/{component}.tsx`. Each `DocsPagePart` entry becomes one `## <title>` section in the output markdown. Update `title`, `md` (prose; supports inline code fences), and/or `component` (JSX) / `code` (explicit code override). Setting `code: ""` suppresses the auto-generated JSX fence for that part — useful when the prose already contains the definitive code sample.
-2. `npm run build`.
-3. Restart your MCP client.
+2. `npm run build:full`.
+3. Commit the regenerated `resources/component-<slug>.md` changes.
+4. Restart your MCP client.
 
 ### Adding a new component reference
 
 1. Create the example TSX in `vaneui-web` following the existing pattern.
 2. Register it in `partsMap` in `app/docs/docsSections.ts` **and** in `COMPONENT_DOCS` in `scripts/sync-component-docs.mjs` (src path, slug, human-readable name, short description).
 3. Add a matching `DocEntry` to `DOCS` in `src/resources.ts` with `slug: "component-<slug>"` and `file: "component-<slug>.md"`.
-4. `npm run build`. Strict mode (`npm run sync:strict`) will fail if any registered TSX file is missing or has no `*Examples` export.
+4. `npm run build:full`. Strict mode (`npm run sync:strict`) will fail if any registered TSX file is missing or has no `*Examples` export.
 
 ## Development
 
-The sync script expects `vaneui-web/` as a sibling of `vaneui/` (so the vaneui-web path resolves to `../../vaneui-web` from this package). Override with `VANEUI_WEB_PATH=/path/to/vaneui-web` if you keep it elsewhere.
+The sync scripts expect `vaneui/` and `vaneui-web/` as **sibling folders** of this repo (so paths resolve to `../vaneui` and `../vaneui-web` from the package root). Override with `VANEUI_PATH=/path/to/vaneui` / `VANEUI_WEB_PATH=/path/to/vaneui-web` env vars if they live elsewhere.
 
-- `npm run sync` — lenient: runs `sync-docs.mjs` then `sync-component-docs.mjs`. If `vaneui-web/` is missing, warns and copies only the 9 vaneui rule docs. Good for local dev when you only have one repo checked out.
-- `npm run sync:strict` — strict: exits with code 1 if `vaneui-web/`, any expected markdown, or any component TSX is missing. Used by `prepublishOnly` so we never ship a tarball with partial docs.
-- `npm run build` — runs the lenient sync + `tsc`.
+- `npm run build` — just `tsc`. Uses the committed `resources/`. Works standalone, no sibling repos required.
+- `npm run build:full` — runs the lenient sync then `tsc`. Regenerates `resources/` from sibling repos; commit the diff afterwards.
+- `npm run sync` — lenient sync only: runs `sync-docs.mjs` then `sync-component-docs.mjs`. If `vaneui/` or `vaneui-web/` is missing, warns and skips. ⚠️ The sync wipes `resources/` before it starts — if a sibling repo is missing, you'll end up with an empty or partial bundle. Prefer `build:full` when you want to regenerate.
+- `npm run sync:strict` — strict sync: exits with code 1 if any sibling or registered file is missing. Used by `prepublishOnly` so we never ship a tarball with partial docs.
 - `npm publish` — runs `prepublishOnly`, which uses `sync:strict` to guarantee all 56 docs (9 rules + 11 guides + 36 per-component references) are present.
 
 ## Available resources

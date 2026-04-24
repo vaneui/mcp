@@ -1,0 +1,322 @@
+# CLAUDE.md
+
+## Project Overview
+
+VaneUI (`@vaneui/ui`, v0.9.0) is a React component library with 24 customizable UI components. Built with TypeScript, React 19, Tailwind CSS v4, and Rollup. Uses a boolean props API (`<Button primary lg filled>`) and CSS variable-based theming via `ThemeProvider`.
+
+## CRITICAL: Verification After ANY Code Change
+
+**After making ANY code changes** (new features, bug fixes, refactoring, import changes, theme updates, etc.), you MUST run the full verification pipeline. Do NOT report work as complete until all checks pass.
+
+```bash
+cd C:/GitHub/vaneui
+
+npm run type-check    # TypeScript type validation
+npm run lint          # ESLint — zero errors required
+npm test              # Jest — all tests must pass
+npm run build         # Full build (includes type-check + lint + rollup + CSS)
+npm run test:e2e      # Playwright e2e tests (after visual/CSS/theme changes, new components, or before publishing)
+```
+
+**`npm run build` is the most comprehensive check** — it runs type-check, lint, rollup bundling, and CSS generation. If build passes, type-check and lint also passed. However, it does NOT run tests, so always run `npm test` separately.
+
+**E2e tests** validate computed CSS styles in a real browser (color inheritance, font-size scaling, border rendering). Run them after any visual/CSS/theme changes, when adding new components, or before publishing.
+
+**Common pitfall**: `tsc --noEmit` (type-check) can pass while runtime tests fail due to circular dependencies. Always run BOTH type-check AND tests.
+
+## Component Implementation Workflow
+
+When creating or modifying components, **ALL steps below must be completed**. Use the `component-implementation` agent for guidance or `pre-commit-checker` agent to verify.
+
+### Required Steps for New Components
+
+1. **Create Component**
+   - Component file: `src/components/ui/{component}.tsx`
+   - Theme file: `src/components/ui/theme/{component}Theme.ts`
+   - Add categories to `src/components/ui/props/keys.ts` if needed
+   - **Key Type Pattern**: Define keys in `ComponentKeys`, export Key type from `keys.ts`, theme files import from `../../props`
+
+2. **Integrate with Theme System**
+   - Update `src/components/themeContext.tsx` (import, ThemeProps, defaultTheme, ThemeDefaults, ThemeExtraClasses)
+   - Update `src/index.ts` (export component and props type)
+
+3. **Write Tests (REQUIRED)**
+   - Create `src/components/tests/{component}.test.tsx`
+   - Test: default rendering, size variants, appearance variants, variant modifiers, shape variants, ref forwarding, prop leak prevention, className merging, tag switching (if applicable)
+   - **Add to `componentThemeCoverage.test.ts`** — every component with categories + theme must have an entry in this test file to validate that all category keys have theme mappers and all boolean defaults have handlers. See `.claude/rules/testing.md` for details.
+   - See `.claude/rules/testing.md` for patterns
+
+4. **Add Playground Examples (REQUIRED)**
+   - Add visual examples to `playground/src/App.tsx` showcasing the new/changed component
+   - Include: default usage, size variants, appearance variants, key props, real-world context
+   - Follow the existing section pattern: `Divider` + `SectionTitle` + multiple `Card` examples
+   - **Cleanup**: Before adding new sections, remove or condense older examples so `App.tsx` stays focused (~3-5 sections, ~500 lines). It is a living showcase, not an append-only log.
+   - See `.claude/rules/playground-examples.md` for patterns
+
+5. **Add E2E Fixtures & Tests**
+   - Add test fixtures to `e2e/fixtures/test-harness.tsx` with `data-testid` attributes
+   - Add e2e spec in `e2e/` validating computed CSS styles (see `.claude/rules/e2e-testing.md`)
+
+6. **Verify (ALL must pass)**
+   ```bash
+   npm run type-check    # TypeScript
+   npm run lint          # ESLint — zero errors required
+   npm test              # Jest — all tests must pass
+   npm run build         # Full build
+   npm run test:e2e      # Playwright e2e tests
+   ```
+
+**Work is NOT complete until tests are written and all verification passes.**
+
+### Agent Delegation (REQUIRED)
+
+When a task matches an agent's trigger below, you **MUST** delegate to that agent. Do not perform the work inline when a matching agent exists.
+
+| Task Pattern | Agent | Why |
+|-------------|-------|-----|
+| Creating new components or full implementation workflow | `component-implementation` | Guides all required steps end-to-end |
+| Before committing any code changes | `pre-commit-checker` | Runs type-check → lint → test → build gate |
+| After writing or modifying tests | `test-runner` | Runs Jest + reports results efficiently (haiku) |
+| Auditing component completeness (theme, tests, exports) | `component-auditor` | Validates all layers are wired correctly |
+| Debugging component rendering, prop, or styling issues | `debugger` | Traces 3-layer prop system end-to-end |
+| Debugging theme/CSS variable issues specifically | `theme-debugger` | Specializes in CSS variable chain and theme inheritance |
+| Reviewing code quality, patterns, security | `code-reviewer` | Cross-layer review with VaneUI conventions |
+
+**Exception:** Do not delegate tasks completable in 1-2 tool calls (reading a file, checking a type, small inline edit).
+
+## Commands
+
+- `npm run build` — Full build (type-check + lint + rollup + CSS generation to `dist/`)
+- `npm test` — Jest test suite (ts-jest, jsdom)
+- `npm run test:e2e` — Playwright e2e tests (visual & computed style validation)
+- `npm run test:e2e:ui` — Playwright interactive UI mode
+- `npm run playground` — Dev server with CSS hot reload
+- `npm run build:js` — TypeScript/Rollup only
+- `npm run build:css:ui` — Tailwind CLI for component styles
+- `npm run build:css:vars` — Tailwind CLI for CSS variables
+
+## Component Inventory
+
+| Category | Components | `data-vane-type` |
+|----------|-----------|-----------------|
+| **Interactive** | Button, Badge, Chip, Code, Input, Checkbox, Label | `ui` |
+| **Layout** | Card, Section, Container, Row, Col, Stack, Grid2-6, Divider, Img | `layout` |
+| **Typography** | Text, Title, SectionTitle, PageTitle, Link, List, ListItem | `ui` |
+
+## Prop System (Boolean Flags)
+
+Props are grouped into **mutually exclusive categories** — only one value per category is active:
+
+| Category | Values |
+|----------|--------|
+| **size** | `xs`, `sm` (default for Button, MenuItem, Label), `md` (default for others), `lg`, `xl` |
+| **appearance** | `primary`, `brand`, `accent`, `secondary`, `tertiary`, `success`, `danger`, `warning`, `info`, `link` |
+| **variant** | `filled`, `outline` (default) |
+| **shape** | `pill`, `rounded` (default), `sharp` |
+| **display** | `flex`, `inlineFlex`, `block`, `inline`, `grid`, etc. |
+| **flexDirection** | `row`, `column`, `rowReverse`, `columnReverse` |
+| **fontWeight** | `thin` through `black` |
+| **textAlign** | `textLeft`, `textCenter`, `textRight`, `textJustify` |
+
+Additional toggle props: `gap`/`noGap`, `padding`/`noPadding`, `shadow`/`noShadow`, `ring`/`noRing`, `border`/`noBorder`, `underline`, `uppercase`, `italic`, `bold`, `semibold`, `mono`, `reverse`, `transparent`, `responsive`, `sticky`, `flexWrap`, `itemsCenter`, `justifyBetween`, etc.
+
+**Breakpoints** (layout components): `mobileCol`, `tabletCol`, `desktopCol`
+**Hide**: `mobileHide`, `tabletHide`, `desktopHide`
+
+## Key Defaults (Do NOT Redundantly Specify)
+
+| Component | Defaults |
+|-----------|----------|
+| **Button** | sm, primary, outline, semibold, rounded, padding, gap, ring, focusVisible, cursorPointer |
+| **Card** | padding, rounded, outline, gap, border |
+| **Row** | itemsCenter, gap, noPadding, outline, sharp |
+| **Col** | gap, noPadding, outline, sharp |
+| **Stack** | padding, gap, flexWrap, outline, sharp |
+| **Badge** | md, primary, outline, pill, semibold, uppercase |
+| **Chip** | md, secondary (not primary!), outline, rounded, mono |
+| **NavLink** | sm, primary, outline, rounded, noBorder, noShadow, noRing, wFull, textLeft |
+| **Link** | link (not primary!), outline, underline, cursorPointer |
+| **Input** | primary, outline, rounded, wFull, ring, focusVisible |
+| **Icon** | md, inlineFlex, itemsCenter, justifyCenter, outline |
+| **Checkbox** | md, primary, border, rounded, filled, focusVisible, cursorPointer |
+| **Label** | sm, flex, gap, inherit, medium |
+| **Modal** | md, wFull, flex, column, overflowAuto, relative, noPadding, gap, rounded, shadow, primary, outline |
+| **Container** | md, wFull, flex, column, itemsCenter, gap, noPadding, outline, sharp |
+| **Section** | md, wFull, flex, column, itemsStart, gap, padding, outline, sharp, responsive |
+| **Typography** (Text, Title, etc.) | md, inherit (not primary!), outline |
+| **Layout** (Row, Col, Stack, Card, Grid*) | gap, md, outline |
+
+## Architecture
+
+```
+src/
+├── components/
+│   ├── ui/              # Component files (button.tsx, card.tsx, etc.)
+│   │   ├── props/       # 30+ prop type definition files + keys.ts (category system)
+│   │   ├── theme/       # Theme implementations (appearance/, size/, layout/, typography/)
+│   │   ├── classes/     # CSS class mappings
+│   │   └── css/         # vars.css (CSS variables), index.css
+│   ├── tests/           # 40+ test files (Jest + Testing Library)
+│   ├── utils/           # deepMerge, componentUtils
+│   ├── themeContext.tsx  # ThemeProvider & useTheme
+│   └── themedComponent.tsx  # Generic themed component wrapper
+└── index.ts             # Barrel exports
+```
+
+**Component pattern**: `forwardRef` + `useTheme()` + `ThemedComponent` wrapper. All components support `className` (merged via `twMerge`), `ref`, `tag` prop, and `href` for tag switching (renders as `<a>`).
+
+**Theming**: CSS variables set by theme classes (`[--fs-unit:8]`) -> computed in `vars.css` (`calc(var(--fs-unit) * var(--fs-base))`) -> consumed by utility classes (`text-(length:--fs)`). Colors driven by `data-appearance` + `data-variant` attributes.
+
+**ThemeProvider**: Supports `themeDefaults`, `extraClasses`, `themeOverride`, nested providers with `mergeStrategy` ("merge" | "replace").
+
+## Exports
+
+- `@vaneui/ui` — All components + ThemeProvider + useTheme + defaultTheme + types
+- `@vaneui/ui/vars` — CSS variables (`vars.css`)
+- `@vaneui/ui/css` — Pre-built component styles (`ui.css`)
+
+## Critical Rules
+
+1. **Prefer VaneUI props over Tailwind classes** — Use `bold` not `className="font-bold"`, `textCenter` not `className="text-center"`, `pill` not `className="rounded-full"`, etc.
+2. **Don't override themed properties with className** — Use `danger` not `className="bg-red-500"`. Use size props not `className="gap-*"`.
+3. **Don't specify default props** — `<Row gap>` is redundant (gap is true by default).
+4. **Boolean props must not leak to DOM** — They are consumed by the theme system and stripped by `getComponentConfig()`.
+5. **Desktop-first responsive** — Breakpoints: mobile (48rem/768px), tablet (64rem/1024px), desktop (80rem/1280px). Use `tabletCol`/`mobileCol` to adapt layouts for smaller screens.
+6. **No replaceable Tailwind classes in base class strings** — When a Tailwind class has an equivalent boolean prop (e.g., `items-center` → `itemsCenter`, `cursor-pointer` → `cursorPointer`, `relative` → `relative`), it MUST go in the component's defaults object, not in the base class string of `new ComponentTheme(...)`. The base class string is only for classes that have NO boolean prop equivalent (e.g., `align-middle`, `aspect-square`, `w-full`, child selectors like `[&_svg]:shrink-0`, conditional selectors like `hover:underline`). This is enforced by the `theme-collections.test.ts` quality check. When adding a boolean prop default, ensure the component's categories include the prop's category, the theme has the corresponding class mapper, and the prop type includes the prop interface.
+7. **No hardcoded visual props on child components** — When a parent component renders a child VaneUI component (e.g., Menu renders Popup), visual defaults (size, appearance, variant, shape, layout) must come from the theme system via a sub-theme + ThemeProvider `themeDefaults`, NOT from hardcoded boolean props on the JSX element. Only functional/ARIA props (open, onClose, role, id, ref, anchorRef, etc.) should be set directly. This ensures all visual aspects are customizable via ThemeProvider.
+8. **No hardcoded inline defaults in ComponentTheme constructors** — Every component's defaults MUST be extracted to a separate `{component}Defaults.ts` file (e.g., `menuDividerDefaults.ts`, `menuPopupDefaults.ts`), never passed as inline object literals in `new ComponentTheme(...)`. This makes ALL defaults customizable via ThemeProvider's `themeDefaults` and discoverable in the `theme/defaults.ts` aggregator. When a sub-theme reuses a parent theme (like MenuDivider reuses DividerTheme), create a separate defaults file for the sub-theme variant.
+9. **Size-dependent padding and border-radius** — Padding (`padding`, `paddingX`, `paddingY`) and border-radius (`rounded`, `pill`, `sharp`) values MUST scale with the component's size prop (`xs`/`sm`/`md`/`lg`/`xl`). A component cannot use the same padding or border-radius across different size variants — these are driven by CSS variables that change per size (e.g., `--pd-unit`, `--rounded`). Always verify that size-dependent properties actually change when different size props are applied. If a padding or radius value is hardcoded and ignores size, it is a bug.
+
+## Detailed Conventions
+
+Path-scoped rules in `.claude/rules/` provide detailed guidance when working with specific file types:
+- `component-patterns.md` — Component structure, categories, defaults (for `src/components/**`)
+- `css-conventions.md` — CSS variable system, Tailwind v4 patterns (for `**/*.css` and theme files)
+- `testing.md` — Test patterns and conventions (for `**/*.test.*`)
+- `props-and-theme.md` — Theme internals, prop resolution pipeline (for props/ and theme/ files)
+- `playground-examples.md` — Playground example requirements (for `playground/src/App.tsx`)
+
+## Contributing
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for architecture details, CSS variable system internals, and development workflows.
+
+---
+
+## Reference UI Framework Repositories
+
+When working on VaneUI, **ALWAYS check how similar features are implemented in the reference UI frameworks** before making changes. These are local clones in sibling directories at `C:\GitHub\`.
+
+### When to Check
+
+| Task Type | What to Check | Where to Look |
+|-----------|---------------|---------------|
+| **Adding a new component** | Similar component implementations, props API, accessibility patterns | All 4 frameworks' component folders |
+| **Adding new props** | How other frameworks name similar props, what values they accept | Component source files in each framework |
+| **Refactoring components** | Architecture patterns, file organization, internal utilities | Framework source structure |
+| **Theming/styling changes** | Token systems, CSS variable patterns, theme provider implementations | Chakra's styled-system, Mantine's core, Ant's theme |
+| **Accessibility** | ARIA attributes, keyboard handling, focus management | Chakra (best), shadcn (Radix-based), Mantine |
+| **TypeScript patterns** | Prop types, generics, utility types, ref forwarding | All frameworks use TypeScript |
+| **Responsive design** | Breakpoint systems, responsive prop patterns | Chakra's breakpoints, Mantine's responsive props |
+| **Testing patterns** | Test structure, what to test, testing utilities | Mantine's @mantine-tests, Chakra's tests |
+
+### Quick Reference Paths
+
+```
+Component implementations:
+  ant-design/components/{component}/        # e.g., ant-design/components/button/
+  shadcn-ui-ui/apps/v4/registry/default/ui/ # shadcn component registry
+  mantine/packages/@mantine/core/src/components/{Component}/
+  chakra-ui/packages/react/src/components/{component}/
+
+Props/Types:
+  ant-design/components/{component}/index.tsx
+  mantine/packages/@mantine/core/src/components/{Component}/{Component}.tsx
+  chakra-ui/packages/react/src/components/{component}/{component}.tsx
+
+Theming:
+  ant-design/components/theme/
+  mantine/packages/@mantine/core/src/core/MantineProvider/
+  chakra-ui/packages/react/src/styled-system/
+
+Hooks:
+  mantine/packages/@mantine/hooks/src/     # 50+ hooks
+  chakra-ui/packages/react/src/hooks/
+```
+
+### Framework Strengths
+
+| Framework | Best For Learning |
+|-----------|-------------------|
+| **Ant Design** | Enterprise patterns, complex components (Table, Tree, Form), i18n, prop naming conventions (see `AGENTS.md`) |
+| **shadcn/ui** | Tailwind CSS patterns (closest to VaneUI), Radix primitives, copy-paste architecture, minimal abstraction |
+| **Mantine** | Comprehensive API design, hooks collection, modular package architecture, CSS Modules patterns |
+| **Chakra UI** | Styled-system (CVA/SVA), accessibility best practices, style props API, design tokens (see `CLAUDE.md`) |
+
+### Workflow Example
+
+When asked to "add a Tooltip component to VaneUI":
+
+1. **First**, check implementations in reference frameworks:
+   - `ant-design/components/tooltip/` — enterprise features, placement options
+   - `mantine/packages/@mantine/core/src/components/Tooltip/` — API design, props
+   - `chakra-ui/packages/react/src/components/tooltip/` — accessibility, style props
+   - `shadcn-ui-ui/` (uses Radix Tooltip) — Tailwind styling approach
+
+2. **Extract patterns**:
+   - Common props across frameworks (content, placement, trigger, delay)
+   - Accessibility requirements (role, aria-describedby)
+   - How each handles positioning (Popper.js, Floating UI, CSS)
+
+3. **Then implement** in VaneUI following VaneUI's conventions:
+   - Boolean props API where appropriate
+   - Tailwind CSS v4 styling
+   - ThemeProvider integration
+   - TypeScript strict mode
+
+### Reporting Findings
+
+When checking reference frameworks, briefly summarize what you found:
+- Which frameworks have the component/feature
+- Key differences in their approaches
+- Which patterns are most suitable for VaneUI's architecture
+- Any accessibility or edge cases to consider
+
+---
+
+## Superpowers Overrides for VaneUI
+
+### The Component Implementation Workflow IS the plan
+For component work, the "Component Implementation Workflow" section in this file IS the authoritative plan. The `superpowers:writing-plans` skill should NOT generate an alternative plan that conflicts with it. When adding a new component, the plan is:
+1. Follow the 6-step workflow in this CLAUDE.md (Create → Integrate → Test → Playground → E2E → Verify)
+2. Use `pre-commit-checker` agent at the end
+3. Done — do not invent additional steps
+
+### Do not use Superpowers' code-reviewer for component structure
+Component structure validation is done by:
+- `component-auditor` agent (structure compliance, 3-layer prop system)
+- `pre-commit-checker` agent (type-check → lint → test → build gate)
+- `componentThemeCoverage.test.ts` (automated category/mapper coverage)
+
+Superpowers' generic code-reviewer does not understand the 3-layer prop system, barrel export circular dependency traps, or the shared mapper collections. Do not use it for VaneUI component reviews — use the project-specific `code-reviewer` or `component-auditor` instead.
+
+### TDD for VaneUI components
+VaneUI already requires tests per the Component Implementation Workflow. Superpowers' TDD Iron Law aligns with this, BUT the test file is created alongside the component per the workflow order:
+1. Component file → 2. Theme integration → 3. Tests → 4. Playground → 5. E2E → 6. Verify
+
+Do not rearrange this order to satisfy strict test-first TDD. Tests written before the component file would fail to compile due to missing imports. The workflow order is authoritative.
+
+### Brainstorming scope for VaneUI
+New components DO need brainstorming, but brainstorm the **API** (which props, which variants, which defaults), not the file structure. The file structure is already defined by the workflow above.
+
+Skip brainstorming entirely for:
+- Adding a new prop to an existing component
+- Fixing a theme/CSS variable issue (use `theme-debugger` agent)
+- Updating defaults for an existing component
+- Playground tweaks
+
+### Debugging skills
+For VaneUI-specific debugging, prefer the project agents:
+- Rendering/prop/styling issues → `debugger` agent
+- Theme/CSS variable issues → `theme-debugger` agent
+
+Fall back to `superpowers:systematic-debugging` only when the issue is not VaneUI-specific (e.g., a Rollup or Tailwind v4 config bug).

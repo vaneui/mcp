@@ -15,7 +15,8 @@
   "scripts": {
     "sync": "node scripts/sync-docs.mjs && node scripts/sync-component-docs.mjs",
     "sync:strict": "node scripts/sync-docs.mjs --strict && node scripts/sync-component-docs.mjs --strict",
-    "build": "npm run sync && tsc",
+    "build": "tsc",
+    "build:full": "npm run sync && tsc",
     "start": "node dist/server.js",
     "prepublishOnly": "npm run sync:strict && tsc"
   },
