@@ -1,4 +1,6 @@
-import { DOCS, readDoc, uriFor, type DocEntry } from "./resources.js";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
+import { DOCS, RESOURCES_DIR, readDoc, uriFor, type DocEntry } from "./resources.js";
 
 export const MAX_RESULTS = 50;
 /** snippet radius around the match, in characters */
@@ -75,4 +77,64 @@ export async function searchDocs(args: SearchArgs): Promise<SearchHit[]> {
     }
   }
   return results;
+}
+
+export interface ComponentPropRow {
+  prop: string;
+  category: string;
+  isDefault: boolean;
+  description: string;
+  isCommon: boolean;
+}
+
+type ComponentPropsIndex = Record<string, ComponentPropRow[]>;
+
+let componentPropsCache: ComponentPropsIndex | null = null;
+
+async function loadComponentProps(): Promise<ComponentPropsIndex> {
+  if (componentPropsCache) return componentPropsCache;
+  const path = join(RESOURCES_DIR, "component-props.json");
+  let text: string;
+  try {
+    text = await readFile(path, "utf8");
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    throw new Error(
+      `component-props.json not found at ${path} (${msg}). Run \`npm run sync\` to generate it.`,
+    );
+  }
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(text);
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    throw new Error(`component-props.json is not valid JSON: ${msg}`);
+  }
+  if (!parsed || typeof parsed !== "object") {
+    throw new Error(`component-props.json must be an object keyed by component slug.`);
+  }
+  componentPropsCache = parsed as ComponentPropsIndex;
+  return componentPropsCache;
+}
+
+export interface GetComponentPropsArgs {
+  slug: string;
+}
+
+export async function getComponentProps(
+  args: GetComponentPropsArgs,
+): Promise<ComponentPropRow[]> {
+  const slug = (args.slug ?? "").trim();
+  if (!slug) {
+    throw new Error("`slug` must be a non-empty string.");
+  }
+  const index = await loadComponentProps();
+  const rows = index[slug];
+  if (!rows) {
+    const known = Object.keys(index).sort().join(", ");
+    throw new Error(
+      `Unknown component slug "${slug}". Known slugs: ${known}.`,
+    );
+  }
+  return rows;
 }

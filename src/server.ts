@@ -16,7 +16,7 @@ import {
   slugFromUri,
   uriFor,
 } from "./resources.js";
-import { searchDocs } from "./tools.js";
+import { getComponentProps, searchDocs } from "./tools.js";
 
 function readPackageVersion(): string {
   const here = dirname(fileURLToPath(import.meta.url));
@@ -107,6 +107,39 @@ async function main(): Promise<void> {
         return {
           isError: true,
           content: [{ type: "text", text: `search_docs failed: ${message}` }],
+        };
+      }
+    },
+  );
+
+  server.registerTool(
+    "get_component_props",
+    {
+      description:
+        "Return the structured prop / category / default / description rows for a single VaneUI component, derived from `ComponentCategories`, `ComponentKeys`, `defaultTheme`, and `PropDescriptions`. Use this to look up the exact prop list, find which prop is the default in a category, or distinguish common layout props from component-specific ones. The slug matches the resource basename — `button`, `card`, `icon-button`, `pagetitle`, etc.",
+      inputSchema: {
+        slug: z
+          .string()
+          .min(1)
+          .describe("Component slug (e.g. `button`, `card`, `icon-button`, `pagetitle`)."),
+      },
+    },
+    async ({ slug }) => {
+      try {
+        const rows = await getComponentProps({ slug });
+        return {
+          content: [
+            {
+              type: "text",
+              text: JSON.stringify(rows, null, 2),
+            },
+          ],
+        };
+      } catch (err) {
+        const message = err instanceof Error ? err.message : String(err);
+        return {
+          isError: true,
+          content: [{ type: "text", text: `get_component_props failed: ${message}` }],
         };
       }
     },
