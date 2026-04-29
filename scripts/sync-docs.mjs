@@ -1,16 +1,21 @@
 #!/usr/bin/env node
 // Copies VaneUI markdown docs into mcp/resources/.
 //
-// Sources:
-//   1. The sibling `vaneui/` repo (CLAUDE.md + .claude/rules/*.md) — API reference
-//      and agent-facing rules. Always required.
-//   2. The sibling `vaneui-web/` repo (app/docs/data/**.md) — user-facing
-//      getting-started and customization guides. Optional in lenient mode so
-//      local dev works with only vaneui/ checked out.
+// Sources (both required — MD-first docs are now authored directly):
+//   1. The sibling `vaneui/` repo (CLAUDE.md + .claude/rules/*.md) — API
+//      reference and agent-facing rules.
+//   2. The sibling `vaneui-web/` repo (app/docs/data/**.md) — narrative guides
+//      AND per-component reference (one .md per component, with frontmatter).
+//
+// Each source MD file is copied verbatim into resources/ keyed by basename.
+// Filenames are globally unique across categories, so the corpus is flat:
+// `resources/button.md`, `resources/installation.md`, `resources/common-props.md`,
+// etc. The MCP URI for each is `vaneui://docs/<basename-without-.md>`.
 //
 // Flags:
-//   --strict   Exit 1 if vaneui-web or any expected file is missing. Used by
-//              `prepublishOnly` so we never ship a tarball with partial docs.
+//   --strict   Exit 1 if any source root is missing OR if no MD files are
+//              found in either source. Used by `prepublishOnly` so we never
+//              ship a tarball with partial docs.
 //
 // Env:
 //   VANEUI_PATH       Absolute or relative path to the vaneui checkout.
@@ -20,58 +25,23 @@
 //
 // Run via: npm run sync  (lenient)  or  npm run sync:strict  (strict).
 import { fileURLToPath } from "node:url";
-import { dirname, join, resolve } from "node:path";
-import { mkdir, copyFile, rm, readdir, access } from "node:fs/promises";
+import { dirname, join, resolve, basename } from "node:path";
+import { mkdir, copyFile, rm, readdir, access, stat } from "node:fs/promises";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const PKG_ROOT = resolve(__dirname, "..");
-// PKG_ROOT = C:/GitHub/vaneui-mcp
-// REPO_ROOT = C:/GitHub/vaneui  (sibling of vaneui-mcp; override with VANEUI_PATH)
+
 const REPO_ROOT = process.env.VANEUI_PATH
   ? resolve(process.env.VANEUI_PATH)
   : resolve(PKG_ROOT, "..", "vaneui");
+const WEB_ROOT = process.env.VANEUI_WEB_PATH
+  ? resolve(process.env.VANEUI_WEB_PATH)
+  : resolve(PKG_ROOT, "..", "vaneui-web");
+
 const RESOURCES_DIR = join(PKG_ROOT, "resources");
 
 const STRICT = process.argv.includes("--strict");
-
-// Source 1: sibling vaneui repo. { src relative to REPO_ROOT, dest filename }.
-const VANEUI_DOCS = [
-  { src: "CLAUDE.md", dest: "claude.md" },
-  { src: ".claude/rules/component-patterns.md", dest: "component-patterns.md" },
-  { src: ".claude/rules/component-usage.md", dest: "component-usage.md" },
-  { src: ".claude/rules/css-conventions.md", dest: "css-conventions.md" },
-  { src: ".claude/rules/e2e-testing.md", dest: "e2e-testing.md" },
-  { src: ".claude/rules/playground-examples.md", dest: "playground-examples.md" },
-  { src: ".claude/rules/prop-to-tailwind-mapping.md", dest: "prop-to-tailwind-mapping.md" },
-  { src: ".claude/rules/props-and-theme.md", dest: "props-and-theme.md" },
-  { src: ".claude/rules/testing.md", dest: "testing.md" },
-];
-
-// Source 2: sibling vaneui-web repo. { src relative to vaneui-web root, dest filename }.
-// Slugs are globally unique so files are flattened into resources/.
-const VANEUI_WEB_DOCS = [
-  { src: "app/docs/data/getting-started/installation.md", dest: "installation.md" },
-  { src: "app/docs/data/getting-started/usage-basics.md", dest: "usage-basics.md" },
-  { src: "app/docs/data/getting-started/core-concepts.md", dest: "core-concepts.md" },
-  { src: "app/docs/data/customization/theming-overview.md", dest: "theming-overview.md" },
-  { src: "app/docs/data/customization/using-themeprovider.md", dest: "using-themeprovider.md" },
-  { src: "app/docs/data/customization/theme-defaults.md", dest: "theme-defaults.md" },
-  { src: "app/docs/data/customization/theme-and-override.md", dest: "theme-and-override.md" },
-  { src: "app/docs/data/customization/extra-classes.md", dest: "extra-classes.md" },
-  { src: "app/docs/data/customization/customizing-styles.md", dest: "customizing-styles.md" },
-  { src: "app/docs/data/customization/variant-inheritance.md", dest: "variant-inheritance.md" },
-  { src: "app/docs/data/customization/css-variables.md", dest: "css-variables.md" },
-];
-
-function resolveVaneuiWebRoot() {
-  const fromEnv = process.env.VANEUI_WEB_PATH;
-  if (fromEnv && fromEnv.length > 0) {
-    return resolve(fromEnv);
-  }
-  // Default: sibling of the vaneui-mcp repo (one level up from the package root).
-  return resolve(PKG_ROOT, "..", "vaneui-web");
-}
 
 async function pathExists(p) {
   try {
@@ -82,24 +52,55 @@ async function pathExists(p) {
   }
 }
 
-async function syncFrom(rootLabel, rootDir, docs) {
+function fail(msg) {
+  if (STRICT) {
+    console.error(msg);
+    process.exit(1);
+  }
+  console.warn(msg);
+}
+
+// Recursively collect all *.md files under `dir`.
+async function collectMd(dir) {
+  const out = [];
+  let entries;
+  try {
+    entries = await readdir(dir, { withFileTypes: true });
+  } catch {
+    return out;
+  }
+  for (const ent of entries) {
+    const full = join(dir, ent.name);
+    if (ent.isDirectory()) {
+      const nested = await collectMd(full);
+      out.push(...nested);
+    } else if (ent.isFile() && ent.name.endsWith(".md")) {
+      out.push(full);
+    }
+  }
+  return out;
+}
+
+// Copy a list of source MD files into resources/. Detects duplicate basenames
+// across the input list and aborts (in strict mode) so a silent overwrite never
+// happens.
+async function syncMd(rootLabel, files) {
+  const seen = new Map(); // dest basename -> source path
   let written = 0;
-  for (const { src, dest } of docs) {
-    const from = join(rootDir, src);
-    const to = join(RESOURCES_DIR, dest);
-    if (!(await pathExists(from))) {
-      const msg = `[sync] ${rootLabel}: missing source file ${src}`;
-      if (STRICT) {
-        console.error(msg);
-        process.exit(1);
-      }
-      console.warn(`${msg} — skipping`);
+  for (const from of files) {
+    // Lowercase the basename so URI slugs are uniform (CLAUDE.md -> claude.md).
+    const dest = basename(from).toLowerCase();
+    if (seen.has(dest)) {
+      const msg = `[sync] ${rootLabel}: duplicate basename ${dest} (${seen.get(dest)} vs ${from})`;
+      fail(msg);
       continue;
     }
+    seen.set(dest, from);
+    const to = join(RESOURCES_DIR, dest);
     await copyFile(from, to);
-    console.log(`synced  ${rootLabel}:${src}  ->  resources/${dest}`);
     written++;
   }
+  console.log(`[sync] ${rootLabel}: ${written} markdown files`);
   return written;
 }
 
@@ -108,25 +109,45 @@ async function main() {
   await rm(RESOURCES_DIR, { recursive: true, force: true });
   await mkdir(RESOURCES_DIR, { recursive: true });
 
-  // Source 1: vaneui (always required).
-  const wroteVaneui = await syncFrom("vaneui", REPO_ROOT, VANEUI_DOCS);
-
-  // Source 2: vaneui-web (optional in lenient mode).
-  const vaneuiWebRoot = resolveVaneuiWebRoot();
-  let wroteVaneuiWeb = 0;
-  if (!(await pathExists(vaneuiWebRoot))) {
-    const msg = `[sync] vaneui-web not found at ${vaneuiWebRoot} — skipping 11 user-facing docs. Pass VANEUI_WEB_PATH or check out vaneui-web as a sibling repo.`;
-    if (STRICT) {
-      console.error(msg);
-      process.exit(1);
-    }
-    console.warn(msg);
-  } else {
-    wroteVaneuiWeb = await syncFrom("vaneui-web", vaneuiWebRoot, VANEUI_WEB_DOCS);
+  // Source 1: sibling vaneui repo. CLAUDE.md + .claude/rules/*.md.
+  if (!(await pathExists(REPO_ROOT))) {
+    fail(`[sync] vaneui not found at ${REPO_ROOT}. Pass VANEUI_PATH or check out vaneui as a sibling repo.`);
   }
+  const vaneuiClaude = join(REPO_ROOT, "CLAUDE.md");
+  const vaneuiRulesDir = join(REPO_ROOT, ".claude", "rules");
+  const vaneuiFiles = [];
+  if (await pathExists(vaneuiClaude)) {
+    vaneuiFiles.push(vaneuiClaude);
+  } else {
+    fail(`[sync] vaneui: missing CLAUDE.md at ${vaneuiClaude}`);
+  }
+  if (await pathExists(vaneuiRulesDir)) {
+    const rules = (await collectMd(vaneuiRulesDir)).sort();
+    vaneuiFiles.push(...rules);
+  } else {
+    fail(`[sync] vaneui: missing rules dir at ${vaneuiRulesDir}`);
+  }
+  if (vaneuiFiles.length === 0) {
+    fail(`[sync] vaneui: no markdown files found`);
+  }
+  const wroteVaneui = await syncMd("vaneui", vaneuiFiles);
+
+  // Source 2: sibling vaneui-web repo. app/docs/data/**/*.md.
+  if (!(await pathExists(WEB_ROOT))) {
+    fail(`[sync] vaneui-web not found at ${WEB_ROOT}. Pass VANEUI_WEB_PATH or check out vaneui-web as a sibling repo.`);
+  }
+  const webDocsRoot = join(WEB_ROOT, "app", "docs", "data");
+  if (!(await pathExists(webDocsRoot))) {
+    fail(`[sync] vaneui-web: missing docs root at ${webDocsRoot}`);
+  }
+  const webFiles = (await collectMd(webDocsRoot)).sort();
+  if (webFiles.length === 0) {
+    fail(`[sync] vaneui-web: no markdown files found under ${webDocsRoot}`);
+  }
+  const wroteWeb = await syncMd("vaneui-web", webFiles);
 
   const entries = await readdir(RESOURCES_DIR);
-  const total = wroteVaneui + wroteVaneuiWeb;
+  const total = wroteVaneui + wroteWeb;
   console.log(`[sync] wrote ${total} files to resources/ (${entries.length} present)`);
 }
 

@@ -6,8 +6,10 @@ A [Model Context Protocol](https://modelcontextprotocol.io) server that exposes 
 
 Docs come from two sibling repos and are bundled at build time:
 
-- **`vaneui/`** — API reference and agent-facing rules (`CLAUDE.md` + `.claude/rules/*.md`). These describe how VaneUI is built internally and how AI agents should work with its source.
-- **`vaneui-web/`** — user-facing guides (`app/docs/data/getting-started/*.md`, `app/docs/data/customization/*.md`) plus **per-component reference docs** extracted from `app/docs/data/{category}/*.tsx`. The TSX example files drive the live demos on vaneui.com; `scripts/sync-component-docs.mjs` parses them via the TypeScript compiler API and emits one `component-<slug>.md` per component into `resources/`.
+- **`vaneui/`** — API reference and agent-facing rules (`CLAUDE.md` + `.claude/rules/*.md`). Describe how VaneUI is built internally and how AI agents should work with its source.
+- **`vaneui-web/`** — narrative guides and per-component reference, all authored as plain markdown under `app/docs/data/**/*.md` (one file per component, with frontmatter).
+
+Each `.md` file is copied verbatim into `resources/` keyed by its basename. Filenames are globally unique across categories, so the corpus is flat: `resources/button.md`, `resources/installation.md`, `resources/common-props.md`, etc. The MCP URI for each resource is `vaneui://docs/<basename-without-.md>`.
 
 ## Local dev usage
 
@@ -59,123 +61,46 @@ Once published to npm, any MCP client can spawn the server without a local clone
 
 ## How to add or update docs
 
-The corpus lives in two sibling repos across three source types:
+Single mechanism — edit the source markdown, then re-sync.
 
-- `C:/GitHub/vaneui/CLAUDE.md` and `C:/GitHub/vaneui/.claude/rules/*.md` — API reference / agent rules.
-- `C:/GitHub/vaneui-web/app/docs/data/**/*.md` — narrative getting-started and customization guides.
-- `C:/GitHub/vaneui-web/app/docs/data/{category}/*.tsx` — component example files; extracted to `component-<slug>.md`.
+### Adding a new doc
 
-This package copies / extracts all three into `resources/` at build time.
+1. Create the markdown in the appropriate source repo:
+   - **Component reference:** `vaneui-web/app/docs/data/<category>/<slug>.md` (with frontmatter — see existing pages for the schema).
+   - **Narrative guide:** `vaneui-web/app/docs/data/getting-started/` or `customization/` or `reference/`.
+   - **Agent rule:** `vaneui/.claude/rules/<slug>.md`.
+2. From this repo: `npm run sync` (or `npm run build:full` to also recompile).
+3. Restart your MCP client. The new resource is available at `vaneui://docs/<slug>` (slug = filename without `.md`).
 
-### Updating a plain markdown doc (rules or guides)
+`src/resources.ts` reads the resources directory at module init, so no registry edit is required.
 
-1. Edit the source markdown file in the appropriate repo.
-2. If you added a new file, register it in both `scripts/sync-docs.mjs` (in the right source list) and `src/resources.ts` (the `DOCS` array — each entry needs a slug, filename, display name, and description).
-3. `npm run build:full` (regenerates `resources/` then compiles).
-4. Commit the regenerated `resources/` changes along with the source edits.
-5. Restart your MCP client.
+### Updating a doc
 
-### Updating a per-component reference
-
-The per-component docs (`component-button.md`, `component-card.md`, …) are **generated**, not hand-written. To change what they contain, edit the source TSX example file.
-
-1. Edit `C:/GitHub/vaneui-web/app/docs/data/{category}/{component}.tsx`. Each `DocsPagePart` entry becomes one `## <title>` section in the output markdown. Update `title`, `md` (prose; supports inline code fences), and/or `component` (JSX) / `code` (explicit code override). Setting `code: ""` suppresses the auto-generated JSX fence for that part — useful when the prose already contains the definitive code sample.
-2. `npm run build:full`.
-3. Commit the regenerated `resources/component-<slug>.md` changes.
-4. Restart your MCP client.
-
-### Adding a new component reference
-
-1. Create the example TSX in `vaneui-web` following the existing pattern.
-2. Register it in `partsMap` in `app/docs/docsSections.ts` **and** in `COMPONENT_DOCS` in `scripts/sync-component-docs.mjs` (src path, slug, human-readable name, short description).
-3. Add a matching `DocEntry` to `DOCS` in `src/resources.ts` with `slug: "component-<slug>"` and `file: "component-<slug>.md"`.
-4. `npm run build:full`. Strict mode (`npm run sync:strict`) will fail if any registered TSX file is missing or has no `*Examples` export.
+1. Edit the source MD in `vaneui/` or `vaneui-web/`.
+2. `npm run sync`. The corpus is regenerated.
+3. Restart your MCP client.
 
 ## Development
 
-The sync scripts expect `vaneui/` and `vaneui-web/` as **sibling folders** of this repo (so paths resolve to `../vaneui` and `../vaneui-web` from the package root). Override with `VANEUI_PATH=/path/to/vaneui` / `VANEUI_WEB_PATH=/path/to/vaneui-web` env vars if they live elsewhere.
+The sync script expects `vaneui/` and `vaneui-web/` as **sibling folders** of this repo (so paths resolve to `../vaneui` and `../vaneui-web` from the package root). Override with `VANEUI_PATH=/path/to/vaneui` / `VANEUI_WEB_PATH=/path/to/vaneui-web` env vars if they live elsewhere.
 
 - `npm run build` — just `tsc`. Uses the committed `resources/`. Works standalone, no sibling repos required.
 - `npm run build:full` — runs the lenient sync then `tsc`. Regenerates `resources/` from sibling repos; commit the diff afterwards.
-- `npm run sync` — lenient sync only: runs `sync-docs.mjs` then `sync-component-docs.mjs`. If `vaneui/` or `vaneui-web/` is missing, warns and skips. ⚠️ The sync wipes `resources/` before it starts — if a sibling repo is missing, you'll end up with an empty or partial bundle. Prefer `build:full` when you want to regenerate.
-- `npm run sync:strict` — strict sync: exits with code 1 if any sibling or registered file is missing. Used by `prepublishOnly` so we never ship a tarball with partial docs.
-- `npm publish` — runs `prepublishOnly`, which uses `sync:strict` to guarantee all 56 docs (9 rules + 11 guides + 36 per-component references) are present.
+- `npm run sync` — lenient sync. Copies every `.md` from both sources into `resources/` (and writes `component-props.json`). If a sibling repo is missing, warns and skips. ⚠️ The sync wipes `resources/` before it starts — if a sibling repo is missing, you'll end up with an empty or partial bundle. Prefer `build:full` when you want to regenerate.
+- `npm run sync:strict` — strict sync. Exits with code 1 if any sibling repo is missing or no MD files are found. Used by `prepublishOnly` so we never ship a tarball with partial docs.
 
 ## Available resources
 
-From `vaneui/` (API reference and agent rules):
+The corpus contains every `.md` in `vaneui/CLAUDE.md`, `vaneui/.claude/rules/`, and `vaneui-web/app/docs/data/**`. Each shows up as a resource named `vaneui://docs/<slug>` where `<slug>` is the source filename minus the `.md` extension.
 
-| URI | What |
-|-----|------|
-| `vaneui://docs/component-usage` | Primary consumer-facing guide: setup, ThemeProvider, component selection, composition patterns, anti-patterns. |
-| `vaneui://docs/prop-to-tailwind-mapping` | Table of VaneUI boolean props and the Tailwind classes they produce. |
-| `vaneui://docs/component-patterns` | Internal component structure: categories, defaults, 3-layer prop system. |
-| `vaneui://docs/props-and-theme` | Theme resolution pipeline and prop category details. |
-| `vaneui://docs/css-conventions` | CSS variable system and Tailwind v4 patterns. |
-| `vaneui://docs/testing` | Jest + Testing Library conventions. |
-| `vaneui://docs/e2e-testing` | Playwright e2e conventions. |
-| `vaneui://docs/playground-examples` | Rules for `playground/src/App.tsx` examples. |
-| `vaneui://docs/claude` | VaneUI project overview (`CLAUDE.md`). |
+Examples:
 
-From `vaneui-web/` (user-facing getting-started guides):
-
-| URI | What |
-|-----|------|
-| `vaneui://docs/installation` | How to install `@vaneui/ui` with npm/yarn/pnpm, including required CSS imports and peer deps. |
-| `vaneui://docs/usage-basics` | Fundamental patterns for using VaneUI components: boolean props, size/appearance/variant, common layouts. |
-| `vaneui://docs/core-concepts` | The boolean-props philosophy behind VaneUI and why it differs from className-driven component libraries. |
-
-From `vaneui-web/` (user-facing customization guides):
-
-| URI | What |
-|-----|------|
-| `vaneui://docs/theming-overview` | High-level tour of VaneUI's `ComponentTheme` architecture — how theme classes, defaults, and class mappers fit together. |
-| `vaneui://docs/using-themeprovider` | Wrapping an app in `ThemeProvider`, nesting providers, and passing theme context to children. |
-| `vaneui://docs/theme-defaults` | Setting app-wide default boolean props per component via `ThemeProvider`'s `themeDefaults`. |
-| `vaneui://docs/theme-and-override` | Using `themeOverride` to mutate base classes or defaults for a subtree. |
-| `vaneui://docs/extra-classes` | Adding extra CSS classes keyed to active boolean props via `extraClasses`. |
-| `vaneui://docs/customizing-styles` | When and how to override component styles with `className` and how `tailwind-merge` resolves conflicts. |
-| `vaneui://docs/variant-inheritance` | How VaneUI components inherit colors from ancestors via CSS custom-property cascade. |
-| `vaneui://docs/css-variables` | The three-tier CSS variable system (unit -> computed -> consumed) that drives size, color, and spacing. |
-
-Per-component reference (extracted from `vaneui-web/app/docs/data/{category}/*.tsx`):
-
-| URI | Component |
-|-----|-----------|
-| `vaneui://docs/component-button` | Button |
-| `vaneui://docs/component-badge` | Badge |
-| `vaneui://docs/component-chip` | Chip |
-| `vaneui://docs/component-checkbox` | Checkbox |
-| `vaneui://docs/component-label` | Label |
-| `vaneui://docs/component-code` | Code (inline) |
-| `vaneui://docs/component-divider` | Divider |
-| `vaneui://docs/component-input` | Input |
-| `vaneui://docs/component-img` | Img |
-| `vaneui://docs/component-icon` | Icon |
-| `vaneui://docs/component-icon-button` | IconButton |
-| `vaneui://docs/component-kbd` | Kbd |
-| `vaneui://docs/component-mark` | Mark |
-| `vaneui://docs/component-section` | Section |
-| `vaneui://docs/component-container` | Container |
-| `vaneui://docs/component-row` | Row |
-| `vaneui://docs/component-col` | Col |
-| `vaneui://docs/component-stack` | Stack |
-| `vaneui://docs/component-card` | Card |
-| `vaneui://docs/component-grid2` … `component-grid6` | Grid2 through Grid6 |
-| `vaneui://docs/component-overlay` | Overlay |
-| `vaneui://docs/component-modal` | Modal |
-| `vaneui://docs/component-popup` | Popup |
-| `vaneui://docs/component-menu` | Menu |
-| `vaneui://docs/component-navlink` | NavLink |
-| `vaneui://docs/component-text` | Text |
-| `vaneui://docs/component-title` | Title |
-| `vaneui://docs/component-page-title` | PageTitle |
-| `vaneui://docs/component-section-title` | SectionTitle |
-| `vaneui://docs/component-link` | Link |
-| `vaneui://docs/component-list` | List |
-| `vaneui://docs/component-blockquote` | Blockquote |
-
-Each per-component doc contains the titled example sections shown on `vaneui.com/docs/<section>/<slug>`: prose, code, and (for simple examples) JSX as a tsx code fence. Dynamic patterns like `ComponentKeys.appearance.map(...)` are preserved verbatim rather than runtime-expanded.
+- `vaneui://docs/claude` — VaneUI project overview (`CLAUDE.md`).
+- `vaneui://docs/component-usage`, `vaneui://docs/prop-to-tailwind-mapping`, `vaneui://docs/component-patterns`, `vaneui://docs/props-and-theme`, `vaneui://docs/css-conventions`, `vaneui://docs/testing`, `vaneui://docs/e2e-testing`, `vaneui://docs/playground-examples` — agent-facing rule files.
+- `vaneui://docs/installation`, `vaneui://docs/usage-basics`, `vaneui://docs/core-concepts` — getting-started guides.
+- `vaneui://docs/theming-overview`, `vaneui://docs/using-themeprovider`, `vaneui://docs/theme-defaults`, `vaneui://docs/theme-and-override`, `vaneui://docs/extra-classes`, `vaneui://docs/customizing-styles`, `vaneui://docs/variant-inheritance`, `vaneui://docs/css-variables` — customization guides.
+- `vaneui://docs/common-props` — shared layout/typography prop reference.
+- `vaneui://docs/button`, `vaneui://docs/card`, `vaneui://docs/modal`, ... — one per component.
 
 All resources have `mimeType: text/markdown`.
 
@@ -191,3 +116,13 @@ Substring or regex search across the full doc corpus.
 | `regex` | boolean | Optional. If `true`, `query` is parsed as a JavaScript regex. Defaults to `false`. |
 
 Returns up to 50 hits, each containing `uri`, `slug`, `lineNumber`, and a short surrounding `snippet`. Use this before guessing prop names, defaults, or class mappings — the answer is almost always already in the docs.
+
+### `get_component_props`
+
+Returns the structured prop / category / default / description table for a single component, derived directly from `@vaneui/ui`'s `ComponentCategories`, `ComponentKeys`, `defaultTheme`, and `PropDescriptions`.
+
+| Param | Type | Notes |
+|-------|------|-------|
+| `slug` | string | Required. The component slug, matching the resource basename — e.g. `button`, `card`, `icon-button`, `pagetitle`. |
+
+Returns a JSON array of `{ prop, category, isDefault, description, isCommon }` rows. Use this when you need the exact prop list for a component (selecting between common layout props vs component-specific props, finding which prop is the default in a category, etc.).
