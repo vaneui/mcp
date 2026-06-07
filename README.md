@@ -1,52 +1,33 @@
 # @vaneui/mcp
 
-A [Model Context Protocol](https://modelcontextprotocol.io) server that exposes the VaneUI documentation as MCP resources. Any MCP-aware client (Claude Code, Cursor, VS Code, Copilot CLI, etc.) can read these docs on demand and search across them with a single tool call, so you don't have to paste rules into prompts by hand.
+[![npm version](https://img.shields.io/npm/v/@vaneui/mcp?color=cb3837&logo=npm)](https://www.npmjs.com/package/@vaneui/mcp)
+[![license](https://img.shields.io/npm/l/@vaneui/mcp)](./LICENSE)
+[![Model Context Protocol](https://img.shields.io/badge/MCP-server-blue)](https://modelcontextprotocol.io)
 
-## Sources
+A [Model Context Protocol](https://modelcontextprotocol.io) server that exposes the [VaneUI](https://vaneui.com) documentation to AI coding agents. Any MCP-aware client (Claude Code, Claude Desktop, Cursor, VS Code, etc.) can read the component docs on demand and search across them with a single tool call, so your agent writes correct VaneUI code without you pasting rules into prompts by hand.
 
-Docs come from two sibling repos and are bundled at build time:
+It serves the full component reference, getting-started and customization guides, and a structured prop table for every component, plus two tools: `search_docs` and `get_component_props`.
 
-- **`vaneui/`** — API reference and agent-facing rules (`CLAUDE.md` + `.claude/rules/*.md`). Describe how VaneUI is built internally and how AI agents should work with its source.
-- **`vaneui-web/`** — narrative guides and per-component reference, all authored as plain markdown under `app/docs/data/**/*.md` (one file per component, with frontmatter).
+## Requirements
 
-Each `.md` file is copied verbatim into `resources/` keyed by its basename. Filenames are globally unique across categories, so the corpus is flat: `resources/button.md`, `resources/installation.md`, `resources/common-props.md`, etc. The MCP URI for each resource is `vaneui://docs/<basename-without-.md>`.
+- **Node.js 24** (the `npx` command below downloads and runs the server for you).
 
-## Local dev usage
+## Quickstart
 
-The `resources/` folder (the bundled doc corpus) is **committed to git**, so a fresh clone already has everything the server needs to run. You only need to re-sync when you've edited the upstream doc sources.
+The server runs over stdio and is published to npm as `@vaneui/mcp`. Add it to your client with the snippets below; no local clone or build is needed.
 
-**Standalone build (for anyone who cloned or forked this repo):**
-
-```bash
-cd C:/GitHub/vaneui-mcp
-npm install
-npm run build           # just tsc — uses the committed resources/
-```
-
-**Full rebuild (for maintainers who also have `vaneui/` and `vaneui-web/` as sibling folders):**
+### Claude Code
 
 ```bash
-npm run build:full      # re-sync resources/ from sibling repos, then tsc
+claude mcp add vaneui -- npx -y @vaneui/mcp
 ```
 
-The full rebuild needs `../vaneui/` and `../vaneui-web/` checked out next to this repo. Override the defaults with `VANEUI_PATH` / `VANEUI_WEB_PATH` env vars if they live elsewhere.
+### Claude Desktop
 
-Point your MCP client at the built server. For clients that consume a `mcp.json`-style config:
+Edit your `claude_desktop_config.json`:
 
-```json
-{
-  "mcpServers": {
-    "vaneui": {
-      "command": "node",
-      "args": ["C:/GitHub/vaneui-mcp/dist/server.js"]
-    }
-  }
-}
-```
-
-## Post-publish usage (`npx`)
-
-Once published to npm, any MCP client can spawn the server without a local clone:
+- macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- Windows: `%APPDATA%\Claude\claude_desktop_config.json`
 
 ```json
 {
@@ -59,50 +40,61 @@ Once published to npm, any MCP client can spawn the server without a local clone
 }
 ```
 
-## How to add or update docs
+Restart Claude Desktop afterward.
 
-Single mechanism — edit the source markdown, then re-sync.
+### Cursor
 
-### Adding a new doc
+Add to `~/.cursor/mcp.json` (global) or `.cursor/mcp.json` (per project):
 
-1. Create the markdown in the appropriate source repo:
-   - **Component reference:** `vaneui-web/app/docs/data/<category>/<slug>.md` (with frontmatter — see existing pages for the schema).
-   - **Narrative guide:** `vaneui-web/app/docs/data/getting-started/` or `customization/` or `reference/`.
-   - **Agent rule:** `vaneui/.claude/rules/<slug>.md`.
-2. From this repo: `npm run sync` (or `npm run build:full` to also recompile).
-3. Restart your MCP client. The new resource is available at `vaneui://docs/<slug>` (slug = filename without `.md`).
+```json
+{
+  "mcpServers": {
+    "vaneui": {
+      "command": "npx",
+      "args": ["-y", "@vaneui/mcp"]
+    }
+  }
+}
+```
 
-`src/resources.ts` reads the resources directory at module init, so no registry edit is required.
+### VS Code
 
-### Updating a doc
+```bash
+code --add-mcp '{"name":"vaneui","command":"npx","args":["-y","@vaneui/mcp"]}'
+```
 
-1. Edit the source MD in `vaneui/` or `vaneui-web/`.
-2. `npm run sync`. The corpus is regenerated.
-3. Restart your MCP client.
+Or add to `.vscode/mcp.json` (note VS Code uses the `servers` key):
 
-## Development
+```json
+{
+  "servers": {
+    "vaneui": {
+      "command": "npx",
+      "args": ["-y", "@vaneui/mcp"]
+    }
+  }
+}
+```
 
-The sync script expects `vaneui/` and `vaneui-web/` as **sibling folders** of this repo (so paths resolve to `../vaneui` and `../vaneui-web` from the package root). Override with `VANEUI_PATH=/path/to/vaneui` / `VANEUI_WEB_PATH=/path/to/vaneui-web` env vars if they live elsewhere.
+### Other clients
 
-- `npm run build` — just `tsc`. Uses the committed `resources/`. Works standalone, no sibling repos required.
-- `npm run build:full` — runs the lenient sync then `tsc`. Regenerates `resources/` from sibling repos; commit the diff afterwards.
-- `npm run sync` — lenient sync. Copies every `.md` from both sources into `resources/` (and writes `component-props.json`). If a sibling repo is missing, warns and skips. ⚠️ The sync wipes `resources/` before it starts — if a sibling repo is missing, you'll end up with an empty or partial bundle. Prefer `build:full` when you want to regenerate.
-- `npm run sync:strict` — strict sync. Exits with code 1 if any sibling repo is missing or no MD files are found. Used by `prepublishOnly` so we never ship a tarball with partial docs.
+Any client that accepts a stdio MCP server works. Use `npx` as the command and `-y @vaneui/mcp` as the args, following that client's config format.
 
-## Available resources
+## How to use it
 
-The corpus contains every `.md` in `vaneui/CLAUDE.md`, `vaneui/.claude/rules/`, and `vaneui-web/app/docs/data/**`. Each shows up as a resource named `vaneui://docs/<slug>` where `<slug>` is the source filename minus the `.md` extension.
+Once the server is connected, just build with VaneUI in natural language. The agent pulls the right docs through the tools automatically:
 
-Examples:
+- *"Using VaneUI, build a pricing card with a title, a feature list, and a filled primary button."* → the agent reads `card`, `list`, and `button` props and composes them correctly.
+- *"What's the default appearance and variant of `Chip`?"* → `get_component_props` returns the prop table (Chip defaults to `secondary` + `outline`, not `primary`).
+- *"How do I set app-wide defaults for every Button?"* → `search_docs` finds the `theme-defaults` guide and shows the `ThemeProvider themeDefaults` pattern.
+- *"Which VaneUI prop maps to `flex-1`?"* → `search_docs` finds it in the prop-to-Tailwind mapping.
 
-- `vaneui://docs/claude` — VaneUI project overview (`CLAUDE.md`).
-- `vaneui://docs/component-usage`, `vaneui://docs/prop-to-tailwind-mapping`, `vaneui://docs/component-patterns`, `vaneui://docs/props-and-theme`, `vaneui://docs/css-conventions`, `vaneui://docs/testing`, `vaneui://docs/e2e-testing`, `vaneui://docs/playground-examples` — agent-facing rule files.
-- `vaneui://docs/installation`, `vaneui://docs/usage-basics`, `vaneui://docs/core-concepts` — getting-started guides.
-- `vaneui://docs/theming-overview`, `vaneui://docs/using-theme-provider`, `vaneui://docs/theme-defaults`, `vaneui://docs/theme-and-override`, `vaneui://docs/extra-classes`, `vaneui://docs/customizing-styles`, `vaneui://docs/variant-inheritance`, `vaneui://docs/css-variables` — customization guides.
-- `vaneui://docs/common-props` — shared layout/typography prop reference.
-- `vaneui://docs/button`, `vaneui://docs/card`, `vaneui://docs/modal`, ... — one per component.
+## Verifying it works
 
-All resources have `mimeType: text/markdown`.
+After adding the server and restarting your client:
+
+- The client should list a server named **`vaneui`** with the tools `search_docs` and `get_component_props` (and the `vaneui://docs/*` resources).
+- To smoke-test the server directly, run `npx -y @vaneui/mcp` in a terminal. It starts and waits on stdio (no output is normal for an MCP stdio server; press Ctrl+C to exit).
 
 ## Tools
 
@@ -126,3 +118,69 @@ Returns the structured prop / category / default / description table for a singl
 | `slug` | string | Required. The component slug, matching the resource basename — e.g. `button`, `card`, `icon-button`, `page-title`. |
 
 Returns a JSON array of `{ prop, category, isDefault, description, isCommon }` rows. Use this when you need the exact prop list for a component (selecting between common layout props vs component-specific props, finding which prop is the default in a category, etc.).
+
+## Available resources
+
+Each documentation file is exposed as a resource named `vaneui://docs/<slug>`, where `<slug>` is the source filename minus the `.md` extension. All resources have `mimeType: text/markdown`.
+
+Examples:
+
+- `vaneui://docs/claude` — VaneUI project overview.
+- `vaneui://docs/component-usage`, `vaneui://docs/prop-to-tailwind-mapping`, `vaneui://docs/component-patterns`, `vaneui://docs/props-and-theme`, `vaneui://docs/css-conventions`, `vaneui://docs/testing`, `vaneui://docs/e2e-testing`, `vaneui://docs/playground-examples` — agent-facing rule files.
+- `vaneui://docs/installation`, `vaneui://docs/usage-basics`, `vaneui://docs/core-concepts` — getting-started guides.
+- `vaneui://docs/theming-overview`, `vaneui://docs/using-theme-provider`, `vaneui://docs/theme-defaults`, `vaneui://docs/theme-and-override`, `vaneui://docs/extra-classes`, `vaneui://docs/customizing-styles`, `vaneui://docs/variant-inheritance`, `vaneui://docs/css-variables` — customization guides.
+- `vaneui://docs/common-props` — shared layout/typography prop reference.
+- `vaneui://docs/button`, `vaneui://docs/card`, `vaneui://docs/modal`, ... — one per component.
+
+---
+
+## Development
+
+This section is for contributors and maintainers working on the server itself.
+
+### Sources
+
+The doc corpus is bundled from two sibling repos at build time:
+
+- **`vaneui/`** — API reference and agent-facing rules (`CLAUDE.md` + `.claude/rules/*.md`).
+- **`vaneui-web/`** — narrative guides and per-component reference, authored as plain markdown under `app/docs/data/**/*.md` (one file per component, with frontmatter).
+
+Each `.md` file is copied verbatim into `resources/` keyed by its basename (filenames are globally unique, so the corpus is flat). `scripts/sync-component-props.mjs` additionally reads each component's `componentKey` frontmatter and joins it with `@vaneui/ui`'s exported metadata to produce `resources/component-props.json`.
+
+### Building
+
+`resources/` is **committed to git**, so a fresh clone already has everything the server needs to run.
+
+```bash
+npm install
+npm run build       # tsc only — uses the committed resources/
+npm start           # run the built server over stdio
+```
+
+Point a client at the local build with `node /absolute/path/to/vaneui-mcp/dist/server.js` as the command.
+
+### Re-syncing the corpus (maintainers)
+
+The sync scripts expect `vaneui/` and `vaneui-web/` as **sibling folders** of this repo (resolved as `../vaneui` and `../vaneui-web`). Override with `VANEUI_PATH` / `VANEUI_WEB_PATH` env vars if they live elsewhere.
+
+```bash
+npm run build:full  # re-sync resources/ from the sibling repos, then tsc
+```
+
+- `npm run sync` — lenient sync: copies every `.md` from both sources into `resources/` and writes `component-props.json`. ⚠️ Wipes `resources/` first; if a sibling repo is missing you'll get a partial bundle. Prefer `build:full`.
+- `npm run sync:strict` — strict sync: exits non-zero if any sibling repo is missing or no MD files are found. Used by `prepublishOnly`.
+
+### Adding or updating a doc
+
+1. Edit (or create) the source markdown in `vaneui/` or `vaneui-web/`:
+   - Component reference: `vaneui-web/app/docs/data/<category>/<slug>.md` (with frontmatter).
+   - Narrative guide: `vaneui-web/app/docs/data/{getting-started,customization,reference}/`.
+   - Agent rule: `vaneui/.claude/rules/<slug>.md`.
+2. `npm run build:full` to regenerate `resources/` and recompile.
+3. Commit the regenerated `resources/` alongside the source edit, and restart your MCP client.
+
+`src/resources.ts` reads the resources directory at startup, so no registry edit is needed when adding a file.
+
+## License
+
+[MIT](./LICENSE)
