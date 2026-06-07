@@ -1,13 +1,13 @@
 ---
 componentKey: button
 importPath: 'import { Button } from "@vaneui/ui"'
-sourceUrl: https://github.com/vaneui/vaneui/blob/main/src/components/ui/button.tsx
+sourceUrl: https://github.com/vaneui/vaneui/blob/main/src/components/ui/button/Button.tsx
 since: 0.9.0
 ---
 
 `Button` is the primary interactive control for triggering actions. It supports the full appearance, size, shape, and variant prop matrix and renders as an `<a>` when given an `href`.
 
-## When to Use
+## When to use
 
 - Primary page actions, calls-to-action, and prominent affordances.
 - Form submissions (`type="submit"`) and form-level reset.
@@ -15,76 +15,105 @@ since: 0.9.0
 - Toolbar actions where the label adds clarity beyond an icon alone.
 - Cross-page navigation when the action looks like a button (otherwise prefer `Link`).
 
-### When NOT to Use
+### When NOT to use
 
-- For inline navigation inside prose, prefer `Link` — it sits on the typography baseline.
+- For inline navigation inside prose, prefer `Link`. It sits on the typography baseline.
 - For icon-only destructive actions inside a row or table cell, prefer `IconButton`.
 
-## Basic Usage
+## Basic usage
 
-Button styles and variants.
+Each `appearance` prop maps to a semantic color from the active theme.
 
 ```tsx demo
 <Row flexWrap>
-  {ComponentKeys.appearance.map((key) => (
-    <Button key={key} {...{ [key]: true }}>{key}</Button>
-  ))}
+  <Button primary>primary</Button>
+  <Button brand>brand</Button>
+  <Button accent>accent</Button>
+  <Button secondary>secondary</Button>
+  <Button tertiary>tertiary</Button>
+  <Button success>success</Button>
+  <Button danger>danger</Button>
+  <Button warning>warning</Button>
+  <Button info>info</Button>
+  <Button link>link</Button>
+  <Button inherit>inherit</Button>
 </Row>
 ```
 
 ## Sizes
 
-Buttons come in different sizes — `xs`, `sm`, `md`, `lg`, `xl`.
+Buttons come in five sizes: `xs`, `sm` (default), `md`, `lg`, `xl`. Size drives font-size, padding, gap, and border-radius simultaneously via CSS variables.
 
 ```tsx demo
 <Row flexWrap>
-  {ComponentKeys.size.map((key) => (
-    <Button key={key} {...{ [key]: true }}>{key}</Button>
-  ))}
+  <Button xs>xs</Button>
+  <Button sm>sm</Button>
+  <Button md>md</Button>
+  <Button lg>lg</Button>
+  <Button xl>xl</Button>
 </Row>
 ```
 
-## Sizes with Icon
+## With icon
 
-The same size matrix paired with an inline icon slot.
+Drop an icon directly inside the button. `gap` is on by default, so spacing is automatic.
 
 ```tsx demo
 <Row flexWrap>
-  <Button xs><span className="rounded-full size-4 bg-gray-300"/> Extra Small</Button>
-  <Button sm><span className="rounded-full size-4.5 bg-gray-300"/> Small</Button>
-  <Button md><span className="rounded-full size-5 bg-gray-300"/> Medium</Button>
-  <Button lg><span className="rounded-full size-6 bg-gray-300"/> Large</Button>
-  <Button xl><span className="rounded-full size-7 bg-gray-300"/> Extra Large</Button>
+  <Button><Download/> Download</Button>
+  <Button success filled><Check/> Saved</Button>
+  <Button danger><Trash2/> Delete</Button>
+  <Button secondary>Next <ArrowRight/></Button>
 </Row>
 ```
 
-## Font Weights
+## Sizes with icon
 
-Buttons support different font weights.
+The same size matrix paired with an inline icon.
 
 ```tsx demo
 <Row flexWrap>
-  {ComponentKeys.fontWeight.map((key) => (
-    <Button key={key} {...{ [key]: true }}>Submit</Button>
-  ))}
+  <Button xs><Star/> Extra Small</Button>
+  <Button sm><Star/> Small</Button>
+  <Button md><Star/> Medium</Button>
+  <Button lg><Star/> Large</Button>
+  <Button xl><Star/> Extra Large</Button>
 </Row>
 ```
 
-## Border Radius Options
+## Font weights
+
+Buttons default to `semibold`. Use any of the standard weight props to override.
+
+```tsx demo
+<Row flexWrap>
+  <Button thin>Submit</Button>
+  <Button extralight>Submit</Button>
+  <Button light>Submit</Button>
+  <Button normal>Submit</Button>
+  <Button medium>Submit</Button>
+  <Button semibold>Submit</Button>
+  <Button bold>Submit</Button>
+  <Button extrabold>Submit</Button>
+  <Button black>Submit</Button>
+</Row>
+```
+
+## Border radius options
 
 Button supports three border-radius styles: `rounded` (default), `pill`, and `sharp`.
 
 ```tsx demo
 <Row flexWrap>
-  {ComponentKeys.shape.map((key) => (
-    <Button key={key} {...{ [key]: true }}>Subscribe</Button>
-  ))}
+  <Button pill>Subscribe</Button>
+  <Button sharp>Subscribe</Button>
+  <Button rounded>Subscribe</Button>
 </Row>
 ```
 
-## Button as Link & Disabled
+## As Link and disabled
 
-Use `href` to render a Button as an `<a>` for navigation. Use `disabled` to prevent interaction.
+Pass `href` to render the button as an `<a>` for navigation. Use `disabled` to prevent interaction.
 
 ```tsx demo
 <Row flexWrap>
@@ -95,21 +124,41 @@ Use `href` to render a Button as an `<a>` for navigation. Use `disabled` to prev
 </Row>
 ```
 
-## Button Styles
+## Next.js Link integration
 
-Buttons can be styled as `outline` (default) or `filled`.
+Use the `tag` prop to render the button as a Next.js `Link` for client-side navigation.
+
+```tsx
+import Link from 'next/link';
+import { Button } from '@vaneui/ui';
+
+<Button href="/docs" tag={Link}>Documentation</Button>
+```
+
+## Variants
+
+Buttons can be styled as `filled`, `outline` (default), or `ghost`.
 
 ```tsx demo
 <Col>
-  {ComponentKeys.variant.map((variant) => (
-    <Row key={variant} flexWrap>
-      {ComponentKeys.appearance.slice(0, 4).map((appearance) => (
-        <Button key={`${variant}-${appearance}`} {...{ [variant]: true, [appearance]: true }}>
-          {appearance}
-        </Button>
-      ))}
-    </Row>
-  ))}
+  <Row flexWrap>
+    <Button filled primary>primary</Button>
+    <Button filled brand>brand</Button>
+    <Button filled accent>accent</Button>
+    <Button filled secondary>secondary</Button>
+  </Row>
+  <Row flexWrap>
+    <Button primary>primary</Button>
+    <Button brand>brand</Button>
+    <Button accent>accent</Button>
+    <Button secondary>secondary</Button>
+  </Row>
+  <Row flexWrap>
+    <Button ghost primary>primary</Button>
+    <Button ghost brand>brand</Button>
+    <Button ghost accent>accent</Button>
+    <Button ghost secondary>secondary</Button>
+  </Row>
 </Col>
 ```
 
@@ -121,21 +170,23 @@ Set app-wide Button defaults with `ThemeProvider`'s `themeDefaults`:
 import { ThemeProvider, Button } from '@vaneui/ui';
 
 <ThemeProvider themeDefaults={{
-  button: { primary: true, lg: true, filled: true },
+  button: { main: { primary: true, lg: true, filled: true } },
 }}>
   <Button>Submit</Button>
 </ThemeProvider>
 ```
 
-Add prop-conditional classes with `extraClasses` — applied whenever the matching boolean prop is active:
+Add prop-conditional classes with `extraClasses`, applied whenever the matching boolean prop is active. For compound themes like Button, nest the prop-class map under the sub-theme name (`main` for Button's primary surface):
 
 ```tsx
 import { ThemeProvider, Button } from '@vaneui/ui';
 
 <ThemeProvider extraClasses={{
   button: {
-    primary: 'shadow-lg hover:shadow-xl transition-shadow',
-    danger: 'animate-pulse',
+    main: {
+      primary: 'shadow-lg hover:shadow-xl transition-shadow',
+      danger: 'animate-pulse',
+    },
   },
 }}>
   <Button primary>Glowing Primary</Button>

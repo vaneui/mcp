@@ -1,25 +1,27 @@
-The `themeDefaults` property in VaneUI's ThemeProvider allows you to set default boolean props for components throughout your application. This provides a powerful way to establish consistent defaults while still allowing individual components to override these values.
+The `themeDefaults` property in VaneUI's ThemeProvider allows you to set default boolean props for components throughout your application. It establishes consistent defaults while still allowing individual components to override these values.
 
-## Understanding ThemeDefaults
+## Understanding themeDefaults
 
 ### themeDefaults?: ThemeDefaults
 
 The `themeDefaults` property accepts an object where keys are component names and values are objects with boolean props. These defaults are merged with VaneUI's built-in defaults.
 
+Most components take props directly. **Components with sub-themes** (`button`, `card`, `checkbox`, `modal`, `menu`, `navLink`) take a nested object keyed by sub-theme name (`main`, `content`, `input`, `item`, `root`, etc.).
+
 ```tsx
 <ThemeProvider themeDefaults={{
-  button: { primary: true, md: true, filled: true },
-  badge: { success: true, sm: true, pill: true },
-  card: { secondary: true, rounded: true },
-  text: { primary: true }
+  button: { main: { md: true, filled: true } }, // nested under `main`
+  badge: { success: true, sm: true },
+  card: { main: { secondary: true } },          // nested under `main`
+  text: { primary: true },
 }}>
   <App />
 </ThemeProvider>
 ```
 
-## Setting Component Defaults
+## Setting component defaults
 
-### Basic Defaults
+### Basic defaults
 
 Set default boolean props for specific component types:
 
@@ -30,29 +32,30 @@ function App() {
   return (
     <ThemeProvider themeDefaults={{
       button: {
-        primary: true,   // All buttons are primary
-        lg: true,        // All buttons are large
-        filled: true     // All buttons are filled
+        main: {
+          lg: true,        // All buttons are large (overrides built-in sm)
+          filled: true     // All buttons are filled
+        }
       },
       badge: {
         success: true,   // All badges are success color
-        pill: true       // All badges are pill-shaped
       },
       card: {
-        rounded: true,   // All cards have rounded corners
-        border: true     // All cards have borders
+        main: {
+          secondary: true, // All cards use secondary appearance
+        }
       }
     }}>
       {/* Components use these defaults automatically */}
-      <Button>Primary Large Filled Button</Button>
-      <Badge>Success Pill Badge</Badge>
-      <Card>Rounded Card with Border</Card>
+      <Button>Large Filled Button</Button>
+      <Badge>Success Badge</Badge>
+      <Card>Secondary Card</Card>
     </ThemeProvider>
   );
 }
 ```
 
-### Brand-Specific Defaults
+### Brand-specific defaults
 
 Create consistent branding across your application:
 
@@ -62,9 +65,9 @@ import { ThemeProvider, Button, Card, Badge } from '@vaneui/ui';
 function BrandedApp() {
   return (
     <ThemeProvider themeDefaults={{
-      button: { brand: true, filled: true, rounded: true },
-      card: { brand: true, rounded: true },
-      badge: { brand: true, pill: true }
+      button: { main: { brand: true, filled: true } },
+      card: { main: { brand: true } },
+      badge: { brand: true }
     }}>
       <nav>
         <Button>Home</Button>
@@ -76,53 +79,66 @@ function BrandedApp() {
 }
 ```
 
-## Available Boolean Props
+## Available boolean props
 
-### Size Props
+### Size props
 - `xs`, `sm`, `md`, `lg`, `xl`
 
-### Appearance Props
-- `primary`, `brand`, `secondary`, `tertiary`, `accent`
+### Appearance props
+- `primary`, `brand`, `accent`, `secondary`, `tertiary`
 - `success`, `danger`, `warning`, `info`, `link`, `inherit`
 
-### Variant Props
+### Variant props
 - `filled`, `outline`
 
-### Shape Props
+### Shape props
 - `rounded`, `pill`, `sharp`
 
-### Typography Props
-- `sans`, `serif`, `mono`, `semibold`, `bold`
+### Typography props
+- `sans`, `serif`, `mono`, `heading`
+- `thin`, `extralight`, `light`, `normal`, `medium`, `semibold`, `bold`, `extrabold`, `black`
+- `italic`, `underline`, `lineThrough`, `noUnderline`, `uppercase`, `lowercase`, `capitalize`
 
-### Layout Props
-- `flex`, `column`, `itemsCenter`, `justifyBetween`, `gap`
+### Layout props
+- `flex`, `inlineFlex`, `block`, `inline`, `grid`, `hidden`
+- `row`, `column`, `rowReverse`, `columnReverse`
+- `itemsStart`, `itemsCenter`, `itemsEnd`, `itemsStretch`, `itemsBaseline`
+- `justifyStart`, `justifyCenter`, `justifyEnd`, `justifyBetween`, `justifyAround`, `justifyEvenly`
+- `flexWrap`, `flexNoWrap`
+- `gap`, `noGap`, `padding`, `noPadding`
+- `border`, `noBorder`, `borderT`, `borderB`, `borderL`, `borderR`, `borderX`, `borderY`
+- `ring`, `noRing`, `shadow`, `noShadow`, `transparent`
 
-### Width Props
-- `wFull`, `wFit`, `wAuto`
+### Width / height props
+- `wFull`, `wFit`, `wAuto`, `wScreen`
+- `hFull`, `hFit`, `hAuto`, `hScreen`
 
-### Height Props
-- `hFit`, `hFull`, `hAuto`
+### Truncate props
+- `truncate`, `lineClamp2`, `lineClamp3`, `lineClamp4`, `lineClamp5`, `noTruncate`
 
-### Truncate Props
-- `truncate`, `lineClamp2`, `lineClamp3`, `lineClamp4`, `lineClamp5`
-
-### Letter Spacing Props
+### Letter spacing props
 - `trackingTighter`, `trackingTight`, `trackingNormal`, `trackingWide`, `trackingWider`, `trackingWidest`
 
-### Cursor Props
+### Cursor props
 - `cursorPointer`, `cursorDefault`, `cursorNotAllowed`, `cursorNone`, `cursorText`, `cursorMove`, `cursorWait`
 
-### Orientation Props
-- `horizontal`, `vertical`
+### Position props
+- `relative`, `absolute`, `fixed`, `sticky`, `static`
 
-### Status Props
-- `error`
+### Responsive props (layout)
+- `mobileCol`, `tabletCol`, `desktopCol`
+- `mobileHide`, `tabletHide`, `desktopHide`
 
-## Override Priority
+### Misc
+- `transition`, `noTransition`, `focusVisible`, `noFocusVisible`
+- `inheritSize`, `inheritColor`, `inheritBg`, `inheritBorder`
+- `responsive`, `horizontal`, `vertical`, `disc`, `decimal`
+
+## Override priority
 
 Understanding how defaults interact with component props:
 
-### Priority Order
+### Priority order
 
 1. **Component props** (highest priority)
 2. **ThemeDefaults from closest ThemeProvider**
@@ -133,22 +149,22 @@ Understanding how defaults interact with component props:
 function OverrideExample() {
   return (
     <ThemeProvider themeDefaults={{
-      button: { primary: true, lg: true }
+      button: { main: { lg: true } }
     }}>
-      {/* Uses defaults: primary=true, lg=true */}
+      {/* Uses defaults: primary (built-in), lg (from provider) */}
       <Button>Default Button</Button>
 
-      {/* Props override defaults: danger=true overrides primary, lg still applies */}
+      {/* Props override defaults: danger replaces primary; lg still applies */}
       <Button danger>Danger Button</Button>
 
-      {/* Explicitly disable default: primary=false, lg still applies */}
-      <Button primary={false} secondary>Secondary Button</Button>
+      {/* Explicit prop overrides default: secondary replaces primary; lg still applies */}
+      <Button secondary>Secondary Button</Button>
     </ThemeProvider>
   );
 }
 ```
 
-## Layout Component Defaults
+## Layout component defaults
 
 Configure defaults for layout components:
 
@@ -158,20 +174,10 @@ import { ThemeProvider, Container, Section, Card, Stack, Text } from '@vaneui/ui
 function LayoutDefaults() {
   return (
     <ThemeProvider themeDefaults={{
-      container: {
-        lg: true
-      },
-      section: {
-        secondary: true,
-        rounded: true
-      },
-      card: {
-        primary: true,
-        rounded: true
-      },
-      stack: {
-        lg: true  // larger gap than default
-      }
+      container: { lg: true },
+      section: { secondary: true },
+      card: { main: { primary: true } }, // card is nested under `main`
+      stack: { lg: true },                // larger gap/padding than default
     }}>
       <Container>
         <Section>
@@ -187,9 +193,9 @@ function LayoutDefaults() {
 }
 ```
 
-## Dynamic Defaults
+## Dynamic defaults
 
-### Runtime Default Changes
+### Runtime default changes
 
 Update defaults based on user preferences or application state:
 
@@ -202,13 +208,13 @@ function DynamicDefaults() {
 
   const themeDefaults = isCompactMode
     ? {
-        button: { sm: true },
-        card: { sm: true },
+        button: { main: { sm: true } },
+        card: { main: { sm: true } },
         text: { sm: true }
       }
     : {
-        button: { lg: true },
-        card: { lg: true },
+        button: { main: { lg: true } },
+        card: { main: { lg: true } },
         text: { md: true }
       };
 
@@ -222,7 +228,7 @@ function DynamicDefaults() {
 }
 ```
 
-### Contextual Defaults
+### Contextual defaults
 
 Different defaults for different areas of your app:
 
@@ -234,14 +240,14 @@ function ContextualDefaults() {
     <>
       {/* Admin area - compact, subtle styling */}
       <ThemeProvider themeDefaults={{
-        button: { sm: true, outline: true, secondary: true }
+        button: { main: { secondary: true } }
       }}>
         <AdminPanel />
       </ThemeProvider>
 
       {/* User area - larger, prominent styling */}
       <ThemeProvider themeDefaults={{
-        button: { lg: true, filled: true, primary: true }
+        button: { main: { lg: true, filled: true } }
       }}>
         <UserInterface />
       </ThemeProvider>
@@ -250,7 +256,7 @@ function ContextualDefaults() {
 }
 ```
 
-## Section-Specific Styling
+## Section-specific styling
 
 Different themes for different page sections:
 
@@ -262,15 +268,15 @@ function MultiSectionApp() {
     <>
       {/* Hero section - large, bold */}
       <ThemeProvider themeDefaults={{
-        button: { xl: true, filled: true },
+        button: { main: { xl: true, filled: true } },
         title: { xl: true }
       }}>
         <HeroSection />
       </ThemeProvider>
 
-      {/* Content section - medium, subtle */}
+      {/* Content section - medium */}
       <ThemeProvider themeDefaults={{
-        button: { md: true, outline: true },
+        button: { main: { md: true } },
         text: { sm: true }
       }}>
         <ContentSection />
@@ -278,7 +284,7 @@ function MultiSectionApp() {
 
       {/* Footer - compact */}
       <ThemeProvider themeDefaults={{
-        button: { xs: true },
+        button: { main: { xs: true } },
         text: { xs: true }
       }}>
         <FooterSection />
@@ -288,57 +294,66 @@ function MultiSectionApp() {
 }
 ```
 
-## Best Practices
+## Patterns that keep themeDefaults predictable
 
-### Know VaneUI's Built-in Defaults
+### Know VaneUI's built-in defaults
 
 VaneUI components come with sensible built-in defaults. Only set defaults that differ from these:
 
-**Built-in defaults you don't need to specify:**
-- **Layout components** (`Row`, `Col`, `Stack`, `Card`, `Section`, `Container`): `gap: true`, `md: true`, `outline: true`
-- **Button**: `primary: true`, `outline: true`, `rounded: true`
-- **Card**: `primary: true`, `outline: true`, `rounded: true`, `padding: true`
-- **Input**: `primary: true`, `outline: true`, `rounded: true`
-- **Badge**: `primary: true`, `outline: true`, `pill: true`
-- **Typography** (`Text`, `Title`): `primary: true`, `md: true`
-- **Overlay**: `md: true`
-- **Modal**: `md: true`, `rounded: true`
-- **Popup**: `md: true`, `rounded: true`
+**Built-in defaults you don't need to specify** (cite the component's `{component}Defaults.ts` file as the source of truth when in doubt). Components that tag-switch to `<a>` via `href` (Badge, Card, Chip, Code, Row, Col, Stack) also get `focusVisible: true` auto-injected when `href` is set. Opt out per-instance with `noFocusVisible`.
+
+- **Button**: `sm`, `primary`, `outline`, `rounded`, `semibold`, `padding`, `gap`, `ring`, `focusVisible`, `cursorPointer`, `transition` (note: defaults to `sm`, not `md`; no `shadow`)
+- **Card**: `md`, `primary`, `outline`, `rounded`, `border`, `padding`, `gap`, `flex`, `column`
+- **Row**: `md`, `row`, `flex`, `itemsCenter`, `gap`, `noPadding`, `noBorder`, `noRing`, `outline`, `sharp`
+- **Col**: `md`, `column`, `flex`, `gap`, `noPadding`, `noBorder`, `noRing`, `outline`, `sharp`
+- **Stack**: `md`, `flex`, `column`, `flexWrap`, `gap`, `padding`, `noBorder`, `noRing`, `outline`, `sharp`
+- **Section**: `md`, `wFull`, `flex`, `column`, `itemsStart`, `gap`, `padding`, `noBorder`, `noRing`, `noShadow`, `outline`, `sharp`, `responsive`
+- **Container**: `md`, `wFull`, `flex`, `column`, `itemsCenter`, `gap`, `noPadding`, `outline`, `sharp`
+- **Input**: `md`, `wFull`, `primary`, `outline`, `rounded`, `padding`, `ring`, `focusVisible`
+- **Label**: `sm`, `flex`, `itemsCenter`, `gap`, `inherit` (not `primary`), `medium` (`itemsCenter` vertically centers the label text next to a nested `Input` or `Checkbox`)
+- **Badge**: `md`, `primary`, `outline`, `pill`, `semibold`, `uppercase`
+- **Chip**: `md`, `secondary` (not `primary`), `outline`, `rounded`, `mono`
+- **Link**: `md`, `link` (not `primary`), `underline`, `sans`, `cursorPointer`, `inheritSize`, `wFit`, `focusVisible` (no variant default, no `outline`)
+- **NavLink**: `sm`, `primary`, `outline`, `rounded`, `wFull`, `textLeft`, `focusVisible`
+- **MenuItem**: `sm`, `primary`, `outline`, `rounded`, `wFull`, `textLeft`, `focusVisible`
+- **Typography** (`Text`, `Title`, `SectionTitle`, `PageTitle`, `Blockquote`): `md`, `inherit` (not `primary`), `outline`
+- **Icon**: `md`, `inlineFlex`, `itemsCenter`, `justifyCenter`, `outline`, `rounded`, `noPadding`, `noBorder`, `noRing`, `noShadow`, `noShrink`, `noTransition`, `wFit`
+- **Modal** content: `md`, `wFull`, `flex`, `column`, `rounded`, `shadow`, `primary`, `outline`
+- **Popup**: `md`, `flex`, `column`, `padding`, `gap`, `rounded`, `shadow`, `border`, `primary`, `outline`
 
 ```tsx
 // Unnecessary - these are already the defaults
 <ThemeProvider themeDefaults={{
-  stack: { gap: true },       // gap is already true
-  button: { primary: true },  // primary is already true
-  card: { rounded: true }     // rounded is already true
+  stack: { gap: true },                 // gap is already true
+  button: { main: { primary: true } },  // primary is already true
+  card: { main: { rounded: true } },    // rounded is already true
 }}>
 
 // Better - only specify what you're changing
 <ThemeProvider themeDefaults={{
-  button: { filled: true },   // change from outline to filled
-  card: { lg: true }          // change from md to lg
+  button: { main: { filled: true } },   // change from outline to filled
+  card: { main: { lg: true } },         // change from md to lg
 }}>
 ```
 
-### Consistent Defaults
+### Consistent defaults
 
 Establish defaults that align with your design system:
 
 ```tsx
-import { ThemeProvider } from '@vaneui/ui';
+import { ThemeProvider, type ThemeDefaults } from '@vaneui/ui';
 
-const designSystemDefaults = {
+const designSystemDefaults: ThemeDefaults = {
   // Interactive elements
-  button: { primary: true, md: true, filled: true },
+  button: { main: { md: true, filled: true } }, // change sm→md, outline→filled
   link: { brand: true },
 
   // Informational elements
   badge: { secondary: true, sm: true },
-  chip: { outline: true },
 
   // Layout elements
-  card: { shadow: true },  // add shadow (not default)
-  section: { lg: true }    // larger spacing
+  card: { main: { shadow: true } }, // add shadow (not default)
+  section: { lg: true }             // larger spacing
 };
 
 <ThemeProvider themeDefaults={designSystemDefaults}>
@@ -346,25 +361,24 @@ const designSystemDefaults = {
 </ThemeProvider>
 ```
 
-### Logical Groupings
+### Logical groupings
 
 Group related defaults together for maintainability:
 
 ```tsx
-import { ThemeProvider } from '@vaneui/ui';
+import { ThemeProvider, type ThemeDefaults } from '@vaneui/ui';
 
-const interactiveDefaults = {
-  button: { primary: true, filled: true },
+const interactiveDefaults: ThemeDefaults = {
+  button: { main: { filled: true } },
   link: { brand: true }
 };
 
-const informationalDefaults = {
+const informationalDefaults: ThemeDefaults = {
   badge: { secondary: true, sm: true },
-  chip: { outline: true }
 };
 
-const layoutDefaults = {
-  card: { shadow: true },
+const layoutDefaults: ThemeDefaults = {
+  card: { main: { shadow: true } },
   stack: { lg: true }
 };
 
@@ -377,4 +391,4 @@ const layoutDefaults = {
 </ThemeProvider>
 ```
 
-The `themeDefaults` property provides a robust system for establishing consistent default values throughout your VaneUI application, enabling global consistency while maintaining the flexibility to override defaults when needed.
+`themeDefaults` establishes consistent default values across the application while allowing per-instance overrides on individual components.

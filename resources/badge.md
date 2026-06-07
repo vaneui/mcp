@@ -1,86 +1,120 @@
 ---
 componentKey: badge
 importPath: 'import { Badge } from "@vaneui/ui"'
-sourceUrl: https://github.com/vaneui/vaneui/blob/main/src/components/ui/badge.tsx
+sourceUrl: https://github.com/vaneui/vaneui/blob/main/src/components/ui/badge/Badge.tsx
 since: 0.9.0
 ---
 
 Highlights important information such as notifications or counts in a non-intrusive way. Badges are typically used in conjunction with other elements like icons or navigation links.
 
-## Basic Usage
+## Basic usage
 
 Badge styles and variants.
 
 ```tsx demo
 <Row flexWrap>
-  {
-    ComponentKeys.appearance.map((key) => (
-      <Badge key={key} {...{[key]: true}}>{key}</Badge>
-    ))
-  }
+  <Badge primary>primary</Badge>
+  <Badge brand>brand</Badge>
+  <Badge accent>accent</Badge>
+  <Badge secondary>secondary</Badge>
+  <Badge tertiary>tertiary</Badge>
+  <Badge success>success</Badge>
+  <Badge danger>danger</Badge>
+  <Badge warning>warning</Badge>
+  <Badge info>info</Badge>
+  <Badge link>link</Badge>
+  <Badge inherit>inherit</Badge>
 </Row>
 ```
 
-## Badge Sizes
+## Badge sizes
 
 Badges come in different sizes such as `xs`, `sm`, `md`, `lg`, `xl`.
 
 ```tsx demo
 <Row flexWrap>
-  {
-    ComponentKeys.size.map((key) => (
-      <Badge key={key} {...{[key]: true}}>{key}</Badge>
-    ))
-  }
+  <Badge xs>xs</Badge>
+  <Badge sm>sm</Badge>
+  <Badge md>md</Badge>
+  <Badge lg>lg</Badge>
+  <Badge xl>xl</Badge>
 </Row>
 ```
 
-## Badge Shapes
+## Badge shapes
 
 Badges support different border radius styles: `rounded`, `pill` (default), and `sharp`.
 
 ```tsx demo
 <Row flexWrap>
-  {
-    ComponentKeys.shape.map((key: string) => (
-      <Badge key={key} {...{[key]: true}}>Pro</Badge>
-    ))
-  }
+  <Badge pill>Pro</Badge>
+  <Badge sharp>Pro</Badge>
+  <Badge rounded>Pro</Badge>
 </Row>
 ```
 
-## Badge Variants
+## Badge variants
 
-Badges can be styled as `outline` (default) or `filled`.
+Badges can be styled as `filled`, `outline` (default), or `ghost`.
 
 ```tsx demo
 <Col>
-  {
-    ComponentKeys.variant.map((variant) => (
-      <Row key={variant} flexWrap>
-        {
-          ComponentKeys.appearance.slice(0, 4).map((appearance) => (
-            <Badge key={`${variant}-${appearance}`} {...{[variant]: true, [appearance]: true}}>
-              {appearance}
-            </Badge>
-          ))
-        }
-      </Row>
-    ))
-  }
+  <Row flexWrap>
+    <Badge filled primary>primary</Badge>
+    <Badge filled brand>brand</Badge>
+    <Badge filled accent>accent</Badge>
+    <Badge filled secondary>secondary</Badge>
+  </Row>
+  <Row flexWrap>
+    <Badge outline primary>primary</Badge>
+    <Badge outline brand>brand</Badge>
+    <Badge outline accent>accent</Badge>
+    <Badge outline secondary>secondary</Badge>
+  </Row>
+  <Row flexWrap>
+    <Badge ghost primary>primary</Badge>
+    <Badge ghost brand>brand</Badge>
+    <Badge ghost accent>accent</Badge>
+    <Badge ghost secondary>secondary</Badge>
+  </Row>
 </Col>
 ```
 
-## Font Weights
+## Font weights
 
 Badges support different font weights.
 
 ```tsx demo
 <Row flexWrap>
-  {
-    ComponentKeys.fontWeight.slice(3, 7).map((key: string) => (
-      <Badge key={key} {...{[key]: true}}>Premium</Badge>
-    ))
-  }
+  <Badge normal>Premium</Badge>
+  <Badge medium>Premium</Badge>
+  <Badge semibold>Premium</Badge>
+  <Badge bold>Premium</Badge>
 </Row>
+```
+
+## As Link
+
+Pass `href` to render the badge as an `<a>`, useful for clickable status labels. When `href` is set, the badge gains a keyboard focus-visible outline by default (opt out with `noFocusVisible`).
+
+```tsx demo
+<Row flexWrap>
+  <Badge href="#">Status</Badge>
+  <Badge href="#" success filled>Live</Badge>
+  <Badge href="#" warning>Pending</Badge>
+</Row>
+```
+
+## Status badges in context
+
+Badges work well as status indicators inside cards and other layout components.
+
+```tsx demo
+<Card>
+  <Row justifyBetween>
+    <Title>Production deploy</Title>
+    <Badge success filled>Live</Badge>
+  </Row>
+  <Text>Build #1284 promoted to production 2 minutes ago.</Text>
+</Card>
 ```

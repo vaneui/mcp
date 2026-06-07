@@ -435,6 +435,34 @@
       "isCommon": true
     },
     {
+      "prop": "flex1",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Take up remaining space (= `flex-1`, i.e. `flex: 1 1 0%`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexAuto",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Grow but respect intrinsic size (= `flex-auto`, i.e. `flex: 1 1 auto`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexNone",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Don't grow and don't shrink (= `flex-none`, i.e. `flex: none`)",
+      "isCommon": false
+    },
+    {
+      "prop": "noShrink",
+      "category": "Shrink",
+      "isDefault": false,
+      "description": "Prevent the flex item from shrinking below its content size (= `shrink-0`)",
+      "isCommon": false
+    },
+    {
       "prop": "primary",
       "category": "Appearance",
       "isDefault": true,
@@ -2378,6 +2406,34 @@
       "isCommon": true
     },
     {
+      "prop": "flex1",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Take up remaining space (= `flex-1`, i.e. `flex: 1 1 0%`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexAuto",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Grow but respect intrinsic size (= `flex-auto`, i.e. `flex: 1 1 auto`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexNone",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Don't grow and don't shrink (= `flex-none`, i.e. `flex: none`)",
+      "isCommon": false
+    },
+    {
+      "prop": "noShrink",
+      "category": "Shrink",
+      "isDefault": false,
+      "description": "Prevent the flex item from shrinking below its content size (= `shrink-0`)",
+      "isCommon": false
+    },
+    {
       "prop": "primary",
       "category": "Appearance",
       "isDefault": true,
@@ -3472,6 +3528,34 @@
       "isCommon": true
     },
     {
+      "prop": "flex1",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Take up remaining space (= `flex-1`, i.e. `flex: 1 1 0%`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexAuto",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Grow but respect intrinsic size (= `flex-auto`, i.e. `flex: 1 1 auto`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexNone",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Don't grow and don't shrink (= `flex-none`, i.e. `flex: none`)",
+      "isCommon": false
+    },
+    {
+      "prop": "noShrink",
+      "category": "Shrink",
+      "isDefault": false,
+      "description": "Prevent the flex item from shrinking below its content size (= `shrink-0`)",
+      "isCommon": false
+    },
+    {
       "prop": "mobileCol",
       "category": "Breakpoint",
       "isDefault": false,
@@ -3840,6 +3924,20 @@
       "category": "Responsive",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
+      "isCommon": true
+    },
+    {
+      "prop": "focusVisible",
+      "category": "Focus Visible",
+      "isDefault": false,
+      "description": "Enable focus-visible outline",
+      "isCommon": true
+    },
+    {
+      "prop": "noFocusVisible",
+      "category": "Focus Visible",
+      "isDefault": false,
+      "description": "Disable focus-visible outline",
       "isCommon": true
     }
   ],
@@ -5009,6 +5107,34 @@
       "isCommon": true
     },
     {
+      "prop": "flex1",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Take up remaining space (= `flex-1`, i.e. `flex: 1 1 0%`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexAuto",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Grow but respect intrinsic size (= `flex-auto`, i.e. `flex: 1 1 auto`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexNone",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Don't grow and don't shrink (= `flex-none`, i.e. `flex: none`)",
+      "isCommon": false
+    },
+    {
+      "prop": "noShrink",
+      "category": "Shrink",
+      "isDefault": false,
+      "description": "Prevent the flex item from shrinking below its content size (= `shrink-0`)",
+      "isCommon": false
+    },
+    {
       "prop": "primary",
       "category": "Appearance",
       "isDefault": false,
@@ -6073,6 +6199,34 @@
       "isDefault": false,
       "description": "Reverse the order of children",
       "isCommon": true
+    },
+    {
+      "prop": "flex1",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Take up remaining space (= `flex-1`, i.e. `flex: 1 1 0%`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexAuto",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Grow but respect intrinsic size (= `flex-auto`, i.e. `flex: 1 1 auto`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexNone",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Don't grow and don't shrink (= `flex-none`, i.e. `flex: none`)",
+      "isCommon": false
+    },
+    {
+      "prop": "noShrink",
+      "category": "Shrink",
+      "isDefault": false,
+      "description": "Prevent the flex item from shrinking below its content size (= `shrink-0`)",
+      "isCommon": false
     },
     {
       "prop": "primary",
@@ -7141,6 +7295,34 @@
       "isCommon": true
     },
     {
+      "prop": "flex1",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Take up remaining space (= `flex-1`, i.e. `flex: 1 1 0%`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexAuto",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Grow but respect intrinsic size (= `flex-auto`, i.e. `flex: 1 1 auto`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexNone",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Don't grow and don't shrink (= `flex-none`, i.e. `flex: none`)",
+      "isCommon": false
+    },
+    {
+      "prop": "noShrink",
+      "category": "Shrink",
+      "isDefault": false,
+      "description": "Prevent the flex item from shrinking below its content size (= `shrink-0`)",
+      "isCommon": false
+    },
+    {
       "prop": "padding",
       "category": "Padding",
       "isDefault": false,
@@ -7489,6 +7671,20 @@
       "isDefault": false,
       "description": "Justify text",
       "isCommon": false
+    },
+    {
+      "prop": "focusVisible",
+      "category": "Focus Visible",
+      "isDefault": false,
+      "description": "Enable focus-visible outline",
+      "isCommon": true
+    },
+    {
+      "prop": "noFocusVisible",
+      "category": "Focus Visible",
+      "isDefault": false,
+      "description": "Disable focus-visible outline",
+      "isCommon": true
     }
   ],
   "container": [
@@ -7925,6 +8121,34 @@
       "isDefault": false,
       "description": "Reverse the order of children",
       "isCommon": true
+    },
+    {
+      "prop": "flex1",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Take up remaining space (= `flex-1`, i.e. `flex: 1 1 0%`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexAuto",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Grow but respect intrinsic size (= `flex-auto`, i.e. `flex: 1 1 auto`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexNone",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Don't grow and don't shrink (= `flex-none`, i.e. `flex: none`)",
+      "isCommon": false
+    },
+    {
+      "prop": "noShrink",
+      "category": "Shrink",
+      "isDefault": false,
+      "description": "Prevent the flex item from shrinking below its content size (= `shrink-0`)",
+      "isCommon": false
     },
     {
       "prop": "padding",
@@ -9289,6 +9513,34 @@
       "isCommon": true
     },
     {
+      "prop": "flex1",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Take up remaining space (= `flex-1`, i.e. `flex: 1 1 0%`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexAuto",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Grow but respect intrinsic size (= `flex-auto`, i.e. `flex: 1 1 auto`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexNone",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Don't grow and don't shrink (= `flex-none`, i.e. `flex: none`)",
+      "isCommon": false
+    },
+    {
+      "prop": "noShrink",
+      "category": "Shrink",
+      "isDefault": false,
+      "description": "Prevent the flex item from shrinking below its content size (= `shrink-0`)",
+      "isCommon": false
+    },
+    {
       "prop": "padding",
       "category": "Padding",
       "isDefault": false,
@@ -9996,6 +10248,34 @@
       "isDefault": false,
       "description": "Reverse the order of children",
       "isCommon": true
+    },
+    {
+      "prop": "flex1",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Take up remaining space (= `flex-1`, i.e. `flex: 1 1 0%`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexAuto",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Grow but respect intrinsic size (= `flex-auto`, i.e. `flex: 1 1 auto`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexNone",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Don't grow and don't shrink (= `flex-none`, i.e. `flex: none`)",
+      "isCommon": false
+    },
+    {
+      "prop": "noShrink",
+      "category": "Shrink",
+      "isDefault": false,
+      "description": "Prevent the flex item from shrinking below its content size (= `shrink-0`)",
+      "isCommon": false
     },
     {
       "prop": "padding",
@@ -10707,6 +10987,34 @@
       "isCommon": true
     },
     {
+      "prop": "flex1",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Take up remaining space (= `flex-1`, i.e. `flex: 1 1 0%`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexAuto",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Grow but respect intrinsic size (= `flex-auto`, i.e. `flex: 1 1 auto`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexNone",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Don't grow and don't shrink (= `flex-none`, i.e. `flex: none`)",
+      "isCommon": false
+    },
+    {
+      "prop": "noShrink",
+      "category": "Shrink",
+      "isDefault": false,
+      "description": "Prevent the flex item from shrinking below its content size (= `shrink-0`)",
+      "isCommon": false
+    },
+    {
       "prop": "padding",
       "category": "Padding",
       "isDefault": false,
@@ -11414,6 +11722,34 @@
       "isDefault": false,
       "description": "Reverse the order of children",
       "isCommon": true
+    },
+    {
+      "prop": "flex1",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Take up remaining space (= `flex-1`, i.e. `flex: 1 1 0%`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexAuto",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Grow but respect intrinsic size (= `flex-auto`, i.e. `flex: 1 1 auto`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexNone",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Don't grow and don't shrink (= `flex-none`, i.e. `flex: none`)",
+      "isCommon": false
+    },
+    {
+      "prop": "noShrink",
+      "category": "Shrink",
+      "isDefault": false,
+      "description": "Prevent the flex item from shrinking below its content size (= `shrink-0`)",
+      "isCommon": false
     },
     {
       "prop": "padding",
@@ -12125,6 +12461,34 @@
       "isCommon": true
     },
     {
+      "prop": "flex1",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Take up remaining space (= `flex-1`, i.e. `flex: 1 1 0%`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexAuto",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Grow but respect intrinsic size (= `flex-auto`, i.e. `flex: 1 1 auto`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexNone",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Don't grow and don't shrink (= `flex-none`, i.e. `flex: none`)",
+      "isCommon": false
+    },
+    {
+      "prop": "noShrink",
+      "category": "Shrink",
+      "isDefault": false,
+      "description": "Prevent the flex item from shrinking below its content size (= `shrink-0`)",
+      "isCommon": false
+    },
+    {
       "prop": "padding",
       "category": "Padding",
       "isDefault": false,
@@ -12398,7 +12762,7 @@
       "isCommon": true
     }
   ],
-  "icon-component": [
+  "icon": [
     {
       "prop": "xs",
       "category": "Size",
@@ -12720,9 +13084,261 @@
       "isDefault": false,
       "description": "Align items along their baseline on main axis",
       "isCommon": true
+    },
+    {
+      "prop": "relative",
+      "category": "Position",
+      "isDefault": false,
+      "description": "Relative positioning",
+      "isCommon": true
+    },
+    {
+      "prop": "absolute",
+      "category": "Position",
+      "isDefault": false,
+      "description": "Absolute positioning",
+      "isCommon": true
+    },
+    {
+      "prop": "fixed",
+      "category": "Position",
+      "isDefault": false,
+      "description": "Fixed positioning",
+      "isCommon": true
+    },
+    {
+      "prop": "sticky",
+      "category": "Position",
+      "isDefault": false,
+      "description": "Sticky positioning",
+      "isCommon": true
+    },
+    {
+      "prop": "static",
+      "category": "Position",
+      "isDefault": false,
+      "description": "Static positioning",
+      "isCommon": true
+    },
+    {
+      "prop": "pill",
+      "category": "Shape",
+      "isDefault": false,
+      "description": "Fully rounded corners (circular)",
+      "isCommon": false
+    },
+    {
+      "prop": "sharp",
+      "category": "Shape",
+      "isDefault": false,
+      "description": "No rounded corners (square)",
+      "isCommon": false
+    },
+    {
+      "prop": "rounded",
+      "category": "Shape",
+      "isDefault": true,
+      "description": "Medium rounded corners (default)",
+      "isCommon": false
+    },
+    {
+      "prop": "padding",
+      "category": "Padding",
+      "isDefault": false,
+      "description": "Enable internal padding",
+      "isCommon": false
+    },
+    {
+      "prop": "paddingX",
+      "category": "Padding",
+      "isDefault": false,
+      "description": "Enable only horizontal padding",
+      "isCommon": false
+    },
+    {
+      "prop": "paddingY",
+      "category": "Padding",
+      "isDefault": false,
+      "description": "Enable only vertical padding",
+      "isCommon": false
+    },
+    {
+      "prop": "noPadding",
+      "category": "Padding",
+      "isDefault": true,
+      "description": "Disable internal padding",
+      "isCommon": false
+    },
+    {
+      "prop": "border",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on all sides",
+      "isCommon": true
+    },
+    {
+      "prop": "borderT",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on top",
+      "isCommon": true
+    },
+    {
+      "prop": "borderB",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on bottom",
+      "isCommon": true
+    },
+    {
+      "prop": "borderL",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on left",
+      "isCommon": true
+    },
+    {
+      "prop": "borderR",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on right",
+      "isCommon": true
+    },
+    {
+      "prop": "borderX",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on left and right",
+      "isCommon": true
+    },
+    {
+      "prop": "borderY",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on top and bottom",
+      "isCommon": true
+    },
+    {
+      "prop": "noBorder",
+      "category": "Border",
+      "isDefault": true,
+      "description": "Disable all borders",
+      "isCommon": true
+    },
+    {
+      "prop": "ring",
+      "category": "Ring",
+      "isDefault": false,
+      "description": "Enable focus ring",
+      "isCommon": true
+    },
+    {
+      "prop": "noRing",
+      "category": "Ring",
+      "isDefault": true,
+      "description": "Disable focus ring",
+      "isCommon": true
+    },
+    {
+      "prop": "shadow",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Enable drop shadow",
+      "isCommon": true
+    },
+    {
+      "prop": "noShadow",
+      "category": "Shadow",
+      "isDefault": true,
+      "description": "Disable drop shadow",
+      "isCommon": true
+    },
+    {
+      "prop": "wFull",
+      "category": "Width",
+      "isDefault": false,
+      "description": "Set width to 100%",
+      "isCommon": true
+    },
+    {
+      "prop": "wFit",
+      "category": "Width",
+      "isDefault": true,
+      "description": "Set width to fit-content",
+      "isCommon": true
+    },
+    {
+      "prop": "wAuto",
+      "category": "Width",
+      "isDefault": false,
+      "description": "Set width to auto",
+      "isCommon": true
+    },
+    {
+      "prop": "wScreen",
+      "category": "Width",
+      "isDefault": false,
+      "description": "Set width to 100vw (viewport width), removes max-width constraint",
+      "isCommon": true
+    },
+    {
+      "prop": "hFit",
+      "category": "Height",
+      "isDefault": false,
+      "description": "Set height to fit-content",
+      "isCommon": true
+    },
+    {
+      "prop": "hFull",
+      "category": "Height",
+      "isDefault": false,
+      "description": "Set height to 100%",
+      "isCommon": true
+    },
+    {
+      "prop": "hAuto",
+      "category": "Height",
+      "isDefault": false,
+      "description": "Set height to auto",
+      "isCommon": true
+    },
+    {
+      "prop": "hScreen",
+      "category": "Height",
+      "isDefault": false,
+      "description": "Set height to 100vh (viewport height), removes max-height constraint",
+      "isCommon": true
+    },
+    {
+      "prop": "noShrink",
+      "category": "Shrink",
+      "isDefault": true,
+      "description": "Prevent the flex item from shrinking below its content size (= `shrink-0`)",
+      "isCommon": false
+    },
+    {
+      "prop": "transition",
+      "category": "Transition",
+      "isDefault": false,
+      "description": "Enable smooth transitions between states",
+      "isCommon": true
+    },
+    {
+      "prop": "noTransition",
+      "category": "Transition",
+      "isDefault": true,
+      "description": "Disable transitions for instant state changes",
+      "isCommon": true
+    },
+    {
+      "prop": "transparent",
+      "category": "Transparent",
+      "isDefault": false,
+      "description": "Disable background color - makes component background transparent",
+      "isCommon": true
     }
   ],
-  "iconbutton": [
+  "icon-button": [
     {
       "prop": "xs",
       "category": "Size",
@@ -13156,6 +13772,34 @@
       "isDefault": false,
       "description": "Reverse the order of children",
       "isCommon": true
+    },
+    {
+      "prop": "flex1",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Take up remaining space (= `flex-1`, i.e. `flex: 1 1 0%`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexAuto",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Grow but respect intrinsic size (= `flex-auto`, i.e. `flex: 1 1 auto`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexNone",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Don't grow and don't shrink (= `flex-none`, i.e. `flex: none`)",
+      "isCommon": false
+    },
+    {
+      "prop": "noShrink",
+      "category": "Shrink",
+      "isDefault": false,
+      "description": "Prevent the flex item from shrinking below its content size (= `shrink-0`)",
+      "isCommon": false
     },
     {
       "prop": "primary",
@@ -14912,6 +15556,34 @@
       "isCommon": true
     },
     {
+      "prop": "flex1",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Take up remaining space (= `flex-1`, i.e. `flex: 1 1 0%`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexAuto",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Grow but respect intrinsic size (= `flex-auto`, i.e. `flex: 1 1 auto`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexNone",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Don't grow and don't shrink (= `flex-none`, i.e. `flex: none`)",
+      "isCommon": false
+    },
+    {
+      "prop": "noShrink",
+      "category": "Shrink",
+      "isDefault": false,
+      "description": "Prevent the flex item from shrinking below its content size (= `shrink-0`)",
+      "isCommon": false
+    },
+    {
       "prop": "primary",
       "category": "Appearance",
       "isDefault": true,
@@ -16013,6 +16685,34 @@
       "isCommon": true
     },
     {
+      "prop": "flex1",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Take up remaining space (= `flex-1`, i.e. `flex: 1 1 0%`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexAuto",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Grow but respect intrinsic size (= `flex-auto`, i.e. `flex: 1 1 auto`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexNone",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Don't grow and don't shrink (= `flex-none`, i.e. `flex: none`)",
+      "isCommon": false
+    },
+    {
+      "prop": "noShrink",
+      "category": "Shrink",
+      "isDefault": false,
+      "description": "Prevent the flex item from shrinking below its content size (= `shrink-0`)",
+      "isCommon": false
+    },
+    {
       "prop": "primary",
       "category": "Appearance",
       "isDefault": true,
@@ -16948,7 +17648,7 @@
     {
       "prop": "itemsCenter",
       "category": "Items",
-      "isDefault": false,
+      "isDefault": true,
       "description": "Align items to center",
       "isCommon": true
     },
@@ -17308,6 +18008,34 @@
       "isDefault": false,
       "description": "Reverse the order of children",
       "isCommon": true
+    },
+    {
+      "prop": "flex1",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Take up remaining space (= `flex-1`, i.e. `flex: 1 1 0%`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexAuto",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Grow but respect intrinsic size (= `flex-auto`, i.e. `flex: 1 1 auto`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexNone",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Don't grow and don't shrink (= `flex-none`, i.e. `flex: none`)",
+      "isCommon": false
+    },
+    {
+      "prop": "noShrink",
+      "category": "Shrink",
+      "isDefault": false,
+      "description": "Prevent the flex item from shrinking below its content size (= `shrink-0`)",
+      "isCommon": false
     },
     {
       "prop": "primary",
@@ -19829,6 +20557,34 @@
       "isCommon": true
     },
     {
+      "prop": "flex1",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Take up remaining space (= `flex-1`, i.e. `flex: 1 1 0%`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexAuto",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Grow but respect intrinsic size (= `flex-auto`, i.e. `flex: 1 1 auto`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexNone",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Don't grow and don't shrink (= `flex-none`, i.e. `flex: none`)",
+      "isCommon": false
+    },
+    {
+      "prop": "noShrink",
+      "category": "Shrink",
+      "isDefault": false,
+      "description": "Prevent the flex item from shrinking below its content size (= `shrink-0`)",
+      "isCommon": false
+    },
+    {
       "prop": "primary",
       "category": "Appearance",
       "isDefault": false,
@@ -20895,6 +21651,34 @@
       "isCommon": true
     },
     {
+      "prop": "flex1",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Take up remaining space (= `flex-1`, i.e. `flex: 1 1 0%`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexAuto",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Grow but respect intrinsic size (= `flex-auto`, i.e. `flex: 1 1 auto`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexNone",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Don't grow and don't shrink (= `flex-none`, i.e. `flex: none`)",
+      "isCommon": false
+    },
+    {
+      "prop": "noShrink",
+      "category": "Shrink",
+      "isDefault": false,
+      "description": "Prevent the flex item from shrinking below its content size (= `shrink-0`)",
+      "isCommon": false
+    },
+    {
       "prop": "primary",
       "category": "Appearance",
       "isDefault": true,
@@ -21058,7 +21842,7 @@
     {
       "prop": "focusVisible",
       "category": "Focus Visible",
-      "isDefault": false,
+      "isDefault": true,
       "description": "Enable focus-visible outline",
       "isCommon": true
     },
@@ -22192,6 +22976,34 @@
       "isCommon": true
     },
     {
+      "prop": "flex1",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Take up remaining space (= `flex-1`, i.e. `flex: 1 1 0%`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexAuto",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Grow but respect intrinsic size (= `flex-auto`, i.e. `flex: 1 1 auto`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexNone",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Don't grow and don't shrink (= `flex-none`, i.e. `flex: none`)",
+      "isCommon": false
+    },
+    {
+      "prop": "noShrink",
+      "category": "Shrink",
+      "isDefault": false,
+      "description": "Prevent the flex item from shrinking below its content size (= `shrink-0`)",
+      "isCommon": false
+    },
+    {
       "prop": "primary",
       "category": "Appearance",
       "isDefault": true,
@@ -22950,6 +23762,34 @@
       "isCommon": true
     },
     {
+      "prop": "flex1",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Take up remaining space (= `flex-1`, i.e. `flex: 1 1 0%`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexAuto",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Grow but respect intrinsic size (= `flex-auto`, i.e. `flex: 1 1 auto`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexNone",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Don't grow and don't shrink (= `flex-none`, i.e. `flex: none`)",
+      "isCommon": false
+    },
+    {
+      "prop": "noShrink",
+      "category": "Shrink",
+      "isDefault": false,
+      "description": "Prevent the flex item from shrinking below its content size (= `shrink-0`)",
+      "isCommon": false
+    },
+    {
       "prop": "primary",
       "category": "Appearance",
       "isDefault": true,
@@ -23113,7 +23953,7 @@
     {
       "prop": "focusVisible",
       "category": "Focus Visible",
-      "isDefault": false,
+      "isDefault": true,
       "description": "Enable focus-visible outline",
       "isCommon": true
     },
@@ -24170,7 +25010,7 @@
       "isCommon": true
     }
   ],
-  "pagetitle": [
+  "page-title": [
     {
       "prop": "thin",
       "category": "Font Weight",
@@ -25714,6 +26554,34 @@
       "isCommon": true
     },
     {
+      "prop": "flex1",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Take up remaining space (= `flex-1`, i.e. `flex: 1 1 0%`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexAuto",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Grow but respect intrinsic size (= `flex-auto`, i.e. `flex: 1 1 auto`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexNone",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Don't grow and don't shrink (= `flex-none`, i.e. `flex: none`)",
+      "isCommon": false
+    },
+    {
+      "prop": "noShrink",
+      "category": "Shrink",
+      "isDefault": false,
+      "description": "Prevent the flex item from shrinking below its content size (= `shrink-0`)",
+      "isCommon": false
+    },
+    {
       "prop": "primary",
       "category": "Appearance",
       "isDefault": true,
@@ -26598,6 +27466,34 @@
       "isCommon": true
     },
     {
+      "prop": "flex1",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Take up remaining space (= `flex-1`, i.e. `flex: 1 1 0%`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexAuto",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Grow but respect intrinsic size (= `flex-auto`, i.e. `flex: 1 1 auto`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexNone",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Don't grow and don't shrink (= `flex-none`, i.e. `flex: none`)",
+      "isCommon": false
+    },
+    {
+      "prop": "noShrink",
+      "category": "Shrink",
+      "isDefault": false,
+      "description": "Prevent the flex item from shrinking below its content size (= `shrink-0`)",
+      "isCommon": false
+    },
+    {
       "prop": "mobileCol",
       "category": "Breakpoint",
       "isDefault": false,
@@ -26946,6 +27842,20 @@
       "isDefault": false,
       "description": "Justify text",
       "isCommon": false
+    },
+    {
+      "prop": "focusVisible",
+      "category": "Focus Visible",
+      "isDefault": false,
+      "description": "Enable focus-visible outline",
+      "isCommon": true
+    },
+    {
+      "prop": "noFocusVisible",
+      "category": "Focus Visible",
+      "isDefault": false,
+      "description": "Disable focus-visible outline",
+      "isCommon": true
     }
   ],
   "section": [
@@ -27384,6 +28294,34 @@
       "isCommon": true
     },
     {
+      "prop": "flex1",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Take up remaining space (= `flex-1`, i.e. `flex: 1 1 0%`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexAuto",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Grow but respect intrinsic size (= `flex-auto`, i.e. `flex: 1 1 auto`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexNone",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Don't grow and don't shrink (= `flex-none`, i.e. `flex: none`)",
+      "isCommon": false
+    },
+    {
+      "prop": "noShrink",
+      "category": "Shrink",
+      "isDefault": false,
+      "description": "Prevent the flex item from shrinking below its content size (= `shrink-0`)",
+      "isCommon": false
+    },
+    {
       "prop": "primary",
       "category": "Appearance",
       "isDefault": false,
@@ -27734,7 +28672,7 @@
       "isCommon": true
     }
   ],
-  "sectiontitle": [
+  "section-title": [
     {
       "prop": "thin",
       "category": "Font Weight",
@@ -29047,6 +29985,34 @@
       "isCommon": true
     },
     {
+      "prop": "flex1",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Take up remaining space (= `flex-1`, i.e. `flex: 1 1 0%`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexAuto",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Grow but respect intrinsic size (= `flex-auto`, i.e. `flex: 1 1 auto`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexNone",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Don't grow and don't shrink (= `flex-none`, i.e. `flex: none`)",
+      "isCommon": false
+    },
+    {
+      "prop": "noShrink",
+      "category": "Shrink",
+      "isDefault": false,
+      "description": "Prevent the flex item from shrinking below its content size (= `shrink-0`)",
+      "isCommon": false
+    },
+    {
       "prop": "mobileCol",
       "category": "Breakpoint",
       "isDefault": false,
@@ -29395,6 +30361,20 @@
       "isDefault": false,
       "description": "Justify text",
       "isCommon": false
+    },
+    {
+      "prop": "focusVisible",
+      "category": "Focus Visible",
+      "isDefault": false,
+      "description": "Enable focus-visible outline",
+      "isCommon": true
+    },
+    {
+      "prop": "noFocusVisible",
+      "category": "Focus Visible",
+      "isDefault": false,
+      "description": "Disable focus-visible outline",
+      "isCommon": true
     }
   ],
   "text": [

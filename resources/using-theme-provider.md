@@ -1,10 +1,10 @@
 The ThemeProvider is the foundation of VaneUI's theming system. It wraps your application and provides theme context to all child components, enabling consistent styling and customization throughout your app.
 
-## Basic Setup
+## Basic setup
 
-### Simple ThemeProvider
+### Minimal ThemeProvider
 
-The most basic setup requires no configuration - components use their built-in defaults:
+The most basic setup requires no configuration. Components use their built-in defaults:
 
 ```tsx
 import { ThemeProvider, Button, Badge, Card } from '@vaneui/ui';
@@ -22,7 +22,7 @@ function App() {
 }
 ```
 
-### Setting Default Props
+### Setting default props
 
 Configure default boolean props for all components:
 
@@ -33,23 +33,27 @@ function App() {
   return (
     <ThemeProvider themeDefaults={{
       button: {
-        primary: true,   // All buttons are primary
-        lg: true,        // All buttons are large
-        filled: true     // All buttons are filled
+        main: {
+          lg: true,        // larger than built-in sm
+          filled: true,    // override built-in outline
+        },
       },
       card: {
-        rounded: true,   // All cards have rounded corners
-        border: true     // All cards have borders
-      }
+        main: {
+          shadow: true,    // add shadow (not a default)
+        },
+      },
     }}>
-      <Button>Primary Large Filled Button</Button>
-      <Card>Rounded Card with Border</Card>
+      <Button>Large Filled Button</Button>
+      <Card>Card with Shadow</Card>
     </ThemeProvider>
   );
 }
 ```
 
-## ThemeProvider Props
+Most components take props directly. **Components with sub-themes** (`button`, `card`, `checkbox`, `modal`, `menu`, `navLink`) are nested by sub-theme name (`main`, `content`, `input`, `item`, `root`, etc.).
+
+## ThemeProvider props
 
 ### themeDefaults
 
@@ -57,10 +61,10 @@ Set default boolean props per component type:
 
 ```tsx
 <ThemeProvider themeDefaults={{
-  button: { primary: true, md: true, filled: true },
-  badge: { success: true, sm: true, pill: true },
-  card: { secondary: true, rounded: true },
-  text: { primary: true }
+  button: { main: { md: true, filled: true } }, // nested under `main`
+  badge: { success: true, sm: true },
+  card: { main: { secondary: true } },          // nested under `main`
+  text: { primary: true },
 }}>
   <App />
 </ThemeProvider>
@@ -73,12 +77,14 @@ Add additional CSS classes based on active props:
 ```tsx
 <ThemeProvider extraClasses={{
   button: {
-    primary: 'shadow-lg hover:shadow-xl transition-shadow',
-    danger: 'animate-pulse'
+    main: {
+      primary: 'shadow-lg hover:shadow-xl transition-shadow',
+      danger: 'animate-pulse',
+    },
   },
   card: {
-    filled: 'backdrop-blur-sm'
-  }
+    main: { filled: 'backdrop-blur-sm' },
+  },
 }}>
   <Button primary>Button with shadow</Button>
   <Button danger>Pulsing danger button</Button>
@@ -92,14 +98,14 @@ Function for programmatic theme modifications:
 ```tsx
 <ThemeProvider themeOverride={(theme) => {
   // Modify base classes
-  theme.button.base += ' uppercase tracking-wide';
-  
+  theme.button.main.base += ' uppercase tracking-wide';
+
   // Modify default props
-  theme.button.defaults = {
-    ...theme.button.defaults,
-    semibold: true
+  theme.button.main.defaults = {
+    ...theme.button.main.defaults,
+    bold: true,
   };
-  
+
   return theme;
 }}>
   <App />
@@ -111,15 +117,15 @@ Function for programmatic theme modifications:
 Control how nested ThemeProviders combine (`'merge'` or `'replace'`):
 
 ```tsx
-<ThemeProvider themeDefaults={{ button: { lg: true } }}>
+<ThemeProvider themeDefaults={{ button: { main: { lg: true } } }}>
   {/* mergeStrategy='merge' (default): child merges with parent */}
-  <ThemeProvider themeDefaults={{ button: { primary: true } }}>
-    <Button>Large Primary (both applied)</Button>
+  <ThemeProvider themeDefaults={{ button: { main: { filled: true } } }}>
+    <Button>Large Filled (both applied)</Button>
   </ThemeProvider>
-  
-  {/* mergeStrategy='replace': child replaces parent entirely */}
-  <ThemeProvider 
-    themeDefaults={{ button: { sm: true } }}
+
+  {/* mergeStrategy='replace': child resets to defaultTheme + its own defaults */}
+  <ThemeProvider
+    themeDefaults={{ button: { main: { sm: true } } }}
     mergeStrategy="replace"
   >
     <Button>Small Only (parent ignored)</Button>
@@ -127,7 +133,7 @@ Control how nested ThemeProviders combine (`'merge'` or `'replace'`):
 </ThemeProvider>
 ```
 
-## Nested Theming
+## Nested theming
 
 Override themes for specific sections of your app:
 
@@ -137,17 +143,17 @@ import { ThemeProvider, Button, Badge, Section } from '@vaneui/ui';
 function NestedThemeApp() {
   return (
     <ThemeProvider themeDefaults={{
-      button: { primary: true, outline: true }
+      button: { main: { bold: true } } // bold buttons across the app
     }}>
       <div>
-        <Button>Primary Outline Button</Button>
-        
+        <Button>Bold Primary Outline Button</Button>
+
         <Section>
           {/* Override for this section only */}
           <ThemeProvider themeDefaults={{
-            button: { success: true, filled: true }
+            button: { main: { success: true, filled: true } }
           }}>
-            <Button>Success Filled Button</Button>
+            <Button>Bold Success Filled Button</Button>
             <Badge>Inherits parent badge defaults</Badge>
           </ThemeProvider>
         </Section>
@@ -157,7 +163,7 @@ function NestedThemeApp() {
 }
 ```
 
-## Accessing Theme Context
+## Accessing theme context
 
 Use the `useTheme` hook to access theme values in custom components:
 
@@ -166,19 +172,16 @@ import { useTheme } from '@vaneui/ui';
 
 function CustomComponent() {
   const theme = useTheme();
-  
-  // Access component themes
-  const buttonTheme = theme.button;
-  const cardTheme = theme.card;
-  
-  // Get classes for custom styling
-  const classes = buttonTheme.getClasses({ primary: true, lg: true });
-  
-  return <div className={classes.join(' ')}>Custom component</div>;
+
+  // Compound themes are nested by sub-part
+  const buttonTheme = theme.button.main;
+  const cardTheme = theme.card.main;
+
+  return <div>Custom component</div>;
 }
 ```
 
-## Custom Colors
+## Custom colors
 
 VaneUI uses CSS variables for colors. Override them globally or for specific sections:
 
@@ -211,9 +214,9 @@ function App() {
 }
 ```
 
-## Common Patterns
+## Recurring ThemeProvider patterns
 
-### Brand Theme
+### Brand theme
 
 Create a consistent brand experience:
 
@@ -221,9 +224,9 @@ Create a consistent brand experience:
 function BrandedApp() {
   return (
     <ThemeProvider themeDefaults={{
-      button: { brand: true, filled: true, rounded: true },
-      card: { brand: true, rounded: true },
-      badge: { brand: true, pill: true }
+      button: { main: { brand: true, filled: true } },
+      card: { main: { brand: true } },
+      badge: { brand: true },
     }}>
       <nav>
         <Button>Home</Button>
@@ -235,7 +238,7 @@ function BrandedApp() {
 }
 ```
 
-### Section-Specific Styling
+### Section-specific styling
 
 Different themes for different areas:
 
@@ -245,24 +248,24 @@ function MultiSectionApp() {
     <>
       {/* Hero section - large, bold */}
       <ThemeProvider themeDefaults={{
-        button: { xl: true, filled: true },
-        title: { xl: true }
+        button: { main: { xl: true, filled: true } },
+        title: { xl: true },
       }}>
         <HeroSection />
       </ThemeProvider>
-      
-      {/* Content section - medium, subtle */}
+
+      {/* Content section - medium */}
       <ThemeProvider themeDefaults={{
-        button: { md: true, outline: true },
-        text: { sm: true }
+        button: { main: { md: true } },
+        text: { sm: true },
       }}>
         <ContentSection />
       </ThemeProvider>
-      
+
       {/* Footer - compact */}
       <ThemeProvider themeDefaults={{
-        button: { xs: true },
-        text: { xs: true }
+        button: { main: { xs: true } },
+        text: { xs: true },
       }}>
         <FooterSection />
       </ThemeProvider>
@@ -271,13 +274,13 @@ function MultiSectionApp() {
 }
 ```
 
-## Advanced Customization
+## Advanced customization
 
 For more detailed information about specific ThemeProvider properties, see these dedicated guides:
 
-- **[Theming Overview](./theming-overview)** - Understand the theme architecture
-- **[ThemeDefaults](./theme-defaults)** - Set application-wide default values
-- **[ExtraClasses](./extra-classes)** - Add custom CSS classes
-- **[CSS Variables](./css-variables)** - Customize colors using CSS custom properties
+- **[Theming Overview](./theming-overview)**: Understand the theme architecture
+- **[ThemeDefaults](./theme-defaults)**: Set application-wide default values
+- **[ExtraClasses](./extra-classes)**: Add custom CSS classes
+- **[CSS Variables](./css-variables)**: Customize colors using CSS custom properties
 
-The ThemeProvider is designed to be flexible and powerful, allowing you to start simple and add complexity as needed.
+ThemeProvider lets you start with a few overrides and add more as needs grow.

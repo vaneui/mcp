@@ -98,7 +98,7 @@ Examples:
 - `vaneui://docs/claude` — VaneUI project overview (`CLAUDE.md`).
 - `vaneui://docs/component-usage`, `vaneui://docs/prop-to-tailwind-mapping`, `vaneui://docs/component-patterns`, `vaneui://docs/props-and-theme`, `vaneui://docs/css-conventions`, `vaneui://docs/testing`, `vaneui://docs/e2e-testing`, `vaneui://docs/playground-examples` — agent-facing rule files.
 - `vaneui://docs/installation`, `vaneui://docs/usage-basics`, `vaneui://docs/core-concepts` — getting-started guides.
-- `vaneui://docs/theming-overview`, `vaneui://docs/using-themeprovider`, `vaneui://docs/theme-defaults`, `vaneui://docs/theme-and-override`, `vaneui://docs/extra-classes`, `vaneui://docs/customizing-styles`, `vaneui://docs/variant-inheritance`, `vaneui://docs/css-variables` — customization guides.
+- `vaneui://docs/theming-overview`, `vaneui://docs/using-theme-provider`, `vaneui://docs/theme-defaults`, `vaneui://docs/theme-and-override`, `vaneui://docs/extra-classes`, `vaneui://docs/customizing-styles`, `vaneui://docs/variant-inheritance`, `vaneui://docs/css-variables` — customization guides.
 - `vaneui://docs/common-props` — shared layout/typography prop reference.
 - `vaneui://docs/button`, `vaneui://docs/card`, `vaneui://docs/modal`, ... — one per component.
 
@@ -123,6 +123,6 @@ Returns the structured prop / category / default / description table for a singl
 
 | Param | Type | Notes |
 |-------|------|-------|
-| `slug` | string | Required. The component slug, matching the resource basename — e.g. `button`, `card`, `icon-button`, `pagetitle`. |
+| `slug` | string | Required. The component slug, matching the resource basename — e.g. `button`, `card`, `icon-button`, `page-title`. |
 
 Returns a JSON array of `{ prop, category, isDefault, description, isCommon }` rows. Use this when you need the exact prop list for a component (selecting between common layout props vs component-specific props, finding which prop is the default in a category, etc.).

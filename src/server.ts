@@ -116,12 +116,12 @@ async function main(): Promise<void> {
     "get_component_props",
     {
       description:
-        "Return the structured prop / category / default / description rows for a single VaneUI component, derived from `ComponentCategories`, `ComponentKeys`, `defaultTheme`, and `PropDescriptions`. Use this to look up the exact prop list, find which prop is the default in a category, or distinguish common layout props from component-specific ones. The slug matches the resource basename — `button`, `card`, `icon-button`, `pagetitle`, etc.",
+        "Return the structured prop / category / default / description rows for a single VaneUI component, derived from `ComponentCategories`, `ComponentKeys`, `defaultTheme`, and `PropDescriptions`. Use this to look up the exact prop list, find which prop is the default in a category, or distinguish common layout props from component-specific ones. The slug matches the resource basename — `button`, `card`, `icon-button`, `page-title`, etc.",
       inputSchema: {
         slug: z
           .string()
           .min(1)
-          .describe("Component slug (e.g. `button`, `card`, `icon-button`, `pagetitle`)."),
+          .describe("Component slug (e.g. `button`, `card`, `icon-button`, `page-title`)."),
       },
     },
     async ({ slug }) => {

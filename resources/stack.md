@@ -1,15 +1,15 @@
 ---
 componentKey: stack
 importPath: 'import { Stack } from "@vaneui/ui"'
-sourceUrl: https://github.com/vaneui/vaneui/blob/main/src/components/ui/stack.tsx
+sourceUrl: https://github.com/vaneui/vaneui/blob/main/src/components/ui/stack/Stack.tsx
 since: 0.9.0
 ---
 
-A flexible layout component that arranges its children with consistent spacing. It can be used for both vertical and horizontal layouts.
+A vertical flex container with built-in `padding` and `flexWrap`. Think of `Stack` as `Col` plus padding and wrap. Reach for it when you want a self-contained surface that breathes, not a structural skeleton.
 
 ## Basic Stack
 
-A flexible layout container that arranges children vertically by default. Has `gap: true` and `padding: true` by default.
+`Stack` defaults to `column`, `flex`, `gap`, `padding`, `flexWrap`, `md`, `noBorder`, `noRing`, `outline`, and `sharp`: you don't need to pass any of these. Pass `href` to render `Stack` as `<a>` instead of `<div>`. A focus-visible outline auto-enables when `href` is set.
 
 ```tsx demo
 <Stack>
@@ -19,45 +19,50 @@ A flexible layout container that arranges children vertically by default. Has `g
 </Stack>
 ```
 
-## Stack Direction
+## Stack vs Col
 
-Use `row` for horizontal layout, default is column (vertical).
+`Stack` and `Col` are both vertical flex columns. The difference is opinion:
 
-```tsx demo
-<Row flexWrap>
-  <Col>
-    <Text semibold>Column (default)</Text>
-    <Stack>
-      <div className="p-4 bg-gray-100 rounded">Item 1</div>
-      <div className="p-4 bg-gray-100 rounded">Item 2</div>
-    </Stack>
-  </Col>
-  <Col>
-    <Text semibold>Row</Text>
-    <Stack row>
-      <div className="p-4 bg-gray-100 rounded">Item 1</div>
-      <div className="p-4 bg-gray-100 rounded">Item 2</div>
-    </Stack>
-  </Col>
-</Row>
-```
+- **`Stack`** = `padding: true` + `flexWrap: true`: a padded, wrap-friendly container.
+- **`Col`** = `noPadding`: a bare structural column you compose inside other surfaces.
 
-## Stack Spacing
-
-Gap is enabled by default. Use size props (`sm`, `lg`) to control the gap amount, or `noGap` to disable.
+Use `Stack` when the column owns its own breathing room. Use `Col` when an outer `Card` / `Section` / `Container` already supplies the padding.
 
 ```tsx demo
-<Row flexWrap>
-  <Col>
-    <Text semibold>Small Gap</Text>
-    <Stack sm>
+<Row itemsStart>
+  <Col flex1>
+    <Text semibold>Stack (padded by default)</Text>
+    <Stack className="border-2 border-dashed border-gray-300">
       <div className="p-3 bg-gray-100 rounded">Item 1</div>
       <div className="p-3 bg-gray-100 rounded">Item 2</div>
     </Stack>
   </Col>
-  <Col>
-    <Text semibold>Large Gap</Text>
-    <Stack lg>
+  <Col flex1>
+    <Text semibold>Col (no padding)</Text>
+    <Col className="border-2 border-dashed border-gray-300">
+      <div className="p-3 bg-gray-100 rounded">Item 1</div>
+      <div className="p-3 bg-gray-100 rounded">Item 2</div>
+    </Col>
+  </Col>
+</Row>
+```
+
+## Stack direction
+
+Use `row` for horizontal layout. Default is `column` (vertical).
+
+```tsx demo
+<Row itemsStart>
+  <Col flex1>
+    <Text semibold>column (default)</Text>
+    <Stack className="border-2 border-dashed border-gray-300">
+      <div className="p-3 bg-gray-100 rounded">Item 1</div>
+      <div className="p-3 bg-gray-100 rounded">Item 2</div>
+    </Stack>
+  </Col>
+  <Col flex1>
+    <Text semibold>row</Text>
+    <Stack row className="border-2 border-dashed border-gray-300">
       <div className="p-3 bg-gray-100 rounded">Item 1</div>
       <div className="p-3 bg-gray-100 rounded">Item 2</div>
     </Stack>
@@ -65,79 +70,260 @@ Gap is enabled by default. Use size props (`sm`, `lg`) to control the gap amount
 </Row>
 ```
 
-## Stack Alignment
+## Stack spacing
 
-Control alignment with `justifyCenter`, `justifyBetween`, `itemsCenter`, etc.
+Use size props (`xs`, `sm`, `md`, `lg`, `xl`) to scale gap and padding together, or `noGap` to remove the gap.
 
 ```tsx demo
-<Row flexWrap>
-  <Col>
-    <Text semibold>Justify Center</Text>
-    <Stack justifyCenter className="h-32 border-2 border-dashed border-gray-300">
-      <div className="p-4 bg-gray-100 rounded">Centered</div>
-    </Stack>
-  </Col>
-  <Col>
-    <Text semibold>Justify Between</Text>
-    <Stack justifyBetween className="h-32 border-2 border-dashed border-gray-300">
-      <div className="p-4 bg-gray-100 rounded">Top</div>
-      <div className="p-4 bg-gray-100 rounded">Bottom</div>
-    </Stack>
-  </Col>
+<Row itemsStart>
+  <Stack xs flex1 className="border-2 border-dashed border-gray-300">
+    <Text semibold>xs</Text>
+    <div className="p-3 bg-gray-100 rounded">Item 1</div>
+    <div className="p-3 bg-gray-100 rounded">Item 2</div>
+  </Stack>
+  <Stack sm flex1 className="border-2 border-dashed border-gray-300">
+    <Text semibold>sm</Text>
+    <div className="p-3 bg-gray-100 rounded">Item 1</div>
+    <div className="p-3 bg-gray-100 rounded">Item 2</div>
+  </Stack>
+  <Stack flex1 className="border-2 border-dashed border-gray-300">
+    <Text semibold>md (default)</Text>
+    <div className="p-3 bg-gray-100 rounded">Item 1</div>
+    <div className="p-3 bg-gray-100 rounded">Item 2</div>
+  </Stack>
+  <Stack lg flex1 className="border-2 border-dashed border-gray-300">
+    <Text semibold>lg</Text>
+    <div className="p-3 bg-gray-100 rounded">Item 1</div>
+    <div className="p-3 bg-gray-100 rounded">Item 2</div>
+  </Stack>
+  <Stack xl flex1 className="border-2 border-dashed border-gray-300">
+    <Text semibold>xl</Text>
+    <div className="p-3 bg-gray-100 rounded">Item 1</div>
+    <div className="p-3 bg-gray-100 rounded">Item 2</div>
+  </Stack>
 </Row>
 ```
 
-## Stack Variants
+## Padding sizes
 
-Use `filled` or `outline` with appearance props for styled containers.
+`padding` is on by default. The padding value scales with the size prop. Use `noPadding` to remove it entirely.
 
 ```tsx demo
-<Row flexWrap>
-  <Stack filled primary>
+<Row itemsStart>
+  <Stack xs filled secondary flex1>
+    <Text semibold>xs padding</Text>
+    <div className="p-2 bg-white/80 rounded">Item</div>
+  </Stack>
+  <Stack filled secondary flex1>
+    <Text semibold>md padding (default)</Text>
+    <div className="p-2 bg-white/80 rounded">Item</div>
+  </Stack>
+  <Stack xl filled secondary flex1>
+    <Text semibold>xl padding</Text>
+    <div className="p-2 bg-white/80 rounded">Item</div>
+  </Stack>
+  <Stack noPadding filled secondary flex1>
+    <Text semibold>noPadding</Text>
+    <div className="p-2 bg-white/80 rounded">Item</div>
+  </Stack>
+</Row>
+```
+
+## Items (cross axis)
+
+Stack has no `items` default, so children stretch to fill the width. Override with `itemsStart`, `itemsCenter`, `itemsEnd`, `itemsBaseline`, or `itemsStretch`.
+
+```tsx demo
+<Row itemsStart>
+  <Stack flex1 className="border-2 border-dashed border-gray-300">
+    <Text semibold>default (stretch)</Text>
+    <div className="p-2 bg-gray-100 rounded">A</div>
+    <div className="p-2 bg-gray-100 rounded">B</div>
+  </Stack>
+  <Stack itemsStart flex1 className="border-2 border-dashed border-gray-300">
+    <Text semibold>itemsStart</Text>
+    <div className="p-2 bg-gray-100 rounded">A</div>
+    <div className="p-2 bg-gray-100 rounded">B</div>
+  </Stack>
+  <Stack itemsCenter flex1 className="border-2 border-dashed border-gray-300">
+    <Text semibold>itemsCenter</Text>
+    <div className="p-2 bg-gray-100 rounded">A</div>
+    <div className="p-2 bg-gray-100 rounded">B</div>
+  </Stack>
+  <Stack itemsEnd flex1 className="border-2 border-dashed border-gray-300">
+    <Text semibold>itemsEnd</Text>
+    <div className="p-2 bg-gray-100 rounded">A</div>
+    <div className="p-2 bg-gray-100 rounded">B</div>
+  </Stack>
+</Row>
+```
+
+## Justify (main axis)
+
+Control vertical distribution with `justifyStart`, `justifyEnd`, `justifyCenter`, `justifyBetween`, `justifyAround`, or `justifyEvenly`. The Stack needs a fixed height for these to have any effect.
+
+```tsx demo
+<Row itemsStart>
+  <Stack justifyStart flex1 className="h-48 border-2 border-dashed border-gray-300">
+    <Text semibold>justifyStart</Text>
+    <div className="p-2 bg-gray-100 rounded">A</div>
+    <div className="p-2 bg-gray-100 rounded">B</div>
+  </Stack>
+  <Stack justifyCenter flex1 className="h-48 border-2 border-dashed border-gray-300">
+    <Text semibold>justifyCenter</Text>
+    <div className="p-2 bg-gray-100 rounded">A</div>
+    <div className="p-2 bg-gray-100 rounded">B</div>
+  </Stack>
+  <Stack justifyEnd flex1 className="h-48 border-2 border-dashed border-gray-300">
+    <Text semibold>justifyEnd</Text>
+    <div className="p-2 bg-gray-100 rounded">A</div>
+    <div className="p-2 bg-gray-100 rounded">B</div>
+  </Stack>
+  <Stack justifyBetween flex1 className="h-48 border-2 border-dashed border-gray-300">
+    <Text semibold>justifyBetween</Text>
+    <div className="p-2 bg-gray-100 rounded">A</div>
+    <div className="p-2 bg-gray-100 rounded">B</div>
+  </Stack>
+  <Stack justifyAround flex1 className="h-48 border-2 border-dashed border-gray-300">
+    <Text semibold>justifyAround</Text>
+    <div className="p-2 bg-gray-100 rounded">A</div>
+    <div className="p-2 bg-gray-100 rounded">B</div>
+  </Stack>
+  <Stack justifyEvenly flex1 className="h-48 border-2 border-dashed border-gray-300">
+    <Text semibold>justifyEvenly</Text>
+    <div className="p-2 bg-gray-100 rounded">A</div>
+    <div className="p-2 bg-gray-100 rounded">B</div>
+  </Stack>
+</Row>
+```
+
+## Wrap behavior
+
+`flexWrap` is on by default. In a horizontal Stack, items wrap to the next line when they would overflow the container. Use `flexNoWrap` to force everything onto a single line.
+
+```tsx demo
+<Col>
+  <Text semibold>flexWrap (default) — items wrap when they overflow</Text>
+  <Stack row className="max-w-md border-2 border-dashed border-gray-300">
+    <div className="p-3 bg-gray-100 rounded">Item 1</div>
+    <div className="p-3 bg-gray-100 rounded">Item 2</div>
+    <div className="p-3 bg-gray-100 rounded">Item 3</div>
+    <div className="p-3 bg-gray-100 rounded">Item 4</div>
+    <div className="p-3 bg-gray-100 rounded">Item 5</div>
+  </Stack>
+  <Text semibold>flexNoWrap — items shrink to fit</Text>
+  <Stack row flexNoWrap className="max-w-md border-2 border-dashed border-gray-300">
+    <div className="p-3 bg-gray-100 rounded">Item 1</div>
+    <div className="p-3 bg-gray-100 rounded">Item 2</div>
+    <div className="p-3 bg-gray-100 rounded">Item 3</div>
+    <div className="p-3 bg-gray-100 rounded">Item 4</div>
+    <div className="p-3 bg-gray-100 rounded">Item 5</div>
+  </Stack>
+</Col>
+```
+
+## Stack variants
+
+Use `filled` or `outline` with appearance props for styled containers. Stack defaults to `sharp`: pair with `rounded` or `pill` for curved corners.
+
+```tsx demo
+<Row itemsStart>
+  <Stack filled primary rounded flex1>
     <div className="p-4 bg-white/80 rounded">Filled Primary</div>
     <div className="p-4 bg-white/80 rounded">Item 2</div>
   </Stack>
-  <Stack outline success>
+  <Stack border success rounded flex1>
     <div className="p-4 rounded">Outline Success</div>
     <div className="p-4 rounded">Item 2</div>
   </Stack>
 </Row>
 ```
 
-## Text Alignment
+## Text alignment
 
-Use `textCenter`, `textLeft`, `textRight`, or `textJustify` to control text alignment within the stack.
+Use `textLeft`, `textCenter`, `textRight`, or `textJustify` to control text alignment within the stack.
 
 ```tsx demo
-<Row flexWrap>
-  <Stack textLeft className="flex-1 border-2 border-dashed border-gray-300 p-4">
+<Row itemsStart>
+  <Stack textLeft flex1 className="border-2 border-dashed border-gray-300">
     <Text semibold>Left Aligned</Text>
     <Text>Content aligned to the left.</Text>
   </Stack>
-  <Stack textCenter className="flex-1 border-2 border-dashed border-gray-300 p-4">
+  <Stack textCenter flex1 className="border-2 border-dashed border-gray-300">
     <Text semibold>Center Aligned</Text>
     <Text>Content centered within the stack.</Text>
   </Stack>
-  <Stack textRight className="flex-1 border-2 border-dashed border-gray-300 p-4">
+  <Stack textRight flex1 className="border-2 border-dashed border-gray-300">
     <Text semibold>Right Aligned</Text>
     <Text>Content aligned to the right.</Text>
   </Stack>
 </Row>
 ```
 
-## Responsive Layout
+## Responsive layout
 
-Use `mobileCol` or `tabletCol` to switch between row and column layouts responsively.
+Use `mobileCol` or `tabletCol` on a horizontal Stack to switch back to a column on narrower viewports.
 
 ```tsx demo
 <Stack row tabletCol>
-  <div className="p-4 bg-primary-100 rounded flex-1">
+  <Col flex1 className="p-4 bg-primary-100 rounded">
     <Text semibold>Column 1</Text>
     <Text>Horizontal on desktop, stacked on tablet and below.</Text>
-  </div>
-  <div className="p-4 bg-primary-100 rounded flex-1">
+  </Col>
+  <Col flex1 className="p-4 bg-primary-100 rounded">
     <Text semibold>Column 2</Text>
     <Text>Resize to see the responsive behavior.</Text>
-  </div>
+  </Col>
+</Stack>
+```
+
+## As a form container
+
+Stack's built-in padding makes it a natural container for a form: each `Label` becomes a row with its input, and the Stack provides the vertical rhythm and outer breathing room without any extra wrapper.
+
+```tsx demo
+<Stack border rounded className="max-w-sm">
+  <Title>Sign in</Title>
+  <Label>
+    Email
+    <Input type="email" placeholder="you@example.com" />
+  </Label>
+  <Label>
+    Password
+    <Input type="password" placeholder="********" />
+  </Label>
+  <Row>
+    <Checkbox />
+    <Text sm>Remember me</Text>
+  </Row>
+  <Button filled>Sign in</Button>
+</Stack>
+```
+
+## As Link
+
+Add `href` to render the Stack as an `<a>` tag, useful for hero cards and large clickable surfaces. A keyboard focus-visible outline auto-renders so the link is reachable via Tab; opt out with `noFocusVisible`.
+
+```tsx demo
+<Stack href="#get-started" border rounded itemsStart className="max-w-md">
+  <Zap size={28} />
+  <PageTitle>Get started in minutes</PageTitle>
+  <Text>Install the package, drop in ThemeProvider, and start shipping.</Text>
+  <Button filled>Read the guide</Button>
+</Stack>
+```
+
+## Next.js Link integration
+
+Use the `tag` prop to render the Stack as a Next.js `Link` for client-side navigation.
+
+```tsx
+import Link from 'next/link';
+import { Stack, PageTitle, Text, Button } from '@vaneui/ui';
+
+<Stack href="/docs/getting-started" tag={Link} border rounded itemsStart>
+  <PageTitle>Get started in minutes</PageTitle>
+  <Text>Install the package, drop in ThemeProvider, and start shipping.</Text>
+  <Button filled>Read the guide</Button>
 </Stack>
 ```

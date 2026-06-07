@@ -1,15 +1,17 @@
 The `themeOverride` property allows programmatic modifications to component themes. Use it to add base classes or change defaults for any subtree of your application.
 
-## Basic Usage
+## Basic usage
 
-### Modifying Base Classes
+### Modifying base classes
 
 Add CSS classes that apply to all instances of a component:
 
 ```tsx
 <ThemeProvider themeOverride={(theme) => {
-  theme.button.base += ' uppercase tracking-wide';
-  theme.card.base += ' shadow-sm';
+  // Compound themes are nested by sub-part — Button is `button.main`,
+  // Card is `card.main`. Single-target themes (Badge, Chip, etc.) sit at the top level.
+  theme.button.main.base += ' uppercase tracking-wide';
+  theme.card.main.base += ' shadow-sm';
   return theme;
 }}>
   <Button primary>Uppercase Button</Button>
@@ -17,45 +19,45 @@ Add CSS classes that apply to all instances of a component:
 </ThemeProvider>
 ```
 
-### Modifying Default Props
+### Modifying default props
 
 Change the default boolean props for components:
 
 ```tsx
 <ThemeProvider themeOverride={(theme) => {
-  theme.button.defaults = {
-    ...theme.button.defaults,
+  theme.button.main.defaults = {
+    ...theme.button.main.defaults,
     filled: true,
-    rounded: true
+    pill: true,
   };
   return theme;
 }}>
-  <Button primary>Filled Rounded Button</Button>
+  <Button primary>Filled Pill Button</Button>
 </ThemeProvider>
 ```
 
-Note: For changing defaults, prefer using `themeDefaults` instead - it's simpler:
+Note: For changing defaults, prefer using `themeDefaults` instead. It uses fewer pieces and the public `ThemeDefaults` type:
 
 ```tsx
 // Preferred approach for defaults
 <ThemeProvider themeDefaults={{
-  button: { filled: true, rounded: true }
+  button: { main: { filled: true, pill: true } }
 }}>
 ```
 
-## Combining with Other Props
+## Combining with other props
 
 Use `themeOverride` alongside `themeDefaults` and `extraClasses`:
 
 ```tsx
 <ThemeProvider
-  themeDefaults={{ button: { primary: true } }}
+  themeDefaults={{ button: { main: { filled: true } } }}
   themeOverride={(theme) => {
-    theme.button.base += ' font-semibold';
+    theme.button.main.base += ' tracking-wide';
     return theme;
   }}
   extraClasses={{
-    button: { primary: 'hover:shadow-lg' }
+    button: { main: { primary: 'hover:shadow-lg' } }
   }}
 >
   <Button>Fully Customized</Button>
@@ -68,13 +70,13 @@ Child overrides build on parent modifications:
 
 ```tsx
 <ThemeProvider themeOverride={(theme) => {
-  theme.button.base += ' uppercase';
+  theme.button.main.base += ' uppercase';
   return theme;
 }}>
   <Button>Uppercase</Button>
 
   <ThemeProvider themeOverride={(theme) => {
-    theme.button.base += ' tracking-widest';
+    theme.button.main.base += ' tracking-widest';
     return theme;
   }}>
     <Button>Uppercase + Wide Tracking</Button>
@@ -82,8 +84,8 @@ Child overrides build on parent modifications:
 </ThemeProvider>
 ```
 
-## When to Use themeOverride
+## When to use themeOverride
 
 - **Use `themeOverride`** when you need to add base CSS classes to all component instances
-- **Use `themeDefaults`** when you want to change default boolean props (simpler syntax)
+- **Use `themeDefaults`** when you want to change default boolean props (smaller surface)
 - **Use `extraClasses`** when you want to add classes based on active props

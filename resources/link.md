@@ -1,23 +1,23 @@
 ---
 componentKey: link
 importPath: 'import { Link } from "@vaneui/ui"'
-sourceUrl: https://github.com/vaneui/vaneui/blob/main/src/components/ui/link.tsx
+sourceUrl: https://github.com/vaneui/vaneui/blob/main/src/components/ui/typography/link/Link.tsx
 since: 0.9.0
 ---
 
 Renders an accessible and themeable anchor link for navigation. Use this to direct users to other pages or external websites.
 
-## When to Use
+## When to use
 
 - In-text navigation that sits naturally on the typography baseline.
 - External links to documentation, repositories, or referenced sources.
 - Footer/secondary navigation where a button would be visually too heavy.
 - Cross-references inside prose where the action is "go somewhere," not "do something."
 
-### When NOT to Use
+### When NOT to use
 
-- For action buttons (submit, confirm, run) — use `Button` instead.
-- For prominent calls-to-action — use `Button primary filled` for visual weight.
+- For action buttons (submit, confirm, run): use `Button` instead.
+- For prominent calls-to-action: use `Button primary filled` for visual weight.
 
 ## Customizing
 
@@ -35,15 +35,15 @@ import { ThemeProvider, Link } from '@vaneui/ui';
 
 ## Basic Link
 
-A styled anchor element for navigation. Unlike other typography components which default to `inherit`, Link defaults to the `link` appearance (blue color) with `underline`.
+A styled anchor element for navigation. Unlike other typography components which default to `inherit`, Link defaults to the `link` appearance (blue color) with `underline`, and ships with `focusVisible` on for a keyboard focus outline.
 
 ```tsx demo
 <Link href="#">Click here to learn more</Link>
 ```
 
-## Size Inherits from Context
+## Size inherits from context
 
-Link defaults to `inheritSize: true` so a link inside a heading renders at the heading's font-size automatically — no `size` prop needed. The link keeps its own blue colour.
+Link defaults to `inheritSize: true` so a link inside a heading renders at the heading's font-size automatically. No `size` prop needed. The link keeps its own blue colour.
 
 ```tsx demo
 <Col>
@@ -54,9 +54,9 @@ Link defaults to `inheritSize: true` so a link inside a heading renders at the h
 </Col>
 ```
 
-## Fixed Size with noInheritSize
+## Fixed size with noInheritSize
 
-Pass `noInheritSize` to render the Link at its own size instead of the parent's — useful when a link inside a heading should stay at body-text size.
+Pass `noInheritSize` to render the Link at its own size instead of the parent's, useful when a link inside a heading should stay at body-text size.
 
 ```tsx demo
 <Title>
@@ -64,7 +64,21 @@ Pass `noInheritSize` to render the Link at its own size instead of the parent's 
 </Title>
 ```
 
-## Link Appearances
+## Explicit sizes
+
+When `noInheritSize` is set (or the parent has no size context), choose an explicit size with `xs`, `sm`, `md` (default), `lg`, `xl`.
+
+```tsx demo
+<Col>
+  <Link href="#" noInheritSize xs>Extra small link</Link>
+  <Link href="#" noInheritSize sm>Small link</Link>
+  <Link href="#" noInheritSize>Medium link (default)</Link>
+  <Link href="#" noInheritSize lg>Large link</Link>
+  <Link href="#" noInheritSize xl>Extra large link</Link>
+</Col>
+```
+
+## Link appearances
 
 Links default to the `link` appearance (blue). Override with: `primary`, `brand`, `accent`, `secondary`, `tertiary`, `success`, `danger`, `warning`, `info`.
 
@@ -81,23 +95,9 @@ Links default to the `link` appearance (blue). Override with: `primary`, `brand`
 </Row>
 ```
 
-## Link Variants
+## Link styling
 
-Use `filled` for solid background links or `outline` for bordered links.
-
-```tsx demo
-<Row flexWrap>
-  <Link primary filled href="#">Filled Primary</Link>
-  <Link success filled href="#">Filled Success</Link>
-  <Link danger filled href="#">Filled Danger</Link>
-  <Link primary outline href="#">Outline Primary</Link>
-  <Link secondary outline href="#">Outline Secondary</Link>
-</Row>
-```
-
-## Link Styling
-
-Use `bold`, `semibold`, `italic`, and text decorations like `underline` or `noUnderline`.
+Use `bold`, `semibold`, `italic`, or `noUnderline` to remove the default underline.
 
 ```tsx demo
 <Col>
@@ -108,9 +108,36 @@ Use `bold`, `semibold`, `italic`, and text decorations like `underline` or `noUn
 </Col>
 ```
 
-## Link in Context
+## Hover state
 
-Links integrate naturally with other text content.
+Links keep an underline at rest. With `noUnderline`, the underline appears on hover for affordance. Links also render a keyboard focus-visible outline by default for keyboard users (opt out with `noFocusVisible`).
+
+```tsx demo
+<Col>
+  <Link href="#">Underlined at rest, stays underlined on hover</Link>
+  <Link noUnderline href="#">No underline at rest, hover to reveal it</Link>
+</Col>
+```
+
+## External links
+
+Pass the `external` prop and Link auto-applies `target="_blank"` and `rel="noopener noreferrer"` for safe cross-origin navigation.
+
+```tsx demo
+<Link href="https://github.com/vaneui/vaneui" external>VaneUI on GitHub</Link>
+```
+
+## Manual target="_blank"
+
+Setting `target="_blank"` directly also auto-applies `rel="noopener noreferrer"`. No need to spell it out.
+
+```tsx demo
+<Link href="https://github.com/vaneui/vaneui" target="_blank">Open in a new tab</Link>
+```
+
+## Inline in Text
+
+Links integrate naturally with surrounding prose. Drop them inline inside `Text` and they inherit the parent size.
 
 ```tsx demo
 <Text>
@@ -119,7 +146,19 @@ Links integrate naturally with other text content.
 </Text>
 ```
 
-## With Icons
+## Inherits parent Text size
+
+Links inside body text inherit the surrounding `Text` size. Set the size on the parent and the Link follows along.
+
+```tsx demo
+<Col>
+  <Text sm>Read the <Link href="#">terms and conditions</Link> before proceeding.</Text>
+  <Text>Visit our <Link href="#">help center</Link> for more information.</Text>
+  <Text lg>Check out the <Link href="#">getting started guide</Link> to begin.</Text>
+</Col>
+```
+
+## With icons
 
 Combine links with icons using Row for visual navigation cues.
 
@@ -140,14 +179,13 @@ Combine links with icons using Row for visual navigation cues.
 </Col>
 ```
 
-## Inherits Parent Text Size
+## Next.js Link integration
 
-Links inside body text inherit the surrounding `Text` size — set the size on the parent and the Link follows along.
+Use the `tag` prop to render the VaneUI Link as a Next.js `Link` for client-side navigation. Alias the Next.js import so it doesn't shadow `Link` from `@vaneui/ui`.
 
-```tsx demo
-<Col>
-  <Text sm>Read the <Link href="#">terms and conditions</Link> before proceeding.</Text>
-  <Text>Visit our <Link href="#">help center</Link> for more information.</Text>
-  <Text lg>Check out the <Link href="#">getting started guide</Link> to begin.</Text>
-</Col>
+```tsx
+import NextLink from 'next/link';
+import { Link } from '@vaneui/ui';
+
+<Link href="/docs" tag={NextLink}>Documentation</Link>
 ```
