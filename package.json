@@ -12,6 +12,9 @@
     "resources",
     "README.md"
   ],
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
     "sync": "node scripts/sync-docs.mjs && node scripts/sync-component-props.mjs",
     "sync:strict": "node scripts/sync-docs.mjs --strict && node scripts/sync-component-props.mjs --strict",
