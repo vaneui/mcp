@@ -1,0 +1,90 @@
+name: Publish Stable Release to npm
+
+# Run on pushes to the prod branch
+on:
+  push:
+    branches:
+      - prod
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          registry-url: 'https://registry.npmjs.org'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      # Check if the version in package.json already exists on npm
+      - name: Check if Version is Already Published
+        id: check_version
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          PACKAGE_NAME=$(node -p "require('./package.json').name")
+          PUBLISHED_VERSION=$(npm view $PACKAGE_NAME version 2>/dev/null || echo "none")
+          echo "Local version: $VERSION"
+          echo "Published version: $PUBLISHED_VERSION"
+          if [ "$VERSION" = "$PUBLISHED_VERSION" ]; then
+            echo "Version $VERSION is already published. Skipping."
+            echo "should_publish=false" >> $GITHUB_OUTPUT
+          else
+            echo "Version $VERSION is new. Proceeding to publish."
+            echo "should_publish=true" >> $GITHUB_OUTPUT
+            echo "version=$VERSION" >> $GITHUB_OUTPUT
+          fi
+
+      # Fail fast if the npm token is missing/expired/lacks publish rights for
+      # @vaneui/mcp — npm publish on a bad token returns a misleading 404
+      # instead of 401, which is hard to diagnose. npm whoami fails clearly.
+      - name: Verify npm Auth
+        if: steps.check_version.outputs.should_publish == 'true'
+        run: |
+          npm whoami
+          echo "✅ npm auth OK"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # Compile TypeScript using the committed resources/ corpus. We do NOT
+      # re-sync here: the sync scripts need the sibling vaneui/ and vaneui-web/
+      # checkouts, which aren't present in CI. resources/ is committed to git
+      # for exactly this reason.
+      - name: Build Package
+        if: steps.check_version.outputs.should_publish == 'true'
+        run: npm run build
+
+      - name: Check Build Result
+        if: steps.check_version.outputs.should_publish == 'true' && failure()
+        run: |
+          echo "❌ Build failed! Cannot proceed with stable release publication."
+          exit 1
+
+      # Best Practice: Verify what will be in the package before publishing
+      - name: Verify Package Contents
+        if: steps.check_version.outputs.should_publish == 'true'
+        run: npm pack --dry-run
+
+      - name: Publish Stable Package to npm
+        # --ignore-scripts: this workflow already ran the build above; without
+        # it, the `prepublishOnly` script would run `sync:strict`, which fails
+        # in CI because the sibling vaneui/ and vaneui-web/ repos aren't
+        # checked out.
+        if: steps.check_version.outputs.should_publish == 'true'
+        run: npm publish --access public --ignore-scripts
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Report Success
+        if: steps.check_version.outputs.should_publish == 'true'
+        run: |
+          echo "✅ Stable release published successfully!"
+          echo "📦 Version: ${{ steps.check_version.outputs.version }}"
+          echo "🏷️  Tag: latest"
+          echo "📥 Install with: npm install @vaneui/mcp@latest"

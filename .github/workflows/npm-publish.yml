@@ -1,0 +1,82 @@
+name: Publish Pre-release to npm
+
+# Run on pushes to the main branch
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          registry-url: 'https://registry.npmjs.org' # Set registry for all npm commands
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      # Fail fast if the npm token is missing/expired/lacks publish rights for
+      # @vaneui/mcp — otherwise we'd waste the build only to fail at the publish
+      # step with a misleading 404. npm whoami exits non-zero on bad tokens.
+      - name: Verify npm Auth
+        run: |
+          npm whoami
+          echo "✅ npm auth OK"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # Generate pre-release version with timestamp and commit SHA, matching the
+      # @vaneui/ui alpha versioning scheme (0.1.0-alpha.<timestamp>.<sha>).
+      - name: Generate Pre-release Version
+        id: version
+        run: |
+          BASE_VERSION=$(node -p "require('./package.json').version")
+          TIMESTAMP=$(date +%Y%m%d%H%M%S)
+          SHORT_SHA=$(git rev-parse --short HEAD)
+          PRE_VERSION="${BASE_VERSION}-alpha.${TIMESTAMP}.${SHORT_SHA}"
+          echo "Pre-release version: $PRE_VERSION"
+          echo "version=$PRE_VERSION" >> $GITHUB_OUTPUT
+          # Update package.json with pre-release version
+          npm version $PRE_VERSION --no-git-tag-version
+
+      # Compile TypeScript using the committed resources/ corpus. We do NOT
+      # re-sync here: the sync scripts need the sibling vaneui/ and vaneui-web/
+      # checkouts, which aren't present in CI. resources/ is committed to git
+      # for exactly this reason — maintainers run `npm run build:full` and
+      # commit the refreshed corpus before pushing.
+      - name: Build Package
+        run: npm run build
+
+      - name: Check Build Result
+        if: failure()
+        run: |
+          echo "❌ Build failed! Cannot proceed with pre-release publication."
+          exit 1
+
+      # Best Practice: Verify what will be in the package before publishing
+      - name: Verify Package Contents
+        run: npm pack --dry-run
+
+      - name: Publish Pre-release to npm
+        # --ignore-scripts: this workflow already ran the build explicitly
+        # above. Without it, the `prepublishOnly` script would run
+        # `sync:strict`, which fails in CI because the sibling vaneui/ and
+        # vaneui-web/ repos aren't checked out.
+        run: npm publish --access public --tag alpha --ignore-scripts
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Report Success
+        run: |
+          echo "✅ Pre-release published successfully!"
+          echo "📦 Version: ${{ steps.version.outputs.version }}"
+          echo "🏷️  Tag: alpha"
+          echo "📥 Install with: npm install @vaneui/mcp@alpha"
