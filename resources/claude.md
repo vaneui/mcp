@@ -95,6 +95,14 @@ When a task matches an agent's trigger below, you **MUST** delegate to that agen
 - `npm run build:css:ui` — Tailwind CLI for component styles
 - `npm run build:css:vars` — Tailwind CLI for CSS variables
 
+## Repository Hygiene
+
+**Never commit one-off / throwaway scripts.** Codemods, migration scripts, ad-hoc test rewriters, and debug helpers (e.g. files like `update-tests.js` or `fix-*.js` at the repo root) must NOT be committed. They run once, then become misleading dead clutter that looks like real tooling.
+
+- Run such scripts from a scratch location outside the repo, or delete them in the same change once they've done their job.
+- If a script is genuinely reusable, it belongs in `scripts/`, follows the repo's `tsx` ESM style, and is wired into `package.json` — otherwise it doesn't get committed.
+- Before committing, check `git status` for stray root-level `.js`/`.mjs` files and remove them. Only intended source, tests, config, and `scripts/` entries should be staged.
+
 ## Component Inventory
 
 | Category | Components | `data-vane-type` |
@@ -214,84 +222,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for architecture details, CSS variable 
 
 ---
 
-## Reference UI Framework Repositories
+## Reference Implementations
 
-When working on VaneUI, **ALWAYS check how similar features are implemented in the reference UI frameworks** before making changes. These are local clones in sibling directories at `C:\GitHub\`.
+When adding or refactoring a component, study mature implementation patterns — props API, accessibility, theming, responsive behavior — before writing VaneUI code, then re-express them in VaneUI's conventions (boolean props API, Tailwind CSS v4, ThemeProvider, TypeScript strict mode). Pointers to the local reference repositories are maintained at the workspace level (`C:\GitHub\CLAUDE.md`), not in this repo.
 
-### When to Check
-
-| Task Type | What to Check | Where to Look |
-|-----------|---------------|---------------|
-| **Adding a new component** | Similar component implementations, props API, accessibility patterns | All 4 frameworks' component folders |
-| **Adding new props** | How other frameworks name similar props, what values they accept | Component source files in each framework |
-| **Refactoring components** | Architecture patterns, file organization, internal utilities | Framework source structure |
-| **Theming/styling changes** | Token systems, CSS variable patterns, theme provider implementations | Chakra's styled-system, Mantine's core, Ant's theme |
-| **Accessibility** | ARIA attributes, keyboard handling, focus management | Chakra (best), shadcn (Radix-based), Mantine |
-| **TypeScript patterns** | Prop types, generics, utility types, ref forwarding | All frameworks use TypeScript |
-| **Responsive design** | Breakpoint systems, responsive prop patterns | Chakra's breakpoints, Mantine's responsive props |
-| **Testing patterns** | Test structure, what to test, testing utilities | Mantine's @mantine-tests, Chakra's tests |
-
-### Quick Reference Paths
-
-```
-Component implementations:
-  ant-design/components/{component}/        # e.g., ant-design/components/button/
-  shadcn-ui-ui/apps/v4/registry/default/ui/ # shadcn component registry
-  mantine/packages/@mantine/core/src/components/{Component}/
-  chakra-ui/packages/react/src/components/{component}/
-
-Props/Types:
-  ant-design/components/{component}/index.tsx
-  mantine/packages/@mantine/core/src/components/{Component}/{Component}.tsx
-  chakra-ui/packages/react/src/components/{component}/{component}.tsx
-
-Theming:
-  ant-design/components/theme/
-  mantine/packages/@mantine/core/src/core/MantineProvider/
-  chakra-ui/packages/react/src/styled-system/
-
-Hooks:
-  mantine/packages/@mantine/hooks/src/     # 50+ hooks
-  chakra-ui/packages/react/src/hooks/
-```
-
-### Framework Strengths
-
-| Framework | Best For Learning |
-|-----------|-------------------|
-| **Ant Design** | Enterprise patterns, complex components (Table, Tree, Form), i18n, prop naming conventions (see `AGENTS.md`) |
-| **shadcn/ui** | Tailwind CSS patterns (closest to VaneUI), Radix primitives, copy-paste architecture, minimal abstraction |
-| **Mantine** | Comprehensive API design, hooks collection, modular package architecture, CSS Modules patterns |
-| **Chakra UI** | Styled-system (CVA/SVA), accessibility best practices, style props API, design tokens (see `CLAUDE.md`) |
-
-### Workflow Example
-
-When asked to "add a Tooltip component to VaneUI":
-
-1. **First**, check implementations in reference frameworks:
-   - `ant-design/components/tooltip/` — enterprise features, placement options
-   - `mantine/packages/@mantine/core/src/components/Tooltip/` — API design, props
-   - `chakra-ui/packages/react/src/components/tooltip/` — accessibility, style props
-   - `shadcn-ui-ui/` (uses Radix Tooltip) — Tailwind styling approach
-
-2. **Extract patterns**:
-   - Common props across frameworks (content, placement, trigger, delay)
-   - Accessibility requirements (role, aria-describedby)
-   - How each handles positioning (Popper.js, Floating UI, CSS)
-
-3. **Then implement** in VaneUI following VaneUI's conventions:
-   - Boolean props API where appropriate
-   - Tailwind CSS v4 styling
-   - ThemeProvider integration
-   - TypeScript strict mode
-
-### Reporting Findings
-
-When checking reference frameworks, briefly summarize what you found:
-- Which frameworks have the component/feature
-- Key differences in their approaches
-- Which patterns are most suitable for VaneUI's architecture
-- Any accessibility or edge cases to consider
+> **Do not name third-party UI frameworks anywhere in this repository** — not in source, comments, tests, CSS, or docs. See the workspace `CLAUDE.md` rule for details.
 
 ---
 

@@ -4307,6 +4307,48 @@
       "isCommon": true
     },
     {
+      "prop": "selfAuto",
+      "category": "Align Self",
+      "isDefault": false,
+      "description": "Use the parent's align-items value (align-self: auto)",
+      "isCommon": false
+    },
+    {
+      "prop": "selfStart",
+      "category": "Align Self",
+      "isDefault": false,
+      "description": "Align this item to the start of the cross axis (align-self: flex-start)",
+      "isCommon": false
+    },
+    {
+      "prop": "selfEnd",
+      "category": "Align Self",
+      "isDefault": false,
+      "description": "Align this item to the end of the cross axis (align-self: flex-end)",
+      "isCommon": false
+    },
+    {
+      "prop": "selfCenter",
+      "category": "Align Self",
+      "isDefault": false,
+      "description": "Center this item on the cross axis (align-self: center)",
+      "isCommon": false
+    },
+    {
+      "prop": "selfStretch",
+      "category": "Align Self",
+      "isDefault": false,
+      "description": "Stretch this item to fill the cross axis (align-self: stretch)",
+      "isCommon": false
+    },
+    {
+      "prop": "selfBaseline",
+      "category": "Align Self",
+      "isDefault": false,
+      "description": "Align this item to its baseline (align-self: baseline)",
+      "isCommon": false
+    },
+    {
       "prop": "primary",
       "category": "Appearance",
       "isDefault": true,
@@ -18325,13 +18367,6 @@
       "isCommon": true
     },
     {
-      "prop": "transparent",
-      "category": "Transparent",
-      "isDefault": false,
-      "description": "Disable background color - makes component background transparent",
-      "isCommon": true
-    },
-    {
       "prop": "responsive",
       "category": "Responsive",
       "isDefault": false,
@@ -27456,6 +27491,83 @@
       "category": "Shrink",
       "isDefault": false,
       "description": "Prevent the flex item from shrinking below its content size (= `shrink-0`)",
+      "isCommon": false
+    },
+    {
+      "prop": "selfAuto",
+      "category": "Align Self",
+      "isDefault": false,
+      "description": "Use the parent's align-items value (align-self: auto)",
+      "isCommon": false
+    },
+    {
+      "prop": "selfStart",
+      "category": "Align Self",
+      "isDefault": false,
+      "description": "Align this item to the start of the cross axis (align-self: flex-start)",
+      "isCommon": false
+    },
+    {
+      "prop": "selfEnd",
+      "category": "Align Self",
+      "isDefault": false,
+      "description": "Align this item to the end of the cross axis (align-self: flex-end)",
+      "isCommon": false
+    },
+    {
+      "prop": "selfCenter",
+      "category": "Align Self",
+      "isDefault": false,
+      "description": "Center this item on the cross axis (align-self: center)",
+      "isCommon": false
+    },
+    {
+      "prop": "selfStretch",
+      "category": "Align Self",
+      "isDefault": false,
+      "description": "Stretch this item to fill the cross axis (align-self: stretch)",
+      "isCommon": false
+    },
+    {
+      "prop": "selfBaseline",
+      "category": "Align Self",
+      "isDefault": false,
+      "description": "Align this item to its baseline (align-self: baseline)",
+      "isCommon": false
+    },
+    {
+      "prop": "justifySelfAuto",
+      "category": "Justify Self",
+      "isDefault": false,
+      "description": "Use the parent's justify-items value (justify-self: auto)",
+      "isCommon": false
+    },
+    {
+      "prop": "justifySelfStart",
+      "category": "Justify Self",
+      "isDefault": false,
+      "description": "Align this item to the start of the inline axis (justify-self: start)",
+      "isCommon": false
+    },
+    {
+      "prop": "justifySelfEnd",
+      "category": "Justify Self",
+      "isDefault": false,
+      "description": "Align this item to the end of the inline axis (justify-self: end)",
+      "isCommon": false
+    },
+    {
+      "prop": "justifySelfCenter",
+      "category": "Justify Self",
+      "isDefault": false,
+      "description": "Center this item on the inline axis (justify-self: center)",
+      "isCommon": false
+    },
+    {
+      "prop": "justifySelfStretch",
+      "category": "Justify Self",
+      "isDefault": false,
+      "description": "Stretch this item to fill the inline axis (justify-self: stretch)",
       "isCommon": false
     },
     {
