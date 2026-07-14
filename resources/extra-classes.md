@@ -42,7 +42,7 @@ function App() {
 
 Add classes based on size props:
 
-```tsx
+```tsx demo
 <ThemeProvider extraClasses={{
   button: {
     main: {
@@ -61,7 +61,7 @@ Add classes based on size props:
 
 Create engaging interactions with animation classes:
 
-```tsx
+```tsx demo
 <ThemeProvider extraClasses={{
   button: {
     main: {
@@ -84,7 +84,7 @@ Create engaging interactions with animation classes:
 
 Draw attention to important elements:
 
-```tsx
+```tsx demo
 <ThemeProvider extraClasses={{
   button: {
     main: {
@@ -105,7 +105,7 @@ Draw attention to important elements:
 
 When multiple props are active, all their associated classes are combined:
 
-```tsx
+```tsx demo
 <ThemeProvider extraClasses={{
   button: {
     main: {
@@ -192,12 +192,12 @@ const extraClasses = {
 Be careful not to add classes that conflict with VaneUI's size-driven system (padding, gap, font-size, border-radius scale via the size prop):
 
 ```tsx
-// Avoid — fights the size system; padding is set by --py-unit per size
+// Avoid: fights the size system; padding is set by --py-unit per size
 extraClasses: {
   button: { main: { primary: 'p-8' } }
 }
 
-// Better — adds effects that complement base styles
+// Better: adds effects that complement base styles
 extraClasses: {
   button: { main: { primary: 'hover:brightness-110' } }
 }

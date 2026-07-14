@@ -5,11 +5,11 @@ sourceUrl: https://github.com/vaneui/vaneui/blob/main/src/components/ui/section/
 since: 0.9.0
 ---
 
-A full-bleed page band used to group related content with consistent vertical rhythm. Sections own the outer padding and background; nest a `Container` inside to cap the inner reading width.
+Sections own the outer padding and background; nest a `Container` inside to cap the inner reading width.
 
-## Basic section
+## Basic usage
 
-`md`, `wFull`, `flex`, `column`, `itemsStart`, `gap`, `padding`, `outline`, `sharp`, and `responsive` are defaults. Padding, gap, and font size automatically scale at tablet and mobile breakpoints because `responsive` is on.
+`md`, `wFull`, `flex`, `column`, `itemsStart`, `gap`, `padding`, `outline`, `sharp`, and `responsive` are defaults. Padding and gap automatically scale at tablet and mobile breakpoints because `responsive` is on.
 
 ```tsx demo
 <Section border>
@@ -18,7 +18,7 @@ A full-bleed page band used to group related content with consistent vertical rh
 </Section>
 ```
 
-## Section sizes
+## Sizes
 
 Sizes (`xs`, `sm`, `md` default, `lg`, `xl`) control padding and gap.
 
@@ -39,7 +39,7 @@ Sizes (`xs`, `sm`, `md` default, `lg`, `xl`) control padding and gap.
 </Col>
 ```
 
-## Section appearances
+## Appearances
 
 Sections support color appearances: `primary`, `secondary`, `success`, `danger`, etc. Use `secondary` filled bands to create visual rhythm between regular sections.
 
@@ -64,7 +64,7 @@ Sections support color appearances: `primary`, `secondary`, `success`, `danger`,
 </Col>
 ```
 
-## Section variants
+## Variants
 
 Use `filled` for solid backgrounds (`outline` is the default), and `shadow` for elevation.
 
@@ -85,7 +85,7 @@ Use `filled` for solid backgrounds (`outline` is the default), and `shadow` for 
 </Col>
 ```
 
-## Section layout
+## Layout
 
 Use `row` for horizontal layout. `gap` is already on by default; pair with `noPadding` only when a wrapper owns spacing.
 
@@ -123,7 +123,7 @@ Use `mobileCol` or `tabletCol` to switch from row to column layout on smaller sc
 
 ## Responsive sizing
 
-`responsive` (default) scales padding, gap, and font size at tablet and mobile breakpoints using `--py-tablet`, `--gap-mobile`, etc. Pass `responsive={false}` to lock a single size across all viewports.
+`responsive` (default) scales padding and gap at tablet and mobile breakpoints using `--py-tablet`, `--gap-mobile`, etc. Pass `responsive={false}` to lock a single size across all viewports.
 
 ```tsx demo
 <Col>

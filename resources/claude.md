@@ -108,7 +108,8 @@ When a task matches an agent's trigger below, you **MUST** delegate to that agen
 | Category | Components | `data-vane-type` |
 |----------|-----------|-----------------|
 | **Interactive** | Button, IconButton, Badge, Chip, Code, Kbd, Mark, Input, Checkbox, Label, Icon | `ui` |
-| **Overlay / Floating** | Overlay, Modal (+ Header/Body/Footer/CloseButton), Popup, PopupTrigger, Menu (+ Item/Label), NavLink | `ui` |
+| **Overlay / Floating** | Overlay, Modal (+ Header/Body/Footer), Popup | `layout` |
+| **Menu / Nav** | Menu (+ Item/Label), NavLink, ModalCloseButton, PopupTrigger | `ui` |
 | **Layout** | Card (+ Header/Body/Footer), Section, Container, Row, Col, Stack, Grid2–6, Divider, Img | `layout` |
 | **Typography** | Text, Title, SectionTitle, PageTitle, Link, List, ListItem, Blockquote | `ui` |
 
@@ -143,14 +144,14 @@ Additional toggle props: `gap`/`noGap`, `padding`/`noPadding`, `shadow`/`noShado
 | **Row** | md, row, flex, itemsCenter, gap, noPadding, noBorder, noRing, outline, sharp |
 | **Col** | md, column, flex, gap, noPadding, noBorder, noRing, outline, sharp |
 | **Stack** | md, flex, column, flexWrap, gap, padding, noBorder, noRing, outline, sharp |
-| **Badge** | md, primary, outline, pill, semibold, uppercase |
-| **Chip** | md, secondary (not primary!), outline, rounded, mono |
+| **Badge** | md, secondary (neutral default; color via success/danger/…), outline, pill, semibold |
+| **Chip** | md, secondary (not primary!), outline, rounded, sans |
 | **NavLink** | sm, primary, outline, rounded, noBorder, noShadow, noRing, wFull, textLeft, focusVisible |
 | **Link** | md, link (not primary!), underline, sans, cursorPointer, inheritSize, wFit, focusVisible (no variant default) |
 | **Input** | md, primary, outline, rounded, wFull, ring, focusVisible |
 | **Icon** | md, inlineFlex, itemsCenter, justifyCenter, outline, rounded, noPadding, noBorder, noRing, noShadow, noShrink, noTransition, wFit |
 | **Checkbox** | md, primary, border, rounded, filled, focusVisible, cursorPointer |
-| **Label** | sm, flex, gap, inherit, medium |
+| **Label** | sm, flex, column, itemsStart, gap, inherit, medium (use `row` for inline controls like Checkbox) |
 | **Modal** | md, wFull, flex, column, overflowAuto, relative, noPadding, gap, rounded, shadow, primary, outline |
 | **Container** | md, wFull, flex, column, itemsCenter, gap, noPadding, outline, sharp |
 | **Section** | md, wFull, flex, column, itemsStart, gap, padding, noBorder, noRing, noShadow, outline, sharp, responsive |

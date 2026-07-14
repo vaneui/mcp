@@ -5,29 +5,15 @@ sourceUrl: https://github.com/vaneui/vaneui/blob/main/src/components/ui/typograp
 since: 0.9.0
 ---
 
-Renders a subsection heading (`<h3>` by default) to establish a semantic hierarchy on the page. Use Title for headings inside a section. Pair it with `PageTitle` (`<h1>`) for the page heading and `SectionTitle` (`<h2>`) for major section headings.
+## Basic usage
 
-## Basic Title
-
-A heading component (renders as `<h3>`) for subsection headings. Defaults to `semibold` weight, `heading` font family, and left-aligned text.
+Title renders an `<h3>` heading for subsection headings. It defaults to `semibold` weight, `heading` font family, and left-aligned text.
 
 ```tsx demo
 <Title>Subsection Heading</Title>
 ```
 
-## Title vs PageTitle vs SectionTitle
-
-Three heading components for a clean semantic hierarchy. Use them together so the document outline matches the visual hierarchy.
-
-```tsx demo
-<Col>
-  <PageTitle>Page Heading (h1)</PageTitle>
-  <SectionTitle>Section Heading (h2)</SectionTitle>
-  <Title>Subsection Heading (h3)</Title>
-</Col>
-```
-
-## Title sizes
+## Sizes
 
 Titles come in five sizes: `xs`, `sm`, `md` (default), `lg`, `xl`.
 
@@ -41,7 +27,7 @@ Titles come in five sizes: `xs`, `sm`, `md` (default), `lg`, `xl`.
 </Col>
 ```
 
-## Title appearances
+## Appearances
 
 By default, Title uses the `inherit` appearance: it inherits color from its parent. Use explicit appearances like `primary`, `secondary`, `success`, `danger`, `warning`, `info` to override.
 
@@ -53,6 +39,18 @@ By default, Title uses the `inherit` appearance: it inherits color from its pare
   <Title warning>Warning Title</Title>
   <Title danger>Danger Title</Title>
   <Title info>Info Title</Title>
+</Col>
+```
+
+## Title vs PageTitle vs SectionTitle
+
+Three heading components for a clean semantic hierarchy. Use them together so the document outline matches the visual hierarchy.
+
+```tsx demo
+<Col>
+  <PageTitle>Page Heading (h1)</PageTitle>
+  <SectionTitle>Section Heading (h2)</SectionTitle>
+  <Title>Subsection Heading (h3)</Title>
 </Col>
 ```
 
@@ -83,7 +81,7 @@ Switch between `sans`, `serif`, and `mono` font families.
 </Col>
 ```
 
-## Italic Title
+## Italic
 
 Use the `italic` prop for italic emphasis.
 
@@ -91,7 +89,7 @@ Use the `italic` prop for italic emphasis.
 <Title italic>Italic Title</Title>
 ```
 
-## Uppercase Title
+## Uppercase
 
 Use the `uppercase` prop to render the title in all caps.
 
@@ -104,11 +102,11 @@ Use the `uppercase` prop to render the title in all caps.
 Title is left-aligned by default. Use `textCenter`, `textRight`, or `textJustify` to change alignment.
 
 ```tsx demo
-<div className="space-y-2 border-2 border-dashed border-gray-300 p-4">
-  <Title>Left Aligned (default)</Title>
-  <Title textCenter>Center Aligned</Title>
-  <Title textRight>Right Aligned</Title>
-</div>
+<Card>
+  <Title wFull>Left Aligned (default)</Title>
+  <Title wFull textCenter>Center Aligned</Title>
+  <Title wFull textRight>Right Aligned</Title>
+</Card>
 ```
 
 ## Custom HTML tag

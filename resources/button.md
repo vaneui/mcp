@@ -5,24 +5,9 @@ sourceUrl: https://github.com/vaneui/vaneui/blob/main/src/components/ui/button/B
 since: 0.9.0
 ---
 
-`Button` is the primary interactive control for triggering actions. It supports the full appearance, size, shape, and variant prop matrix and renders as an `<a>` when given an `href`.
-
-## When to use
-
-- Primary page actions, calls-to-action, and prominent affordances.
-- Form submissions (`type="submit"`) and form-level reset.
-- Confirming or dismissing dialogs and modals.
-- Toolbar actions where the label adds clarity beyond an icon alone.
-- Cross-page navigation when the action looks like a button (otherwise prefer `Link`).
-
-### When NOT to use
-
-- For inline navigation inside prose, prefer `Link`. It sits on the typography baseline.
-- For icon-only destructive actions inside a row or table cell, prefer `IconButton`.
-
 ## Basic usage
 
-Each `appearance` prop maps to a semantic color from the active theme.
+Button triggers an action when the user clicks it; each `appearance` prop maps to a semantic color from the active theme.
 
 ```tsx demo
 <Row flexWrap>
@@ -51,6 +36,45 @@ Buttons come in five sizes: `xs`, `sm` (default), `md`, `lg`, `xl`. Size drives 
   <Button md>md</Button>
   <Button lg>lg</Button>
   <Button xl>xl</Button>
+</Row>
+```
+
+## Variants
+
+Buttons can be styled as `filled`, `outline` (default), or `ghost`.
+
+```tsx demo
+<Col>
+  <Row flexWrap>
+    <Button filled primary>primary</Button>
+    <Button filled brand>brand</Button>
+    <Button filled accent>accent</Button>
+    <Button filled secondary>secondary</Button>
+  </Row>
+  <Row flexWrap>
+    <Button primary>primary</Button>
+    <Button brand>brand</Button>
+    <Button accent>accent</Button>
+    <Button secondary>secondary</Button>
+  </Row>
+  <Row flexWrap>
+    <Button ghost primary>primary</Button>
+    <Button ghost brand>brand</Button>
+    <Button ghost accent>accent</Button>
+    <Button ghost secondary>secondary</Button>
+  </Row>
+</Col>
+```
+
+## Shapes
+
+Button supports three border-radius styles: `rounded` (default), `pill`, and `sharp`.
+
+```tsx demo
+<Row flexWrap>
+  <Button pill>Subscribe</Button>
+  <Button sharp>Subscribe</Button>
+  <Button rounded>Subscribe</Button>
 </Row>
 ```
 
@@ -99,18 +123,6 @@ Buttons default to `semibold`. Use any of the standard weight props to override.
 </Row>
 ```
 
-## Border radius options
-
-Button supports three border-radius styles: `rounded` (default), `pill`, and `sharp`.
-
-```tsx demo
-<Row flexWrap>
-  <Button pill>Subscribe</Button>
-  <Button sharp>Subscribe</Button>
-  <Button rounded>Subscribe</Button>
-</Row>
-```
-
 ## As Link and disabled
 
 Pass `href` to render the button as an `<a>` for navigation. Use `disabled` to prevent interaction.
@@ -135,40 +147,11 @@ import { Button } from '@vaneui/ui';
 <Button href="/docs" tag={Link}>Documentation</Button>
 ```
 
-## Variants
-
-Buttons can be styled as `filled`, `outline` (default), or `ghost`.
-
-```tsx demo
-<Col>
-  <Row flexWrap>
-    <Button filled primary>primary</Button>
-    <Button filled brand>brand</Button>
-    <Button filled accent>accent</Button>
-    <Button filled secondary>secondary</Button>
-  </Row>
-  <Row flexWrap>
-    <Button primary>primary</Button>
-    <Button brand>brand</Button>
-    <Button accent>accent</Button>
-    <Button secondary>secondary</Button>
-  </Row>
-  <Row flexWrap>
-    <Button ghost primary>primary</Button>
-    <Button ghost brand>brand</Button>
-    <Button ghost accent>accent</Button>
-    <Button ghost secondary>secondary</Button>
-  </Row>
-</Col>
-```
-
 ## Customizing
 
 Set app-wide Button defaults with `ThemeProvider`'s `themeDefaults`:
 
-```tsx
-import { ThemeProvider, Button } from '@vaneui/ui';
-
+```tsx demo
 <ThemeProvider themeDefaults={{
   button: { main: { primary: true, lg: true, filled: true } },
 }}>
@@ -178,9 +161,7 @@ import { ThemeProvider, Button } from '@vaneui/ui';
 
 Add prop-conditional classes with `extraClasses`, applied whenever the matching boolean prop is active. For compound themes like Button, nest the prop-class map under the sub-theme name (`main` for Button's primary surface):
 
-```tsx
-import { ThemeProvider, Button } from '@vaneui/ui';
-
+```tsx demo
 <ThemeProvider extraClasses={{
   button: {
     main: {

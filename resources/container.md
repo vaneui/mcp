@@ -5,9 +5,7 @@ sourceUrl: https://github.com/vaneui/vaneui/blob/main/src/components/ui/containe
 since: 0.9.0
 ---
 
-Manages the main content area by centering it and applying a max-width. It ensures a consistent and readable layout across different screen sizes.
-
-## Basic container
+## Basic usage
 
 A centered, full-width wrapper that caps content at a readable max-width. `md`, `wFull`, `flex`, `column`, `itemsCenter`, `gap`, `noPadding`, `outline`, and `sharp` are defaults.
 
@@ -18,31 +16,31 @@ A centered, full-width wrapper that caps content at a readable max-width. `md`, 
 </Container>
 ```
 
-## Container sizes
+## Sizes
 
 Sizes (`xs`, `sm`, `md` default, `lg`, `xl`) control the max-width: `max-w-3xl` through `max-w-7xl`. Resize the viewport to see narrower containers stop growing before wider ones do.
 
 ```tsx demo
 <Col>
   <Container xs border>
-    <Text semibold>xs — max-w-3xl</Text>
+    <Text semibold>xs: max-w-3xl</Text>
   </Container>
   <Container sm border>
-    <Text semibold>sm — max-w-4xl</Text>
+    <Text semibold>sm: max-w-4xl</Text>
   </Container>
   <Container border>
-    <Text semibold>md (default) — max-w-5xl</Text>
+    <Text semibold>md (default): max-w-5xl</Text>
   </Container>
   <Container lg border>
-    <Text semibold>lg — max-w-6xl</Text>
+    <Text semibold>lg: max-w-6xl</Text>
   </Container>
   <Container xl border>
-    <Text semibold>xl — max-w-7xl</Text>
+    <Text semibold>xl: max-w-7xl</Text>
   </Container>
 </Col>
 ```
 
-## Container padding
+## Padding
 
 Container defaults to `noPadding`: the parent Section usually owns vertical rhythm. Pass `padding` to opt in to size-driven internal padding.
 
@@ -59,7 +57,7 @@ Container defaults to `noPadding`: the parent Section usually owns vertical rhyt
 </Col>
 ```
 
-## Container appearances
+## Appearances
 
 Containers support color appearances: `primary`, `secondary`, `success`, `danger`, etc.
 
@@ -76,7 +74,7 @@ Containers support color appearances: `primary`, `secondary`, `success`, `danger
 </Col>
 ```
 
-## Container variants
+## Variants
 
 Use `filled` for solid backgrounds. `outline` is the default. Add `shadow` for elevation.
 
@@ -97,7 +95,7 @@ Use `filled` for solid backgrounds. `outline` is the default. Add `shadow` for e
 </Col>
 ```
 
-## Container shapes
+## Shapes
 
 Containers support different border radius styles. `sharp` is the default (no radius).
 

@@ -5,8 +5,6 @@ sourceUrl: https://github.com/vaneui/vaneui/blob/main/src/components/ui/iconButt
 since: 0.9.0
 ---
 
-A square icon-only button with customizable appearance, size, and shape. Supports loading state and renders as an `<a>` when given an `href`. Always provide `aria-label` for accessibility.
-
 ## Basic usage
 
 Drop an icon directly inside the `IconButton`. Each `appearance` prop maps to a semantic color from the active theme.
@@ -24,7 +22,7 @@ Drop an icon directly inside the `IconButton`. Each `appearance` prop maps to a 
 
 ## Sizes
 
-IconButton supports five sizes: `xs`, `sm`, `md` (default), `lg`, `xl`. Size drives the square aspect ratio, padding, and border-radius simultaneously via CSS variables.
+IconButton supports five sizes: `xs`, `sm` (default), `md`, `lg`, `xl`. Size drives the button's dimensions, padding, and border-radius; the aspect ratio stays square at every size.
 
 ```tsx demo
 <Row flexWrap itemsEnd>
@@ -37,7 +35,7 @@ IconButton supports five sizes: `xs`, `sm`, `md` (default), `lg`, `xl`. Size dri
     <Text sm secondary>sm</Text>
   </Col>
   <Col itemsCenter>
-    <IconButton><Star /></IconButton>
+    <IconButton md><Star /></IconButton>
     <Text sm secondary>md</Text>
   </Col>
   <Col itemsCenter>
@@ -126,21 +124,21 @@ import { Settings } from 'react-feather';
 
 Set `loading` to show a spinner and auto-disable the button.
 
-```tsx
+```tsx demo
 const [loading, setLoading] = useState(false);
 
-<IconButton loading={loading} onClick={() => setLoading(true)}>
-  <Star />
-</IconButton>
+return (
+  <IconButton loading={loading} onClick={() => setLoading(true)}>
+    <Star />
+  </IconButton>
+);
 ```
 
 ## Customizing
 
 Set app-wide IconButton defaults with `ThemeProvider`'s `themeDefaults`:
 
-```tsx
-import { ThemeProvider, IconButton } from '@vaneui/ui';
-
+```tsx demo
 <ThemeProvider themeDefaults={{
   iconButton: { secondary: true, pill: true, lg: true },
 }}>

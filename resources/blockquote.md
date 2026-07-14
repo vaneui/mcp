@@ -5,17 +5,29 @@ sourceUrl: https://github.com/vaneui/vaneui/blob/main/src/components/ui/typograp
 since: 0.9.0
 ---
 
-Displays quoted content as a semantic `<blockquote>` with a left border accent. Inherits appearance from the parent by default so it blends with themed containers.
-
 ## Basic usage
 
-A blockquote with attribution. The element renders as `<blockquote>` and inherits color from its surroundings.
+Blockquote displays quoted content, shown here with an attribution line. The element renders as `<blockquote>` and inherits color from its surroundings.
 
 ```tsx demo
 <Blockquote>
   <Text italic>The only way to do great work is to love what you do.</Text>
   <Text sm secondary> - Steve Jobs</Text>
 </Blockquote>
+```
+
+## Sizes
+
+Blockquote supports five sizes: `xs`, `sm`, `md` (default), `lg`, `xl`.
+
+```tsx demo
+<Col>
+  <Blockquote xs primary>Size xs: The best way to predict the future is to create it.</Blockquote>
+  <Blockquote sm primary>Size sm: The best way to predict the future is to create it.</Blockquote>
+  <Blockquote primary>Size md: The best way to predict the future is to create it.</Blockquote>
+  <Blockquote lg primary>Size lg: The best way to predict the future is to create it.</Blockquote>
+  <Blockquote xl primary>Size xl: The best way to predict the future is to create it.</Blockquote>
+</Col>
 ```
 
 ## Appearances
@@ -35,20 +47,6 @@ Apply appearance props to color the blockquote. The default is `inherit`, which 
 </Col>
 ```
 
-## Sizes
-
-Blockquote supports five sizes: `xs`, `sm`, `md` (default), `lg`, `xl`.
-
-```tsx demo
-<Col>
-  <Blockquote xs primary>Size xs: The best way to predict the future is to create it.</Blockquote>
-  <Blockquote sm primary>Size sm: The best way to predict the future is to create it.</Blockquote>
-  <Blockquote primary>Size md: The best way to predict the future is to create it.</Blockquote>
-  <Blockquote lg primary>Size lg: The best way to predict the future is to create it.</Blockquote>
-  <Blockquote xl primary>Size xl: The best way to predict the future is to create it.</Blockquote>
-</Col>
-```
-
 ## Italic
 
 Italic is not a default. Opt in with the `italic` prop for traditional quotation styling.
@@ -60,16 +58,18 @@ Italic is not a default. Opt in with the `italic` prop for traditional quotation
 </Col>
 ```
 
-## Variants
+## Source attribution
 
-Use `filled` for solid background blockquotes or `outline` (default) for the left-border accent style.
+Pass `cite` to set the native `<blockquote cite>` attribute and render a visible source line below the quote. `Blockquote` has a single visual style, the reading-direction-start accent border (the `outline` default); it does not paint a background, so wrap it in a `Card` or `Section` to place a quote on a colored surface.
 
 ```tsx demo
 <Col>
-  <Blockquote primary>Outline (default), with a left border accent.</Blockquote>
-  <Blockquote primary filled>Filled, solid background for emphasis.</Blockquote>
-  <Blockquote info>Outline info, informational note.</Blockquote>
-  <Blockquote info filled>Filled info, strong callout.</Blockquote>
+  <Blockquote primary cite="Ada Lovelace">
+    That brain of mine is something more than merely mortal, as time will show.
+  </Blockquote>
+  <Blockquote info cite="Alan Turing">
+    We can only see a short distance ahead, but we can see plenty there that needs to be done.
+  </Blockquote>
 </Col>
 ```
 

@@ -5,56 +5,12 @@ sourceUrl: https://github.com/vaneui/vaneui/blob/main/src/components/ui/label/La
 since: 0.9.0
 ---
 
-Renders a `<label>` for form controls. Pairs with `Input` and `Checkbox` to provide accessible field labels, with size automatically propagating to nested form elements.
-
-## When to use
-
-- Labelling text inputs, password fields, and other `Input` controls.
-- Wrapping a `Checkbox` so the label text becomes part of the click target.
-- Marking required fields, validation status, or hint text alongside a control.
-- Use `htmlFor` to associate a label with an external `Input` by `id`.
-
 ## Basic usage
 
 A `Label` defaults to `sm` size and `inherit` appearance, so it picks up text color from its surroundings.
 
 ```tsx demo
 <Label>Email address</Label>
-```
-
-## With Input
-
-Wrap an `Input` inside a `Label` to make the label clickable and associate them implicitly. No `htmlFor`/`id` wiring required.
-
-```tsx demo
-<Col noGap>
-  <Label>
-    Email
-    <Input placeholder="you@example.com" />
-  </Label>
-</Col>
-```
-
-## With Checkbox
-
-Place a `Checkbox` inside a `Label` so the label text expands the toggle's hit area.
-
-```tsx demo
-<Label>
-  <Checkbox />
-  Subscribe to product updates
-</Label>
-```
-
-## htmlFor association
-
-When the control lives outside the label, use the standard `htmlFor` attribute pointing at the input's `id`.
-
-```tsx demo
-<Col noGap>
-  <Label htmlFor="username">Username</Label>
-  <Input id="username" placeholder="Choose a username" />
-</Col>
 ```
 
 ## Sizes
@@ -89,6 +45,41 @@ Labels default to `inherit`: they take their color from the surrounding text. Se
   <Label info>info label</Label>
   <Label link>link label</Label>
 </Row>
+```
+
+## With Input
+
+Wrap an `Input` inside a `Label` to make the label clickable and associate them implicitly. No `htmlFor`/`id` wiring required.
+
+```tsx demo
+<Col noGap>
+  <Label>
+    Email
+    <Input placeholder="you@example.com" />
+  </Label>
+</Col>
+```
+
+## With Checkbox
+
+Place a `Checkbox` inside a `Label` so the label text expands the toggle's hit area. `Label` defaults to a stacked column layout, so add `row itemsCenter` to sit the checkbox inline with its text.
+
+```tsx demo
+<Label row itemsCenter>
+  <Checkbox />
+  Subscribe to product updates
+</Label>
+```
+
+## htmlFor association
+
+When the control lives outside the label, use the standard `htmlFor` attribute pointing at the input's `id`.
+
+```tsx demo
+<Col noGap>
+  <Label htmlFor="username">Username</Label>
+  <Input id="username" placeholder="Choose a username" />
+</Col>
 ```
 
 ## Font weights
@@ -127,11 +118,11 @@ When an `Input` or `Checkbox` is nested inside a `Label`, it automatically picks
 
 ```tsx demo
 <Col>
-  <Label xl>
+  <Label xl row itemsCenter>
     <Checkbox />
     Extra-large checkbox option
   </Label>
-  <Label lg>
+  <Label lg row itemsCenter>
     <Checkbox xs />
     Explicit <Code>xs</Code> checkbox overrides the <Code>lg</Code> label
   </Label>
@@ -145,7 +136,7 @@ Use appearances to indicate field status: `danger` for errors, `success` for val
 ```tsx demo
 <Col>
   <Col noGap>
-    <Label semibold>Username <Label danger>*</Label></Label>
+    <Label semibold>Username <Text tag="span" danger>*</Text></Label>
     <Input placeholder="Choose a username" />
   </Col>
   <Col noGap>

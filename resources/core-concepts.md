@@ -1,4 +1,4 @@
-VaneUI turns common design decisions into expressive, readable boolean props. Instead of memorizing property names and values, you compose intent: `primary`, `lg`, `outline`, `rounded`. The result is cleaner code, fewer decisions per component, and a smoother path from wireframe to production.
+VaneUI turns common design decisions into boolean props. Instead of memorizing property names and values, you compose intent: `primary`, `lg`, `outline`, `rounded`. This page covers the boolean props API, the three-layer component architecture, prop extraction priority, and the three-tier CSS variable system.
 
 ## Boolean props API
 
@@ -15,15 +15,15 @@ At its core, VaneUI uses **boolean props** instead of string enums for cleaner J
 Props are organized into **categories**:
 - **size**: `xs`, `sm`, `md`, `lg`, `xl`
 - **appearance**: `primary`, `brand`, `accent`, `secondary`, `tertiary`, `success`, `danger`, `warning`, `info`, `link`, `inherit`
-- **variant**: `filled`, `outline`
+- **variant**: `filled`, `outline`, `ghost`
 - **shape**: `rounded`, `pill`, `sharp`
 - **typography**: `sans`, `serif`, `mono`, `semibold`, `bold`, etc.
 - **layout**: `flex`, `column`, `itemsCenter`, `justifyBetween`, etc.
 - **inheritance**: `inheritSize`, `inheritColor`, `inheritBg`, `inheritBorder` (and `noInherit*` toggles)
 
-Typography components (Text, Title, SectionTitle, PageTitle), Label, List, and Divider default to `inherit`, which means they inherit colors from their parent element via CSS variable cascade rather than setting their own color. Inline components like Link, Code, Kbd, and Mark default to `inheritSize`. They inherit font-size from their parent while keeping their own appearance color.
+Typography components (Text, Title, SectionTitle, PageTitle, Blockquote), Label, List, and Divider default to `inherit`, which means they inherit colors from their parent element via CSS variable cascade rather than setting their own color. Link and Mark default to `inheritSize`, so they inherit font-size from their parent while keeping their own appearance color; Code and Kbd achieve the same effect through em-relative geometry.
 
-## How components work
+## Three-layer component architecture
 
 VaneUI components follow a three-layer architecture:
 
@@ -34,7 +34,7 @@ Each component gets its theme from `ThemeContext` via `useTheme()` and passes pr
 The `ComponentTheme` class orchestrates class generation. It walks a tree of `BaseTheme` subclasses (like `FontSizeTheme`, `RadiusTheme`) that each generate specific CSS classes based on the active props.
 
 ### Layer 3: CSS variables
-Components output **data attributes** (`data-size`, `data-appearance`, `data-variant`) that CSS rules in `vars.css` use to set CSS variables. These variables are then consumed by Tailwind utility classes.
+Components output **data attributes** (`data-size`, `data-appearance`, `data-variant`) that CSS rules in `rules.css` use to set CSS variables. These variables are then consumed by Tailwind utility classes.
 
 ## Prop extraction
 
@@ -82,7 +82,6 @@ Set by component class based on `data-size`:
 .vane-button[data-size="md"] {
   --fs-unit: 8;   /* Font size unit */
   --py-unit: 2;   /* Padding Y unit */
-  --br-unit: 2;   /* Border radius unit */
 }
 ```
 
@@ -111,7 +110,7 @@ Set by `data-variant` + `data-appearance` attributes:
 ## Mixing custom classes
 
 You can always add your own Tailwind classes via `className` to fine-tune any edge case:
-```tsx
+```tsx demo
 <Button primary lg filled className="hover:opacity-80 shadow-xl">
   Get started
 </Button>
@@ -133,7 +132,7 @@ Override colors globally or for any subtree:
 
 ### ThemeProvider defaults
 Set default prop values for all components, including overlay components (Overlay, Modal, Popup):
-```tsx
+```tsx demo
 <ThemeProvider themeDefaults={{
   button: { main: { pill: true, lg: true } }, // button is compound; defaults nest under `main`
   card: { main: { primary: true } }            // card is compound too
@@ -144,7 +143,7 @@ Set default prop values for all components, including overlay components (Overla
 
 ### Extra classes
 Add additional CSS classes based on active props:
-```tsx
+```tsx demo
 <ThemeProvider extraClasses={{
   button: { main: { primary: 'shadow-lg hover:shadow-xl' } }
 }}>
@@ -153,11 +152,11 @@ Add additional CSS classes based on active props:
 ```
 
 ### Theme override function
-For programmatic theme modifications:
+A function that receives the resolved theme and returns it modified. Unlike `themeDefaults` (which sets default props) and `extraClasses` (which adds classes keyed by active prop), it has direct access to the whole theme tree, including each component's always-on base classes:
 ```tsx
 <ThemeProvider themeOverride={(theme) => {
   // Modify base classes
-  theme.button.base += ' uppercase tracking-wide';
+  theme.button.main.base += ' uppercase tracking-wide';
   return theme;
 }}>
   <App />

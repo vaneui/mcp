@@ -5,20 +5,6 @@ sourceUrl: https://github.com/vaneui/vaneui/blob/main/src/components/ui/navLink/
 since: 0.9.0
 ---
 
-A navigation link for sidebars, nav menus, and headers. Supports active state, icons, and renders as `<a>` when `href` is provided, or `<button>` otherwise.
-
-## When to use
-
-- Sidebar navigation items (docs nav, app shell sidebar, settings menus).
-- Header navigation links that need an active-state indicator.
-- Vertical or horizontal nav menus where each item routes to a page or section.
-- On-page table-of-contents items (paired with `active` based on scroll position).
-
-### When NOT to use
-
-- For inline links inside prose: use `Link`, which sits on the typography baseline.
-- For primary calls-to-action: use `Button primary filled`.
-
 ## Basic usage
 
 NavLink renders as an `<a>` when `href` is provided. Defaults to `sm` size, `primary` appearance, `outline` variant, `wFull` and `textLeft` layout, ideal for stacking inside a sidebar `Col`.
@@ -31,9 +17,23 @@ NavLink renders as an `<a>` when `href` is provided. Defaults to `sm` size, `pri
 </Col>
 ```
 
+## Sizes
+
+NavLink supports five sizes: `xs`, `sm` (default), `md`, `lg`, `xl`. Size drives font-size, padding, gap, and border-radius simultaneously via CSS variables.
+
+```tsx demo
+<Col className="w-72">
+  <NavLink xs href="#"><Home size={12} /> XS NavLink</NavLink>
+  <NavLink href="#"><Home size={14} /> SM NavLink</NavLink>
+  <NavLink md href="#"><Home size={16} /> MD NavLink</NavLink>
+  <NavLink lg href="#"><Home size={18} /> LG NavLink</NavLink>
+  <NavLink xl href="#"><Home size={20} /> XL NavLink</NavLink>
+</Col>
+```
+
 ## Active state
 
-Use the `active` prop to indicate the current page. Active NavLinks get `aria-current="page"` and a `data-active` attribute for styling.
+Use the `active` prop to indicate the current page. Active NavLinks get a `data-active` attribute for styling; the `href` (anchor) form also gets `aria-current="page"` (the no-href button form omits it).
 
 ```tsx demo
 <Col className="w-64">
@@ -54,20 +54,6 @@ Drop an icon directly inside the NavLink. `gap` is on by default, so spacing is 
   <NavLink href="#" active><FileText size={16} /> Documents</NavLink>
   <NavLink href="#"><Users size={16} /> Team</NavLink>
   <NavLink href="#"><Settings size={16} /> Settings</NavLink>
-</Col>
-```
-
-## Sizes
-
-NavLink supports five sizes: `xs`, `sm` (default), `md`, `lg`, `xl`. Size drives font-size, padding, gap, and border-radius simultaneously via CSS variables.
-
-```tsx demo
-<Col className="w-72">
-  <NavLink xs href="#"><Home size={12} /> XS NavLink</NavLink>
-  <NavLink href="#"><Home size={14} /> SM NavLink</NavLink>
-  <NavLink md href="#"><Home size={16} /> MD NavLink</NavLink>
-  <NavLink lg href="#"><Home size={18} /> LG NavLink</NavLink>
-  <NavLink xl href="#"><Home size={20} /> XL NavLink</NavLink>
 </Col>
 ```
 
@@ -96,7 +82,7 @@ NavLinks default to `primary outline`. Use `filled` for solid backgrounds. Activ
 
 ## Disabled state
 
-Use `disabled` to prevent interaction. When `disabled` is combined with `href`, the anchor is replaced with a disabled `<button>` so the link cannot be followed.
+Use `disabled` to prevent interaction. When `disabled` is combined with `href`, the `href` is dropped and it renders as a non-navigable anchor (`role="link"`, `aria-disabled="true"`) that stays focusable but cannot be followed.
 
 ```tsx demo
 <Col className="w-64">
@@ -156,15 +142,18 @@ import { NavLink } from '@vaneui/ui';
 
 ## Customizing
 
-Set app-wide NavLink defaults with `ThemeProvider`'s `themeDefaults` and active-state styling with `extraClasses`:
+Set app-wide NavLink defaults with `ThemeProvider`'s `themeDefaults`. Style the active state by targeting the emitted `data-active` attribute in your own CSS: `extraClasses` keys apply only to category props, so an `active` key there has no effect.
 
-```tsx
-import { ThemeProvider, NavLink } from '@vaneui/ui';
-
-<ThemeProvider
-  themeDefaults={{ navLink: { root: { md: true } } }}
-  extraClasses={{ navLink: { root: { active: 'bg-brand-50 text-brand-700 font-semibold' } } }}
->
+```tsx demo
+<ThemeProvider themeDefaults={{ navLink: { root: { md: true } } }}>
   <NavLink href="/docs" active>Docs</NavLink>
 </ThemeProvider>
+```
+
+```css
+.vane-nav-link[data-active] {
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-weight: 600;
+}
 ```

@@ -1,4 +1,4 @@
-The `themeOverride` property allows programmatic modifications to component themes. Use it to add base classes or change defaults for any subtree of your application.
+The `themeOverride` property is a function that receives the theme and returns it modified. Use it for changes the declarative options can't express, like adding base classes or changing defaults for any subtree of your application.
 
 ## Basic usage
 
@@ -6,9 +6,9 @@ The `themeOverride` property allows programmatic modifications to component them
 
 Add CSS classes that apply to all instances of a component:
 
-```tsx
+```tsx demo
 <ThemeProvider themeOverride={(theme) => {
-  // Compound themes are nested by sub-part — Button is `button.main`,
+  // Compound themes are nested by sub-part: Button is `button.main`,
   // Card is `card.main`. Single-target themes (Badge, Chip, etc.) sit at the top level.
   theme.button.main.base += ' uppercase tracking-wide';
   theme.card.main.base += ' shadow-sm';
@@ -23,7 +23,7 @@ Add CSS classes that apply to all instances of a component:
 
 Change the default boolean props for components:
 
-```tsx
+```tsx demo
 <ThemeProvider themeOverride={(theme) => {
   theme.button.main.defaults = {
     ...theme.button.main.defaults,
@@ -49,7 +49,7 @@ Note: For changing defaults, prefer using `themeDefaults` instead. It uses fewer
 
 Use `themeOverride` alongside `themeDefaults` and `extraClasses`:
 
-```tsx
+```tsx demo
 <ThemeProvider
   themeDefaults={{ button: { main: { filled: true } } }}
   themeOverride={(theme) => {
@@ -68,7 +68,7 @@ Use `themeOverride` alongside `themeDefaults` and `extraClasses`:
 
 Child overrides build on parent modifications:
 
-```tsx
+```tsx demo
 <ThemeProvider themeOverride={(theme) => {
   theme.button.main.base += ' uppercase';
   return theme;

@@ -5,24 +5,9 @@ sourceUrl: https://github.com/vaneui/vaneui/blob/main/src/components/ui/chip/Chi
 since: 0.9.0
 ---
 
-Compact, monospace-leaning token for representing tags, attributes, filter values, or other discrete entities inline with text. Chips default to `secondary` appearance, `outline` variant, `rounded` shape, and `mono` font, tuned for code-adjacent and metadata contexts.
-
-## When to use
-
-- Tags, labels, and keyword filters attached to a record.
-- Attribute or metadata pills inside cards and lists (versions, environments, IDs).
-- Removable selections inside an input or filter bar (combine with an inline icon).
-- Inline category markers in code samples and API tables. `mono` is the default.
-
-### When NOT to use
-
-- For status indicators that need uppercase emphasis, prefer `Badge` (pill, uppercase, semibold by default).
-- For triggering actions or navigation, prefer `Button` or `Link`.
-- For inline code snippets, prefer `Code`.
-
 ## Basic usage
 
-Each `appearance` prop maps to a semantic color from the active theme.
+Chip is a compact token for tags or attributes, and each `appearance` prop maps to a semantic color from the active theme.
 
 ```tsx demo
 <Row flexWrap>
@@ -95,12 +80,12 @@ Chips support three border-radius styles: `rounded` (default), `pill`, and `shar
 
 ## Font family
 
-Chips default to `mono` to fit code-adjacent contexts. Override with `sans` or `serif` when the surrounding copy calls for it.
+Chips default to `sans`. Override with `mono` for code-adjacent tokens or `serif` when the surrounding copy calls for it.
 
 ```tsx demo
 <Row flexWrap>
-  <Chip>v1.4.2</Chip>
-  <Chip sans>Active user</Chip>
+  <Chip mono>v1.4.2</Chip>
+  <Chip>Active user</Chip>
   <Chip serif>Editorial</Chip>
 </Row>
 ```
@@ -117,9 +102,9 @@ Drop an icon directly inside the chip. `gap` is on by default, so spacing is aut
 </Row>
 ```
 
-## Tag and filter lists
+## Tag lists
 
-The canonical chip pattern: a wrapping row of tokens that classify or filter content.
+The canonical chip pattern: a wrapping row of tokens that label or categorize content. Chip is presentational, so for clickable tags give it an `href` (see As Link) or wire your own `onClick`.
 
 ```tsx demo
 <Card>
@@ -136,14 +121,23 @@ The canonical chip pattern: a wrapping row of tokens that classify or filter con
 
 ## Removable chips
 
-Pair a chip with an inline close icon to represent removable selections inside a filter bar.
+Chip is presentational, so wire removal yourself: compose an `IconButton` as the close control and drop the tag from your own state. The trailing `IconButton` owns the click target and carries an accessible label.
 
 ```tsx demo
-<Row flexWrap>
-  <Chip>typescript <X/></Chip>
-  <Chip>react <X/></Chip>
-  <Chip danger filled>blocked <X/></Chip>
-</Row>
+const [tags, setTags] = React.useState(['typescript', 'react', 'tailwind']);
+return (
+  <Row flexWrap>
+    {tags.map(tag => (
+      <Chip key={tag}>
+        {tag}
+        <IconButton xs ghost aria-label={`Remove ${tag}`} onClick={() => setTags(tags.filter(t => t !== tag))}>
+          <X/>
+        </IconButton>
+      </Chip>
+    ))}
+    {tags.length === 0 && <Text secondary>All tags removed.</Text>}
+  </Row>
+);
 ```
 
 ## As Link
@@ -162,9 +156,7 @@ Pass `href` to render the chip as an `<a>`, useful for clickable tag listings. W
 
 Set app-wide Chip defaults with `ThemeProvider`'s `themeDefaults`:
 
-```tsx
-import { ThemeProvider, Chip } from '@vaneui/ui';
-
+```tsx demo
 <ThemeProvider themeDefaults={{
   chip: { brand: true, filled: true, pill: true },
 }}>
@@ -174,9 +166,7 @@ import { ThemeProvider, Chip } from '@vaneui/ui';
 
 Add prop-conditional classes with `extraClasses`, applied whenever the matching boolean prop is active:
 
-```tsx
-import { ThemeProvider, Chip } from '@vaneui/ui';
-
+```tsx demo
 <ThemeProvider extraClasses={{
   chip: {
     danger: 'animate-pulse',

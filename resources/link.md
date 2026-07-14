@@ -5,40 +5,29 @@ sourceUrl: https://github.com/vaneui/vaneui/blob/main/src/components/ui/typograp
 since: 0.9.0
 ---
 
-Renders an accessible and themeable anchor link for navigation. Use this to direct users to other pages or external websites.
+## Basic usage
 
-## When to use
-
-- In-text navigation that sits naturally on the typography baseline.
-- External links to documentation, repositories, or referenced sources.
-- Footer/secondary navigation where a button would be visually too heavy.
-- Cross-references inside prose where the action is "go somewhere," not "do something."
-
-### When NOT to use
-
-- For action buttons (submit, confirm, run): use `Button` instead.
-- For prominent calls-to-action: use `Button primary filled` for visual weight.
-
-## Customizing
-
-Set app-wide Link defaults with `ThemeProvider`'s `themeDefaults`:
-
-```tsx
-import { ThemeProvider, Link } from '@vaneui/ui';
-
-<ThemeProvider themeDefaults={{
-  link: { brand: true, noUnderline: true },
-}}>
-  <Link href="/docs">Read more</Link>
-</ThemeProvider>
-```
-
-## Basic Link
-
-A styled anchor element for navigation. Unlike other typography components which default to `inherit`, Link defaults to the `link` appearance (blue color) with `underline`, and ships with `focusVisible` on for a keyboard focus outline.
+Link renders a styled anchor element for navigation. Unlike other typography components which default to `inherit`, Link defaults to the `link` appearance (blue color) with `underline`, and ships with `focusVisible` on for a keyboard focus outline.
 
 ```tsx demo
 <Link href="#">Click here to learn more</Link>
+```
+
+## Appearances
+
+Links default to the `link` appearance (blue). Override with: `primary`, `brand`, `accent`, `secondary`, `tertiary`, `success`, `danger`, `warning`, `info`.
+
+```tsx demo
+<Row flexWrap>
+  <Link primary href="#">Primary</Link>
+  <Link brand href="#">Brand</Link>
+  <Link accent href="#">Accent</Link>
+  <Link secondary href="#">Secondary</Link>
+  <Link success href="#">Success</Link>
+  <Link danger href="#">Danger</Link>
+  <Link warning href="#">Warning</Link>
+  <Link info href="#">Info</Link>
+</Row>
 ```
 
 ## Size inherits from context
@@ -78,26 +67,9 @@ When `noInheritSize` is set (or the parent has no size context), choose an expli
 </Col>
 ```
 
-## Link appearances
+## Styling
 
-Links default to the `link` appearance (blue). Override with: `primary`, `brand`, `accent`, `secondary`, `tertiary`, `success`, `danger`, `warning`, `info`.
-
-```tsx demo
-<Row flexWrap>
-  <Link primary href="#">Primary</Link>
-  <Link brand href="#">Brand</Link>
-  <Link accent href="#">Accent</Link>
-  <Link secondary href="#">Secondary</Link>
-  <Link success href="#">Success</Link>
-  <Link danger href="#">Danger</Link>
-  <Link warning href="#">Warning</Link>
-  <Link info href="#">Info</Link>
-</Row>
-```
-
-## Link styling
-
-Use `bold`, `semibold`, `italic`, or `noUnderline` to remove the default underline.
+Use `bold`, `semibold`, or `italic` for emphasis, or `noUnderline` to remove the default underline.
 
 ```tsx demo
 <Col>
@@ -188,4 +160,16 @@ import NextLink from 'next/link';
 import { Link } from '@vaneui/ui';
 
 <Link href="/docs" tag={NextLink}>Documentation</Link>
+```
+
+## Customizing
+
+Set app-wide Link defaults with `ThemeProvider`'s `themeDefaults`:
+
+```tsx demo
+<ThemeProvider themeDefaults={{
+  link: { brand: true, noUnderline: true },
+}}>
+  <Link href="/docs">Read more</Link>
+</ThemeProvider>
 ```

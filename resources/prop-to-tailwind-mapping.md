@@ -154,10 +154,12 @@ If a Tailwind class has a prop equivalent, **use the prop**. Never put these cla
 
 | Prop | Tailwind Class |
 |------|---------------|
-| `textLeft` | `text-left` |
+| `textLeft` | `text-left` (physical) |
 | `textCenter` | `text-center` |
-| `textRight` | `text-right` |
+| `textRight` | `text-right` (physical) |
 | `textJustify` | `text-justify` |
+| `textStart` | `text-start` (logical — flips under `dir="rtl"`) |
+| `textEnd` | `text-end` (logical — flips under `dir="rtl"`) |
 
 ## Font Weight
 
@@ -246,6 +248,8 @@ If a Tailwind class has a prop equivalent, **use the prop**. Never put these cla
 | `borderR` | `border-r-[length:var(--bw)]` |
 | `borderX` | `border-x-[length:var(--bw)]` |
 | `borderY` | `border-y-[length:var(--bw)]` |
+| `borderS` | `border-s-[length:var(--bw)]` (logical inline-start — flips under `dir="rtl"`) |
+| `borderE` | `border-e-[length:var(--bw)]` (logical inline-end — flips under `dir="rtl"`) |
 | `noBorder` | (removes border) |
 
 ## Shape (Border Radius)
@@ -324,6 +328,8 @@ Gap and padding are **controlled by the size prop**, not by Tailwind utility cla
 
 ### UI components (`data-vane-type="ui"` — Button, Badge, Chip, Text, Title, etc.)
 
+Base curve (the fallback for any `ui` component that doesn't override it):
+
 | Prop | `--gap-unit` |
 |------|-------------:|
 | `xs` | 1 |
@@ -331,6 +337,18 @@ Gap and padding are **controlled by the size prop**, not by Tailwind utility cla
 | `md` (default) | 2 |
 | `lg` | 2.5 |
 | `xl` | 3 |
+
+**Role-aware icon gap.** The icon-to-label gap tracks component ROLE, not size alone (matching mainstream design systems), so two tiers override the base curve in `rules.css`. Controls run one notch looser (so the `sm` default lands at 8px instead of 6px); compact pills run about half the control gap (so the icon stays close to the label rather than a gap as wide as the pill's own padding):
+
+| Prop | Controls (Button, NavLink, MenuItem, MenuLabel) | Pills (Badge, Chip) |
+|------|-------------:|-------------:|
+| `xs` | 1.5 (6px) | 0.5 (2px) |
+| `sm` | 2 (8px) | 0.75 (3px) |
+| `md` | 2.5 (10px) | 1 (4px) |
+| `lg` | 3 (12px) | 1.25 (5px) |
+| `xl` | 3.5 (14px) | 1.5 (6px) |
+
+`Link` is a further exception: its inline start/end icons use `--gap × 0.5` (via margin) for tighter inline runs. `ListItem` uses the full base `--gap`.
 
 ### Rendered pixels
 
@@ -365,7 +383,7 @@ Asymmetric padding (`px-*` only, `py-*` only) has no VaneUI prop — `className=
 - Custom widths/heights beyond `full/fit/auto/screen` (e.g., `w-64`, `max-w-3xl`, `min-h-screen`)
 - Positioning offsets (`top-0`, `left-4`, `inset-0`, `z-10`)
 - Grid-specific utilities (`col-span-2`, `grid-cols-[...]`)
-- Margin (VaneUI has no margin props — use `className="mt-4"` etc.)
+- Inline-side margins or specific values — layout components and block typography have size-driven `margin`/`marginX`/`marginY`/`marginT`/`marginB`/`noMargin` props; for the inline sides (`ml-*`/`mr-*`) or an exact value use `className="ml-4"`
 - Gradients, backgrounds beyond appearance system
 - Hover/focus variants not covered by component state
 - `sr-only`, accessibility utilities

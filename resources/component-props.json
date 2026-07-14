@@ -465,7 +465,7 @@
     {
       "prop": "primary",
       "category": "Appearance",
-      "isDefault": true,
+      "isDefault": false,
       "description": "Primary color appearance (gray)",
       "isCommon": false
     },
@@ -486,7 +486,7 @@
     {
       "prop": "secondary",
       "category": "Appearance",
-      "isDefault": false,
+      "isDefault": true,
       "description": "Secondary color appearance (gray)",
       "isCommon": false
     },
@@ -586,6 +586,20 @@
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on top and bottom",
+      "isCommon": true
+    },
+    {
+      "prop": "borderS",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
+      "isCommon": true
+    },
+    {
+      "prop": "borderE",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
       "isCommon": true
     },
     {
@@ -766,7 +780,7 @@
     {
       "prop": "uppercase",
       "category": "Text Transform",
-      "isDefault": true,
+      "isDefault": false,
       "description": "Transform text to uppercase",
       "isCommon": false
     },
@@ -823,7 +837,7 @@
       "prop": "textLeft",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to left",
+      "description": "Align text to left (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -837,7 +851,7 @@
       "prop": "textRight",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to right",
+      "description": "Align text to right (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -845,6 +859,20 @@
       "category": "Text Align",
       "isDefault": false,
       "description": "Justify text",
+      "isCommon": false
+    },
+    {
+      "prop": "textStart",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction start (left in LTR, right in RTL)",
+      "isCommon": false
+    },
+    {
+      "prop": "textEnd",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction end (right in LTR, left in RTL)",
       "isCommon": false
     },
     {
@@ -1258,8 +1286,8 @@
     {
       "prop": "textLeft",
       "category": "Text Align",
-      "isDefault": true,
-      "description": "Align text to left",
+      "isDefault": false,
+      "description": "Align text to left (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -1273,7 +1301,7 @@
       "prop": "textRight",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to right",
+      "description": "Align text to right (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -1281,6 +1309,20 @@
       "category": "Text Align",
       "isDefault": false,
       "description": "Justify text",
+      "isCommon": false
+    },
+    {
+      "prop": "textStart",
+      "category": "Text Align",
+      "isDefault": true,
+      "description": "Align text to the reading-direction start (left in LTR, right in RTL)",
+      "isCommon": false
+    },
+    {
+      "prop": "textEnd",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction end (right in LTR, left in RTL)",
       "isCommon": false
     },
     {
@@ -1764,6 +1806,48 @@
       "category": "Appearance",
       "isDefault": true,
       "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
+      "isCommon": false
+    },
+    {
+      "prop": "margin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable margin on all sides",
+      "isCommon": false
+    },
+    {
+      "prop": "marginX",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only horizontal (inline) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginY",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only vertical (block) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginT",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only top margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginB",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only bottom margin",
+      "isCommon": false
+    },
+    {
+      "prop": "noMargin",
+      "category": "Margin",
+      "isDefault": true,
+      "description": "Disable margin (reset to 0)",
       "isCommon": false
     },
     {
@@ -2560,6 +2644,20 @@
       "isCommon": true
     },
     {
+      "prop": "borderS",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
+      "isCommon": true
+    },
+    {
+      "prop": "borderE",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
+      "isCommon": true
+    },
+    {
       "prop": "noBorder",
       "category": "Border",
       "isDefault": true,
@@ -2794,7 +2892,7 @@
       "prop": "textLeft",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to left",
+      "description": "Align text to left (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -2808,7 +2906,7 @@
       "prop": "textRight",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to right",
+      "description": "Align text to right (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -2816,6 +2914,20 @@
       "category": "Text Align",
       "isDefault": false,
       "description": "Justify text",
+      "isCommon": false
+    },
+    {
+      "prop": "textStart",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction start (left in LTR, right in RTL)",
+      "isCommon": false
+    },
+    {
+      "prop": "textEnd",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction end (right in LTR, left in RTL)",
       "isCommon": false
     },
     {
@@ -3069,7 +3181,7 @@
       "prop": "textLeft",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to left",
+      "description": "Align text to left (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -3083,7 +3195,7 @@
       "prop": "textRight",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to right",
+      "description": "Align text to right (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -3091,6 +3203,20 @@
       "category": "Text Align",
       "isDefault": false,
       "description": "Justify text",
+      "isCommon": false
+    },
+    {
+      "prop": "textStart",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction start (left in LTR, right in RTL)",
+      "isCommon": false
+    },
+    {
+      "prop": "textEnd",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction end (right in LTR, left in RTL)",
       "isCommon": false
     },
     {
@@ -3703,6 +3829,20 @@
       "isCommon": true
     },
     {
+      "prop": "borderS",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
+      "isCommon": true
+    },
+    {
+      "prop": "borderE",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
+      "isCommon": true
+    },
+    {
       "prop": "noBorder",
       "category": "Border",
       "isDefault": false,
@@ -3784,6 +3924,48 @@
       "category": "Padding",
       "isDefault": false,
       "description": "Disable internal padding",
+      "isCommon": false
+    },
+    {
+      "prop": "margin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable margin on all sides",
+      "isCommon": false
+    },
+    {
+      "prop": "marginX",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only horizontal (inline) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginY",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only vertical (block) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginT",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only top margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginB",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only bottom margin",
+      "isCommon": false
+    },
+    {
+      "prop": "noMargin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Disable margin (reset to 0)",
       "isCommon": false
     },
     {
@@ -4472,6 +4654,20 @@
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on top and bottom",
+      "isCommon": true
+    },
+    {
+      "prop": "borderS",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
+      "isCommon": true
+    },
+    {
+      "prop": "borderE",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
       "isCommon": true
     },
     {
@@ -5303,6 +5499,20 @@
       "isCommon": true
     },
     {
+      "prop": "borderS",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
+      "isCommon": true
+    },
+    {
+      "prop": "borderE",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
+      "isCommon": true
+    },
+    {
       "prop": "noBorder",
       "category": "Border",
       "isDefault": false,
@@ -5508,7 +5718,7 @@
     {
       "prop": "sans",
       "category": "Font Family",
-      "isDefault": false,
+      "isDefault": true,
       "description": "Sans-serif font family (default)",
       "isCommon": false
     },
@@ -5522,7 +5732,7 @@
     {
       "prop": "mono",
       "category": "Font Family",
-      "isDefault": true,
+      "isDefault": false,
       "description": "Monospace font family",
       "isCommon": false
     },
@@ -5537,7 +5747,7 @@
       "prop": "textLeft",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to left",
+      "description": "Align text to left (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -5551,7 +5761,7 @@
       "prop": "textRight",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to right",
+      "description": "Align text to right (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -5559,6 +5769,20 @@
       "category": "Text Align",
       "isDefault": false,
       "description": "Justify text",
+      "isCommon": false
+    },
+    {
+      "prop": "textStart",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction start (left in LTR, right in RTL)",
+      "isCommon": false
+    },
+    {
+      "prop": "textEnd",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction end (right in LTR, left in RTL)",
       "isCommon": false
     },
     {
@@ -6273,7 +6497,7 @@
     {
       "prop": "primary",
       "category": "Appearance",
-      "isDefault": true,
+      "isDefault": false,
       "description": "Primary color appearance (gray)",
       "isCommon": false
     },
@@ -6294,7 +6518,7 @@
     {
       "prop": "secondary",
       "category": "Appearance",
-      "isDefault": false,
+      "isDefault": true,
       "description": "Secondary color appearance (gray)",
       "isCommon": false
     },
@@ -6397,6 +6621,20 @@
       "isCommon": true
     },
     {
+      "prop": "borderS",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
+      "isCommon": true
+    },
+    {
+      "prop": "borderE",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
+      "isCommon": true
+    },
+    {
       "prop": "noBorder",
       "category": "Border",
       "isDefault": false,
@@ -6490,7 +6728,7 @@
     {
       "prop": "normal",
       "category": "Font Weight",
-      "isDefault": false,
+      "isDefault": true,
       "description": "Normal font weight (400)",
       "isCommon": false
     },
@@ -6504,7 +6742,7 @@
     {
       "prop": "semibold",
       "category": "Font Weight",
-      "isDefault": true,
+      "isDefault": false,
       "description": "Semibold font weight (600)",
       "isCommon": false
     },
@@ -6631,7 +6869,7 @@
       "prop": "textLeft",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to left",
+      "description": "Align text to left (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -6645,7 +6883,7 @@
       "prop": "textRight",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to right",
+      "description": "Align text to right (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -6653,6 +6891,20 @@
       "category": "Text Align",
       "isDefault": false,
       "description": "Justify text",
+      "isCommon": false
+    },
+    {
+      "prop": "textStart",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction start (left in LTR, right in RTL)",
+      "isCommon": false
+    },
+    {
+      "prop": "textEnd",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction end (right in LTR, left in RTL)",
       "isCommon": false
     },
     {
@@ -7393,6 +7645,48 @@
       "isCommon": false
     },
     {
+      "prop": "margin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable margin on all sides",
+      "isCommon": false
+    },
+    {
+      "prop": "marginX",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only horizontal (inline) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginY",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only vertical (block) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginT",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only top margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginB",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only bottom margin",
+      "isCommon": false
+    },
+    {
+      "prop": "noMargin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Disable margin (reset to 0)",
+      "isCommon": false
+    },
+    {
       "prop": "primary",
       "category": "Appearance",
       "isDefault": false,
@@ -7516,6 +7810,20 @@
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on top and bottom",
+      "isCommon": true
+    },
+    {
+      "prop": "borderS",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
+      "isCommon": true
+    },
+    {
+      "prop": "borderE",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
       "isCommon": true
     },
     {
@@ -7690,7 +7998,7 @@
       "prop": "textLeft",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to left",
+      "description": "Align text to left (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -7704,7 +8012,7 @@
       "prop": "textRight",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to right",
+      "description": "Align text to right (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -7712,6 +8020,20 @@
       "category": "Text Align",
       "isDefault": false,
       "description": "Justify text",
+      "isCommon": false
+    },
+    {
+      "prop": "textStart",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction start (left in LTR, right in RTL)",
+      "isCommon": false
+    },
+    {
+      "prop": "textEnd",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction end (right in LTR, left in RTL)",
       "isCommon": false
     },
     {
@@ -8221,6 +8543,48 @@
       "isCommon": false
     },
     {
+      "prop": "margin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable margin on all sides",
+      "isCommon": false
+    },
+    {
+      "prop": "marginX",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only horizontal (inline) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginY",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only vertical (block) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginT",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only top margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginB",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only bottom margin",
+      "isCommon": false
+    },
+    {
+      "prop": "noMargin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Disable margin (reset to 0)",
+      "isCommon": false
+    },
+    {
       "prop": "primary",
       "category": "Appearance",
       "isDefault": false,
@@ -8344,6 +8708,20 @@
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on top and bottom",
+      "isCommon": true
+    },
+    {
+      "prop": "borderS",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
+      "isCommon": true
+    },
+    {
+      "prop": "borderE",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
       "isCommon": true
     },
     {
@@ -8518,7 +8896,7 @@
       "prop": "textLeft",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to left",
+      "description": "Align text to left (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -8532,7 +8910,7 @@
       "prop": "textRight",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to right",
+      "description": "Align text to right (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -8540,6 +8918,20 @@
       "category": "Text Align",
       "isDefault": false,
       "description": "Justify text",
+      "isCommon": false
+    },
+    {
+      "prop": "textStart",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction start (left in LTR, right in RTL)",
+      "isCommon": false
+    },
+    {
+      "prop": "textEnd",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction end (right in LTR, left in RTL)",
       "isCommon": false
     }
   ],
@@ -9611,6 +10003,48 @@
       "isCommon": false
     },
     {
+      "prop": "margin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable margin on all sides",
+      "isCommon": false
+    },
+    {
+      "prop": "marginX",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only horizontal (inline) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginY",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only vertical (block) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginT",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only top margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginB",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only bottom margin",
+      "isCommon": false
+    },
+    {
+      "prop": "noMargin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Disable margin (reset to 0)",
+      "isCommon": false
+    },
+    {
       "prop": "primary",
       "category": "Appearance",
       "isDefault": false,
@@ -9734,6 +10168,20 @@
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on top and bottom",
+      "isCommon": true
+    },
+    {
+      "prop": "borderS",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
+      "isCommon": true
+    },
+    {
+      "prop": "borderE",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
       "isCommon": true
     },
     {
@@ -10348,6 +10796,48 @@
       "isCommon": false
     },
     {
+      "prop": "margin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable margin on all sides",
+      "isCommon": false
+    },
+    {
+      "prop": "marginX",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only horizontal (inline) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginY",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only vertical (block) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginT",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only top margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginB",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only bottom margin",
+      "isCommon": false
+    },
+    {
+      "prop": "noMargin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Disable margin (reset to 0)",
+      "isCommon": false
+    },
+    {
       "prop": "primary",
       "category": "Appearance",
       "isDefault": false,
@@ -10471,6 +10961,20 @@
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on top and bottom",
+      "isCommon": true
+    },
+    {
+      "prop": "borderS",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
+      "isCommon": true
+    },
+    {
+      "prop": "borderE",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
       "isCommon": true
     },
     {
@@ -11085,6 +11589,48 @@
       "isCommon": false
     },
     {
+      "prop": "margin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable margin on all sides",
+      "isCommon": false
+    },
+    {
+      "prop": "marginX",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only horizontal (inline) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginY",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only vertical (block) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginT",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only top margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginB",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only bottom margin",
+      "isCommon": false
+    },
+    {
+      "prop": "noMargin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Disable margin (reset to 0)",
+      "isCommon": false
+    },
+    {
       "prop": "primary",
       "category": "Appearance",
       "isDefault": false,
@@ -11208,6 +11754,20 @@
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on top and bottom",
+      "isCommon": true
+    },
+    {
+      "prop": "borderS",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
+      "isCommon": true
+    },
+    {
+      "prop": "borderE",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
       "isCommon": true
     },
     {
@@ -11822,6 +12382,48 @@
       "isCommon": false
     },
     {
+      "prop": "margin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable margin on all sides",
+      "isCommon": false
+    },
+    {
+      "prop": "marginX",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only horizontal (inline) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginY",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only vertical (block) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginT",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only top margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginB",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only bottom margin",
+      "isCommon": false
+    },
+    {
+      "prop": "noMargin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Disable margin (reset to 0)",
+      "isCommon": false
+    },
+    {
       "prop": "primary",
       "category": "Appearance",
       "isDefault": false,
@@ -11945,6 +12547,20 @@
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on top and bottom",
+      "isCommon": true
+    },
+    {
+      "prop": "borderS",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
+      "isCommon": true
+    },
+    {
+      "prop": "borderE",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
       "isCommon": true
     },
     {
@@ -12559,6 +13175,48 @@
       "isCommon": false
     },
     {
+      "prop": "margin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable margin on all sides",
+      "isCommon": false
+    },
+    {
+      "prop": "marginX",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only horizontal (inline) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginY",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only vertical (block) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginT",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only top margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginB",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only bottom margin",
+      "isCommon": false
+    },
+    {
+      "prop": "noMargin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Disable margin (reset to 0)",
+      "isCommon": false
+    },
+    {
       "prop": "primary",
       "category": "Appearance",
       "isDefault": false,
@@ -12682,6 +13340,20 @@
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on top and bottom",
+      "isCommon": true
+    },
+    {
+      "prop": "borderS",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
+      "isCommon": true
+    },
+    {
+      "prop": "borderE",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
       "isCommon": true
     },
     {
@@ -13261,6 +13933,20 @@
       "isCommon": true
     },
     {
+      "prop": "borderS",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
+      "isCommon": true
+    },
+    {
+      "prop": "borderE",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
+      "isCommon": true
+    },
+    {
       "prop": "noBorder",
       "category": "Border",
       "isDefault": true,
@@ -13391,14 +14077,14 @@
     {
       "prop": "sm",
       "category": "Size",
-      "isDefault": false,
+      "isDefault": true,
       "description": "Small size",
       "isCommon": false
     },
     {
       "prop": "md",
       "category": "Size",
-      "isDefault": true,
+      "isDefault": false,
       "description": "Medium size (default)",
       "isCommon": false
     },
@@ -13970,6 +14656,20 @@
       "isCommon": true
     },
     {
+      "prop": "borderS",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
+      "isCommon": true
+    },
+    {
+      "prop": "borderE",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
+      "isCommon": true
+    },
+    {
       "prop": "noBorder",
       "category": "Border",
       "isDefault": true,
@@ -14204,7 +14904,7 @@
       "prop": "textLeft",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to left",
+      "description": "Align text to left (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -14218,7 +14918,7 @@
       "prop": "textRight",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to right",
+      "description": "Align text to right (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -14226,6 +14926,20 @@
       "category": "Text Align",
       "isDefault": false,
       "description": "Justify text",
+      "isCommon": false
+    },
+    {
+      "prop": "textStart",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction start (left in LTR, right in RTL)",
+      "isCommon": false
+    },
+    {
+      "prop": "textEnd",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction end (right in LTR, left in RTL)",
       "isCommon": false
     },
     {
@@ -14392,7 +15106,7 @@
     {
       "prop": "wFit",
       "category": "Width",
-      "isDefault": false,
+      "isDefault": true,
       "description": "Set width to fit-content",
       "isCommon": true
     },
@@ -14963,6 +15677,20 @@
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on top and bottom",
+      "isCommon": true
+    },
+    {
+      "prop": "borderS",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
+      "isCommon": true
+    },
+    {
+      "prop": "borderE",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
       "isCommon": true
     },
     {
@@ -15752,6 +16480,20 @@
       "isCommon": true
     },
     {
+      "prop": "borderS",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
+      "isCommon": true
+    },
+    {
+      "prop": "borderE",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
+      "isCommon": true
+    },
+    {
       "prop": "noBorder",
       "category": "Border",
       "isDefault": false,
@@ -15986,7 +16728,7 @@
       "prop": "textLeft",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to left",
+      "description": "Align text to left (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -16000,7 +16742,7 @@
       "prop": "textRight",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to right",
+      "description": "Align text to right (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -16008,6 +16750,20 @@
       "category": "Text Align",
       "isDefault": false,
       "description": "Justify text",
+      "isCommon": false
+    },
+    {
+      "prop": "textStart",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction start (left in LTR, right in RTL)",
+      "isCommon": false
+    },
+    {
+      "prop": "textEnd",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction end (right in LTR, left in RTL)",
       "isCommon": false
     },
     {
@@ -16288,6 +17044,13 @@
       "category": "Disabled",
       "isDefault": false,
       "description": "Disable the component — reduces opacity, changes cursor to not-allowed, and prevents interaction",
+      "isCommon": false
+    },
+    {
+      "prop": "readOnly",
+      "category": "Read Only",
+      "isDefault": false,
+      "description": "Render the field read-only — mutes it (lighter than disabled) and sets a default cursor; the value stays selectable and submittable",
       "isCommon": false
     }
   ],
@@ -16757,7 +17520,7 @@
     {
       "prop": "primary",
       "category": "Appearance",
-      "isDefault": true,
+      "isDefault": false,
       "description": "Primary color appearance (gray)",
       "isCommon": false
     },
@@ -16778,7 +17541,7 @@
     {
       "prop": "secondary",
       "category": "Appearance",
-      "isDefault": false,
+      "isDefault": true,
       "description": "Secondary color appearance (gray)",
       "isCommon": false
     },
@@ -16878,6 +17641,20 @@
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on top and bottom",
+      "isCommon": true
+    },
+    {
+      "prop": "borderS",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
+      "isCommon": true
+    },
+    {
+      "prop": "borderE",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
       "isCommon": true
     },
     {
@@ -17115,7 +17892,7 @@
       "prop": "textLeft",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to left",
+      "description": "Align text to left (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -17129,7 +17906,7 @@
       "prop": "textRight",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to right",
+      "description": "Align text to right (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -17137,6 +17914,20 @@
       "category": "Text Align",
       "isDefault": false,
       "description": "Justify text",
+      "isCommon": false
+    },
+    {
+      "prop": "textStart",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction start (left in LTR, right in RTL)",
+      "isCommon": false
+    },
+    {
+      "prop": "textEnd",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction end (right in LTR, left in RTL)",
       "isCommon": false
     },
     {
@@ -17551,7 +18342,7 @@
       "prop": "textLeft",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to left",
+      "description": "Align text to left (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -17565,7 +18356,7 @@
       "prop": "textRight",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to right",
+      "description": "Align text to right (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -17573,6 +18364,20 @@
       "category": "Text Align",
       "isDefault": false,
       "description": "Justify text",
+      "isCommon": false
+    },
+    {
+      "prop": "textStart",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction start (left in LTR, right in RTL)",
+      "isCommon": false
+    },
+    {
+      "prop": "textEnd",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction end (right in LTR, left in RTL)",
       "isCommon": false
     },
     {
@@ -17676,7 +18481,7 @@
     {
       "prop": "itemsStart",
       "category": "Items",
-      "isDefault": false,
+      "isDefault": true,
       "description": "Align items to start (top/left)",
       "isCommon": true
     },
@@ -17690,7 +18495,7 @@
     {
       "prop": "itemsCenter",
       "category": "Items",
-      "isDefault": true,
+      "isDefault": false,
       "description": "Align items to center",
       "isCommon": true
     },
@@ -18026,7 +18831,7 @@
     {
       "prop": "column",
       "category": "Flex Direction",
-      "isDefault": false,
+      "isDefault": true,
       "description": "Flex direction column (vertical)",
       "isCommon": true
     },
@@ -18203,6 +19008,20 @@
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on top and bottom",
+      "isCommon": true
+    },
+    {
+      "prop": "borderS",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
+      "isCommon": true
+    },
+    {
+      "prop": "borderE",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
       "isCommon": true
     },
     {
@@ -18540,7 +19359,7 @@
       "prop": "textLeft",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to left",
+      "description": "Align text to left (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -18554,7 +19373,7 @@
       "prop": "textRight",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to right",
+      "description": "Align text to right (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -18562,6 +19381,20 @@
       "category": "Text Align",
       "isDefault": false,
       "description": "Justify text",
+      "isCommon": false
+    },
+    {
+      "prop": "textStart",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction start (left in LTR, right in RTL)",
+      "isCommon": false
+    },
+    {
+      "prop": "textEnd",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction end (right in LTR, left in RTL)",
       "isCommon": false
     },
     {
@@ -19048,6 +19881,48 @@
       "isCommon": false
     },
     {
+      "prop": "margin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable margin on all sides",
+      "isCommon": false
+    },
+    {
+      "prop": "marginX",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only horizontal (inline) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginY",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only vertical (block) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginT",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only top margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginB",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only bottom margin",
+      "isCommon": false
+    },
+    {
+      "prop": "noMargin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Disable margin (reset to 0)",
+      "isCommon": false
+    },
+    {
       "prop": "filled",
       "category": "Variant",
       "isDefault": false,
@@ -19249,6 +20124,20 @@
       "isDefault": false,
       "description": "Keep own text color; do not inherit from parent",
       "isCommon": false
+    },
+    {
+      "prop": "focusVisible",
+      "category": "Focus Visible",
+      "isDefault": true,
+      "description": "Enable focus-visible outline",
+      "isCommon": true
+    },
+    {
+      "prop": "noFocusVisible",
+      "category": "Focus Visible",
+      "isDefault": false,
+      "description": "Disable focus-visible outline",
+      "isCommon": true
     }
   ],
   "list": [
@@ -19417,7 +20306,7 @@
       "prop": "textLeft",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to left",
+      "description": "Align text to left (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -19431,7 +20320,7 @@
       "prop": "textRight",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to right",
+      "description": "Align text to right (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -19439,6 +20328,20 @@
       "category": "Text Align",
       "isDefault": false,
       "description": "Justify text",
+      "isCommon": false
+    },
+    {
+      "prop": "textStart",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction start (left in LTR, right in RTL)",
+      "isCommon": false
+    },
+    {
+      "prop": "textEnd",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction end (right in LTR, left in RTL)",
       "isCommon": false
     },
     {
@@ -20322,7 +21225,7 @@
       "prop": "textLeft",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to left",
+      "description": "Align text to left (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -20336,7 +21239,7 @@
       "prop": "textRight",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to right",
+      "description": "Align text to right (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -20344,6 +21247,20 @@
       "category": "Text Align",
       "isDefault": false,
       "description": "Justify text",
+      "isCommon": false
+    },
+    {
+      "prop": "textStart",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction start (left in LTR, right in RTL)",
+      "isCommon": false
+    },
+    {
+      "prop": "textEnd",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction end (right in LTR, left in RTL)",
       "isCommon": false
     },
     {
@@ -20848,97 +21765,6 @@
       "category": "Variant",
       "isDefault": false,
       "description": "Ghost variant - transparent background, no border, appearance-colored text, tinted hover background",
-      "isCommon": false
-    },
-    {
-      "prop": "cursorPointer",
-      "category": "Cursor",
-      "isDefault": false,
-      "description": "Pointer cursor - indicates clickable element",
-      "isCommon": true
-    },
-    {
-      "prop": "cursorDefault",
-      "category": "Cursor",
-      "isDefault": false,
-      "description": "Default cursor - standard arrow",
-      "isCommon": true
-    },
-    {
-      "prop": "cursorNotAllowed",
-      "category": "Cursor",
-      "isDefault": false,
-      "description": "Not-allowed cursor - indicates disabled state",
-      "isCommon": true
-    },
-    {
-      "prop": "cursorNone",
-      "category": "Cursor",
-      "isDefault": false,
-      "description": "No cursor - hides the cursor",
-      "isCommon": true
-    },
-    {
-      "prop": "cursorText",
-      "category": "Cursor",
-      "isDefault": false,
-      "description": "Text cursor - indicates selectable text",
-      "isCommon": true
-    },
-    {
-      "prop": "cursorMove",
-      "category": "Cursor",
-      "isDefault": false,
-      "description": "Move cursor - indicates draggable element",
-      "isCommon": true
-    },
-    {
-      "prop": "cursorWait",
-      "category": "Cursor",
-      "isDefault": false,
-      "description": "Wait cursor - indicates loading/processing",
-      "isCommon": true
-    },
-    {
-      "prop": "trackingTighter",
-      "category": "Letter Spacing",
-      "isDefault": false,
-      "description": "Tighter letter spacing (-0.05em)",
-      "isCommon": false
-    },
-    {
-      "prop": "trackingTight",
-      "category": "Letter Spacing",
-      "isDefault": false,
-      "description": "Tight letter spacing (-0.025em)",
-      "isCommon": false
-    },
-    {
-      "prop": "trackingNormal",
-      "category": "Letter Spacing",
-      "isDefault": false,
-      "description": "Normal letter spacing (0)",
-      "isCommon": false
-    },
-    {
-      "prop": "trackingWide",
-      "category": "Letter Spacing",
-      "isDefault": false,
-      "description": "Wide letter spacing (0.025em)",
-      "isCommon": false
-    },
-    {
-      "prop": "trackingWider",
-      "category": "Letter Spacing",
-      "isDefault": false,
-      "description": "Wider letter spacing (0.05em)",
-      "isCommon": false
-    },
-    {
-      "prop": "trackingWidest",
-      "category": "Letter Spacing",
-      "isDefault": false,
-      "description": "Widest letter spacing (0.1em)",
       "isCommon": false
     },
     {
@@ -21623,6 +22449,20 @@
       "isCommon": true
     },
     {
+      "prop": "borderS",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
+      "isCommon": true
+    },
+    {
+      "prop": "borderE",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
+      "isCommon": true
+    },
+    {
       "prop": "noBorder",
       "category": "Border",
       "isDefault": false,
@@ -21857,7 +22697,7 @@
       "prop": "textLeft",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to left",
+      "description": "Align text to left (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -21871,7 +22711,7 @@
       "prop": "textRight",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to right",
+      "description": "Align text to right (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -21879,6 +22719,20 @@
       "category": "Text Align",
       "isDefault": false,
       "description": "Justify text",
+      "isCommon": false
+    },
+    {
+      "prop": "textStart",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction start (left in LTR, right in RTL)",
+      "isCommon": false
+    },
+    {
+      "prop": "textEnd",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction end (right in LTR, left in RTL)",
       "isCommon": false
     },
     {
@@ -22717,6 +23571,20 @@
       "isCommon": true
     },
     {
+      "prop": "borderS",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
+      "isCommon": true
+    },
+    {
+      "prop": "borderE",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
+      "isCommon": true
+    },
+    {
       "prop": "noBorder",
       "category": "Border",
       "isDefault": true,
@@ -22951,7 +23819,7 @@
       "prop": "textLeft",
       "category": "Text Align",
       "isDefault": true,
-      "description": "Align text to left",
+      "description": "Align text to left (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -22965,7 +23833,7 @@
       "prop": "textRight",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to right",
+      "description": "Align text to right (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -22973,6 +23841,20 @@
       "category": "Text Align",
       "isDefault": false,
       "description": "Justify text",
+      "isCommon": false
+    },
+    {
+      "prop": "textStart",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction start (left in LTR, right in RTL)",
+      "isCommon": false
+    },
+    {
+      "prop": "textEnd",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction end (right in LTR, left in RTL)",
       "isCommon": false
     },
     {
@@ -23387,7 +24269,7 @@
       "prop": "textLeft",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to left",
+      "description": "Align text to left (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -23401,7 +24283,7 @@
       "prop": "textRight",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to right",
+      "description": "Align text to right (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -23409,6 +24291,20 @@
       "category": "Text Align",
       "isDefault": false,
       "description": "Justify text",
+      "isCommon": false
+    },
+    {
+      "prop": "textStart",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction start (left in LTR, right in RTL)",
+      "isCommon": false
+    },
+    {
+      "prop": "textEnd",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction end (right in LTR, left in RTL)",
       "isCommon": false
     },
     {
@@ -24039,6 +24935,20 @@
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on top and bottom",
+      "isCommon": true
+    },
+    {
+      "prop": "borderS",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
+      "isCommon": true
+    },
+    {
+      "prop": "borderE",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
       "isCommon": true
     },
     {
@@ -24828,6 +25738,20 @@
       "isCommon": true
     },
     {
+      "prop": "borderS",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
+      "isCommon": true
+    },
+    {
+      "prop": "borderE",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
+      "isCommon": true
+    },
+    {
       "prop": "noBorder",
       "category": "Border",
       "isDefault": true,
@@ -25062,7 +25986,7 @@
       "prop": "textLeft",
       "category": "Text Align",
       "isDefault": true,
-      "description": "Align text to left",
+      "description": "Align text to left (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -25076,7 +26000,7 @@
       "prop": "textRight",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to right",
+      "description": "Align text to right (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -25084,6 +26008,20 @@
       "category": "Text Align",
       "isDefault": false,
       "description": "Justify text",
+      "isCommon": false
+    },
+    {
+      "prop": "textStart",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction start (left in LTR, right in RTL)",
+      "isCommon": false
+    },
+    {
+      "prop": "textEnd",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction end (right in LTR, left in RTL)",
       "isCommon": false
     },
     {
@@ -26088,7 +27026,7 @@
       "prop": "textLeft",
       "category": "Text Align",
       "isDefault": true,
-      "description": "Align text to left",
+      "description": "Align text to left (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -26102,7 +27040,7 @@
       "prop": "textRight",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to right",
+      "description": "Align text to right (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -26110,6 +27048,20 @@
       "category": "Text Align",
       "isDefault": false,
       "description": "Justify text",
+      "isCommon": false
+    },
+    {
+      "prop": "textStart",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction start (left in LTR, right in RTL)",
+      "isCommon": false
+    },
+    {
+      "prop": "textEnd",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction end (right in LTR, left in RTL)",
       "isCommon": false
     },
     {
@@ -26596,6 +27548,48 @@
       "isCommon": false
     },
     {
+      "prop": "margin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable margin on all sides",
+      "isCommon": false
+    },
+    {
+      "prop": "marginX",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only horizontal (inline) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginY",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only vertical (block) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginT",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only top margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginB",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only bottom margin",
+      "isCommon": false
+    },
+    {
+      "prop": "noMargin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Disable margin (reset to 0)",
+      "isCommon": false
+    },
+    {
       "prop": "filled",
       "category": "Variant",
       "isDefault": false,
@@ -26965,7 +27959,7 @@
       "prop": "textLeft",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to left",
+      "description": "Align text to left (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -26979,7 +27973,7 @@
       "prop": "textRight",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to right",
+      "description": "Align text to right (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -26987,6 +27981,20 @@
       "category": "Text Align",
       "isDefault": false,
       "description": "Justify text",
+      "isCommon": false
+    },
+    {
+      "prop": "textStart",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction start (left in LTR, right in RTL)",
+      "isCommon": false
+    },
+    {
+      "prop": "textEnd",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction end (right in LTR, left in RTL)",
       "isCommon": false
     },
     {
@@ -27694,6 +28702,20 @@
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on top and bottom",
+      "isCommon": true
+    },
+    {
+      "prop": "borderS",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
+      "isCommon": true
+    },
+    {
+      "prop": "borderE",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
       "isCommon": true
     },
     {
@@ -28532,6 +29554,48 @@
       "isCommon": false
     },
     {
+      "prop": "margin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable margin on all sides",
+      "isCommon": false
+    },
+    {
+      "prop": "marginX",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only horizontal (inline) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginY",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only vertical (block) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginT",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only top margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginB",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only bottom margin",
+      "isCommon": false
+    },
+    {
+      "prop": "noMargin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Disable margin (reset to 0)",
+      "isCommon": false
+    },
+    {
       "prop": "primary",
       "category": "Appearance",
       "isDefault": false,
@@ -28655,6 +29719,20 @@
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on top and bottom",
+      "isCommon": true
+    },
+    {
+      "prop": "borderS",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
+      "isCommon": true
+    },
+    {
+      "prop": "borderE",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
       "isCommon": true
     },
     {
@@ -28808,7 +29886,7 @@
       "prop": "textLeft",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to left",
+      "description": "Align text to left (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -28822,7 +29900,7 @@
       "prop": "textRight",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to right",
+      "description": "Align text to right (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -28830,6 +29908,20 @@
       "category": "Text Align",
       "isDefault": false,
       "description": "Justify text",
+      "isCommon": false
+    },
+    {
+      "prop": "textStart",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction start (left in LTR, right in RTL)",
+      "isCommon": false
+    },
+    {
+      "prop": "textEnd",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction end (right in LTR, left in RTL)",
       "isCommon": false
     },
     {
@@ -29437,6 +30529,20 @@
       "isCommon": true
     },
     {
+      "prop": "borderS",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
+      "isCommon": true
+    },
+    {
+      "prop": "borderE",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
+      "isCommon": true
+    },
+    {
       "prop": "noBorder",
       "category": "Border",
       "isDefault": true,
@@ -29518,6 +30624,48 @@
       "category": "Padding",
       "isDefault": false,
       "description": "Disable internal padding",
+      "isCommon": false
+    },
+    {
+      "prop": "margin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable margin on all sides",
+      "isCommon": false
+    },
+    {
+      "prop": "marginX",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only horizontal (inline) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginY",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only vertical (block) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginT",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only top margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginB",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only bottom margin",
+      "isCommon": false
+    },
+    {
+      "prop": "noMargin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Disable margin (reset to 0)",
       "isCommon": false
     },
     {
@@ -29622,7 +30770,7 @@
       "prop": "textLeft",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to left",
+      "description": "Align text to left (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -29636,7 +30784,7 @@
       "prop": "textRight",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to right",
+      "description": "Align text to right (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -29644,6 +30792,20 @@
       "category": "Text Align",
       "isDefault": false,
       "description": "Justify text",
+      "isCommon": false
+    },
+    {
+      "prop": "textStart",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction start (left in LTR, right in RTL)",
+      "isCommon": false
+    },
+    {
+      "prop": "textEnd",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction end (right in LTR, left in RTL)",
       "isCommon": false
     },
     {
@@ -29827,7 +30989,7 @@
       "prop": "textLeft",
       "category": "Text Align",
       "isDefault": true,
-      "description": "Align text to left",
+      "description": "Align text to left (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -29841,7 +31003,7 @@
       "prop": "textRight",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to right",
+      "description": "Align text to right (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -29849,6 +31011,20 @@
       "category": "Text Align",
       "isDefault": false,
       "description": "Justify text",
+      "isCommon": false
+    },
+    {
+      "prop": "textStart",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction start (left in LTR, right in RTL)",
+      "isCommon": false
+    },
+    {
+      "prop": "textEnd",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction end (right in LTR, left in RTL)",
       "isCommon": false
     },
     {
@@ -30332,6 +31508,48 @@
       "category": "Appearance",
       "isDefault": true,
       "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
+      "isCommon": false
+    },
+    {
+      "prop": "margin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable margin on all sides",
+      "isCommon": false
+    },
+    {
+      "prop": "marginX",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only horizontal (inline) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginY",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only vertical (block) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginT",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only top margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginB",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only bottom margin",
+      "isCommon": false
+    },
+    {
+      "prop": "noMargin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Disable margin (reset to 0)",
       "isCommon": false
     },
     {
@@ -31051,6 +32269,48 @@
       "isCommon": false
     },
     {
+      "prop": "margin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable margin on all sides",
+      "isCommon": false
+    },
+    {
+      "prop": "marginX",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only horizontal (inline) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginY",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only vertical (block) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginT",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only top margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginB",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only bottom margin",
+      "isCommon": false
+    },
+    {
+      "prop": "noMargin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Disable margin (reset to 0)",
+      "isCommon": false
+    },
+    {
       "prop": "primary",
       "category": "Appearance",
       "isDefault": false,
@@ -31174,6 +32434,20 @@
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on top and bottom",
+      "isCommon": true
+    },
+    {
+      "prop": "borderS",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
+      "isCommon": true
+    },
+    {
+      "prop": "borderE",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
       "isCommon": true
     },
     {
@@ -31327,7 +32601,7 @@
       "prop": "textLeft",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to left",
+      "description": "Align text to left (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -31341,7 +32615,7 @@
       "prop": "textRight",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to right",
+      "description": "Align text to right (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -31349,6 +32623,20 @@
       "category": "Text Align",
       "isDefault": false,
       "description": "Justify text",
+      "isCommon": false
+    },
+    {
+      "prop": "textStart",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction start (left in LTR, right in RTL)",
+      "isCommon": false
+    },
+    {
+      "prop": "textEnd",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction end (right in LTR, left in RTL)",
       "isCommon": false
     },
     {
@@ -31532,7 +32820,7 @@
       "prop": "textLeft",
       "category": "Text Align",
       "isDefault": true,
-      "description": "Align text to left",
+      "description": "Align text to left (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -31546,7 +32834,7 @@
       "prop": "textRight",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to right",
+      "description": "Align text to right (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -31554,6 +32842,20 @@
       "category": "Text Align",
       "isDefault": false,
       "description": "Justify text",
+      "isCommon": false
+    },
+    {
+      "prop": "textStart",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction start (left in LTR, right in RTL)",
+      "isCommon": false
+    },
+    {
+      "prop": "textEnd",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction end (right in LTR, left in RTL)",
       "isCommon": false
     },
     {
@@ -32037,6 +33339,48 @@
       "category": "Appearance",
       "isDefault": true,
       "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
+      "isCommon": false
+    },
+    {
+      "prop": "margin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable margin on all sides",
+      "isCommon": false
+    },
+    {
+      "prop": "marginX",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only horizontal (inline) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginY",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only vertical (block) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginT",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only top margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginB",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only bottom margin",
+      "isCommon": false
+    },
+    {
+      "prop": "noMargin",
+      "category": "Margin",
+      "isDefault": true,
+      "description": "Disable margin (reset to 0)",
       "isCommon": false
     },
     {
@@ -32409,7 +33753,7 @@
       "prop": "textLeft",
       "category": "Text Align",
       "isDefault": true,
-      "description": "Align text to left",
+      "description": "Align text to left (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -32423,7 +33767,7 @@
       "prop": "textRight",
       "category": "Text Align",
       "isDefault": false,
-      "description": "Align text to right",
+      "description": "Align text to right (physical side, does not flip under RTL)",
       "isCommon": false
     },
     {
@@ -32431,6 +33775,20 @@
       "category": "Text Align",
       "isDefault": false,
       "description": "Justify text",
+      "isCommon": false
+    },
+    {
+      "prop": "textStart",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction start (left in LTR, right in RTL)",
+      "isCommon": false
+    },
+    {
+      "prop": "textEnd",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction end (right in LTR, left in RTL)",
       "isCommon": false
     },
     {
@@ -32914,6 +34272,48 @@
       "category": "Appearance",
       "isDefault": true,
       "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
+      "isCommon": false
+    },
+    {
+      "prop": "margin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable margin on all sides",
+      "isCommon": false
+    },
+    {
+      "prop": "marginX",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only horizontal (inline) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginY",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only vertical (block) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginT",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only top margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginB",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only bottom margin",
+      "isCommon": false
+    },
+    {
+      "prop": "noMargin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Disable margin (reset to 0)",
       "isCommon": false
     },
     {

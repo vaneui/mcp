@@ -5,45 +5,15 @@ sourceUrl: https://github.com/vaneui/vaneui/blob/main/src/components/ui/input/In
 since: 0.9.0
 ---
 
-Allows users to enter text, numbers, and other data. Inputs are essential form elements with support for various types, validation states, and styling options.
+## Basic usage
 
-## When to use
-
-- Text, email, password, number, search, URL, and tel form fields.
-- Inline editable values in tables, settings panels, or detail pages.
-- Filter/search bars where the value drives a list or query.
-- Pair with `Label` for accessible field labelling.
-
-### When NOT to use
-
-- For long-form text: use a `<textarea>` (autosize support not yet built into VaneUI).
-- For binary toggles: use `Checkbox`.
-- For one-of-many selection: use a select/radio pattern.
-
-## Customizing
-
-Set app-wide Input defaults with `ThemeProvider`'s `themeDefaults` and add a focus-ring colour with `extraClasses`:
-
-```tsx
-import { ThemeProvider, Input } from '@vaneui/ui';
-
-<ThemeProvider
-  themeDefaults={{ input: { lg: true, filled: true } }}
-  extraClasses={{ input: { primary: 'focus:ring-2 focus:ring-brand-500/40' } }}
->
-  <Input placeholder="Email" />
-</ThemeProvider>
-```
-
-## Basic input
-
-A styled text input field.
+Input renders a styled text field for entering text, numbers, and other data.
 
 ```tsx demo
 <Input placeholder="Enter text..." />
 ```
 
-## Input sizes
+## Sizes
 
 Inputs come in different sizes: `xs`, `sm`, `md` (default), `lg`, `xl`.
 
@@ -57,7 +27,38 @@ Inputs come in different sizes: `xs`, `sm`, `md` (default), `lg`, `xl`.
 </Col>
 ```
 
-## Input types
+## Variants
+
+Inputs are `outline` by default. Use `filled` for solid backgrounds.
+
+```tsx demo
+<Col>
+  <Row flexWrap>
+    <Input placeholder="Outline (default)" />
+    <Input success placeholder="Outline success" />
+    <Input danger placeholder="Outline danger" />
+  </Row>
+  <Row flexWrap>
+    <Input filled placeholder="Filled" />
+    <Input filled success placeholder="Filled success" />
+    <Input filled danger placeholder="Filled danger" />
+  </Row>
+</Col>
+```
+
+## Shapes
+
+Inputs support border radius styles: `rounded` (default), `pill`, and `sharp`.
+
+```tsx demo
+<Row flexWrap>
+  <Input placeholder="Rounded (default)" />
+  <Input pill placeholder="Pill shape" />
+  <Input sharp placeholder="Sharp corners" />
+</Row>
+```
+
+## Types
 
 The `type` HTML attribute passes through to the underlying `<input>` element.
 
@@ -71,26 +72,7 @@ The `type` HTML attribute passes through to the underlying `<input>` element.
 </Col>
 ```
 
-## Input variants
-
-Inputs are `outline` by default. Use `filled` for solid backgrounds.
-
-```tsx demo
-<Col>
-  <Row flexWrap>
-    <Input placeholder="Outline (default)" />
-    <Input success placeholder="Outline success" />
-    <Input danger placeholder="Outline danger" />
-  </Row>
-  <Row flexWrap>
-    <Input filled placeholder="Filled (default)" />
-    <Input filled success placeholder="Filled success" />
-    <Input filled danger placeholder="Filled danger" />
-  </Row>
-</Col>
-```
-
-## Input with labels
+## With labels
 
 Pair inputs with labels for accessibility and better UX. When the `Input` is nested inside a `Label`, it inherits the Label's size. Set it once on the Label.
 
@@ -107,19 +89,7 @@ Pair inputs with labels for accessibility and better UX. When the `Input` is nes
 </Col>
 ```
 
-## Input shapes
-
-Inputs support border radius styles: `rounded` (default), `pill`, and `sharp`.
-
-```tsx demo
-<Row flexWrap>
-  <Input placeholder="Rounded (default)" />
-  <Input pill placeholder="Pill shape" />
-  <Input sharp placeholder="Sharp corners" />
-</Row>
-```
-
-## Input states
+## States
 
 Different input states: disabled, readonly, and validation feedback. Use appearance props (`success`, `danger`) for visual feedback, or the `error` status prop for form validation state.
 
@@ -139,4 +109,17 @@ Different input states: disabled, readonly, and validation feedback. Use appeara
   <Input danger placeholder="Error state" />
   <Input error placeholder="Validation error (status)" />
 </Col>
+```
+
+## Customizing
+
+Set app-wide Input defaults with `ThemeProvider`'s `themeDefaults` and add a focus-ring colour with `extraClasses`:
+
+```tsx demo
+<ThemeProvider
+  themeDefaults={{ input: { lg: true, filled: true } }}
+  extraClasses={{ input: { primary: 'focus:ring-2 focus:ring-brand-500/40' } }}
+>
+  <Input placeholder="Email" />
+</ThemeProvider>
 ```
