@@ -26636,132 +26636,6 @@
       "isCommon": true
     },
     {
-      "prop": "primary",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Primary color appearance (gray)",
-      "isCommon": false
-    },
-    {
-      "prop": "brand",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Brand color appearance (blue)",
-      "isCommon": false
-    },
-    {
-      "prop": "accent",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Accent color appearance (rose)",
-      "isCommon": false
-    },
-    {
-      "prop": "secondary",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Secondary color appearance (gray)",
-      "isCommon": false
-    },
-    {
-      "prop": "tertiary",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Tertiary color appearance",
-      "isCommon": false
-    },
-    {
-      "prop": "success",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Success color appearance (green)",
-      "isCommon": false
-    },
-    {
-      "prop": "danger",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Danger color appearance (red)",
-      "isCommon": false
-    },
-    {
-      "prop": "warning",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Warning color appearance (amber)",
-      "isCommon": false
-    },
-    {
-      "prop": "info",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Info color appearance (cyan)",
-      "isCommon": false
-    },
-    {
-      "prop": "link",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Link color appearance (blue, for hyperlinks)",
-      "isCommon": false
-    },
-    {
-      "prop": "inherit",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
-      "isCommon": false
-    },
-    {
-      "prop": "shadow",
-      "category": "Shadow",
-      "isDefault": false,
-      "description": "Enable drop shadow",
-      "isCommon": true
-    },
-    {
-      "prop": "noShadow",
-      "category": "Shadow",
-      "isDefault": false,
-      "description": "Disable drop shadow",
-      "isCommon": true
-    },
-    {
-      "prop": "ring",
-      "category": "Ring",
-      "isDefault": false,
-      "description": "Enable focus ring",
-      "isCommon": true
-    },
-    {
-      "prop": "noRing",
-      "category": "Ring",
-      "isDefault": false,
-      "description": "Disable focus ring",
-      "isCommon": true
-    },
-    {
-      "prop": "filled",
-      "category": "Variant",
-      "isDefault": false,
-      "description": "Filled variant - solid background with contrasting text color",
-      "isCommon": false
-    },
-    {
-      "prop": "outline",
-      "category": "Variant",
-      "isDefault": false,
-      "description": "Outline variant - transparent background with border and colored text (default)",
-      "isCommon": false
-    },
-    {
-      "prop": "ghost",
-      "category": "Variant",
-      "isDefault": false,
-      "description": "Ghost variant - transparent background, no border, appearance-colored text, tinted hover background",
-      "isCommon": false
-    },
-    {
       "prop": "blur",
       "category": "Blur",
       "isDefault": false,
@@ -32651,6 +32525,351 @@
       "category": "Focus Visible",
       "isDefault": false,
       "description": "Disable focus-visible outline",
+      "isCommon": true
+    }
+  ],
+  "table": [
+    {
+      "prop": "xs",
+      "category": "Size",
+      "isDefault": false,
+      "description": "Extra small size",
+      "isCommon": false
+    },
+    {
+      "prop": "sm",
+      "category": "Size",
+      "isDefault": false,
+      "description": "Small size",
+      "isCommon": false
+    },
+    {
+      "prop": "md",
+      "category": "Size",
+      "isDefault": true,
+      "description": "Medium size (default)",
+      "isCommon": false
+    },
+    {
+      "prop": "lg",
+      "category": "Size",
+      "isDefault": false,
+      "description": "Large size",
+      "isCommon": false
+    },
+    {
+      "prop": "xl",
+      "category": "Size",
+      "isDefault": false,
+      "description": "Extra large size",
+      "isCommon": false
+    },
+    {
+      "prop": "primary",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Primary color appearance (gray)",
+      "isCommon": false
+    },
+    {
+      "prop": "brand",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Brand color appearance (blue)",
+      "isCommon": false
+    },
+    {
+      "prop": "accent",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Accent color appearance (rose)",
+      "isCommon": false
+    },
+    {
+      "prop": "secondary",
+      "category": "Appearance",
+      "isDefault": true,
+      "description": "Secondary color appearance (gray)",
+      "isCommon": false
+    },
+    {
+      "prop": "tertiary",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Tertiary color appearance",
+      "isCommon": false
+    },
+    {
+      "prop": "success",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Success color appearance (green)",
+      "isCommon": false
+    },
+    {
+      "prop": "danger",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Danger color appearance (red)",
+      "isCommon": false
+    },
+    {
+      "prop": "warning",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Warning color appearance (amber)",
+      "isCommon": false
+    },
+    {
+      "prop": "info",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Info color appearance (cyan)",
+      "isCommon": false
+    },
+    {
+      "prop": "link",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Link color appearance (blue, for hyperlinks)",
+      "isCommon": false
+    },
+    {
+      "prop": "inherit",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
+      "isCommon": false
+    },
+    {
+      "prop": "filled",
+      "category": "Variant",
+      "isDefault": false,
+      "description": "Filled variant - solid background with contrasting text color",
+      "isCommon": false
+    },
+    {
+      "prop": "outline",
+      "category": "Variant",
+      "isDefault": true,
+      "description": "Outline variant - transparent background with border and colored text (default)",
+      "isCommon": false
+    },
+    {
+      "prop": "ghost",
+      "category": "Variant",
+      "isDefault": false,
+      "description": "Ghost variant - transparent background, no border, appearance-colored text, tinted hover background",
+      "isCommon": false
+    },
+    {
+      "prop": "border",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on all sides",
+      "isCommon": true
+    },
+    {
+      "prop": "borderT",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on top",
+      "isCommon": true
+    },
+    {
+      "prop": "borderB",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on bottom",
+      "isCommon": true
+    },
+    {
+      "prop": "borderL",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on left",
+      "isCommon": true
+    },
+    {
+      "prop": "borderR",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on right",
+      "isCommon": true
+    },
+    {
+      "prop": "borderX",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on left and right",
+      "isCommon": true
+    },
+    {
+      "prop": "borderY",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on top and bottom",
+      "isCommon": true
+    },
+    {
+      "prop": "borderS",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
+      "isCommon": true
+    },
+    {
+      "prop": "borderE",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
+      "isCommon": true
+    },
+    {
+      "prop": "noBorder",
+      "category": "Border",
+      "isDefault": true,
+      "description": "Disable all borders",
+      "isCommon": true
+    },
+    {
+      "prop": "wFull",
+      "category": "Width",
+      "isDefault": true,
+      "description": "Set width to 100%",
+      "isCommon": true
+    },
+    {
+      "prop": "wFit",
+      "category": "Width",
+      "isDefault": false,
+      "description": "Set width to fit-content",
+      "isCommon": true
+    },
+    {
+      "prop": "wAuto",
+      "category": "Width",
+      "isDefault": false,
+      "description": "Set width to auto",
+      "isCommon": true
+    },
+    {
+      "prop": "wScreen",
+      "category": "Width",
+      "isDefault": false,
+      "description": "Set width to 100vw (viewport width), removes max-width constraint",
+      "isCommon": true
+    },
+    {
+      "prop": "margin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable margin on all sides",
+      "isCommon": false
+    },
+    {
+      "prop": "marginX",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only horizontal (inline) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginY",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only vertical (block) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginT",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only top margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginB",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only bottom margin",
+      "isCommon": false
+    },
+    {
+      "prop": "noMargin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Disable margin (reset to 0)",
+      "isCommon": false
+    },
+    {
+      "prop": "textLeft",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to left (physical side, does not flip under RTL)",
+      "isCommon": false
+    },
+    {
+      "prop": "textCenter",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to center",
+      "isCommon": false
+    },
+    {
+      "prop": "textRight",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to right (physical side, does not flip under RTL)",
+      "isCommon": false
+    },
+    {
+      "prop": "textJustify",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Justify text",
+      "isCommon": false
+    },
+    {
+      "prop": "textStart",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction start (left in LTR, right in RTL)",
+      "isCommon": false
+    },
+    {
+      "prop": "textEnd",
+      "category": "Text Align",
+      "isDefault": false,
+      "description": "Align text to the reading-direction end (right in LTR, left in RTL)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileHide",
+      "category": "Hide",
+      "isDefault": false,
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "isCommon": true
+    },
+    {
+      "prop": "tabletHide",
+      "category": "Hide",
+      "isDefault": false,
+      "description": "Hide element on tablet devices and below (max-tablet: 64rem)",
+      "isCommon": true
+    },
+    {
+      "prop": "desktopHide",
+      "category": "Hide",
+      "isDefault": false,
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "isCommon": true
+    },
+    {
+      "prop": "responsive",
+      "category": "Responsive",
+      "isDefault": false,
+      "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
       "isCommon": true
     }
   ],
