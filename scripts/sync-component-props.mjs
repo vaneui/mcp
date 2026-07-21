@@ -84,8 +84,8 @@ const COMMON_DOC_CATEGORIES = new Set([
 
 const COMPONENT_DIRS = [
   "basic-components",
+  "form-components",
   "layout-components",
-  "navigation-components",
   "overlay-components",
   "typography-components",
 ];
