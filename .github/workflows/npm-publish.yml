@@ -34,7 +34,8 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       # Generate pre-release version with timestamp and commit SHA, matching the
-      # @vaneui/ui alpha versioning scheme (0.1.0-alpha.<timestamp>.<sha>).
+      # shared VaneUI alpha versioning scheme (<base>-alpha.<timestamp>.<sha>).
+      # Base version is kept in lockstep with @vaneui/ui and @vaneui/md (0.9.0).
       - name: Generate Pre-release Version
         id: version
         run: |
