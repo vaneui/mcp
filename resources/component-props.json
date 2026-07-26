@@ -1030,6 +1030,34 @@
       "isCommon": true
     },
     {
+      "prop": "breakNormal",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Reset breaking - overflow-wrap and word-break normal",
+      "isCommon": false
+    },
+    {
+      "prop": "breakWords",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Break long words to prevent overflow - overflow-wrap: break-word",
+      "isCommon": false
+    },
+    {
+      "prop": "breakAll",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Break between any two characters - word-break: break-all",
+      "isCommon": false
+    },
+    {
+      "prop": "breakKeep",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Do not break CJK text - word-break: keep-all",
+      "isCommon": false
+    },
+    {
       "prop": "wFull",
       "category": "Width",
       "isDefault": false,
@@ -1960,6 +1988,76 @@
       "category": "Letter Spacing",
       "isDefault": false,
       "description": "Widest letter spacing (0.1em)",
+      "isCommon": false
+    },
+    {
+      "prop": "whitespaceNowrap",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "No wrap - text stays on single line",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespaceNormal",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Normal wrapping - default browser behavior",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePre",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve whitespace and line breaks",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePreWrap",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve whitespace, wrap text",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePreLine",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve line breaks, collapse spaces, wrap text",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespaceBreakSpaces",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Break words to prevent overflow",
+      "isCommon": true
+    },
+    {
+      "prop": "breakNormal",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Reset breaking - overflow-wrap and word-break normal",
+      "isCommon": false
+    },
+    {
+      "prop": "breakWords",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Break long words to prevent overflow - overflow-wrap: break-word",
+      "isCommon": false
+    },
+    {
+      "prop": "breakAll",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Break between any two characters - word-break: break-all",
+      "isCommon": false
+    },
+    {
+      "prop": "breakKeep",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Do not break CJK text - word-break: keep-all",
       "isCommon": false
     },
     {
@@ -3083,6 +3181,34 @@
       "isDefault": false,
       "description": "Break words to prevent overflow",
       "isCommon": true
+    },
+    {
+      "prop": "breakNormal",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Reset breaking - overflow-wrap and word-break normal",
+      "isCommon": false
+    },
+    {
+      "prop": "breakWords",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Break long words to prevent overflow - overflow-wrap: break-word",
+      "isCommon": false
+    },
+    {
+      "prop": "breakAll",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Break between any two characters - word-break: break-all",
+      "isCommon": false
+    },
+    {
+      "prop": "breakKeep",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Do not break CJK text - word-break: keep-all",
+      "isCommon": false
     },
     {
       "prop": "wFull",
@@ -5940,6 +6066,34 @@
       "isCommon": true
     },
     {
+      "prop": "breakNormal",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Reset breaking - overflow-wrap and word-break normal",
+      "isCommon": false
+    },
+    {
+      "prop": "breakWords",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Break long words to prevent overflow - overflow-wrap: break-word",
+      "isCommon": false
+    },
+    {
+      "prop": "breakAll",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Break between any two characters - word-break: break-all",
+      "isCommon": false
+    },
+    {
+      "prop": "breakKeep",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Do not break CJK text - word-break: keep-all",
+      "isCommon": false
+    },
+    {
       "prop": "wFull",
       "category": "Width",
       "isDefault": false,
@@ -7060,6 +7214,34 @@
       "isDefault": false,
       "description": "Break words to prevent overflow",
       "isCommon": true
+    },
+    {
+      "prop": "breakNormal",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Reset breaking - overflow-wrap and word-break normal",
+      "isCommon": false
+    },
+    {
+      "prop": "breakWords",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Break long words to prevent overflow - overflow-wrap: break-word",
+      "isCommon": false
+    },
+    {
+      "prop": "breakAll",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Break between any two characters - word-break: break-all",
+      "isCommon": false
+    },
+    {
+      "prop": "breakKeep",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Do not break CJK text - word-break: keep-all",
+      "isCommon": false
     },
     {
       "prop": "wFull",
@@ -11925,6 +12107,34 @@
       "isCommon": true
     },
     {
+      "prop": "breakNormal",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Reset breaking - overflow-wrap and word-break normal",
+      "isCommon": false
+    },
+    {
+      "prop": "breakWords",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Break long words to prevent overflow - overflow-wrap: break-word",
+      "isCommon": false
+    },
+    {
+      "prop": "breakAll",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Break between any two characters - word-break: break-all",
+      "isCommon": false
+    },
+    {
+      "prop": "breakKeep",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Do not break CJK text - word-break: keep-all",
+      "isCommon": false
+    },
+    {
       "prop": "wFull",
       "category": "Width",
       "isDefault": false,
@@ -14913,6 +15123,34 @@
       "isCommon": true
     },
     {
+      "prop": "breakNormal",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Reset breaking - overflow-wrap and word-break normal",
+      "isCommon": false
+    },
+    {
+      "prop": "breakWords",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Break long words to prevent overflow - overflow-wrap: break-word",
+      "isCommon": false
+    },
+    {
+      "prop": "breakAll",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Break between any two characters - word-break: break-all",
+      "isCommon": false
+    },
+    {
+      "prop": "breakKeep",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Do not break CJK text - word-break: keep-all",
+      "isCommon": false
+    },
+    {
       "prop": "wFull",
       "category": "Width",
       "isDefault": false,
@@ -16863,6 +17101,76 @@
       "isCommon": false
     },
     {
+      "prop": "whitespaceNowrap",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "No wrap - text stays on single line",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespaceNormal",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Normal wrapping - default browser behavior",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePre",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve whitespace and line breaks",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePreWrap",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve whitespace, wrap text",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePreLine",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve line breaks, collapse spaces, wrap text",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespaceBreakSpaces",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Break words to prevent overflow",
+      "isCommon": true
+    },
+    {
+      "prop": "breakNormal",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Reset breaking - overflow-wrap and word-break normal",
+      "isCommon": false
+    },
+    {
+      "prop": "breakWords",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Break long words to prevent overflow - overflow-wrap: break-word",
+      "isCommon": false
+    },
+    {
+      "prop": "breakAll",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Break between any two characters - word-break: break-all",
+      "isCommon": false
+    },
+    {
+      "prop": "breakKeep",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Do not break CJK text - word-break: keep-all",
+      "isCommon": false
+    },
+    {
       "prop": "wFull",
       "category": "Width",
       "isDefault": false,
@@ -17772,6 +18080,76 @@
       "category": "Variant",
       "isDefault": false,
       "description": "Ghost variant - transparent background, no border, appearance-colored text, tinted hover background",
+      "isCommon": false
+    },
+    {
+      "prop": "whitespaceNowrap",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "No wrap - text stays on single line",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespaceNormal",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Normal wrapping - default browser behavior",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePre",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve whitespace and line breaks",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePreWrap",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve whitespace, wrap text",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePreLine",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve line breaks, collapse spaces, wrap text",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespaceBreakSpaces",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Break words to prevent overflow",
+      "isCommon": true
+    },
+    {
+      "prop": "breakNormal",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Reset breaking - overflow-wrap and word-break normal",
+      "isCommon": false
+    },
+    {
+      "prop": "breakWords",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Break long words to prevent overflow - overflow-wrap: break-word",
+      "isCommon": false
+    },
+    {
+      "prop": "breakAll",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Break between any two characters - word-break: break-all",
+      "isCommon": false
+    },
+    {
+      "prop": "breakKeep",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Do not break CJK text - word-break: keep-all",
       "isCommon": false
     },
     {
@@ -18918,6 +19296,34 @@
       "isCommon": true
     },
     {
+      "prop": "breakNormal",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Reset breaking - overflow-wrap and word-break normal",
+      "isCommon": false
+    },
+    {
+      "prop": "breakWords",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Break long words to prevent overflow - overflow-wrap: break-word",
+      "isCommon": false
+    },
+    {
+      "prop": "breakAll",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Break between any two characters - word-break: break-all",
+      "isCommon": false
+    },
+    {
+      "prop": "breakKeep",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Do not break CJK text - word-break: keep-all",
+      "isCommon": false
+    },
+    {
       "prop": "wFull",
       "category": "Width",
       "isDefault": false,
@@ -20038,6 +20444,34 @@
       "isDefault": false,
       "description": "Break words to prevent overflow",
       "isCommon": true
+    },
+    {
+      "prop": "breakNormal",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Reset breaking - overflow-wrap and word-break normal",
+      "isCommon": false
+    },
+    {
+      "prop": "breakWords",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Break long words to prevent overflow - overflow-wrap: break-word",
+      "isCommon": false
+    },
+    {
+      "prop": "breakAll",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Break between any two characters - word-break: break-all",
+      "isCommon": false
+    },
+    {
+      "prop": "breakKeep",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Do not break CJK text - word-break: keep-all",
+      "isCommon": false
     },
     {
       "prop": "wFull",
@@ -22207,6 +22641,34 @@
       "isCommon": true
     },
     {
+      "prop": "breakNormal",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Reset breaking - overflow-wrap and word-break normal",
+      "isCommon": false
+    },
+    {
+      "prop": "breakWords",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Break long words to prevent overflow - overflow-wrap: break-word",
+      "isCommon": false
+    },
+    {
+      "prop": "breakAll",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Break between any two characters - word-break: break-all",
+      "isCommon": false
+    },
+    {
+      "prop": "breakKeep",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Do not break CJK text - word-break: keep-all",
+      "isCommon": false
+    },
+    {
       "prop": "wFull",
       "category": "Width",
       "isDefault": true,
@@ -23601,6 +24063,76 @@
       "category": "Letter Spacing",
       "isDefault": false,
       "description": "Widest letter spacing (0.1em)",
+      "isCommon": false
+    },
+    {
+      "prop": "whitespaceNowrap",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "No wrap - text stays on single line",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespaceNormal",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Normal wrapping - default browser behavior",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePre",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve whitespace and line breaks",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePreWrap",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve whitespace, wrap text",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePreLine",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve line breaks, collapse spaces, wrap text",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespaceBreakSpaces",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Break words to prevent overflow",
+      "isCommon": true
+    },
+    {
+      "prop": "breakNormal",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Reset breaking - overflow-wrap and word-break normal",
+      "isCommon": false
+    },
+    {
+      "prop": "breakWords",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Break long words to prevent overflow - overflow-wrap: break-word",
+      "isCommon": false
+    },
+    {
+      "prop": "breakAll",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Break between any two characters - word-break: break-all",
+      "isCommon": false
+    },
+    {
+      "prop": "breakKeep",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Do not break CJK text - word-break: keep-all",
       "isCommon": false
     },
     {
@@ -27567,6 +28099,76 @@
       "isCommon": false
     },
     {
+      "prop": "whitespaceNowrap",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "No wrap - text stays on single line",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespaceNormal",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Normal wrapping - default browser behavior",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePre",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve whitespace and line breaks",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePreWrap",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve whitespace, wrap text",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePreLine",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve line breaks, collapse spaces, wrap text",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespaceBreakSpaces",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Break words to prevent overflow",
+      "isCommon": true
+    },
+    {
+      "prop": "breakNormal",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Reset breaking - overflow-wrap and word-break normal",
+      "isCommon": false
+    },
+    {
+      "prop": "breakWords",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Break long words to prevent overflow - overflow-wrap: break-word",
+      "isCommon": false
+    },
+    {
+      "prop": "breakAll",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Break between any two characters - word-break: break-all",
+      "isCommon": false
+    },
+    {
+      "prop": "breakKeep",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Do not break CJK text - word-break: keep-all",
+      "isCommon": false
+    },
+    {
       "prop": "wFull",
       "category": "Width",
       "isDefault": false,
@@ -29743,6 +30345,76 @@
       "isCommon": false
     },
     {
+      "prop": "whitespaceNowrap",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "No wrap - text stays on single line",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespaceNormal",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Normal wrapping - default browser behavior",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePre",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve whitespace and line breaks",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePreWrap",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve whitespace, wrap text",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePreLine",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve line breaks, collapse spaces, wrap text",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespaceBreakSpaces",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Break words to prevent overflow",
+      "isCommon": true
+    },
+    {
+      "prop": "breakNormal",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Reset breaking - overflow-wrap and word-break normal",
+      "isCommon": false
+    },
+    {
+      "prop": "breakWords",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Break long words to prevent overflow - overflow-wrap: break-word",
+      "isCommon": false
+    },
+    {
+      "prop": "breakAll",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Break between any two characters - word-break: break-all",
+      "isCommon": false
+    },
+    {
+      "prop": "breakKeep",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Do not break CJK text - word-break: keep-all",
+      "isCommon": false
+    },
+    {
       "prop": "wFull",
       "category": "Width",
       "isDefault": false,
@@ -30673,6 +31345,76 @@
       "category": "Letter Spacing",
       "isDefault": false,
       "description": "Widest letter spacing (0.1em)",
+      "isCommon": false
+    },
+    {
+      "prop": "whitespaceNowrap",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "No wrap - text stays on single line",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespaceNormal",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Normal wrapping - default browser behavior",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePre",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve whitespace and line breaks",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePreWrap",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve whitespace, wrap text",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePreLine",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve line breaks, collapse spaces, wrap text",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespaceBreakSpaces",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Break words to prevent overflow",
+      "isCommon": true
+    },
+    {
+      "prop": "breakNormal",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Reset breaking - overflow-wrap and word-break normal",
+      "isCommon": false
+    },
+    {
+      "prop": "breakWords",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Break long words to prevent overflow - overflow-wrap: break-word",
+      "isCommon": false
+    },
+    {
+      "prop": "breakAll",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Break between any two characters - word-break: break-all",
+      "isCommon": false
+    },
+    {
+      "prop": "breakKeep",
+      "category": "Word Break",
+      "isDefault": false,
+      "description": "Do not break CJK text - word-break: keep-all",
       "isCommon": false
     },
     {
