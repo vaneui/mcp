@@ -428,13 +428,6 @@
       "isCommon": true
     },
     {
-      "prop": "reverse",
-      "category": "Reverse",
-      "isDefault": false,
-      "description": "Reverse the order of children",
-      "isCommon": true
-    },
-    {
       "prop": "flex1",
       "category": "Flex",
       "isDefault": false,
@@ -624,17 +617,17 @@
       "isCommon": true
     },
     {
-      "prop": "ring",
+      "prop": "insetRing",
       "category": "Ring",
       "isDefault": true,
-      "description": "Enable focus ring",
+      "description": "Enable the inset ring — emits ring-inset",
       "isCommon": true
     },
     {
-      "prop": "noRing",
+      "prop": "noInsetRing",
       "category": "Ring",
       "isDefault": false,
-      "description": "Disable focus ring",
+      "description": "Disable the inset ring",
       "isCommon": true
     },
     {
@@ -673,66 +666,66 @@
       "isCommon": false
     },
     {
-      "prop": "thin",
+      "prop": "fontThin",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Thin font weight (100)",
+      "description": "Thin font weight (100) — emits font-thin",
       "isCommon": false
     },
     {
-      "prop": "extralight",
+      "prop": "fontExtralight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra light font weight (200)",
+      "description": "Extra light font weight (200) — emits font-extralight",
       "isCommon": false
     },
     {
-      "prop": "light",
+      "prop": "fontLight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Light font weight (300)",
+      "description": "Light font weight (300) — emits font-light",
       "isCommon": false
     },
     {
-      "prop": "normal",
+      "prop": "fontNormal",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Normal font weight (400)",
+      "description": "Normal font weight (400) — emits font-normal",
       "isCommon": false
     },
     {
-      "prop": "medium",
+      "prop": "fontMedium",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Medium font weight (500)",
+      "description": "Medium font weight (500) — emits font-medium",
       "isCommon": false
     },
     {
-      "prop": "semibold",
+      "prop": "fontSemibold",
       "category": "Font Weight",
       "isDefault": true,
-      "description": "Semibold font weight (600)",
+      "description": "Semibold font weight (600) — emits font-semibold",
       "isCommon": false
     },
     {
-      "prop": "bold",
+      "prop": "fontBold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Bold font weight (700)",
+      "description": "Bold font weight (700) — emits font-bold",
       "isCommon": false
     },
     {
-      "prop": "extrabold",
+      "prop": "fontExtrabold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra bold font weight (800)",
+      "description": "Extra bold font weight (800) — emits font-extrabold",
       "isCommon": false
     },
     {
-      "prop": "black",
+      "prop": "fontBlack",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Black font weight (900)",
+      "description": "Black font weight (900) — emits font-black",
       "isCommon": false
     },
     {
@@ -767,7 +760,7 @@
       "prop": "noUnderline",
       "category": "Text Decoration",
       "isDefault": false,
-      "description": "Remove text decoration (no underline, strikethrough, etc.)",
+      "description": "Remove ALL text-decoration — underline, line-through, and overline (text-decoration: none)",
       "isCommon": false
     },
     {
@@ -806,31 +799,31 @@
       "isCommon": false
     },
     {
-      "prop": "sans",
+      "prop": "fontSans",
       "category": "Font Family",
       "isDefault": true,
-      "description": "Sans-serif font family (default)",
+      "description": "Sans-serif font family (default) — emits font-sans",
       "isCommon": false
     },
     {
-      "prop": "serif",
+      "prop": "fontSerif",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Serif font family",
+      "description": "Serif font family — emits font-serif",
       "isCommon": false
     },
     {
-      "prop": "mono",
+      "prop": "fontMono",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Monospace font family",
+      "description": "Monospace font family — emits font-mono",
       "isCommon": false
     },
     {
-      "prop": "heading",
+      "prop": "fontHeading",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Heading font family (defaults to sans, independently customizable via --font-heading CSS variable)",
+      "description": "Heading font family (defaults to sans, customizable via --font-heading) — emits font-heading",
       "isCommon": false
     },
     {
@@ -1026,7 +1019,7 @@
       "prop": "whitespaceBreakSpaces",
       "category": "Whitespace",
       "isDefault": false,
-      "description": "Break words to prevent overflow",
+      "description": "Preserve whitespace incl. trailing spaces, wrap text (white-space: break-spaces)",
       "isCommon": true
     },
     {
@@ -1151,66 +1144,66 @@
   ],
   "blockquote": [
     {
-      "prop": "thin",
+      "prop": "fontThin",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Thin font weight (100)",
+      "description": "Thin font weight (100) — emits font-thin",
       "isCommon": false
     },
     {
-      "prop": "extralight",
+      "prop": "fontExtralight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra light font weight (200)",
+      "description": "Extra light font weight (200) — emits font-extralight",
       "isCommon": false
     },
     {
-      "prop": "light",
+      "prop": "fontLight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Light font weight (300)",
+      "description": "Light font weight (300) — emits font-light",
       "isCommon": false
     },
     {
-      "prop": "normal",
+      "prop": "fontNormal",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Normal font weight (400)",
+      "description": "Normal font weight (400) — emits font-normal",
       "isCommon": false
     },
     {
-      "prop": "medium",
+      "prop": "fontMedium",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Medium font weight (500)",
+      "description": "Medium font weight (500) — emits font-medium",
       "isCommon": false
     },
     {
-      "prop": "semibold",
+      "prop": "fontSemibold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Semibold font weight (600)",
+      "description": "Semibold font weight (600) — emits font-semibold",
       "isCommon": false
     },
     {
-      "prop": "bold",
+      "prop": "fontBold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Bold font weight (700)",
+      "description": "Bold font weight (700) — emits font-bold",
       "isCommon": false
     },
     {
-      "prop": "extrabold",
+      "prop": "fontExtrabold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra bold font weight (800)",
+      "description": "Extra bold font weight (800) — emits font-extrabold",
       "isCommon": false
     },
     {
-      "prop": "black",
+      "prop": "fontBlack",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Black font weight (900)",
+      "description": "Black font weight (900) — emits font-black",
       "isCommon": false
     },
     {
@@ -1245,7 +1238,7 @@
       "prop": "noUnderline",
       "category": "Text Decoration",
       "isDefault": false,
-      "description": "Remove text decoration (no underline, strikethrough, etc.)",
+      "description": "Remove ALL text-decoration — underline, line-through, and overline (text-decoration: none)",
       "isCommon": false
     },
     {
@@ -1284,31 +1277,31 @@
       "isCommon": false
     },
     {
-      "prop": "sans",
+      "prop": "fontSans",
       "category": "Font Family",
       "isDefault": true,
-      "description": "Sans-serif font family (default)",
+      "description": "Sans-serif font family (default) — emits font-sans",
       "isCommon": false
     },
     {
-      "prop": "serif",
+      "prop": "fontSerif",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Serif font family",
+      "description": "Serif font family — emits font-serif",
       "isCommon": false
     },
     {
-      "prop": "mono",
+      "prop": "fontMono",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Monospace font family",
+      "description": "Monospace font family — emits font-mono",
       "isCommon": false
     },
     {
-      "prop": "heading",
+      "prop": "fontHeading",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Heading font family (defaults to sans, independently customizable via --font-heading CSS variable)",
+      "description": "Heading font family (defaults to sans, customizable via --font-heading) — emits font-heading",
       "isCommon": false
     },
     {
@@ -2029,7 +2022,7 @@
       "prop": "whitespaceBreakSpaces",
       "category": "Whitespace",
       "isDefault": false,
-      "description": "Break words to prevent overflow",
+      "description": "Preserve whitespace incl. trailing spaces, wrap text (white-space: break-spaces)",
       "isCommon": true
     },
     {
@@ -2581,13 +2574,6 @@
       "isCommon": true
     },
     {
-      "prop": "reverse",
-      "category": "Reverse",
-      "isDefault": false,
-      "description": "Reverse the order of children",
-      "isCommon": true
-    },
-    {
       "prop": "flex1",
       "category": "Flex",
       "isDefault": false,
@@ -2777,17 +2763,17 @@
       "isCommon": true
     },
     {
-      "prop": "ring",
+      "prop": "insetRing",
       "category": "Ring",
       "isDefault": true,
-      "description": "Enable focus ring",
+      "description": "Enable the inset ring — emits ring-inset",
       "isCommon": true
     },
     {
-      "prop": "noRing",
+      "prop": "noInsetRing",
       "category": "Ring",
       "isDefault": false,
-      "description": "Disable focus ring",
+      "description": "Disable the inset ring",
       "isCommon": true
     },
     {
@@ -2826,66 +2812,66 @@
       "isCommon": false
     },
     {
-      "prop": "thin",
+      "prop": "fontThin",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Thin font weight (100)",
+      "description": "Thin font weight (100) — emits font-thin",
       "isCommon": false
     },
     {
-      "prop": "extralight",
+      "prop": "fontExtralight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra light font weight (200)",
+      "description": "Extra light font weight (200) — emits font-extralight",
       "isCommon": false
     },
     {
-      "prop": "light",
+      "prop": "fontLight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Light font weight (300)",
+      "description": "Light font weight (300) — emits font-light",
       "isCommon": false
     },
     {
-      "prop": "normal",
+      "prop": "fontNormal",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Normal font weight (400)",
+      "description": "Normal font weight (400) — emits font-normal",
       "isCommon": false
     },
     {
-      "prop": "medium",
+      "prop": "fontMedium",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Medium font weight (500)",
+      "description": "Medium font weight (500) — emits font-medium",
       "isCommon": false
     },
     {
-      "prop": "semibold",
+      "prop": "fontSemibold",
       "category": "Font Weight",
       "isDefault": true,
-      "description": "Semibold font weight (600)",
+      "description": "Semibold font weight (600) — emits font-semibold",
       "isCommon": false
     },
     {
-      "prop": "bold",
+      "prop": "fontBold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Bold font weight (700)",
+      "description": "Bold font weight (700) — emits font-bold",
       "isCommon": false
     },
     {
-      "prop": "extrabold",
+      "prop": "fontExtrabold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra bold font weight (800)",
+      "description": "Extra bold font weight (800) — emits font-extrabold",
       "isCommon": false
     },
     {
-      "prop": "black",
+      "prop": "fontBlack",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Black font weight (900)",
+      "description": "Black font weight (900) — emits font-black",
       "isCommon": false
     },
     {
@@ -2920,7 +2906,7 @@
       "prop": "noUnderline",
       "category": "Text Decoration",
       "isDefault": false,
-      "description": "Remove text decoration (no underline, strikethrough, etc.)",
+      "description": "Remove ALL text-decoration — underline, line-through, and overline (text-decoration: none)",
       "isCommon": false
     },
     {
@@ -2959,31 +2945,31 @@
       "isCommon": false
     },
     {
-      "prop": "sans",
+      "prop": "fontSans",
       "category": "Font Family",
       "isDefault": true,
-      "description": "Sans-serif font family (default)",
+      "description": "Sans-serif font family (default) — emits font-sans",
       "isCommon": false
     },
     {
-      "prop": "serif",
+      "prop": "fontSerif",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Serif font family",
+      "description": "Serif font family — emits font-serif",
       "isCommon": false
     },
     {
-      "prop": "mono",
+      "prop": "fontMono",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Monospace font family",
+      "description": "Monospace font family — emits font-mono",
       "isCommon": false
     },
     {
-      "prop": "heading",
+      "prop": "fontHeading",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Heading font family (defaults to sans, independently customizable via --font-heading CSS variable)",
+      "description": "Heading font family (defaults to sans, customizable via --font-heading) — emits font-heading",
       "isCommon": false
     },
     {
@@ -3179,7 +3165,7 @@
       "prop": "whitespaceBreakSpaces",
       "category": "Whitespace",
       "isDefault": false,
-      "description": "Break words to prevent overflow",
+      "description": "Preserve whitespace incl. trailing spaces, wrap text (white-space: break-spaces)",
       "isCommon": true
     },
     {
@@ -3773,13 +3759,6 @@
       "isCommon": true
     },
     {
-      "prop": "reverse",
-      "category": "Reverse",
-      "isDefault": false,
-      "description": "Reverse the order of children",
-      "isCommon": true
-    },
-    {
       "prop": "flex1",
       "category": "Flex",
       "isDefault": false,
@@ -3990,17 +3969,17 @@
       "isCommon": true
     },
     {
-      "prop": "ring",
+      "prop": "insetRing",
       "category": "Ring",
       "isDefault": false,
-      "description": "Enable focus ring",
+      "description": "Enable the inset ring — emits ring-inset",
       "isCommon": true
     },
     {
-      "prop": "noRing",
+      "prop": "noInsetRing",
       "category": "Ring",
       "isDefault": false,
-      "description": "Disable focus ring",
+      "description": "Disable the inset ring",
       "isCommon": true
     },
     {
@@ -4818,17 +4797,17 @@
       "isCommon": true
     },
     {
-      "prop": "ring",
+      "prop": "insetRing",
       "category": "Ring",
       "isDefault": false,
-      "description": "Enable focus ring",
+      "description": "Enable the inset ring — emits ring-inset",
       "isCommon": true
     },
     {
-      "prop": "noRing",
+      "prop": "noInsetRing",
       "category": "Ring",
       "isDefault": true,
-      "description": "Disable focus ring",
+      "description": "Disable the inset ring",
       "isCommon": true
     },
     {
@@ -5464,13 +5443,6 @@
       "isCommon": true
     },
     {
-      "prop": "reverse",
-      "category": "Reverse",
-      "isDefault": false,
-      "description": "Reverse the order of children",
-      "isCommon": true
-    },
-    {
       "prop": "flex1",
       "category": "Flex",
       "isDefault": false,
@@ -5660,17 +5632,17 @@
       "isCommon": true
     },
     {
-      "prop": "ring",
+      "prop": "insetRing",
       "category": "Ring",
       "isDefault": true,
-      "description": "Enable focus ring",
+      "description": "Enable the inset ring — emits ring-inset",
       "isCommon": true
     },
     {
-      "prop": "noRing",
+      "prop": "noInsetRing",
       "category": "Ring",
       "isDefault": false,
-      "description": "Disable focus ring",
+      "description": "Disable the inset ring",
       "isCommon": true
     },
     {
@@ -5709,66 +5681,66 @@
       "isCommon": false
     },
     {
-      "prop": "thin",
+      "prop": "fontThin",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Thin font weight (100)",
+      "description": "Thin font weight (100) — emits font-thin",
       "isCommon": false
     },
     {
-      "prop": "extralight",
+      "prop": "fontExtralight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra light font weight (200)",
+      "description": "Extra light font weight (200) — emits font-extralight",
       "isCommon": false
     },
     {
-      "prop": "light",
+      "prop": "fontLight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Light font weight (300)",
+      "description": "Light font weight (300) — emits font-light",
       "isCommon": false
     },
     {
-      "prop": "normal",
+      "prop": "fontNormal",
       "category": "Font Weight",
       "isDefault": true,
-      "description": "Normal font weight (400)",
+      "description": "Normal font weight (400) — emits font-normal",
       "isCommon": false
     },
     {
-      "prop": "medium",
+      "prop": "fontMedium",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Medium font weight (500)",
+      "description": "Medium font weight (500) — emits font-medium",
       "isCommon": false
     },
     {
-      "prop": "semibold",
+      "prop": "fontSemibold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Semibold font weight (600)",
+      "description": "Semibold font weight (600) — emits font-semibold",
       "isCommon": false
     },
     {
-      "prop": "bold",
+      "prop": "fontBold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Bold font weight (700)",
+      "description": "Bold font weight (700) — emits font-bold",
       "isCommon": false
     },
     {
-      "prop": "extrabold",
+      "prop": "fontExtrabold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra bold font weight (800)",
+      "description": "Extra bold font weight (800) — emits font-extrabold",
       "isCommon": false
     },
     {
-      "prop": "black",
+      "prop": "fontBlack",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Black font weight (900)",
+      "description": "Black font weight (900) — emits font-black",
       "isCommon": false
     },
     {
@@ -5803,7 +5775,7 @@
       "prop": "noUnderline",
       "category": "Text Decoration",
       "isDefault": false,
-      "description": "Remove text decoration (no underline, strikethrough, etc.)",
+      "description": "Remove ALL text-decoration — underline, line-through, and overline (text-decoration: none)",
       "isCommon": false
     },
     {
@@ -5842,31 +5814,31 @@
       "isCommon": false
     },
     {
-      "prop": "sans",
+      "prop": "fontSans",
       "category": "Font Family",
       "isDefault": true,
-      "description": "Sans-serif font family (default)",
+      "description": "Sans-serif font family (default) — emits font-sans",
       "isCommon": false
     },
     {
-      "prop": "serif",
+      "prop": "fontSerif",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Serif font family",
+      "description": "Serif font family — emits font-serif",
       "isCommon": false
     },
     {
-      "prop": "mono",
+      "prop": "fontMono",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Monospace font family",
+      "description": "Monospace font family — emits font-mono",
       "isCommon": false
     },
     {
-      "prop": "heading",
+      "prop": "fontHeading",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Heading font family (defaults to sans, independently customizable via --font-heading CSS variable)",
+      "description": "Heading font family (defaults to sans, customizable via --font-heading) — emits font-heading",
       "isCommon": false
     },
     {
@@ -6062,7 +6034,7 @@
       "prop": "whitespaceBreakSpaces",
       "category": "Whitespace",
       "isDefault": false,
-      "description": "Break words to prevent overflow",
+      "description": "Preserve whitespace incl. trailing spaces, wrap text (white-space: break-spaces)",
       "isCommon": true
     },
     {
@@ -6614,13 +6586,6 @@
       "isCommon": true
     },
     {
-      "prop": "reverse",
-      "category": "Reverse",
-      "isDefault": false,
-      "description": "Reverse the order of children",
-      "isCommon": true
-    },
-    {
       "prop": "flex1",
       "category": "Flex",
       "isDefault": false,
@@ -6810,17 +6775,17 @@
       "isCommon": true
     },
     {
-      "prop": "ring",
+      "prop": "insetRing",
       "category": "Ring",
       "isDefault": false,
-      "description": "Enable focus ring",
+      "description": "Enable the inset ring — emits ring-inset",
       "isCommon": true
     },
     {
-      "prop": "noRing",
+      "prop": "noInsetRing",
       "category": "Ring",
       "isDefault": true,
-      "description": "Disable focus ring",
+      "description": "Disable the inset ring",
       "isCommon": true
     },
     {
@@ -6859,66 +6824,66 @@
       "isCommon": false
     },
     {
-      "prop": "thin",
+      "prop": "fontThin",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Thin font weight (100)",
+      "description": "Thin font weight (100) — emits font-thin",
       "isCommon": false
     },
     {
-      "prop": "extralight",
+      "prop": "fontExtralight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra light font weight (200)",
+      "description": "Extra light font weight (200) — emits font-extralight",
       "isCommon": false
     },
     {
-      "prop": "light",
+      "prop": "fontLight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Light font weight (300)",
+      "description": "Light font weight (300) — emits font-light",
       "isCommon": false
     },
     {
-      "prop": "normal",
+      "prop": "fontNormal",
       "category": "Font Weight",
       "isDefault": true,
-      "description": "Normal font weight (400)",
+      "description": "Normal font weight (400) — emits font-normal",
       "isCommon": false
     },
     {
-      "prop": "medium",
+      "prop": "fontMedium",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Medium font weight (500)",
+      "description": "Medium font weight (500) — emits font-medium",
       "isCommon": false
     },
     {
-      "prop": "semibold",
+      "prop": "fontSemibold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Semibold font weight (600)",
+      "description": "Semibold font weight (600) — emits font-semibold",
       "isCommon": false
     },
     {
-      "prop": "bold",
+      "prop": "fontBold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Bold font weight (700)",
+      "description": "Bold font weight (700) — emits font-bold",
       "isCommon": false
     },
     {
-      "prop": "extrabold",
+      "prop": "fontExtrabold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra bold font weight (800)",
+      "description": "Extra bold font weight (800) — emits font-extrabold",
       "isCommon": false
     },
     {
-      "prop": "black",
+      "prop": "fontBlack",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Black font weight (900)",
+      "description": "Black font weight (900) — emits font-black",
       "isCommon": false
     },
     {
@@ -6953,7 +6918,7 @@
       "prop": "noUnderline",
       "category": "Text Decoration",
       "isDefault": false,
-      "description": "Remove text decoration (no underline, strikethrough, etc.)",
+      "description": "Remove ALL text-decoration — underline, line-through, and overline (text-decoration: none)",
       "isCommon": false
     },
     {
@@ -6992,31 +6957,31 @@
       "isCommon": false
     },
     {
-      "prop": "sans",
+      "prop": "fontSans",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Sans-serif font family (default)",
+      "description": "Sans-serif font family (default) — emits font-sans",
       "isCommon": false
     },
     {
-      "prop": "serif",
+      "prop": "fontSerif",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Serif font family",
+      "description": "Serif font family — emits font-serif",
       "isCommon": false
     },
     {
-      "prop": "mono",
+      "prop": "fontMono",
       "category": "Font Family",
       "isDefault": true,
-      "description": "Monospace font family",
+      "description": "Monospace font family — emits font-mono",
       "isCommon": false
     },
     {
-      "prop": "heading",
+      "prop": "fontHeading",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Heading font family (defaults to sans, independently customizable via --font-heading CSS variable)",
+      "description": "Heading font family (defaults to sans, customizable via --font-heading) — emits font-heading",
       "isCommon": false
     },
     {
@@ -7212,7 +7177,7 @@
       "prop": "whitespaceBreakSpaces",
       "category": "Whitespace",
       "isDefault": false,
-      "description": "Break words to prevent overflow",
+      "description": "Preserve whitespace incl. trailing spaces, wrap text (white-space: break-spaces)",
       "isCommon": true
     },
     {
@@ -7764,13 +7729,6 @@
       "isCommon": true
     },
     {
-      "prop": "reverse",
-      "category": "Reverse",
-      "isDefault": false,
-      "description": "Reverse the order of children",
-      "isCommon": true
-    },
-    {
       "prop": "flex1",
       "category": "Flex",
       "isDefault": false,
@@ -8030,17 +7988,17 @@
       "isCommon": true
     },
     {
-      "prop": "ring",
+      "prop": "insetRing",
       "category": "Ring",
       "isDefault": false,
-      "description": "Enable focus ring",
+      "description": "Enable the inset ring — emits ring-inset",
       "isCommon": true
     },
     {
-      "prop": "noRing",
+      "prop": "noInsetRing",
       "category": "Ring",
       "isDefault": true,
-      "description": "Disable focus ring",
+      "description": "Disable the inset ring",
       "isCommon": true
     },
     {
@@ -8662,13 +8620,6 @@
       "isCommon": true
     },
     {
-      "prop": "reverse",
-      "category": "Reverse",
-      "isDefault": false,
-      "description": "Reverse the order of children",
-      "isCommon": true
-    },
-    {
       "prop": "flex1",
       "category": "Flex",
       "isDefault": false,
@@ -9061,17 +9012,17 @@
       "isCommon": true
     },
     {
-      "prop": "ring",
+      "prop": "insetRing",
       "category": "Ring",
       "isDefault": false,
-      "description": "Enable focus ring",
+      "description": "Enable the inset ring — emits ring-inset",
       "isCommon": true
     },
     {
-      "prop": "noRing",
+      "prop": "noInsetRing",
       "category": "Ring",
       "isDefault": true,
-      "description": "Disable focus ring",
+      "description": "Disable the inset ring",
       "isCommon": true
     },
     {
@@ -10122,13 +10073,6 @@
       "isCommon": true
     },
     {
-      "prop": "reverse",
-      "category": "Reverse",
-      "isDefault": false,
-      "description": "Reverse the order of children",
-      "isCommon": true
-    },
-    {
       "prop": "flex1",
       "category": "Flex",
       "isDefault": false,
@@ -10964,17 +10908,17 @@
       "isCommon": true
     },
     {
-      "prop": "ring",
+      "prop": "insetRing",
       "category": "Ring",
       "isDefault": false,
-      "description": "Enable focus ring",
+      "description": "Enable the inset ring — emits ring-inset",
       "isCommon": true
     },
     {
-      "prop": "noRing",
+      "prop": "noInsetRing",
       "category": "Ring",
       "isDefault": true,
-      "description": "Disable focus ring",
+      "description": "Disable the inset ring",
       "isCommon": true
     },
     {
@@ -11505,13 +11449,6 @@
       "isCommon": true
     },
     {
-      "prop": "reverse",
-      "category": "Reverse",
-      "isDefault": false,
-      "description": "Reverse the order of children",
-      "isCommon": true
-    },
-    {
       "prop": "flex1",
       "category": "Flex",
       "isDefault": false,
@@ -11701,17 +11638,17 @@
       "isCommon": true
     },
     {
-      "prop": "ring",
+      "prop": "insetRing",
       "category": "Ring",
       "isDefault": true,
-      "description": "Enable focus ring",
+      "description": "Enable the inset ring — emits ring-inset",
       "isCommon": true
     },
     {
-      "prop": "noRing",
+      "prop": "noInsetRing",
       "category": "Ring",
       "isDefault": false,
-      "description": "Disable focus ring",
+      "description": "Disable the inset ring",
       "isCommon": true
     },
     {
@@ -11750,66 +11687,66 @@
       "isCommon": false
     },
     {
-      "prop": "thin",
+      "prop": "fontThin",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Thin font weight (100)",
+      "description": "Thin font weight (100) — emits font-thin",
       "isCommon": false
     },
     {
-      "prop": "extralight",
+      "prop": "fontExtralight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra light font weight (200)",
+      "description": "Extra light font weight (200) — emits font-extralight",
       "isCommon": false
     },
     {
-      "prop": "light",
+      "prop": "fontLight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Light font weight (300)",
+      "description": "Light font weight (300) — emits font-light",
       "isCommon": false
     },
     {
-      "prop": "normal",
+      "prop": "fontNormal",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Normal font weight (400)",
+      "description": "Normal font weight (400) — emits font-normal",
       "isCommon": false
     },
     {
-      "prop": "medium",
+      "prop": "fontMedium",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Medium font weight (500)",
+      "description": "Medium font weight (500) — emits font-medium",
       "isCommon": false
     },
     {
-      "prop": "semibold",
+      "prop": "fontSemibold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Semibold font weight (600)",
+      "description": "Semibold font weight (600) — emits font-semibold",
       "isCommon": false
     },
     {
-      "prop": "bold",
+      "prop": "fontBold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Bold font weight (700)",
+      "description": "Bold font weight (700) — emits font-bold",
       "isCommon": false
     },
     {
-      "prop": "extrabold",
+      "prop": "fontExtrabold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra bold font weight (800)",
+      "description": "Extra bold font weight (800) — emits font-extrabold",
       "isCommon": false
     },
     {
-      "prop": "black",
+      "prop": "fontBlack",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Black font weight (900)",
+      "description": "Black font weight (900) — emits font-black",
       "isCommon": false
     },
     {
@@ -11844,7 +11781,7 @@
       "prop": "noUnderline",
       "category": "Text Decoration",
       "isDefault": false,
-      "description": "Remove text decoration (no underline, strikethrough, etc.)",
+      "description": "Remove ALL text-decoration — underline, line-through, and overline (text-decoration: none)",
       "isCommon": false
     },
     {
@@ -11883,31 +11820,31 @@
       "isCommon": false
     },
     {
-      "prop": "sans",
+      "prop": "fontSans",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Sans-serif font family (default)",
+      "description": "Sans-serif font family (default) — emits font-sans",
       "isCommon": false
     },
     {
-      "prop": "serif",
+      "prop": "fontSerif",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Serif font family",
+      "description": "Serif font family — emits font-serif",
       "isCommon": false
     },
     {
-      "prop": "mono",
+      "prop": "fontMono",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Monospace font family",
+      "description": "Monospace font family — emits font-mono",
       "isCommon": false
     },
     {
-      "prop": "heading",
+      "prop": "fontHeading",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Heading font family (defaults to sans, independently customizable via --font-heading CSS variable)",
+      "description": "Heading font family (defaults to sans, customizable via --font-heading) — emits font-heading",
       "isCommon": false
     },
     {
@@ -12103,7 +12040,7 @@
       "prop": "whitespaceBreakSpaces",
       "category": "Whitespace",
       "isDefault": false,
-      "description": "Break words to prevent overflow",
+      "description": "Preserve whitespace incl. trailing spaces, wrap text (white-space: break-spaces)",
       "isCommon": true
     },
     {
@@ -12753,17 +12690,17 @@
       "isCommon": true
     },
     {
-      "prop": "ring",
+      "prop": "insetRing",
       "category": "Ring",
       "isDefault": false,
-      "description": "Enable focus ring",
+      "description": "Enable the inset ring — emits ring-inset",
       "isCommon": true
     },
     {
-      "prop": "noRing",
+      "prop": "noInsetRing",
       "category": "Ring",
       "isDefault": false,
-      "description": "Disable focus ring",
+      "description": "Disable the inset ring",
       "isCommon": true
     },
     {
@@ -13357,13 +13294,6 @@
       "isCommon": true
     },
     {
-      "prop": "reverse",
-      "category": "Reverse",
-      "isDefault": false,
-      "description": "Reverse the order of children",
-      "isCommon": true
-    },
-    {
       "prop": "flex1",
       "category": "Flex",
       "isDefault": false,
@@ -13553,17 +13483,17 @@
       "isCommon": true
     },
     {
-      "prop": "ring",
+      "prop": "insetRing",
       "category": "Ring",
       "isDefault": true,
-      "description": "Enable focus ring",
+      "description": "Enable the inset ring — emits ring-inset",
       "isCommon": true
     },
     {
-      "prop": "noRing",
+      "prop": "noInsetRing",
       "category": "Ring",
       "isDefault": false,
-      "description": "Disable focus ring",
+      "description": "Disable the inset ring",
       "isCommon": true
     },
     {
@@ -13602,66 +13532,66 @@
       "isCommon": false
     },
     {
-      "prop": "thin",
+      "prop": "fontThin",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Thin font weight (100)",
+      "description": "Thin font weight (100) — emits font-thin",
       "isCommon": false
     },
     {
-      "prop": "extralight",
+      "prop": "fontExtralight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra light font weight (200)",
+      "description": "Extra light font weight (200) — emits font-extralight",
       "isCommon": false
     },
     {
-      "prop": "light",
+      "prop": "fontLight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Light font weight (300)",
+      "description": "Light font weight (300) — emits font-light",
       "isCommon": false
     },
     {
-      "prop": "normal",
+      "prop": "fontNormal",
       "category": "Font Weight",
       "isDefault": true,
-      "description": "Normal font weight (400)",
+      "description": "Normal font weight (400) — emits font-normal",
       "isCommon": false
     },
     {
-      "prop": "medium",
+      "prop": "fontMedium",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Medium font weight (500)",
+      "description": "Medium font weight (500) — emits font-medium",
       "isCommon": false
     },
     {
-      "prop": "semibold",
+      "prop": "fontSemibold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Semibold font weight (600)",
+      "description": "Semibold font weight (600) — emits font-semibold",
       "isCommon": false
     },
     {
-      "prop": "bold",
+      "prop": "fontBold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Bold font weight (700)",
+      "description": "Bold font weight (700) — emits font-bold",
       "isCommon": false
     },
     {
-      "prop": "extrabold",
+      "prop": "fontExtrabold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra bold font weight (800)",
+      "description": "Extra bold font weight (800) — emits font-extrabold",
       "isCommon": false
     },
     {
-      "prop": "black",
+      "prop": "fontBlack",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Black font weight (900)",
+      "description": "Black font weight (900) — emits font-black",
       "isCommon": false
     },
     {
@@ -13696,7 +13626,7 @@
       "prop": "noUnderline",
       "category": "Text Decoration",
       "isDefault": false,
-      "description": "Remove text decoration (no underline, strikethrough, etc.)",
+      "description": "Remove ALL text-decoration — underline, line-through, and overline (text-decoration: none)",
       "isCommon": false
     },
     {
@@ -13735,31 +13665,31 @@
       "isCommon": false
     },
     {
-      "prop": "sans",
+      "prop": "fontSans",
       "category": "Font Family",
       "isDefault": true,
-      "description": "Sans-serif font family (default)",
+      "description": "Sans-serif font family (default) — emits font-sans",
       "isCommon": false
     },
     {
-      "prop": "serif",
+      "prop": "fontSerif",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Serif font family",
+      "description": "Serif font family — emits font-serif",
       "isCommon": false
     },
     {
-      "prop": "mono",
+      "prop": "fontMono",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Monospace font family",
+      "description": "Monospace font family — emits font-mono",
       "isCommon": false
     },
     {
-      "prop": "heading",
+      "prop": "fontHeading",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Heading font family (defaults to sans, independently customizable via --font-heading CSS variable)",
+      "description": "Heading font family (defaults to sans, customizable via --font-heading) — emits font-heading",
       "isCommon": false
     },
     {
@@ -13997,7 +13927,7 @@
       "prop": "whitespaceBreakSpaces",
       "category": "Whitespace",
       "isDefault": false,
-      "description": "Break words to prevent overflow",
+      "description": "Preserve whitespace incl. trailing spaces, wrap text (white-space: break-spaces)",
       "isCommon": true
     },
     {
@@ -14521,13 +14451,6 @@
       "isCommon": true
     },
     {
-      "prop": "reverse",
-      "category": "Reverse",
-      "isDefault": false,
-      "description": "Reverse the order of children",
-      "isCommon": true
-    },
-    {
       "prop": "flex1",
       "category": "Flex",
       "isDefault": false,
@@ -14717,17 +14640,17 @@
       "isCommon": true
     },
     {
-      "prop": "ring",
+      "prop": "insetRing",
       "category": "Ring",
       "isDefault": false,
-      "description": "Enable focus ring",
+      "description": "Enable the inset ring — emits ring-inset",
       "isCommon": true
     },
     {
-      "prop": "noRing",
+      "prop": "noInsetRing",
       "category": "Ring",
       "isDefault": false,
-      "description": "Disable focus ring",
+      "description": "Disable the inset ring",
       "isCommon": true
     },
     {
@@ -14766,66 +14689,66 @@
       "isCommon": false
     },
     {
-      "prop": "thin",
+      "prop": "fontThin",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Thin font weight (100)",
+      "description": "Thin font weight (100) — emits font-thin",
       "isCommon": false
     },
     {
-      "prop": "extralight",
+      "prop": "fontExtralight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra light font weight (200)",
+      "description": "Extra light font weight (200) — emits font-extralight",
       "isCommon": false
     },
     {
-      "prop": "light",
+      "prop": "fontLight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Light font weight (300)",
+      "description": "Light font weight (300) — emits font-light",
       "isCommon": false
     },
     {
-      "prop": "normal",
+      "prop": "fontNormal",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Normal font weight (400)",
+      "description": "Normal font weight (400) — emits font-normal",
       "isCommon": false
     },
     {
-      "prop": "medium",
+      "prop": "fontMedium",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Medium font weight (500)",
+      "description": "Medium font weight (500) — emits font-medium",
       "isCommon": false
     },
     {
-      "prop": "semibold",
+      "prop": "fontSemibold",
       "category": "Font Weight",
       "isDefault": true,
-      "description": "Semibold font weight (600)",
+      "description": "Semibold font weight (600) — emits font-semibold",
       "isCommon": false
     },
     {
-      "prop": "bold",
+      "prop": "fontBold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Bold font weight (700)",
+      "description": "Bold font weight (700) — emits font-bold",
       "isCommon": false
     },
     {
-      "prop": "extrabold",
+      "prop": "fontExtrabold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra bold font weight (800)",
+      "description": "Extra bold font weight (800) — emits font-extrabold",
       "isCommon": false
     },
     {
-      "prop": "black",
+      "prop": "fontBlack",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Black font weight (900)",
+      "description": "Black font weight (900) — emits font-black",
       "isCommon": false
     },
     {
@@ -14860,7 +14783,7 @@
       "prop": "noUnderline",
       "category": "Text Decoration",
       "isDefault": false,
-      "description": "Remove text decoration (no underline, strikethrough, etc.)",
+      "description": "Remove ALL text-decoration — underline, line-through, and overline (text-decoration: none)",
       "isCommon": false
     },
     {
@@ -14899,31 +14822,31 @@
       "isCommon": false
     },
     {
-      "prop": "sans",
+      "prop": "fontSans",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Sans-serif font family (default)",
+      "description": "Sans-serif font family (default) — emits font-sans",
       "isCommon": false
     },
     {
-      "prop": "serif",
+      "prop": "fontSerif",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Serif font family",
+      "description": "Serif font family — emits font-serif",
       "isCommon": false
     },
     {
-      "prop": "mono",
+      "prop": "fontMono",
       "category": "Font Family",
       "isDefault": true,
-      "description": "Monospace font family",
+      "description": "Monospace font family — emits font-mono",
       "isCommon": false
     },
     {
-      "prop": "heading",
+      "prop": "fontHeading",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Heading font family (defaults to sans, independently customizable via --font-heading CSS variable)",
+      "description": "Heading font family (defaults to sans, customizable via --font-heading) — emits font-heading",
       "isCommon": false
     },
     {
@@ -15119,7 +15042,7 @@
       "prop": "whitespaceBreakSpaces",
       "category": "Whitespace",
       "isDefault": false,
-      "description": "Break words to prevent overflow",
+      "description": "Preserve whitespace incl. trailing spaces, wrap text (white-space: break-spaces)",
       "isCommon": true
     },
     {
@@ -15244,66 +15167,66 @@
   ],
   "label": [
     {
-      "prop": "thin",
+      "prop": "fontThin",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Thin font weight (100)",
+      "description": "Thin font weight (100) — emits font-thin",
       "isCommon": false
     },
     {
-      "prop": "extralight",
+      "prop": "fontExtralight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra light font weight (200)",
+      "description": "Extra light font weight (200) — emits font-extralight",
       "isCommon": false
     },
     {
-      "prop": "light",
+      "prop": "fontLight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Light font weight (300)",
+      "description": "Light font weight (300) — emits font-light",
       "isCommon": false
     },
     {
-      "prop": "normal",
+      "prop": "fontNormal",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Normal font weight (400)",
+      "description": "Normal font weight (400) — emits font-normal",
       "isCommon": false
     },
     {
-      "prop": "medium",
+      "prop": "fontMedium",
       "category": "Font Weight",
       "isDefault": true,
-      "description": "Medium font weight (500)",
+      "description": "Medium font weight (500) — emits font-medium",
       "isCommon": false
     },
     {
-      "prop": "semibold",
+      "prop": "fontSemibold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Semibold font weight (600)",
+      "description": "Semibold font weight (600) — emits font-semibold",
       "isCommon": false
     },
     {
-      "prop": "bold",
+      "prop": "fontBold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Bold font weight (700)",
+      "description": "Bold font weight (700) — emits font-bold",
       "isCommon": false
     },
     {
-      "prop": "extrabold",
+      "prop": "fontExtrabold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra bold font weight (800)",
+      "description": "Extra bold font weight (800) — emits font-extrabold",
       "isCommon": false
     },
     {
-      "prop": "black",
+      "prop": "fontBlack",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Black font weight (900)",
+      "description": "Black font weight (900) — emits font-black",
       "isCommon": false
     },
     {
@@ -15338,7 +15261,7 @@
       "prop": "noUnderline",
       "category": "Text Decoration",
       "isDefault": false,
-      "description": "Remove text decoration (no underline, strikethrough, etc.)",
+      "description": "Remove ALL text-decoration — underline, line-through, and overline (text-decoration: none)",
       "isCommon": false
     },
     {
@@ -15377,31 +15300,31 @@
       "isCommon": false
     },
     {
-      "prop": "sans",
+      "prop": "fontSans",
       "category": "Font Family",
       "isDefault": true,
-      "description": "Sans-serif font family (default)",
+      "description": "Sans-serif font family (default) — emits font-sans",
       "isCommon": false
     },
     {
-      "prop": "serif",
+      "prop": "fontSerif",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Serif font family",
+      "description": "Serif font family — emits font-serif",
       "isCommon": false
     },
     {
-      "prop": "mono",
+      "prop": "fontMono",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Monospace font family",
+      "description": "Monospace font family — emits font-mono",
       "isCommon": false
     },
     {
-      "prop": "heading",
+      "prop": "fontHeading",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Heading font family (defaults to sans, independently customizable via --font-heading CSS variable)",
+      "description": "Heading font family (defaults to sans, customizable via --font-heading) — emits font-heading",
       "isCommon": false
     },
     {
@@ -15916,13 +15839,6 @@
       "isCommon": true
     },
     {
-      "prop": "reverse",
-      "category": "Reverse",
-      "isDefault": false,
-      "description": "Reverse the order of children",
-      "isCommon": true
-    },
-    {
       "prop": "flex1",
       "category": "Flex",
       "isDefault": false,
@@ -16112,17 +16028,17 @@
       "isCommon": true
     },
     {
-      "prop": "ring",
+      "prop": "insetRing",
       "category": "Ring",
       "isDefault": false,
-      "description": "Enable focus ring",
+      "description": "Enable the inset ring — emits ring-inset",
       "isCommon": true
     },
     {
-      "prop": "noRing",
+      "prop": "noInsetRing",
       "category": "Ring",
       "isDefault": false,
-      "description": "Disable focus ring",
+      "description": "Disable the inset ring",
       "isCommon": true
     },
     {
@@ -16261,66 +16177,66 @@
   ],
   "link": [
     {
-      "prop": "thin",
+      "prop": "fontThin",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Thin font weight (100)",
+      "description": "Thin font weight (100) — emits font-thin",
       "isCommon": false
     },
     {
-      "prop": "extralight",
+      "prop": "fontExtralight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra light font weight (200)",
+      "description": "Extra light font weight (200) — emits font-extralight",
       "isCommon": false
     },
     {
-      "prop": "light",
+      "prop": "fontLight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Light font weight (300)",
+      "description": "Light font weight (300) — emits font-light",
       "isCommon": false
     },
     {
-      "prop": "normal",
+      "prop": "fontNormal",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Normal font weight (400)",
+      "description": "Normal font weight (400) — emits font-normal",
       "isCommon": false
     },
     {
-      "prop": "medium",
+      "prop": "fontMedium",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Medium font weight (500)",
+      "description": "Medium font weight (500) — emits font-medium",
       "isCommon": false
     },
     {
-      "prop": "semibold",
+      "prop": "fontSemibold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Semibold font weight (600)",
+      "description": "Semibold font weight (600) — emits font-semibold",
       "isCommon": false
     },
     {
-      "prop": "bold",
+      "prop": "fontBold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Bold font weight (700)",
+      "description": "Bold font weight (700) — emits font-bold",
       "isCommon": false
     },
     {
-      "prop": "extrabold",
+      "prop": "fontExtrabold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra bold font weight (800)",
+      "description": "Extra bold font weight (800) — emits font-extrabold",
       "isCommon": false
     },
     {
-      "prop": "black",
+      "prop": "fontBlack",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Black font weight (900)",
+      "description": "Black font weight (900) — emits font-black",
       "isCommon": false
     },
     {
@@ -16355,7 +16271,7 @@
       "prop": "noUnderline",
       "category": "Text Decoration",
       "isDefault": false,
-      "description": "Remove text decoration (no underline, strikethrough, etc.)",
+      "description": "Remove ALL text-decoration — underline, line-through, and overline (text-decoration: none)",
       "isCommon": false
     },
     {
@@ -16394,31 +16310,31 @@
       "isCommon": false
     },
     {
-      "prop": "sans",
+      "prop": "fontSans",
       "category": "Font Family",
       "isDefault": true,
-      "description": "Sans-serif font family (default)",
+      "description": "Sans-serif font family (default) — emits font-sans",
       "isCommon": false
     },
     {
-      "prop": "serif",
+      "prop": "fontSerif",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Serif font family",
+      "description": "Serif font family — emits font-serif",
       "isCommon": false
     },
     {
-      "prop": "mono",
+      "prop": "fontMono",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Monospace font family",
+      "description": "Monospace font family — emits font-mono",
       "isCommon": false
     },
     {
-      "prop": "heading",
+      "prop": "fontHeading",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Heading font family (defaults to sans, independently customizable via --font-heading CSS variable)",
+      "description": "Heading font family (defaults to sans, customizable via --font-heading) — emits font-heading",
       "isCommon": false
     },
     {
@@ -17139,7 +17055,7 @@
       "prop": "whitespaceBreakSpaces",
       "category": "Whitespace",
       "isDefault": false,
-      "description": "Break words to prevent overflow",
+      "description": "Preserve whitespace incl. trailing spaces, wrap text (white-space: break-spaces)",
       "isCommon": true
     },
     {
@@ -17278,66 +17194,66 @@
   ],
   "list": [
     {
-      "prop": "thin",
+      "prop": "fontThin",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Thin font weight (100)",
+      "description": "Thin font weight (100) — emits font-thin",
       "isCommon": false
     },
     {
-      "prop": "extralight",
+      "prop": "fontExtralight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra light font weight (200)",
+      "description": "Extra light font weight (200) — emits font-extralight",
       "isCommon": false
     },
     {
-      "prop": "light",
+      "prop": "fontLight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Light font weight (300)",
+      "description": "Light font weight (300) — emits font-light",
       "isCommon": false
     },
     {
-      "prop": "normal",
+      "prop": "fontNormal",
       "category": "Font Weight",
       "isDefault": true,
-      "description": "Normal font weight (400)",
+      "description": "Normal font weight (400) — emits font-normal",
       "isCommon": false
     },
     {
-      "prop": "medium",
+      "prop": "fontMedium",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Medium font weight (500)",
+      "description": "Medium font weight (500) — emits font-medium",
       "isCommon": false
     },
     {
-      "prop": "semibold",
+      "prop": "fontSemibold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Semibold font weight (600)",
+      "description": "Semibold font weight (600) — emits font-semibold",
       "isCommon": false
     },
     {
-      "prop": "bold",
+      "prop": "fontBold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Bold font weight (700)",
+      "description": "Bold font weight (700) — emits font-bold",
       "isCommon": false
     },
     {
-      "prop": "extrabold",
+      "prop": "fontExtrabold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra bold font weight (800)",
+      "description": "Extra bold font weight (800) — emits font-extrabold",
       "isCommon": false
     },
     {
-      "prop": "black",
+      "prop": "fontBlack",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Black font weight (900)",
+      "description": "Black font weight (900) — emits font-black",
       "isCommon": false
     },
     {
@@ -17372,7 +17288,7 @@
       "prop": "noUnderline",
       "category": "Text Decoration",
       "isDefault": false,
-      "description": "Remove text decoration (no underline, strikethrough, etc.)",
+      "description": "Remove ALL text-decoration — underline, line-through, and overline (text-decoration: none)",
       "isCommon": false
     },
     {
@@ -17411,31 +17327,31 @@
       "isCommon": false
     },
     {
-      "prop": "sans",
+      "prop": "fontSans",
       "category": "Font Family",
       "isDefault": true,
-      "description": "Sans-serif font family (default)",
+      "description": "Sans-serif font family (default) — emits font-sans",
       "isCommon": false
     },
     {
-      "prop": "serif",
+      "prop": "fontSerif",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Serif font family",
+      "description": "Serif font family — emits font-serif",
       "isCommon": false
     },
     {
-      "prop": "mono",
+      "prop": "fontMono",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Monospace font family",
+      "description": "Monospace font family — emits font-mono",
       "isCommon": false
     },
     {
-      "prop": "heading",
+      "prop": "fontHeading",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Heading font family (defaults to sans, independently customizable via --font-heading CSS variable)",
+      "description": "Heading font family (defaults to sans, customizable via --font-heading) — emits font-heading",
       "isCommon": false
     },
     {
@@ -17523,59 +17439,59 @@
       "isCommon": false
     },
     {
-      "prop": "disc",
+      "prop": "listDisc",
       "category": "List Style",
       "isDefault": true,
-      "description": "Filled bullet — default for unordered lists",
+      "description": "Filled bullet — default for unordered lists — emits list-disc",
       "isCommon": false
     },
     {
-      "prop": "decimal",
+      "prop": "listDecimal",
       "category": "List Style",
       "isDefault": false,
-      "description": "Arabic numerals — default for ordered lists",
+      "description": "Arabic numerals — default for ordered lists — emits list-decimal",
       "isCommon": false
     },
     {
-      "prop": "circle",
+      "prop": "listCircle",
       "category": "List Style",
       "isDefault": false,
-      "description": "Hollow circle — typically 2nd-depth unordered marker",
+      "description": "Hollow circle — typically 2nd-depth unordered marker — emits list-[circle]",
       "isCommon": false
     },
     {
-      "prop": "square",
+      "prop": "listSquare",
       "category": "List Style",
       "isDefault": false,
-      "description": "Filled square — typically 3rd-depth unordered marker",
+      "description": "Filled square — typically 3rd-depth unordered marker — emits list-[square]",
       "isCommon": false
     },
     {
-      "prop": "lowerAlpha",
+      "prop": "listLowerAlpha",
       "category": "List Style",
       "isDefault": false,
-      "description": "Lowercase letters a, b, c — typically 2nd-depth ordered marker",
+      "description": "Lowercase letters a, b, c — typically 2nd-depth ordered marker — emits list-[lower-alpha]",
       "isCommon": false
     },
     {
-      "prop": "lowerRoman",
+      "prop": "listLowerRoman",
       "category": "List Style",
       "isDefault": false,
-      "description": "Lowercase roman i, ii, iii — typically 3rd-depth ordered marker",
+      "description": "Lowercase roman i, ii, iii — typically 3rd-depth ordered marker — emits list-[lower-roman]",
       "isCommon": false
     },
     {
-      "prop": "inside",
+      "prop": "listInside",
       "category": "List Position",
       "isDefault": false,
-      "description": "Place list markers inside the content area (list-style-position: inside)",
+      "description": "Place list markers inside the content area — emits list-inside",
       "isCommon": false
     },
     {
-      "prop": "outside",
+      "prop": "listOutside",
       "category": "List Position",
       "isDefault": true,
-      "description": "Hang list markers outside the content area (list-style-position: outside)",
+      "description": "Hang list markers outside the content area — emits list-outside",
       "isCommon": false
     },
     {
@@ -18121,7 +18037,7 @@
       "prop": "whitespaceBreakSpaces",
       "category": "Whitespace",
       "isDefault": false,
-      "description": "Break words to prevent overflow",
+      "description": "Preserve whitespace incl. trailing spaces, wrap text (white-space: break-spaces)",
       "isCommon": true
     },
     {
@@ -18694,13 +18610,6 @@
       "isCommon": true
     },
     {
-      "prop": "reverse",
-      "category": "Reverse",
-      "isDefault": false,
-      "description": "Reverse the order of children",
-      "isCommon": true
-    },
-    {
       "prop": "flex1",
       "category": "Flex",
       "isDefault": false,
@@ -18890,17 +18799,17 @@
       "isCommon": true
     },
     {
-      "prop": "ring",
+      "prop": "insetRing",
       "category": "Ring",
       "isDefault": false,
-      "description": "Enable focus ring",
+      "description": "Enable the inset ring — emits ring-inset",
       "isCommon": true
     },
     {
-      "prop": "noRing",
+      "prop": "noInsetRing",
       "category": "Ring",
       "isDefault": false,
-      "description": "Disable focus ring",
+      "description": "Disable the inset ring",
       "isCommon": true
     },
     {
@@ -18939,66 +18848,66 @@
       "isCommon": false
     },
     {
-      "prop": "thin",
+      "prop": "fontThin",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Thin font weight (100)",
+      "description": "Thin font weight (100) — emits font-thin",
       "isCommon": false
     },
     {
-      "prop": "extralight",
+      "prop": "fontExtralight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra light font weight (200)",
+      "description": "Extra light font weight (200) — emits font-extralight",
       "isCommon": false
     },
     {
-      "prop": "light",
+      "prop": "fontLight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Light font weight (300)",
+      "description": "Light font weight (300) — emits font-light",
       "isCommon": false
     },
     {
-      "prop": "normal",
+      "prop": "fontNormal",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Normal font weight (400)",
+      "description": "Normal font weight (400) — emits font-normal",
       "isCommon": false
     },
     {
-      "prop": "medium",
+      "prop": "fontMedium",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Medium font weight (500)",
+      "description": "Medium font weight (500) — emits font-medium",
       "isCommon": false
     },
     {
-      "prop": "semibold",
+      "prop": "fontSemibold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Semibold font weight (600)",
+      "description": "Semibold font weight (600) — emits font-semibold",
       "isCommon": false
     },
     {
-      "prop": "bold",
+      "prop": "fontBold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Bold font weight (700)",
+      "description": "Bold font weight (700) — emits font-bold",
       "isCommon": false
     },
     {
-      "prop": "extrabold",
+      "prop": "fontExtrabold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra bold font weight (800)",
+      "description": "Extra bold font weight (800) — emits font-extrabold",
       "isCommon": false
     },
     {
-      "prop": "black",
+      "prop": "fontBlack",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Black font weight (900)",
+      "description": "Black font weight (900) — emits font-black",
       "isCommon": false
     },
     {
@@ -19033,7 +18942,7 @@
       "prop": "noUnderline",
       "category": "Text Decoration",
       "isDefault": false,
-      "description": "Remove text decoration (no underline, strikethrough, etc.)",
+      "description": "Remove ALL text-decoration — underline, line-through, and overline (text-decoration: none)",
       "isCommon": false
     },
     {
@@ -19072,31 +18981,31 @@
       "isCommon": false
     },
     {
-      "prop": "sans",
+      "prop": "fontSans",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Sans-serif font family (default)",
+      "description": "Sans-serif font family (default) — emits font-sans",
       "isCommon": false
     },
     {
-      "prop": "serif",
+      "prop": "fontSerif",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Serif font family",
+      "description": "Serif font family — emits font-serif",
       "isCommon": false
     },
     {
-      "prop": "mono",
+      "prop": "fontMono",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Monospace font family",
+      "description": "Monospace font family — emits font-mono",
       "isCommon": false
     },
     {
-      "prop": "heading",
+      "prop": "fontHeading",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Heading font family (defaults to sans, independently customizable via --font-heading CSS variable)",
+      "description": "Heading font family (defaults to sans, customizable via --font-heading) — emits font-heading",
       "isCommon": false
     },
     {
@@ -19292,7 +19201,7 @@
       "prop": "whitespaceBreakSpaces",
       "category": "Whitespace",
       "isDefault": false,
-      "description": "Break words to prevent overflow",
+      "description": "Preserve whitespace incl. trailing spaces, wrap text (white-space: break-spaces)",
       "isCommon": true
     },
     {
@@ -19844,13 +19753,6 @@
       "isCommon": true
     },
     {
-      "prop": "reverse",
-      "category": "Reverse",
-      "isDefault": false,
-      "description": "Reverse the order of children",
-      "isCommon": true
-    },
-    {
       "prop": "flex1",
       "category": "Flex",
       "isDefault": false,
@@ -20040,17 +19942,17 @@
       "isCommon": true
     },
     {
-      "prop": "ring",
+      "prop": "insetRing",
       "category": "Ring",
       "isDefault": false,
-      "description": "Enable focus ring",
+      "description": "Enable the inset ring — emits ring-inset",
       "isCommon": true
     },
     {
-      "prop": "noRing",
+      "prop": "noInsetRing",
       "category": "Ring",
       "isDefault": true,
-      "description": "Disable focus ring",
+      "description": "Disable the inset ring",
       "isCommon": true
     },
     {
@@ -20089,66 +19991,66 @@
       "isCommon": false
     },
     {
-      "prop": "thin",
+      "prop": "fontThin",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Thin font weight (100)",
+      "description": "Thin font weight (100) — emits font-thin",
       "isCommon": false
     },
     {
-      "prop": "extralight",
+      "prop": "fontExtralight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra light font weight (200)",
+      "description": "Extra light font weight (200) — emits font-extralight",
       "isCommon": false
     },
     {
-      "prop": "light",
+      "prop": "fontLight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Light font weight (300)",
+      "description": "Light font weight (300) — emits font-light",
       "isCommon": false
     },
     {
-      "prop": "normal",
+      "prop": "fontNormal",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Normal font weight (400)",
+      "description": "Normal font weight (400) — emits font-normal",
       "isCommon": false
     },
     {
-      "prop": "medium",
+      "prop": "fontMedium",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Medium font weight (500)",
+      "description": "Medium font weight (500) — emits font-medium",
       "isCommon": false
     },
     {
-      "prop": "semibold",
+      "prop": "fontSemibold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Semibold font weight (600)",
+      "description": "Semibold font weight (600) — emits font-semibold",
       "isCommon": false
     },
     {
-      "prop": "bold",
+      "prop": "fontBold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Bold font weight (700)",
+      "description": "Bold font weight (700) — emits font-bold",
       "isCommon": false
     },
     {
-      "prop": "extrabold",
+      "prop": "fontExtrabold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra bold font weight (800)",
+      "description": "Extra bold font weight (800) — emits font-extrabold",
       "isCommon": false
     },
     {
-      "prop": "black",
+      "prop": "fontBlack",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Black font weight (900)",
+      "description": "Black font weight (900) — emits font-black",
       "isCommon": false
     },
     {
@@ -20183,7 +20085,7 @@
       "prop": "noUnderline",
       "category": "Text Decoration",
       "isDefault": false,
-      "description": "Remove text decoration (no underline, strikethrough, etc.)",
+      "description": "Remove ALL text-decoration — underline, line-through, and overline (text-decoration: none)",
       "isCommon": false
     },
     {
@@ -20222,31 +20124,31 @@
       "isCommon": false
     },
     {
-      "prop": "sans",
+      "prop": "fontSans",
       "category": "Font Family",
       "isDefault": true,
-      "description": "Sans-serif font family (default)",
+      "description": "Sans-serif font family (default) — emits font-sans",
       "isCommon": false
     },
     {
-      "prop": "serif",
+      "prop": "fontSerif",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Serif font family",
+      "description": "Serif font family — emits font-serif",
       "isCommon": false
     },
     {
-      "prop": "mono",
+      "prop": "fontMono",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Monospace font family",
+      "description": "Monospace font family — emits font-mono",
       "isCommon": false
     },
     {
-      "prop": "heading",
+      "prop": "fontHeading",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Heading font family (defaults to sans, independently customizable via --font-heading CSS variable)",
+      "description": "Heading font family (defaults to sans, customizable via --font-heading) — emits font-heading",
       "isCommon": false
     },
     {
@@ -20442,7 +20344,7 @@
       "prop": "whitespaceBreakSpaces",
       "category": "Whitespace",
       "isDefault": false,
-      "description": "Break words to prevent overflow",
+      "description": "Preserve whitespace incl. trailing spaces, wrap text (white-space: break-spaces)",
       "isCommon": true
     },
     {
@@ -20567,66 +20469,66 @@
   ],
   "modal": [
     {
-      "prop": "thin",
+      "prop": "fontThin",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Thin font weight (100)",
+      "description": "Thin font weight (100) — emits font-thin",
       "isCommon": false
     },
     {
-      "prop": "extralight",
+      "prop": "fontExtralight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra light font weight (200)",
+      "description": "Extra light font weight (200) — emits font-extralight",
       "isCommon": false
     },
     {
-      "prop": "light",
+      "prop": "fontLight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Light font weight (300)",
+      "description": "Light font weight (300) — emits font-light",
       "isCommon": false
     },
     {
-      "prop": "normal",
+      "prop": "fontNormal",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Normal font weight (400)",
+      "description": "Normal font weight (400) — emits font-normal",
       "isCommon": false
     },
     {
-      "prop": "medium",
+      "prop": "fontMedium",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Medium font weight (500)",
+      "description": "Medium font weight (500) — emits font-medium",
       "isCommon": false
     },
     {
-      "prop": "semibold",
+      "prop": "fontSemibold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Semibold font weight (600)",
+      "description": "Semibold font weight (600) — emits font-semibold",
       "isCommon": false
     },
     {
-      "prop": "bold",
+      "prop": "fontBold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Bold font weight (700)",
+      "description": "Bold font weight (700) — emits font-bold",
       "isCommon": false
     },
     {
-      "prop": "extrabold",
+      "prop": "fontExtrabold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra bold font weight (800)",
+      "description": "Extra bold font weight (800) — emits font-extrabold",
       "isCommon": false
     },
     {
-      "prop": "black",
+      "prop": "fontBlack",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Black font weight (900)",
+      "description": "Black font weight (900) — emits font-black",
       "isCommon": false
     },
     {
@@ -20661,7 +20563,7 @@
       "prop": "noUnderline",
       "category": "Text Decoration",
       "isDefault": false,
-      "description": "Remove text decoration (no underline, strikethrough, etc.)",
+      "description": "Remove ALL text-decoration — underline, line-through, and overline (text-decoration: none)",
       "isCommon": false
     },
     {
@@ -20700,31 +20602,31 @@
       "isCommon": false
     },
     {
-      "prop": "sans",
+      "prop": "fontSans",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Sans-serif font family (default)",
+      "description": "Sans-serif font family (default) — emits font-sans",
       "isCommon": false
     },
     {
-      "prop": "serif",
+      "prop": "fontSerif",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Serif font family",
+      "description": "Serif font family — emits font-serif",
       "isCommon": false
     },
     {
-      "prop": "mono",
+      "prop": "fontMono",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Monospace font family",
+      "description": "Monospace font family — emits font-mono",
       "isCommon": false
     },
     {
-      "prop": "heading",
+      "prop": "fontHeading",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Heading font family (defaults to sans, independently customizable via --font-heading CSS variable)",
+      "description": "Heading font family (defaults to sans, customizable via --font-heading) — emits font-heading",
       "isCommon": false
     },
     {
@@ -21239,13 +21141,6 @@
       "isCommon": true
     },
     {
-      "prop": "reverse",
-      "category": "Reverse",
-      "isDefault": false,
-      "description": "Reverse the order of children",
-      "isCommon": true
-    },
-    {
       "prop": "flex1",
       "category": "Flex",
       "isDefault": false,
@@ -21435,17 +21330,17 @@
       "isCommon": true
     },
     {
-      "prop": "ring",
+      "prop": "insetRing",
       "category": "Ring",
       "isDefault": false,
-      "description": "Enable focus ring",
+      "description": "Enable the inset ring — emits ring-inset",
       "isCommon": true
     },
     {
-      "prop": "noRing",
+      "prop": "noInsetRing",
       "category": "Ring",
       "isDefault": false,
-      "description": "Disable focus ring",
+      "description": "Disable the inset ring",
       "isCommon": true
     },
     {
@@ -22039,13 +21934,6 @@
       "isCommon": true
     },
     {
-      "prop": "reverse",
-      "category": "Reverse",
-      "isDefault": false,
-      "description": "Reverse the order of children",
-      "isCommon": true
-    },
-    {
       "prop": "flex1",
       "category": "Flex",
       "isDefault": false,
@@ -22235,17 +22123,17 @@
       "isCommon": true
     },
     {
-      "prop": "ring",
+      "prop": "insetRing",
       "category": "Ring",
       "isDefault": false,
-      "description": "Enable focus ring",
+      "description": "Enable the inset ring — emits ring-inset",
       "isCommon": true
     },
     {
-      "prop": "noRing",
+      "prop": "noInsetRing",
       "category": "Ring",
       "isDefault": true,
-      "description": "Disable focus ring",
+      "description": "Disable the inset ring",
       "isCommon": true
     },
     {
@@ -22284,66 +22172,66 @@
       "isCommon": false
     },
     {
-      "prop": "thin",
+      "prop": "fontThin",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Thin font weight (100)",
+      "description": "Thin font weight (100) — emits font-thin",
       "isCommon": false
     },
     {
-      "prop": "extralight",
+      "prop": "fontExtralight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra light font weight (200)",
+      "description": "Extra light font weight (200) — emits font-extralight",
       "isCommon": false
     },
     {
-      "prop": "light",
+      "prop": "fontLight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Light font weight (300)",
+      "description": "Light font weight (300) — emits font-light",
       "isCommon": false
     },
     {
-      "prop": "normal",
+      "prop": "fontNormal",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Normal font weight (400)",
+      "description": "Normal font weight (400) — emits font-normal",
       "isCommon": false
     },
     {
-      "prop": "medium",
+      "prop": "fontMedium",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Medium font weight (500)",
+      "description": "Medium font weight (500) — emits font-medium",
       "isCommon": false
     },
     {
-      "prop": "semibold",
+      "prop": "fontSemibold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Semibold font weight (600)",
+      "description": "Semibold font weight (600) — emits font-semibold",
       "isCommon": false
     },
     {
-      "prop": "bold",
+      "prop": "fontBold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Bold font weight (700)",
+      "description": "Bold font weight (700) — emits font-bold",
       "isCommon": false
     },
     {
-      "prop": "extrabold",
+      "prop": "fontExtrabold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra bold font weight (800)",
+      "description": "Extra bold font weight (800) — emits font-extrabold",
       "isCommon": false
     },
     {
-      "prop": "black",
+      "prop": "fontBlack",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Black font weight (900)",
+      "description": "Black font weight (900) — emits font-black",
       "isCommon": false
     },
     {
@@ -22378,7 +22266,7 @@
       "prop": "noUnderline",
       "category": "Text Decoration",
       "isDefault": false,
-      "description": "Remove text decoration (no underline, strikethrough, etc.)",
+      "description": "Remove ALL text-decoration — underline, line-through, and overline (text-decoration: none)",
       "isCommon": false
     },
     {
@@ -22417,31 +22305,31 @@
       "isCommon": false
     },
     {
-      "prop": "sans",
+      "prop": "fontSans",
       "category": "Font Family",
       "isDefault": true,
-      "description": "Sans-serif font family (default)",
+      "description": "Sans-serif font family (default) — emits font-sans",
       "isCommon": false
     },
     {
-      "prop": "serif",
+      "prop": "fontSerif",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Serif font family",
+      "description": "Serif font family — emits font-serif",
       "isCommon": false
     },
     {
-      "prop": "mono",
+      "prop": "fontMono",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Monospace font family",
+      "description": "Monospace font family — emits font-mono",
       "isCommon": false
     },
     {
-      "prop": "heading",
+      "prop": "fontHeading",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Heading font family (defaults to sans, independently customizable via --font-heading CSS variable)",
+      "description": "Heading font family (defaults to sans, customizable via --font-heading) — emits font-heading",
       "isCommon": false
     },
     {
@@ -22637,7 +22525,7 @@
       "prop": "whitespaceBreakSpaces",
       "category": "Whitespace",
       "isDefault": false,
-      "description": "Break words to prevent overflow",
+      "description": "Preserve whitespace incl. trailing spaces, wrap text (white-space: break-spaces)",
       "isCommon": true
     },
     {
@@ -23126,14 +23014,14 @@
       "isCommon": true
     },
     {
-      "prop": "blur",
+      "prop": "backdropBlur",
       "category": "Blur",
       "isDefault": false,
-      "description": "Enable backdrop blur effect",
+      "description": "Enable backdrop blur effect — emits backdrop-blur",
       "isCommon": true
     },
     {
-      "prop": "noBlur",
+      "prop": "noBackdropBlur",
       "category": "Blur",
       "isDefault": false,
       "description": "Disable backdrop blur effect",
@@ -23226,66 +23114,66 @@
   ],
   "page-title": [
     {
-      "prop": "thin",
+      "prop": "fontThin",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Thin font weight (100)",
+      "description": "Thin font weight (100) — emits font-thin",
       "isCommon": false
     },
     {
-      "prop": "extralight",
+      "prop": "fontExtralight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra light font weight (200)",
+      "description": "Extra light font weight (200) — emits font-extralight",
       "isCommon": false
     },
     {
-      "prop": "light",
+      "prop": "fontLight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Light font weight (300)",
+      "description": "Light font weight (300) — emits font-light",
       "isCommon": false
     },
     {
-      "prop": "normal",
+      "prop": "fontNormal",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Normal font weight (400)",
+      "description": "Normal font weight (400) — emits font-normal",
       "isCommon": false
     },
     {
-      "prop": "medium",
+      "prop": "fontMedium",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Medium font weight (500)",
+      "description": "Medium font weight (500) — emits font-medium",
       "isCommon": false
     },
     {
-      "prop": "semibold",
+      "prop": "fontSemibold",
       "category": "Font Weight",
       "isDefault": true,
-      "description": "Semibold font weight (600)",
+      "description": "Semibold font weight (600) — emits font-semibold",
       "isCommon": false
     },
     {
-      "prop": "bold",
+      "prop": "fontBold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Bold font weight (700)",
+      "description": "Bold font weight (700) — emits font-bold",
       "isCommon": false
     },
     {
-      "prop": "extrabold",
+      "prop": "fontExtrabold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra bold font weight (800)",
+      "description": "Extra bold font weight (800) — emits font-extrabold",
       "isCommon": false
     },
     {
-      "prop": "black",
+      "prop": "fontBlack",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Black font weight (900)",
+      "description": "Black font weight (900) — emits font-black",
       "isCommon": false
     },
     {
@@ -23320,7 +23208,7 @@
       "prop": "noUnderline",
       "category": "Text Decoration",
       "isDefault": false,
-      "description": "Remove text decoration (no underline, strikethrough, etc.)",
+      "description": "Remove ALL text-decoration — underline, line-through, and overline (text-decoration: none)",
       "isCommon": false
     },
     {
@@ -23359,31 +23247,31 @@
       "isCommon": false
     },
     {
-      "prop": "sans",
+      "prop": "fontSans",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Sans-serif font family (default)",
+      "description": "Sans-serif font family (default) — emits font-sans",
       "isCommon": false
     },
     {
-      "prop": "serif",
+      "prop": "fontSerif",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Serif font family",
+      "description": "Serif font family — emits font-serif",
       "isCommon": false
     },
     {
-      "prop": "mono",
+      "prop": "fontMono",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Monospace font family",
+      "description": "Monospace font family — emits font-mono",
       "isCommon": false
     },
     {
-      "prop": "heading",
+      "prop": "fontHeading",
       "category": "Font Family",
       "isDefault": true,
-      "description": "Heading font family (defaults to sans, independently customizable via --font-heading CSS variable)",
+      "description": "Heading font family (defaults to sans, customizable via --font-heading) — emits font-heading",
       "isCommon": false
     },
     {
@@ -24104,7 +23992,7 @@
       "prop": "whitespaceBreakSpaces",
       "category": "Whitespace",
       "isDefault": false,
-      "description": "Break words to prevent overflow",
+      "description": "Preserve whitespace incl. trailing spaces, wrap text (white-space: break-spaces)",
       "isCommon": true
     },
     {
@@ -24229,66 +24117,66 @@
   ],
   "popup": [
     {
-      "prop": "thin",
+      "prop": "fontThin",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Thin font weight (100)",
+      "description": "Thin font weight (100) — emits font-thin",
       "isCommon": false
     },
     {
-      "prop": "extralight",
+      "prop": "fontExtralight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra light font weight (200)",
+      "description": "Extra light font weight (200) — emits font-extralight",
       "isCommon": false
     },
     {
-      "prop": "light",
+      "prop": "fontLight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Light font weight (300)",
+      "description": "Light font weight (300) — emits font-light",
       "isCommon": false
     },
     {
-      "prop": "normal",
+      "prop": "fontNormal",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Normal font weight (400)",
+      "description": "Normal font weight (400) — emits font-normal",
       "isCommon": false
     },
     {
-      "prop": "medium",
+      "prop": "fontMedium",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Medium font weight (500)",
+      "description": "Medium font weight (500) — emits font-medium",
       "isCommon": false
     },
     {
-      "prop": "semibold",
+      "prop": "fontSemibold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Semibold font weight (600)",
+      "description": "Semibold font weight (600) — emits font-semibold",
       "isCommon": false
     },
     {
-      "prop": "bold",
+      "prop": "fontBold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Bold font weight (700)",
+      "description": "Bold font weight (700) — emits font-bold",
       "isCommon": false
     },
     {
-      "prop": "extrabold",
+      "prop": "fontExtrabold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra bold font weight (800)",
+      "description": "Extra bold font weight (800) — emits font-extrabold",
       "isCommon": false
     },
     {
-      "prop": "black",
+      "prop": "fontBlack",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Black font weight (900)",
+      "description": "Black font weight (900) — emits font-black",
       "isCommon": false
     },
     {
@@ -24323,7 +24211,7 @@
       "prop": "noUnderline",
       "category": "Text Decoration",
       "isDefault": false,
-      "description": "Remove text decoration (no underline, strikethrough, etc.)",
+      "description": "Remove ALL text-decoration — underline, line-through, and overline (text-decoration: none)",
       "isCommon": false
     },
     {
@@ -24362,31 +24250,31 @@
       "isCommon": false
     },
     {
-      "prop": "sans",
+      "prop": "fontSans",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Sans-serif font family (default)",
+      "description": "Sans-serif font family (default) — emits font-sans",
       "isCommon": false
     },
     {
-      "prop": "serif",
+      "prop": "fontSerif",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Serif font family",
+      "description": "Serif font family — emits font-serif",
       "isCommon": false
     },
     {
-      "prop": "mono",
+      "prop": "fontMono",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Monospace font family",
+      "description": "Monospace font family — emits font-mono",
       "isCommon": false
     },
     {
-      "prop": "heading",
+      "prop": "fontHeading",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Heading font family (defaults to sans, independently customizable via --font-heading CSS variable)",
+      "description": "Heading font family (defaults to sans, customizable via --font-heading) — emits font-heading",
       "isCommon": false
     },
     {
@@ -24901,13 +24789,6 @@
       "isCommon": true
     },
     {
-      "prop": "reverse",
-      "category": "Reverse",
-      "isDefault": false,
-      "description": "Reverse the order of children",
-      "isCommon": true
-    },
-    {
       "prop": "flex1",
       "category": "Flex",
       "isDefault": false,
@@ -25174,17 +25055,17 @@
       "isCommon": true
     },
     {
-      "prop": "ring",
+      "prop": "insetRing",
       "category": "Ring",
       "isDefault": false,
-      "description": "Enable focus ring",
+      "description": "Enable the inset ring — emits ring-inset",
       "isCommon": true
     },
     {
-      "prop": "noRing",
+      "prop": "noInsetRing",
       "category": "Ring",
       "isDefault": false,
-      "description": "Disable focus ring",
+      "description": "Disable the inset ring",
       "isCommon": true
     },
     {
@@ -25904,13 +25785,6 @@
       "isCommon": true
     },
     {
-      "prop": "reverse",
-      "category": "Reverse",
-      "isDefault": false,
-      "description": "Reverse the order of children",
-      "isCommon": true
-    },
-    {
       "prop": "flex1",
       "category": "Flex",
       "isDefault": false,
@@ -26191,17 +26065,17 @@
       "isCommon": true
     },
     {
-      "prop": "ring",
+      "prop": "insetRing",
       "category": "Ring",
       "isDefault": false,
-      "description": "Enable focus ring",
+      "description": "Enable the inset ring — emits ring-inset",
       "isCommon": true
     },
     {
-      "prop": "noRing",
+      "prop": "noInsetRing",
       "category": "Ring",
       "isDefault": true,
-      "description": "Disable focus ring",
+      "description": "Disable the inset ring",
       "isCommon": true
     },
     {
@@ -26802,13 +26676,6 @@
       "isCommon": true
     },
     {
-      "prop": "reverse",
-      "category": "Reverse",
-      "isDefault": false,
-      "description": "Reverse the order of children",
-      "isCommon": true
-    },
-    {
       "prop": "flex1",
       "category": "Flex",
       "isDefault": false,
@@ -26998,17 +26865,17 @@
       "isCommon": true
     },
     {
-      "prop": "ring",
+      "prop": "insetRing",
       "category": "Ring",
       "isDefault": false,
-      "description": "Enable focus ring",
+      "description": "Enable the inset ring — emits ring-inset",
       "isCommon": true
     },
     {
-      "prop": "noRing",
+      "prop": "noInsetRing",
       "category": "Ring",
       "isDefault": true,
-      "description": "Disable focus ring",
+      "description": "Disable the inset ring",
       "isCommon": true
     },
     {
@@ -27259,66 +27126,66 @@
   ],
   "section-title": [
     {
-      "prop": "thin",
+      "prop": "fontThin",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Thin font weight (100)",
+      "description": "Thin font weight (100) — emits font-thin",
       "isCommon": false
     },
     {
-      "prop": "extralight",
+      "prop": "fontExtralight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra light font weight (200)",
+      "description": "Extra light font weight (200) — emits font-extralight",
       "isCommon": false
     },
     {
-      "prop": "light",
+      "prop": "fontLight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Light font weight (300)",
+      "description": "Light font weight (300) — emits font-light",
       "isCommon": false
     },
     {
-      "prop": "normal",
+      "prop": "fontNormal",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Normal font weight (400)",
+      "description": "Normal font weight (400) — emits font-normal",
       "isCommon": false
     },
     {
-      "prop": "medium",
+      "prop": "fontMedium",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Medium font weight (500)",
+      "description": "Medium font weight (500) — emits font-medium",
       "isCommon": false
     },
     {
-      "prop": "semibold",
+      "prop": "fontSemibold",
       "category": "Font Weight",
       "isDefault": true,
-      "description": "Semibold font weight (600)",
+      "description": "Semibold font weight (600) — emits font-semibold",
       "isCommon": false
     },
     {
-      "prop": "bold",
+      "prop": "fontBold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Bold font weight (700)",
+      "description": "Bold font weight (700) — emits font-bold",
       "isCommon": false
     },
     {
-      "prop": "extrabold",
+      "prop": "fontExtrabold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra bold font weight (800)",
+      "description": "Extra bold font weight (800) — emits font-extrabold",
       "isCommon": false
     },
     {
-      "prop": "black",
+      "prop": "fontBlack",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Black font weight (900)",
+      "description": "Black font weight (900) — emits font-black",
       "isCommon": false
     },
     {
@@ -27353,7 +27220,7 @@
       "prop": "noUnderline",
       "category": "Text Decoration",
       "isDefault": false,
-      "description": "Remove text decoration (no underline, strikethrough, etc.)",
+      "description": "Remove ALL text-decoration — underline, line-through, and overline (text-decoration: none)",
       "isCommon": false
     },
     {
@@ -27392,31 +27259,31 @@
       "isCommon": false
     },
     {
-      "prop": "sans",
+      "prop": "fontSans",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Sans-serif font family (default)",
+      "description": "Sans-serif font family (default) — emits font-sans",
       "isCommon": false
     },
     {
-      "prop": "serif",
+      "prop": "fontSerif",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Serif font family",
+      "description": "Serif font family — emits font-serif",
       "isCommon": false
     },
     {
-      "prop": "mono",
+      "prop": "fontMono",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Monospace font family",
+      "description": "Monospace font family — emits font-mono",
       "isCommon": false
     },
     {
-      "prop": "heading",
+      "prop": "fontHeading",
       "category": "Font Family",
       "isDefault": true,
-      "description": "Heading font family (defaults to sans, independently customizable via --font-heading CSS variable)",
+      "description": "Heading font family (defaults to sans, customizable via --font-heading) — emits font-heading",
       "isCommon": false
     },
     {
@@ -28137,7 +28004,7 @@
       "prop": "whitespaceBreakSpaces",
       "category": "Whitespace",
       "isDefault": false,
-      "description": "Break words to prevent overflow",
+      "description": "Preserve whitespace incl. trailing spaces, wrap text (white-space: break-spaces)",
       "isCommon": true
     },
     {
@@ -28689,13 +28556,6 @@
       "isCommon": true
     },
     {
-      "prop": "reverse",
-      "category": "Reverse",
-      "isDefault": false,
-      "description": "Reverse the order of children",
-      "isCommon": true
-    },
-    {
       "prop": "flex1",
       "category": "Flex",
       "isDefault": false,
@@ -28976,17 +28836,17 @@
       "isCommon": true
     },
     {
-      "prop": "ring",
+      "prop": "insetRing",
       "category": "Ring",
       "isDefault": false,
-      "description": "Enable focus ring",
+      "description": "Enable the inset ring — emits ring-inset",
       "isCommon": true
     },
     {
-      "prop": "noRing",
+      "prop": "noInsetRing",
       "category": "Ring",
       "isDefault": true,
-      "description": "Disable focus ring",
+      "description": "Disable the inset ring",
       "isCommon": true
     },
     {
@@ -29505,66 +29365,66 @@
   ],
   "text": [
     {
-      "prop": "thin",
+      "prop": "fontThin",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Thin font weight (100)",
+      "description": "Thin font weight (100) — emits font-thin",
       "isCommon": false
     },
     {
-      "prop": "extralight",
+      "prop": "fontExtralight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra light font weight (200)",
+      "description": "Extra light font weight (200) — emits font-extralight",
       "isCommon": false
     },
     {
-      "prop": "light",
+      "prop": "fontLight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Light font weight (300)",
+      "description": "Light font weight (300) — emits font-light",
       "isCommon": false
     },
     {
-      "prop": "normal",
+      "prop": "fontNormal",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Normal font weight (400)",
+      "description": "Normal font weight (400) — emits font-normal",
       "isCommon": false
     },
     {
-      "prop": "medium",
+      "prop": "fontMedium",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Medium font weight (500)",
+      "description": "Medium font weight (500) — emits font-medium",
       "isCommon": false
     },
     {
-      "prop": "semibold",
+      "prop": "fontSemibold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Semibold font weight (600)",
+      "description": "Semibold font weight (600) — emits font-semibold",
       "isCommon": false
     },
     {
-      "prop": "bold",
+      "prop": "fontBold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Bold font weight (700)",
+      "description": "Bold font weight (700) — emits font-bold",
       "isCommon": false
     },
     {
-      "prop": "extrabold",
+      "prop": "fontExtrabold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra bold font weight (800)",
+      "description": "Extra bold font weight (800) — emits font-extrabold",
       "isCommon": false
     },
     {
-      "prop": "black",
+      "prop": "fontBlack",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Black font weight (900)",
+      "description": "Black font weight (900) — emits font-black",
       "isCommon": false
     },
     {
@@ -29599,7 +29459,7 @@
       "prop": "noUnderline",
       "category": "Text Decoration",
       "isDefault": false,
-      "description": "Remove text decoration (no underline, strikethrough, etc.)",
+      "description": "Remove ALL text-decoration — underline, line-through, and overline (text-decoration: none)",
       "isCommon": false
     },
     {
@@ -29638,31 +29498,31 @@
       "isCommon": false
     },
     {
-      "prop": "sans",
+      "prop": "fontSans",
       "category": "Font Family",
       "isDefault": true,
-      "description": "Sans-serif font family (default)",
+      "description": "Sans-serif font family (default) — emits font-sans",
       "isCommon": false
     },
     {
-      "prop": "serif",
+      "prop": "fontSerif",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Serif font family",
+      "description": "Serif font family — emits font-serif",
       "isCommon": false
     },
     {
-      "prop": "mono",
+      "prop": "fontMono",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Monospace font family",
+      "description": "Monospace font family — emits font-mono",
       "isCommon": false
     },
     {
-      "prop": "heading",
+      "prop": "fontHeading",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Heading font family (defaults to sans, independently customizable via --font-heading CSS variable)",
+      "description": "Heading font family (defaults to sans, customizable via --font-heading) — emits font-heading",
       "isCommon": false
     },
     {
@@ -30383,7 +30243,7 @@
       "prop": "whitespaceBreakSpaces",
       "category": "Whitespace",
       "isDefault": false,
-      "description": "Break words to prevent overflow",
+      "description": "Preserve whitespace incl. trailing spaces, wrap text (white-space: break-spaces)",
       "isCommon": true
     },
     {
@@ -30508,66 +30368,66 @@
   ],
   "title": [
     {
-      "prop": "thin",
+      "prop": "fontThin",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Thin font weight (100)",
+      "description": "Thin font weight (100) — emits font-thin",
       "isCommon": false
     },
     {
-      "prop": "extralight",
+      "prop": "fontExtralight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra light font weight (200)",
+      "description": "Extra light font weight (200) — emits font-extralight",
       "isCommon": false
     },
     {
-      "prop": "light",
+      "prop": "fontLight",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Light font weight (300)",
+      "description": "Light font weight (300) — emits font-light",
       "isCommon": false
     },
     {
-      "prop": "normal",
+      "prop": "fontNormal",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Normal font weight (400)",
+      "description": "Normal font weight (400) — emits font-normal",
       "isCommon": false
     },
     {
-      "prop": "medium",
+      "prop": "fontMedium",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Medium font weight (500)",
+      "description": "Medium font weight (500) — emits font-medium",
       "isCommon": false
     },
     {
-      "prop": "semibold",
+      "prop": "fontSemibold",
       "category": "Font Weight",
       "isDefault": true,
-      "description": "Semibold font weight (600)",
+      "description": "Semibold font weight (600) — emits font-semibold",
       "isCommon": false
     },
     {
-      "prop": "bold",
+      "prop": "fontBold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Bold font weight (700)",
+      "description": "Bold font weight (700) — emits font-bold",
       "isCommon": false
     },
     {
-      "prop": "extrabold",
+      "prop": "fontExtrabold",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Extra bold font weight (800)",
+      "description": "Extra bold font weight (800) — emits font-extrabold",
       "isCommon": false
     },
     {
-      "prop": "black",
+      "prop": "fontBlack",
       "category": "Font Weight",
       "isDefault": false,
-      "description": "Black font weight (900)",
+      "description": "Black font weight (900) — emits font-black",
       "isCommon": false
     },
     {
@@ -30602,7 +30462,7 @@
       "prop": "noUnderline",
       "category": "Text Decoration",
       "isDefault": false,
-      "description": "Remove text decoration (no underline, strikethrough, etc.)",
+      "description": "Remove ALL text-decoration — underline, line-through, and overline (text-decoration: none)",
       "isCommon": false
     },
     {
@@ -30641,31 +30501,31 @@
       "isCommon": false
     },
     {
-      "prop": "sans",
+      "prop": "fontSans",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Sans-serif font family (default)",
+      "description": "Sans-serif font family (default) — emits font-sans",
       "isCommon": false
     },
     {
-      "prop": "serif",
+      "prop": "fontSerif",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Serif font family",
+      "description": "Serif font family — emits font-serif",
       "isCommon": false
     },
     {
-      "prop": "mono",
+      "prop": "fontMono",
       "category": "Font Family",
       "isDefault": false,
-      "description": "Monospace font family",
+      "description": "Monospace font family — emits font-mono",
       "isCommon": false
     },
     {
-      "prop": "heading",
+      "prop": "fontHeading",
       "category": "Font Family",
       "isDefault": true,
-      "description": "Heading font family (defaults to sans, independently customizable via --font-heading CSS variable)",
+      "description": "Heading font family (defaults to sans, customizable via --font-heading) — emits font-heading",
       "isCommon": false
     },
     {
@@ -31386,7 +31246,7 @@
       "prop": "whitespaceBreakSpaces",
       "category": "Whitespace",
       "isDefault": false,
-      "description": "Break words to prevent overflow",
+      "description": "Preserve whitespace incl. trailing spaces, wrap text (white-space: break-spaces)",
       "isCommon": true
     },
     {
