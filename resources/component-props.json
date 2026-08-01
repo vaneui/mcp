@@ -463,13 +463,6 @@
       "isCommon": false
     },
     {
-      "prop": "brand",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Brand color appearance (blue)",
-      "isCommon": false
-    },
-    {
       "prop": "accent",
       "category": "Appearance",
       "isDefault": false,
@@ -516,13 +509,6 @@
       "category": "Appearance",
       "isDefault": false,
       "description": "Info color appearance (cyan)",
-      "isCommon": false
-    },
-    {
-      "prop": "link",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Link color appearance (blue, for hyperlinks)",
       "isCommon": false
     },
     {
@@ -1760,13 +1746,6 @@
       "isCommon": false
     },
     {
-      "prop": "brand",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Brand color appearance (blue)",
-      "isCommon": false
-    },
-    {
       "prop": "accent",
       "category": "Appearance",
       "isDefault": false,
@@ -1813,13 +1792,6 @@
       "category": "Appearance",
       "isDefault": false,
       "description": "Info color appearance (cyan)",
-      "isCommon": false
-    },
-    {
-      "prop": "link",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Link color appearance (blue, for hyperlinks)",
       "isCommon": false
     },
     {
@@ -2609,13 +2581,6 @@
       "isCommon": false
     },
     {
-      "prop": "brand",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Brand color appearance (blue)",
-      "isCommon": false
-    },
-    {
       "prop": "accent",
       "category": "Appearance",
       "isDefault": false,
@@ -2662,13 +2627,6 @@
       "category": "Appearance",
       "isDefault": false,
       "description": "Info color appearance (cyan)",
-      "isCommon": false
-    },
-    {
-      "prop": "link",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Link color appearance (blue, for hyperlinks)",
       "isCommon": false
     },
     {
@@ -3815,13 +3773,6 @@
       "isCommon": false
     },
     {
-      "prop": "brand",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Brand color appearance (blue)",
-      "isCommon": false
-    },
-    {
       "prop": "accent",
       "category": "Appearance",
       "isDefault": false,
@@ -3868,13 +3819,6 @@
       "category": "Appearance",
       "isDefault": false,
       "description": "Info color appearance (cyan)",
-      "isCommon": false
-    },
-    {
-      "prop": "link",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Link color appearance (blue, for hyperlinks)",
       "isCommon": false
     },
     {
@@ -4643,13 +4587,6 @@
       "isCommon": false
     },
     {
-      "prop": "brand",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Brand color appearance (blue)",
-      "isCommon": false
-    },
-    {
       "prop": "accent",
       "category": "Appearance",
       "isDefault": false,
@@ -4696,13 +4633,6 @@
       "category": "Appearance",
       "isDefault": false,
       "description": "Info color appearance (cyan)",
-      "isCommon": false
-    },
-    {
-      "prop": "link",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Link color appearance (blue, for hyperlinks)",
       "isCommon": false
     },
     {
@@ -5478,13 +5408,6 @@
       "isCommon": false
     },
     {
-      "prop": "brand",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Brand color appearance (blue)",
-      "isCommon": false
-    },
-    {
       "prop": "accent",
       "category": "Appearance",
       "isDefault": false,
@@ -5531,13 +5454,6 @@
       "category": "Appearance",
       "isDefault": false,
       "description": "Info color appearance (cyan)",
-      "isCommon": false
-    },
-    {
-      "prop": "link",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Link color appearance (blue, for hyperlinks)",
       "isCommon": false
     },
     {
@@ -6621,13 +6537,6 @@
       "isCommon": false
     },
     {
-      "prop": "brand",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Brand color appearance (blue)",
-      "isCommon": false
-    },
-    {
       "prop": "accent",
       "category": "Appearance",
       "isDefault": false,
@@ -6674,13 +6583,6 @@
       "category": "Appearance",
       "isDefault": false,
       "description": "Info color appearance (cyan)",
-      "isCommon": false
-    },
-    {
-      "prop": "link",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Link color appearance (blue, for hyperlinks)",
       "isCommon": false
     },
     {
@@ -7834,13 +7736,6 @@
       "isCommon": false
     },
     {
-      "prop": "brand",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Brand color appearance (blue)",
-      "isCommon": false
-    },
-    {
       "prop": "accent",
       "category": "Appearance",
       "isDefault": false,
@@ -7887,13 +7782,6 @@
       "category": "Appearance",
       "isDefault": false,
       "description": "Info color appearance (cyan)",
-      "isCommon": false
-    },
-    {
-      "prop": "link",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Link color appearance (blue, for hyperlinks)",
       "isCommon": false
     },
     {
@@ -8725,13 +8613,6 @@
       "isCommon": false
     },
     {
-      "prop": "brand",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Brand color appearance (blue)",
-      "isCommon": false
-    },
-    {
       "prop": "accent",
       "category": "Appearance",
       "isDefault": false,
@@ -8778,13 +8659,6 @@
       "category": "Appearance",
       "isDefault": false,
       "description": "Info color appearance (cyan)",
-      "isCommon": false
-    },
-    {
-      "prop": "link",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Link color appearance (blue, for hyperlinks)",
       "isCommon": false
     },
     {
@@ -9441,13 +9315,6 @@
       "isCommon": false
     },
     {
-      "prop": "brand",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Brand color appearance (blue)",
-      "isCommon": false
-    },
-    {
       "prop": "accent",
       "category": "Appearance",
       "isDefault": false,
@@ -9494,13 +9361,6 @@
       "category": "Appearance",
       "isDefault": false,
       "description": "Info color appearance (cyan)",
-      "isCommon": false
-    },
-    {
-      "prop": "link",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Link color appearance (blue, for hyperlinks)",
       "isCommon": false
     },
     {
@@ -10178,13 +10038,6 @@
       "isCommon": false
     },
     {
-      "prop": "brand",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Brand color appearance (blue)",
-      "isCommon": false
-    },
-    {
       "prop": "accent",
       "category": "Appearance",
       "isDefault": false,
@@ -10231,13 +10084,6 @@
       "category": "Appearance",
       "isDefault": false,
       "description": "Info color appearance (cyan)",
-      "isCommon": false
-    },
-    {
-      "prop": "link",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Link color appearance (blue, for hyperlinks)",
       "isCommon": false
     },
     {
@@ -10474,13 +10320,6 @@
       "isCommon": false
     },
     {
-      "prop": "brand",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Brand color appearance (blue)",
-      "isCommon": false
-    },
-    {
       "prop": "accent",
       "category": "Appearance",
       "isDefault": false,
@@ -10527,13 +10366,6 @@
       "category": "Appearance",
       "isDefault": false,
       "description": "Info color appearance (cyan)",
-      "isCommon": false
-    },
-    {
-      "prop": "link",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Link color appearance (blue, for hyperlinks)",
       "isCommon": false
     },
     {
@@ -11484,13 +11316,6 @@
       "isCommon": false
     },
     {
-      "prop": "brand",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Brand color appearance (blue)",
-      "isCommon": false
-    },
-    {
       "prop": "accent",
       "category": "Appearance",
       "isDefault": false,
@@ -11537,13 +11362,6 @@
       "category": "Appearance",
       "isDefault": false,
       "description": "Info color appearance (cyan)",
-      "isCommon": false
-    },
-    {
-      "prop": "link",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Link color appearance (blue, for hyperlinks)",
       "isCommon": false
     },
     {
@@ -12536,13 +12354,6 @@
       "isCommon": false
     },
     {
-      "prop": "brand",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Brand color appearance (blue)",
-      "isCommon": false
-    },
-    {
       "prop": "accent",
       "category": "Appearance",
       "isDefault": false,
@@ -12589,13 +12400,6 @@
       "category": "Appearance",
       "isDefault": false,
       "description": "Info color appearance (cyan)",
-      "isCommon": false
-    },
-    {
-      "prop": "link",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Link color appearance (blue, for hyperlinks)",
       "isCommon": false
     },
     {
@@ -13329,13 +13133,6 @@
       "isCommon": false
     },
     {
-      "prop": "brand",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Brand color appearance (blue)",
-      "isCommon": false
-    },
-    {
       "prop": "accent",
       "category": "Appearance",
       "isDefault": false,
@@ -13382,13 +13179,6 @@
       "category": "Appearance",
       "isDefault": false,
       "description": "Info color appearance (cyan)",
-      "isCommon": false
-    },
-    {
-      "prop": "link",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Link color appearance (blue, for hyperlinks)",
       "isCommon": false
     },
     {
@@ -14486,13 +14276,6 @@
       "isCommon": false
     },
     {
-      "prop": "brand",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Brand color appearance (blue)",
-      "isCommon": false
-    },
-    {
       "prop": "accent",
       "category": "Appearance",
       "isDefault": false,
@@ -14539,13 +14322,6 @@
       "category": "Appearance",
       "isDefault": false,
       "description": "Info color appearance (cyan)",
-      "isCommon": false
-    },
-    {
-      "prop": "link",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Link color appearance (blue, for hyperlinks)",
       "isCommon": false
     },
     {
@@ -15874,13 +15650,6 @@
       "isCommon": false
     },
     {
-      "prop": "brand",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Brand color appearance (blue)",
-      "isCommon": false
-    },
-    {
       "prop": "accent",
       "category": "Appearance",
       "isDefault": false,
@@ -15927,13 +15696,6 @@
       "category": "Appearance",
       "isDefault": false,
       "description": "Info color appearance (cyan)",
-      "isCommon": false
-    },
-    {
-      "prop": "link",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Link color appearance (blue, for hyperlinks)",
       "isCommon": false
     },
     {
@@ -16793,13 +16555,6 @@
       "isCommon": false
     },
     {
-      "prop": "brand",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Brand color appearance (blue)",
-      "isCommon": false
-    },
-    {
       "prop": "accent",
       "category": "Appearance",
       "isDefault": false,
@@ -16846,13 +16601,6 @@
       "category": "Appearance",
       "isDefault": false,
       "description": "Info color appearance (cyan)",
-      "isCommon": false
-    },
-    {
-      "prop": "link",
-      "category": "Appearance",
-      "isDefault": true,
-      "description": "Link color appearance (blue, for hyperlinks)",
       "isCommon": false
     },
     {
@@ -17880,13 +17628,6 @@
       "isCommon": false
     },
     {
-      "prop": "brand",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Brand color appearance (blue)",
-      "isCommon": false
-    },
-    {
       "prop": "accent",
       "category": "Appearance",
       "isDefault": false,
@@ -17933,13 +17674,6 @@
       "category": "Appearance",
       "isDefault": false,
       "description": "Info color appearance (cyan)",
-      "isCommon": false
-    },
-    {
-      "prop": "link",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Link color appearance (blue, for hyperlinks)",
       "isCommon": false
     },
     {
@@ -18645,13 +18379,6 @@
       "isCommon": false
     },
     {
-      "prop": "brand",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Brand color appearance (blue)",
-      "isCommon": false
-    },
-    {
       "prop": "accent",
       "category": "Appearance",
       "isDefault": false,
@@ -18698,13 +18425,6 @@
       "category": "Appearance",
       "isDefault": false,
       "description": "Info color appearance (cyan)",
-      "isCommon": false
-    },
-    {
-      "prop": "link",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Link color appearance (blue, for hyperlinks)",
       "isCommon": false
     },
     {
@@ -19788,13 +19508,6 @@
       "isCommon": false
     },
     {
-      "prop": "brand",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Brand color appearance (blue)",
-      "isCommon": false
-    },
-    {
       "prop": "accent",
       "category": "Appearance",
       "isDefault": false,
@@ -19841,13 +19554,6 @@
       "category": "Appearance",
       "isDefault": false,
       "description": "Info color appearance (cyan)",
-      "isCommon": false
-    },
-    {
-      "prop": "link",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Link color appearance (blue, for hyperlinks)",
       "isCommon": false
     },
     {
@@ -21176,13 +20882,6 @@
       "isCommon": false
     },
     {
-      "prop": "brand",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Brand color appearance (blue)",
-      "isCommon": false
-    },
-    {
       "prop": "accent",
       "category": "Appearance",
       "isDefault": false,
@@ -21229,13 +20928,6 @@
       "category": "Appearance",
       "isDefault": false,
       "description": "Info color appearance (cyan)",
-      "isCommon": false
-    },
-    {
-      "prop": "link",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Link color appearance (blue, for hyperlinks)",
       "isCommon": false
     },
     {
@@ -21969,13 +21661,6 @@
       "isCommon": false
     },
     {
-      "prop": "brand",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Brand color appearance (blue)",
-      "isCommon": false
-    },
-    {
       "prop": "accent",
       "category": "Appearance",
       "isDefault": false,
@@ -22022,13 +21707,6 @@
       "category": "Appearance",
       "isDefault": false,
       "description": "Info color appearance (cyan)",
-      "isCommon": false
-    },
-    {
-      "prop": "link",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Link color appearance (blue, for hyperlinks)",
       "isCommon": false
     },
     {
@@ -23730,13 +23408,6 @@
       "isCommon": false
     },
     {
-      "prop": "brand",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Brand color appearance (blue)",
-      "isCommon": false
-    },
-    {
       "prop": "accent",
       "category": "Appearance",
       "isDefault": false,
@@ -23783,13 +23454,6 @@
       "category": "Appearance",
       "isDefault": false,
       "description": "Info color appearance (cyan)",
-      "isCommon": false
-    },
-    {
-      "prop": "link",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Link color appearance (blue, for hyperlinks)",
       "isCommon": false
     },
     {
@@ -24901,13 +24565,6 @@
       "isCommon": false
     },
     {
-      "prop": "brand",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Brand color appearance (blue)",
-      "isCommon": false
-    },
-    {
       "prop": "accent",
       "category": "Appearance",
       "isDefault": false,
@@ -24954,13 +24611,6 @@
       "category": "Appearance",
       "isDefault": false,
       "description": "Info color appearance (cyan)",
-      "isCommon": false
-    },
-    {
-      "prop": "link",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Link color appearance (blue, for hyperlinks)",
       "isCommon": false
     },
     {
@@ -25911,13 +25561,6 @@
       "isCommon": false
     },
     {
-      "prop": "brand",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Brand color appearance (blue)",
-      "isCommon": false
-    },
-    {
       "prop": "accent",
       "category": "Appearance",
       "isDefault": false,
@@ -25964,13 +25607,6 @@
       "category": "Appearance",
       "isDefault": false,
       "description": "Info color appearance (cyan)",
-      "isCommon": false
-    },
-    {
-      "prop": "link",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Link color appearance (blue, for hyperlinks)",
       "isCommon": false
     },
     {
@@ -26711,13 +26347,6 @@
       "isCommon": false
     },
     {
-      "prop": "brand",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Brand color appearance (blue)",
-      "isCommon": false
-    },
-    {
       "prop": "accent",
       "category": "Appearance",
       "isDefault": false,
@@ -26764,13 +26393,6 @@
       "category": "Appearance",
       "isDefault": false,
       "description": "Info color appearance (cyan)",
-      "isCommon": false
-    },
-    {
-      "prop": "link",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Link color appearance (blue, for hyperlinks)",
       "isCommon": false
     },
     {
@@ -27742,13 +27364,6 @@
       "isCommon": false
     },
     {
-      "prop": "brand",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Brand color appearance (blue)",
-      "isCommon": false
-    },
-    {
       "prop": "accent",
       "category": "Appearance",
       "isDefault": false,
@@ -27795,13 +27410,6 @@
       "category": "Appearance",
       "isDefault": false,
       "description": "Info color appearance (cyan)",
-      "isCommon": false
-    },
-    {
-      "prop": "link",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Link color appearance (blue, for hyperlinks)",
       "isCommon": false
     },
     {
@@ -28682,13 +28290,6 @@
       "isCommon": false
     },
     {
-      "prop": "brand",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Brand color appearance (blue)",
-      "isCommon": false
-    },
-    {
       "prop": "accent",
       "category": "Appearance",
       "isDefault": false,
@@ -28735,13 +28336,6 @@
       "category": "Appearance",
       "isDefault": false,
       "description": "Info color appearance (cyan)",
-      "isCommon": false
-    },
-    {
-      "prop": "link",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Link color appearance (blue, for hyperlinks)",
       "isCommon": false
     },
     {
@@ -29062,13 +28656,6 @@
       "isCommon": false
     },
     {
-      "prop": "brand",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Brand color appearance (blue)",
-      "isCommon": false
-    },
-    {
       "prop": "accent",
       "category": "Appearance",
       "isDefault": false,
@@ -29115,13 +28702,6 @@
       "category": "Appearance",
       "isDefault": false,
       "description": "Info color appearance (cyan)",
-      "isCommon": false
-    },
-    {
-      "prop": "link",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Link color appearance (blue, for hyperlinks)",
       "isCommon": false
     },
     {
@@ -29981,13 +29561,6 @@
       "isCommon": false
     },
     {
-      "prop": "brand",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Brand color appearance (blue)",
-      "isCommon": false
-    },
-    {
       "prop": "accent",
       "category": "Appearance",
       "isDefault": false,
@@ -30034,13 +29607,6 @@
       "category": "Appearance",
       "isDefault": false,
       "description": "Info color appearance (cyan)",
-      "isCommon": false
-    },
-    {
-      "prop": "link",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Link color appearance (blue, for hyperlinks)",
       "isCommon": false
     },
     {
@@ -30984,13 +30550,6 @@
       "isCommon": false
     },
     {
-      "prop": "brand",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Brand color appearance (blue)",
-      "isCommon": false
-    },
-    {
       "prop": "accent",
       "category": "Appearance",
       "isDefault": false,
@@ -31037,13 +30596,6 @@
       "category": "Appearance",
       "isDefault": false,
       "description": "Info color appearance (cyan)",
-      "isCommon": false
-    },
-    {
-      "prop": "link",
-      "category": "Appearance",
-      "isDefault": false,
-      "description": "Link color appearance (blue, for hyperlinks)",
       "isCommon": false
     },
     {
