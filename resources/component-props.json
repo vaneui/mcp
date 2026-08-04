@@ -512,7 +512,7 @@
       "isCommon": false
     },
     {
-      "prop": "inherit",
+      "prop": "inheritAppearance",
       "category": "Appearance",
       "isDefault": false,
       "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
@@ -568,14 +568,14 @@
       "isCommon": true
     },
     {
-      "prop": "borderS",
+      "prop": "borderStart",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
       "isCommon": true
     },
     {
-      "prop": "borderE",
+      "prop": "borderEnd",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
@@ -1100,11 +1100,11 @@
       "isCommon": true
     },
     {
-      "prop": "responsive",
-      "category": "Responsive",
+      "prop": "responsiveSizing",
+      "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": true
+      "isCommon": false
     },
     {
       "prop": "disabled",
@@ -1795,7 +1795,7 @@
       "isCommon": false
     },
     {
-      "prop": "inherit",
+      "prop": "inheritAppearance",
       "category": "Appearance",
       "isDefault": true,
       "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
@@ -2082,11 +2082,11 @@
       "isCommon": true
     },
     {
-      "prop": "responsive",
-      "category": "Responsive",
+      "prop": "responsiveSizing",
+      "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": true
+      "isCommon": false
     },
     {
       "prop": "inheritSize",
@@ -2630,7 +2630,7 @@
       "isCommon": false
     },
     {
-      "prop": "inherit",
+      "prop": "inheritAppearance",
       "category": "Appearance",
       "isDefault": false,
       "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
@@ -2686,14 +2686,14 @@
       "isCommon": true
     },
     {
-      "prop": "borderS",
+      "prop": "borderStart",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
       "isCommon": true
     },
     {
-      "prop": "borderE",
+      "prop": "borderEnd",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
@@ -3218,11 +3218,11 @@
       "isCommon": true
     },
     {
-      "prop": "responsive",
-      "category": "Responsive",
+      "prop": "responsiveSizing",
+      "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": true
+      "isCommon": false
     },
     {
       "prop": "disabled",
@@ -3745,24 +3745,24 @@
       "isCommon": false
     },
     {
-      "prop": "mobileCol",
+      "prop": "mobileStack",
       "category": "Breakpoint",
       "isDefault": false,
-      "description": "Switch to column layout on mobile and below (max-mobile: 48rem)",
+      "description": "Stack into a column at mobile width and below (max-mobile: 48rem)",
       "isCommon": false
     },
     {
-      "prop": "tabletCol",
+      "prop": "tabletStack",
       "category": "Breakpoint",
       "isDefault": false,
-      "description": "Switch to column layout on tablet and below (max-tablet: 64rem)",
+      "description": "Stack into a column at tablet width and below (max-tablet: 64rem)",
       "isCommon": false
     },
     {
-      "prop": "desktopCol",
+      "prop": "desktopStack",
       "category": "Breakpoint",
       "isDefault": false,
-      "description": "Switch to column layout on desktop and below (max-desktop: 80rem)",
+      "description": "Stack into a column at desktop width and below (max-desktop: 80rem)",
       "isCommon": false
     },
     {
@@ -3822,7 +3822,7 @@
       "isCommon": false
     },
     {
-      "prop": "inherit",
+      "prop": "inheritAppearance",
       "category": "Appearance",
       "isDefault": false,
       "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
@@ -3878,14 +3878,14 @@
       "isCommon": true
     },
     {
-      "prop": "borderS",
+      "prop": "borderStart",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
       "isCommon": true
     },
     {
-      "prop": "borderE",
+      "prop": "borderEnd",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
@@ -4151,11 +4151,11 @@
       "isCommon": true
     },
     {
-      "prop": "responsive",
-      "category": "Responsive",
+      "prop": "responsiveSizing",
+      "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": true
+      "isCommon": false
     },
     {
       "prop": "focusVisible",
@@ -4538,42 +4538,42 @@
       "isCommon": true
     },
     {
-      "prop": "selfAuto",
+      "prop": "alignSelfAuto",
       "category": "Align Self",
       "isDefault": false,
       "description": "Use the parent's align-items value (align-self: auto)",
       "isCommon": false
     },
     {
-      "prop": "selfStart",
+      "prop": "alignSelfStart",
       "category": "Align Self",
       "isDefault": false,
       "description": "Align this item to the start of the cross axis (align-self: flex-start)",
       "isCommon": false
     },
     {
-      "prop": "selfEnd",
+      "prop": "alignSelfEnd",
       "category": "Align Self",
       "isDefault": false,
       "description": "Align this item to the end of the cross axis (align-self: flex-end)",
       "isCommon": false
     },
     {
-      "prop": "selfCenter",
+      "prop": "alignSelfCenter",
       "category": "Align Self",
       "isDefault": false,
       "description": "Center this item on the cross axis (align-self: center)",
       "isCommon": false
     },
     {
-      "prop": "selfStretch",
+      "prop": "alignSelfStretch",
       "category": "Align Self",
       "isDefault": false,
       "description": "Stretch this item to fill the cross axis (align-self: stretch)",
       "isCommon": false
     },
     {
-      "prop": "selfBaseline",
+      "prop": "alignSelfBaseline",
       "category": "Align Self",
       "isDefault": false,
       "description": "Align this item to its baseline (align-self: baseline)",
@@ -4636,7 +4636,7 @@
       "isCommon": false
     },
     {
-      "prop": "inherit",
+      "prop": "inheritAppearance",
       "category": "Appearance",
       "isDefault": false,
       "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
@@ -4692,14 +4692,14 @@
       "isCommon": true
     },
     {
-      "prop": "borderS",
+      "prop": "borderStart",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
       "isCommon": true
     },
     {
-      "prop": "borderE",
+      "prop": "borderEnd",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
@@ -4860,10 +4860,10 @@
       "isCommon": true
     },
     {
-      "prop": "error",
-      "category": "Status",
+      "prop": "invalid",
+      "category": "Validity",
       "isDefault": false,
-      "description": "Show error state (red border/ring) for form validation",
+      "description": "Mark the field invalid (red border/ring), layered over any appearance",
       "isCommon": false
     },
     {
@@ -4930,11 +4930,11 @@
       "isCommon": true
     },
     {
-      "prop": "responsive",
-      "category": "Responsive",
+      "prop": "responsiveSizing",
+      "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": true
+      "isCommon": false
     },
     {
       "prop": "disabled",
@@ -5457,7 +5457,7 @@
       "isCommon": false
     },
     {
-      "prop": "inherit",
+      "prop": "inheritAppearance",
       "category": "Appearance",
       "isDefault": false,
       "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
@@ -5513,14 +5513,14 @@
       "isCommon": true
     },
     {
-      "prop": "borderS",
+      "prop": "borderStart",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
       "isCommon": true
     },
     {
-      "prop": "borderE",
+      "prop": "borderEnd",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
@@ -6045,11 +6045,11 @@
       "isCommon": true
     },
     {
-      "prop": "responsive",
-      "category": "Responsive",
+      "prop": "responsiveSizing",
+      "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": true
+      "isCommon": false
     },
     {
       "prop": "disabled",
@@ -6586,7 +6586,7 @@
       "isCommon": false
     },
     {
-      "prop": "inherit",
+      "prop": "inheritAppearance",
       "category": "Appearance",
       "isDefault": false,
       "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
@@ -6642,14 +6642,14 @@
       "isCommon": true
     },
     {
-      "prop": "borderS",
+      "prop": "borderStart",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
       "isCommon": true
     },
     {
-      "prop": "borderE",
+      "prop": "borderEnd",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
@@ -7174,11 +7174,11 @@
       "isCommon": true
     },
     {
-      "prop": "responsive",
-      "category": "Responsive",
+      "prop": "responsiveSizing",
+      "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": true
+      "isCommon": false
     },
     {
       "prop": "disabled",
@@ -7785,7 +7785,7 @@
       "isCommon": false
     },
     {
-      "prop": "inherit",
+      "prop": "inheritAppearance",
       "category": "Appearance",
       "isDefault": false,
       "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
@@ -7841,14 +7841,14 @@
       "isCommon": true
     },
     {
-      "prop": "borderS",
+      "prop": "borderStart",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
       "isCommon": true
     },
     {
-      "prop": "borderE",
+      "prop": "borderEnd",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
@@ -7932,24 +7932,24 @@
       "isCommon": false
     },
     {
-      "prop": "mobileCol",
+      "prop": "mobileStack",
       "category": "Breakpoint",
       "isDefault": false,
-      "description": "Switch to column layout on mobile and below (max-mobile: 48rem)",
+      "description": "Stack into a column at mobile width and below (max-mobile: 48rem)",
       "isCommon": false
     },
     {
-      "prop": "tabletCol",
+      "prop": "tabletStack",
       "category": "Breakpoint",
       "isDefault": false,
-      "description": "Switch to column layout on tablet and below (max-tablet: 64rem)",
+      "description": "Stack into a column at tablet width and below (max-tablet: 64rem)",
       "isCommon": false
     },
     {
-      "prop": "desktopCol",
+      "prop": "desktopStack",
       "category": "Breakpoint",
       "isDefault": false,
-      "description": "Switch to column layout on desktop and below (max-desktop: 80rem)",
+      "description": "Stack into a column at desktop width and below (max-desktop: 80rem)",
       "isCommon": false
     },
     {
@@ -8016,11 +8016,11 @@
       "isCommon": true
     },
     {
-      "prop": "responsive",
-      "category": "Responsive",
+      "prop": "responsiveSizing",
+      "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": true
+      "isCommon": false
     },
     {
       "prop": "textLeft",
@@ -8662,7 +8662,7 @@
       "isCommon": false
     },
     {
-      "prop": "inherit",
+      "prop": "inheritAppearance",
       "category": "Appearance",
       "isDefault": false,
       "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
@@ -8718,14 +8718,14 @@
       "isCommon": true
     },
     {
-      "prop": "borderS",
+      "prop": "borderStart",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
       "isCommon": true
     },
     {
-      "prop": "borderE",
+      "prop": "borderEnd",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
@@ -8844,31 +8844,31 @@
       "isCommon": true
     },
     {
-      "prop": "responsive",
-      "category": "Responsive",
+      "prop": "responsiveSizing",
+      "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": true
-    },
-    {
-      "prop": "mobileCol",
-      "category": "Breakpoint",
-      "isDefault": false,
-      "description": "Switch to column layout on mobile and below (max-mobile: 48rem)",
       "isCommon": false
     },
     {
-      "prop": "tabletCol",
+      "prop": "mobileStack",
       "category": "Breakpoint",
       "isDefault": false,
-      "description": "Switch to column layout on tablet and below (max-tablet: 64rem)",
+      "description": "Stack into a column at mobile width and below (max-mobile: 48rem)",
       "isCommon": false
     },
     {
-      "prop": "desktopCol",
+      "prop": "tabletStack",
       "category": "Breakpoint",
       "isDefault": false,
-      "description": "Switch to column layout on desktop and below (max-desktop: 80rem)",
+      "description": "Stack into a column at tablet width and below (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "desktopStack",
+      "category": "Breakpoint",
+      "isDefault": false,
+      "description": "Stack into a column at desktop width and below (max-desktop: 80rem)",
       "isCommon": false
     },
     {
@@ -9364,7 +9364,7 @@
       "isCommon": false
     },
     {
-      "prop": "inherit",
+      "prop": "inheritAppearance",
       "category": "Appearance",
       "isDefault": true,
       "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
@@ -9497,11 +9497,11 @@
       "isCommon": true
     },
     {
-      "prop": "responsive",
-      "category": "Responsive",
+      "prop": "responsiveSizing",
+      "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": true
+      "isCommon": false
     }
   ],
   "grid": [
@@ -10087,7 +10087,7 @@
       "isCommon": false
     },
     {
-      "prop": "inherit",
+      "prop": "inheritAppearance",
       "category": "Appearance",
       "isDefault": false,
       "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
@@ -10143,14 +10143,14 @@
       "isCommon": true
     },
     {
-      "prop": "borderS",
+      "prop": "borderStart",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
       "isCommon": true
     },
     {
-      "prop": "borderE",
+      "prop": "borderEnd",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
@@ -10269,11 +10269,11 @@
       "isCommon": true
     },
     {
-      "prop": "responsive",
-      "category": "Responsive",
+      "prop": "responsiveSizing",
+      "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": true
+      "isCommon": false
     }
   ],
   "icon": [
@@ -10369,7 +10369,7 @@
       "isCommon": false
     },
     {
-      "prop": "inherit",
+      "prop": "inheritAppearance",
       "category": "Appearance",
       "isDefault": false,
       "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
@@ -10719,14 +10719,14 @@
       "isCommon": true
     },
     {
-      "prop": "borderS",
+      "prop": "borderStart",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
       "isCommon": true
     },
     {
-      "prop": "borderE",
+      "prop": "borderEnd",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
@@ -11365,7 +11365,7 @@
       "isCommon": false
     },
     {
-      "prop": "inherit",
+      "prop": "inheritAppearance",
       "category": "Appearance",
       "isDefault": false,
       "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
@@ -11421,14 +11421,14 @@
       "isCommon": true
     },
     {
-      "prop": "borderS",
+      "prop": "borderStart",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
       "isCommon": true
     },
     {
-      "prop": "borderE",
+      "prop": "borderEnd",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
@@ -11953,11 +11953,11 @@
       "isCommon": true
     },
     {
-      "prop": "responsive",
-      "category": "Responsive",
+      "prop": "responsiveSizing",
+      "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": true
+      "isCommon": false
     },
     {
       "prop": "disabled",
@@ -12403,7 +12403,7 @@
       "isCommon": false
     },
     {
-      "prop": "inherit",
+      "prop": "inheritAppearance",
       "category": "Appearance",
       "isDefault": false,
       "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
@@ -12459,14 +12459,14 @@
       "isCommon": true
     },
     {
-      "prop": "borderS",
+      "prop": "borderStart",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
       "isCommon": true
     },
     {
-      "prop": "borderE",
+      "prop": "borderEnd",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
@@ -12662,11 +12662,11 @@
       "isCommon": true
     },
     {
-      "prop": "responsive",
-      "category": "Responsive",
+      "prop": "responsiveSizing",
+      "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": true
+      "isCommon": false
     }
   ],
   "input": [
@@ -13182,7 +13182,7 @@
       "isCommon": false
     },
     {
-      "prop": "inherit",
+      "prop": "inheritAppearance",
       "category": "Appearance",
       "isDefault": false,
       "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
@@ -13238,14 +13238,14 @@
       "isCommon": true
     },
     {
-      "prop": "borderS",
+      "prop": "borderStart",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
       "isCommon": true
     },
     {
-      "prop": "borderE",
+      "prop": "borderEnd",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
@@ -13784,17 +13784,17 @@
       "isCommon": true
     },
     {
-      "prop": "responsive",
-      "category": "Responsive",
+      "prop": "responsiveSizing",
+      "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": true
+      "isCommon": false
     },
     {
-      "prop": "error",
-      "category": "Status",
+      "prop": "invalid",
+      "category": "Validity",
       "isDefault": false,
-      "description": "Show error state (red border/ring) for form validation",
+      "description": "Mark the field invalid (red border/ring), layered over any appearance",
       "isCommon": false
     },
     {
@@ -14325,7 +14325,7 @@
       "isCommon": false
     },
     {
-      "prop": "inherit",
+      "prop": "inheritAppearance",
       "category": "Appearance",
       "isDefault": false,
       "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
@@ -14381,14 +14381,14 @@
       "isCommon": true
     },
     {
-      "prop": "borderS",
+      "prop": "borderStart",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
       "isCommon": true
     },
     {
-      "prop": "borderE",
+      "prop": "borderEnd",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
@@ -14913,11 +14913,11 @@
       "isCommon": true
     },
     {
-      "prop": "responsive",
-      "category": "Responsive",
+      "prop": "responsiveSizing",
+      "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": true
+      "isCommon": false
     },
     {
       "prop": "disabled",
@@ -15699,7 +15699,7 @@
       "isCommon": false
     },
     {
-      "prop": "inherit",
+      "prop": "inheritAppearance",
       "category": "Appearance",
       "isDefault": true,
       "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
@@ -15755,14 +15755,14 @@
       "isCommon": true
     },
     {
-      "prop": "borderS",
+      "prop": "borderStart",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
       "isCommon": true
     },
     {
-      "prop": "borderE",
+      "prop": "borderEnd",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
@@ -15930,11 +15930,11 @@
       "isCommon": true
     },
     {
-      "prop": "responsive",
-      "category": "Responsive",
+      "prop": "responsiveSizing",
+      "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": true
+      "isCommon": false
     }
   ],
   "link": [
@@ -16604,7 +16604,7 @@
       "isCommon": false
     },
     {
-      "prop": "inherit",
+      "prop": "inheritAppearance",
       "category": "Appearance",
       "isDefault": false,
       "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
@@ -16891,11 +16891,11 @@
       "isCommon": true
     },
     {
-      "prop": "responsive",
-      "category": "Responsive",
+      "prop": "responsiveSizing",
+      "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": true
+      "isCommon": false
     },
     {
       "prop": "inheritSize",
@@ -17677,7 +17677,7 @@
       "isCommon": false
     },
     {
-      "prop": "inherit",
+      "prop": "inheritAppearance",
       "category": "Appearance",
       "isDefault": true,
       "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
@@ -17866,11 +17866,11 @@
       "isCommon": true
     },
     {
-      "prop": "responsive",
-      "category": "Responsive",
+      "prop": "responsiveSizing",
+      "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": true
+      "isCommon": false
     },
     {
       "prop": "inheritSize",
@@ -18428,7 +18428,7 @@
       "isCommon": false
     },
     {
-      "prop": "inherit",
+      "prop": "inheritAppearance",
       "category": "Appearance",
       "isDefault": false,
       "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
@@ -18484,14 +18484,14 @@
       "isCommon": true
     },
     {
-      "prop": "borderS",
+      "prop": "borderStart",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
       "isCommon": true
     },
     {
-      "prop": "borderE",
+      "prop": "borderEnd",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
@@ -19016,11 +19016,11 @@
       "isCommon": true
     },
     {
-      "prop": "responsive",
-      "category": "Responsive",
+      "prop": "responsiveSizing",
+      "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": true
+      "isCommon": false
     },
     {
       "prop": "disabled",
@@ -19557,7 +19557,7 @@
       "isCommon": false
     },
     {
-      "prop": "inherit",
+      "prop": "inheritAppearance",
       "category": "Appearance",
       "isDefault": false,
       "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
@@ -19613,14 +19613,14 @@
       "isCommon": true
     },
     {
-      "prop": "borderS",
+      "prop": "borderStart",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
       "isCommon": true
     },
     {
-      "prop": "borderE",
+      "prop": "borderEnd",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
@@ -20145,11 +20145,11 @@
       "isCommon": true
     },
     {
-      "prop": "responsive",
-      "category": "Responsive",
+      "prop": "responsiveSizing",
+      "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": true
+      "isCommon": false
     },
     {
       "prop": "disabled",
@@ -20931,7 +20931,7 @@
       "isCommon": false
     },
     {
-      "prop": "inherit",
+      "prop": "inheritAppearance",
       "category": "Appearance",
       "isDefault": false,
       "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
@@ -20987,14 +20987,14 @@
       "isCommon": true
     },
     {
-      "prop": "borderS",
+      "prop": "borderStart",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
       "isCommon": true
     },
     {
-      "prop": "borderE",
+      "prop": "borderEnd",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
@@ -21190,11 +21190,11 @@
       "isCommon": true
     },
     {
-      "prop": "responsive",
-      "category": "Responsive",
+      "prop": "responsiveSizing",
+      "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": true
+      "isCommon": false
     }
   ],
   "navlink": [
@@ -21710,7 +21710,7 @@
       "isCommon": false
     },
     {
-      "prop": "inherit",
+      "prop": "inheritAppearance",
       "category": "Appearance",
       "isDefault": false,
       "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
@@ -21766,14 +21766,14 @@
       "isCommon": true
     },
     {
-      "prop": "borderS",
+      "prop": "borderStart",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
       "isCommon": true
     },
     {
-      "prop": "borderE",
+      "prop": "borderEnd",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
@@ -22298,11 +22298,11 @@
       "isCommon": true
     },
     {
-      "prop": "responsive",
-      "category": "Responsive",
+      "prop": "responsiveSizing",
+      "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": true
+      "isCommon": false
     },
     {
       "prop": "disabled",
@@ -22783,11 +22783,11 @@
       "isCommon": true
     },
     {
-      "prop": "responsive",
-      "category": "Responsive",
+      "prop": "responsiveSizing",
+      "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": true
+      "isCommon": false
     }
   ],
   "page-title": [
@@ -23457,7 +23457,7 @@
       "isCommon": false
     },
     {
-      "prop": "inherit",
+      "prop": "inheritAppearance",
       "category": "Appearance",
       "isDefault": true,
       "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
@@ -23744,11 +23744,11 @@
       "isCommon": true
     },
     {
-      "prop": "responsive",
-      "category": "Responsive",
+      "prop": "responsiveSizing",
+      "category": "Responsive Sizing",
       "isDefault": true,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": true
+      "isCommon": false
     },
     {
       "prop": "inheritSize",
@@ -24481,42 +24481,42 @@
       "isCommon": false
     },
     {
-      "prop": "selfAuto",
+      "prop": "alignSelfAuto",
       "category": "Align Self",
       "isDefault": false,
       "description": "Use the parent's align-items value (align-self: auto)",
       "isCommon": false
     },
     {
-      "prop": "selfStart",
+      "prop": "alignSelfStart",
       "category": "Align Self",
       "isDefault": false,
       "description": "Align this item to the start of the cross axis (align-self: flex-start)",
       "isCommon": false
     },
     {
-      "prop": "selfEnd",
+      "prop": "alignSelfEnd",
       "category": "Align Self",
       "isDefault": false,
       "description": "Align this item to the end of the cross axis (align-self: flex-end)",
       "isCommon": false
     },
     {
-      "prop": "selfCenter",
+      "prop": "alignSelfCenter",
       "category": "Align Self",
       "isDefault": false,
       "description": "Center this item on the cross axis (align-self: center)",
       "isCommon": false
     },
     {
-      "prop": "selfStretch",
+      "prop": "alignSelfStretch",
       "category": "Align Self",
       "isDefault": false,
       "description": "Stretch this item to fill the cross axis (align-self: stretch)",
       "isCommon": false
     },
     {
-      "prop": "selfBaseline",
+      "prop": "alignSelfBaseline",
       "category": "Align Self",
       "isDefault": false,
       "description": "Align this item to its baseline (align-self: baseline)",
@@ -24614,7 +24614,7 @@
       "isCommon": false
     },
     {
-      "prop": "inherit",
+      "prop": "inheritAppearance",
       "category": "Appearance",
       "isDefault": false,
       "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
@@ -24670,14 +24670,14 @@
       "isCommon": true
     },
     {
-      "prop": "borderS",
+      "prop": "borderStart",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
       "isCommon": true
     },
     {
-      "prop": "borderE",
+      "prop": "borderEnd",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
@@ -24887,91 +24887,91 @@
       "isCommon": true
     },
     {
-      "prop": "responsive",
-      "category": "Responsive",
+      "prop": "responsiveSizing",
+      "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": true
+      "isCommon": false
     },
     {
-      "prop": "top",
+      "prop": "placeTop",
       "category": "Placement",
       "isDefault": false,
       "description": "Position above anchor, centered horizontally (default)",
       "isCommon": false
     },
     {
-      "prop": "topStart",
+      "prop": "placeTopStart",
       "category": "Placement",
       "isDefault": false,
       "description": "Position above anchor, aligned to start (left)",
       "isCommon": false
     },
     {
-      "prop": "topEnd",
+      "prop": "placeTopEnd",
       "category": "Placement",
       "isDefault": false,
       "description": "Position above anchor, aligned to end (right)",
       "isCommon": false
     },
     {
-      "prop": "bottom",
+      "prop": "placeBottom",
       "category": "Placement",
       "isDefault": true,
       "description": "Position below anchor, centered horizontally",
       "isCommon": false
     },
     {
-      "prop": "bottomStart",
+      "prop": "placeBottomStart",
       "category": "Placement",
       "isDefault": false,
       "description": "Position below anchor, aligned to start (left)",
       "isCommon": false
     },
     {
-      "prop": "bottomEnd",
+      "prop": "placeBottomEnd",
       "category": "Placement",
       "isDefault": false,
       "description": "Position below anchor, aligned to end (right)",
       "isCommon": false
     },
     {
-      "prop": "left",
+      "prop": "placeLeft",
       "category": "Placement",
       "isDefault": false,
       "description": "Position to the left of anchor, centered vertically",
       "isCommon": false
     },
     {
-      "prop": "leftStart",
+      "prop": "placeLeftStart",
       "category": "Placement",
       "isDefault": false,
       "description": "Position to the left of anchor, aligned to top",
       "isCommon": false
     },
     {
-      "prop": "leftEnd",
+      "prop": "placeLeftEnd",
       "category": "Placement",
       "isDefault": false,
       "description": "Position to the left of anchor, aligned to bottom",
       "isCommon": false
     },
     {
-      "prop": "right",
+      "prop": "placeRight",
       "category": "Placement",
       "isDefault": false,
       "description": "Position to the right of anchor, centered vertically",
       "isCommon": false
     },
     {
-      "prop": "rightStart",
+      "prop": "placeRightStart",
       "category": "Placement",
       "isDefault": false,
       "description": "Position to the right of anchor, aligned to top",
       "isCommon": false
     },
     {
-      "prop": "rightEnd",
+      "prop": "placeRightEnd",
       "category": "Placement",
       "isDefault": false,
       "description": "Position to the right of anchor, aligned to bottom",
@@ -24992,18 +24992,18 @@
       "isCommon": true
     },
     {
-      "prop": "minWidth",
-      "category": "Min Width",
+      "prop": "constrainWidth",
+      "category": "Constrain Width",
       "isDefault": false,
-      "description": "Apply size-dependent minimum width (uses --popup-min-w CSS variable)",
-      "isCommon": true
+      "description": "Constrain to a size-dependent minimum width (uses --popup-min-w CSS variable)",
+      "isCommon": false
     },
     {
-      "prop": "maxHeight",
-      "category": "Max Height",
+      "prop": "clampHeight",
+      "category": "Clamp Height",
       "isDefault": true,
-      "description": "Apply size-dependent maximum height (uses --max-height CSS variable)",
-      "isCommon": true
+      "description": "Clamp to a size-dependent maximum height (uses --max-height CSS variable)",
+      "isCommon": false
     }
   ],
   "row": [
@@ -25463,24 +25463,24 @@
       "isCommon": false
     },
     {
-      "prop": "mobileCol",
+      "prop": "mobileStack",
       "category": "Breakpoint",
       "isDefault": false,
-      "description": "Switch to column layout on mobile and below (max-mobile: 48rem)",
+      "description": "Stack into a column at mobile width and below (max-mobile: 48rem)",
       "isCommon": false
     },
     {
-      "prop": "tabletCol",
+      "prop": "tabletStack",
       "category": "Breakpoint",
       "isDefault": false,
-      "description": "Switch to column layout on tablet and below (max-tablet: 64rem)",
+      "description": "Stack into a column at tablet width and below (max-tablet: 64rem)",
       "isCommon": false
     },
     {
-      "prop": "desktopCol",
+      "prop": "desktopStack",
       "category": "Breakpoint",
       "isDefault": false,
-      "description": "Switch to column layout on desktop and below (max-desktop: 80rem)",
+      "description": "Stack into a column at desktop width and below (max-desktop: 80rem)",
       "isCommon": false
     },
     {
@@ -25610,7 +25610,7 @@
       "isCommon": false
     },
     {
-      "prop": "inherit",
+      "prop": "inheritAppearance",
       "category": "Appearance",
       "isDefault": false,
       "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
@@ -25666,14 +25666,14 @@
       "isCommon": true
     },
     {
-      "prop": "borderS",
+      "prop": "borderStart",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
       "isCommon": true
     },
     {
-      "prop": "borderE",
+      "prop": "borderEnd",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
@@ -25820,11 +25820,11 @@
       "isCommon": true
     },
     {
-      "prop": "responsive",
-      "category": "Responsive",
+      "prop": "responsiveSizing",
+      "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": true
+      "isCommon": false
     },
     {
       "prop": "textLeft",
@@ -26396,7 +26396,7 @@
       "isCommon": false
     },
     {
-      "prop": "inherit",
+      "prop": "inheritAppearance",
       "category": "Appearance",
       "isDefault": false,
       "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
@@ -26452,14 +26452,14 @@
       "isCommon": true
     },
     {
-      "prop": "borderS",
+      "prop": "borderStart",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
       "isCommon": true
     },
     {
-      "prop": "borderE",
+      "prop": "borderEnd",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
@@ -26592,24 +26592,24 @@
       "isCommon": false
     },
     {
-      "prop": "mobileCol",
+      "prop": "mobileStack",
       "category": "Breakpoint",
       "isDefault": false,
-      "description": "Switch to column layout on mobile and below (max-mobile: 48rem)",
+      "description": "Stack into a column at mobile width and below (max-mobile: 48rem)",
       "isCommon": false
     },
     {
-      "prop": "tabletCol",
+      "prop": "tabletStack",
       "category": "Breakpoint",
       "isDefault": false,
-      "description": "Switch to column layout on tablet and below (max-tablet: 64rem)",
+      "description": "Stack into a column at tablet width and below (max-tablet: 64rem)",
       "isCommon": false
     },
     {
-      "prop": "desktopCol",
+      "prop": "desktopStack",
       "category": "Breakpoint",
       "isDefault": false,
-      "description": "Switch to column layout on desktop and below (max-desktop: 80rem)",
+      "description": "Stack into a column at desktop width and below (max-desktop: 80rem)",
       "isCommon": false
     },
     {
@@ -26739,11 +26739,11 @@
       "isCommon": true
     },
     {
-      "prop": "responsive",
-      "category": "Responsive",
+      "prop": "responsiveSizing",
+      "category": "Responsive Sizing",
       "isDefault": true,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": true
+      "isCommon": false
     }
   ],
   "section-title": [
@@ -27413,7 +27413,7 @@
       "isCommon": false
     },
     {
-      "prop": "inherit",
+      "prop": "inheritAppearance",
       "category": "Appearance",
       "isDefault": true,
       "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
@@ -27700,11 +27700,11 @@
       "isCommon": true
     },
     {
-      "prop": "responsive",
-      "category": "Responsive",
+      "prop": "responsiveSizing",
+      "category": "Responsive Sizing",
       "isDefault": true,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": true
+      "isCommon": false
     },
     {
       "prop": "inheritSize",
@@ -28192,24 +28192,24 @@
       "isCommon": false
     },
     {
-      "prop": "mobileCol",
+      "prop": "mobileStack",
       "category": "Breakpoint",
       "isDefault": false,
-      "description": "Switch to column layout on mobile and below (max-mobile: 48rem)",
+      "description": "Stack into a column at mobile width and below (max-mobile: 48rem)",
       "isCommon": false
     },
     {
-      "prop": "tabletCol",
+      "prop": "tabletStack",
       "category": "Breakpoint",
       "isDefault": false,
-      "description": "Switch to column layout on tablet and below (max-tablet: 64rem)",
+      "description": "Stack into a column at tablet width and below (max-tablet: 64rem)",
       "isCommon": false
     },
     {
-      "prop": "desktopCol",
+      "prop": "desktopStack",
       "category": "Breakpoint",
       "isDefault": false,
-      "description": "Switch to column layout on desktop and below (max-desktop: 80rem)",
+      "description": "Stack into a column at desktop width and below (max-desktop: 80rem)",
       "isCommon": false
     },
     {
@@ -28339,7 +28339,7 @@
       "isCommon": false
     },
     {
-      "prop": "inherit",
+      "prop": "inheritAppearance",
       "category": "Appearance",
       "isDefault": false,
       "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
@@ -28395,14 +28395,14 @@
       "isCommon": true
     },
     {
-      "prop": "borderS",
+      "prop": "borderStart",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
       "isCommon": true
     },
     {
-      "prop": "borderE",
+      "prop": "borderEnd",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
@@ -28549,11 +28549,11 @@
       "isCommon": true
     },
     {
-      "prop": "responsive",
-      "category": "Responsive",
+      "prop": "responsiveSizing",
+      "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": true
+      "isCommon": false
     },
     {
       "prop": "textLeft",
@@ -28705,7 +28705,7 @@
       "isCommon": false
     },
     {
-      "prop": "inherit",
+      "prop": "inheritAppearance",
       "category": "Appearance",
       "isDefault": false,
       "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
@@ -28782,14 +28782,14 @@
       "isCommon": true
     },
     {
-      "prop": "borderS",
+      "prop": "borderStart",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
       "isCommon": true
     },
     {
-      "prop": "borderE",
+      "prop": "borderEnd",
       "category": "Border",
       "isDefault": false,
       "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
@@ -28936,11 +28936,11 @@
       "isCommon": true
     },
     {
-      "prop": "responsive",
-      "category": "Responsive",
+      "prop": "responsiveSizing",
+      "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": true
+      "isCommon": false
     }
   ],
   "text": [
@@ -29610,7 +29610,7 @@
       "isCommon": false
     },
     {
-      "prop": "inherit",
+      "prop": "inheritAppearance",
       "category": "Appearance",
       "isDefault": true,
       "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
@@ -29897,11 +29897,11 @@
       "isCommon": true
     },
     {
-      "prop": "responsive",
-      "category": "Responsive",
+      "prop": "responsiveSizing",
+      "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": true
+      "isCommon": false
     },
     {
       "prop": "inheritSize",
@@ -30599,7 +30599,7 @@
       "isCommon": false
     },
     {
-      "prop": "inherit",
+      "prop": "inheritAppearance",
       "category": "Appearance",
       "isDefault": true,
       "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
@@ -30886,11 +30886,11 @@
       "isCommon": true
     },
     {
-      "prop": "responsive",
-      "category": "Responsive",
+      "prop": "responsiveSizing",
+      "category": "Responsive Sizing",
       "isDefault": true,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": true
+      "isCommon": false
     },
     {
       "prop": "inheritSize",
