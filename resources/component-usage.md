@@ -396,7 +396,18 @@ VaneUI is **desktop-first**. Base styles target desktop. Use breakpoint props to
 </Row>
 ```
 
-Breakpoints (max-width): mobile = 768px, tablet = 1024px, desktop = 1280px.
+Breakpoints stack/hide **below** the width (exclusive): mobile < 768px, tablet < 1024px, desktop < 1280px. The boundary pixel itself (768/1024/1280) is the larger tier. Combining several `*Stack` (or `*Hide`) props resolves to the widest = their union.
+
+`*Stack` only affects **row-direction** components. It emits `flex-col`, so on `Col`/`Stack`/`Container`/`Section` (already column) it is a no-op — use it on `Row`.
+
+Stacking a `Row` keeps its default `itemsCenter`, so the stacked children shrink to **content width** and center. For full-width stacked cards on mobile, add `itemsStretch` (or `wFull` on each child):
+
+```tsx
+<Row mobileStack itemsStretch>
+  <Card>Full-width when stacked</Card>
+  <Card>Full-width when stacked</Card>
+</Row>
+```
 
 ## Size Props
 

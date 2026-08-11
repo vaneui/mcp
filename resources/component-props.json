@@ -36,10 +36,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileHide",
+      "prop": "desktopHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
       "isCommon": true
     },
     {
@@ -50,10 +50,10 @@
       "isCommon": true
     },
     {
-      "prop": "desktopHide",
+      "prop": "mobileHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
     },
     {
@@ -1410,10 +1410,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileHide",
+      "prop": "desktopHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
       "isCommon": true
     },
     {
@@ -1424,10 +1424,10 @@
       "isCommon": true
     },
     {
-      "prop": "desktopHide",
+      "prop": "mobileHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
     },
     {
@@ -2154,10 +2154,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileHide",
+      "prop": "desktopHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
       "isCommon": true
     },
     {
@@ -2168,10 +2168,10 @@
       "isCommon": true
     },
     {
-      "prop": "desktopHide",
+      "prop": "mobileHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
     },
     {
@@ -3325,10 +3325,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileHide",
+      "prop": "desktopHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
       "isCommon": true
     },
     {
@@ -3339,10 +3339,10 @@
       "isCommon": true
     },
     {
-      "prop": "desktopHide",
+      "prop": "mobileHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
     },
     {
@@ -3745,10 +3745,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileStack",
+      "prop": "desktopStack",
       "category": "Breakpoint",
       "isDefault": false,
-      "description": "Stack into a column at mobile width and below (max-mobile: 48rem)",
+      "description": "Stack into a column at desktop width and below (max-desktop: 80rem)",
       "isCommon": false
     },
     {
@@ -3759,10 +3759,10 @@
       "isCommon": false
     },
     {
-      "prop": "desktopStack",
+      "prop": "mobileStack",
       "category": "Breakpoint",
       "isDefault": false,
-      "description": "Stack into a column at desktop width and below (max-desktop: 80rem)",
+      "description": "Stack into a column at mobile width and below (max-mobile: 48rem)",
       "isCommon": false
     },
     {
@@ -4209,10 +4209,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileHide",
+      "prop": "desktopHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
       "isCommon": true
     },
     {
@@ -4223,10 +4223,10 @@
       "isCommon": true
     },
     {
-      "prop": "desktopHide",
+      "prop": "mobileHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
     },
     {
@@ -4981,10 +4981,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileHide",
+      "prop": "desktopHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
       "isCommon": true
     },
     {
@@ -4995,10 +4995,10 @@
       "isCommon": true
     },
     {
-      "prop": "desktopHide",
+      "prop": "mobileHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
     },
     {
@@ -6110,10 +6110,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileHide",
+      "prop": "desktopHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
       "isCommon": true
     },
     {
@@ -6124,10 +6124,10 @@
       "isCommon": true
     },
     {
-      "prop": "desktopHide",
+      "prop": "mobileHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
     },
     {
@@ -7239,10 +7239,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileHide",
+      "prop": "desktopHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
       "isCommon": true
     },
     {
@@ -7253,10 +7253,10 @@
       "isCommon": true
     },
     {
-      "prop": "desktopHide",
+      "prop": "mobileHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
     },
     {
@@ -7932,10 +7932,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileStack",
+      "prop": "desktopStack",
       "category": "Breakpoint",
       "isDefault": false,
-      "description": "Stack into a column at mobile width and below (max-mobile: 48rem)",
+      "description": "Stack into a column at desktop width and below (max-desktop: 80rem)",
       "isCommon": false
     },
     {
@@ -7946,10 +7946,10 @@
       "isCommon": false
     },
     {
-      "prop": "desktopStack",
+      "prop": "mobileStack",
       "category": "Breakpoint",
       "isDefault": false,
-      "description": "Stack into a column at desktop width and below (max-desktop: 80rem)",
+      "description": "Stack into a column at mobile width and below (max-mobile: 48rem)",
       "isCommon": false
     },
     {
@@ -8116,10 +8116,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileHide",
+      "prop": "desktopHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
       "isCommon": true
     },
     {
@@ -8130,10 +8130,10 @@
       "isCommon": true
     },
     {
-      "prop": "desktopHide",
+      "prop": "mobileHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
     },
     {
@@ -8851,10 +8851,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileStack",
+      "prop": "desktopStack",
       "category": "Breakpoint",
       "isDefault": false,
-      "description": "Stack into a column at mobile width and below (max-mobile: 48rem)",
+      "description": "Stack into a column at desktop width and below (max-desktop: 80rem)",
       "isCommon": false
     },
     {
@@ -8865,10 +8865,10 @@
       "isCommon": false
     },
     {
-      "prop": "desktopStack",
+      "prop": "mobileStack",
       "category": "Breakpoint",
       "isDefault": false,
-      "description": "Stack into a column at desktop width and below (max-desktop: 80rem)",
+      "description": "Stack into a column at mobile width and below (max-mobile: 48rem)",
       "isCommon": false
     },
     {
@@ -8979,10 +8979,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileHide",
+      "prop": "desktopHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
       "isCommon": true
     },
     {
@@ -8993,10 +8993,10 @@
       "isCommon": true
     },
     {
-      "prop": "desktopHide",
+      "prop": "mobileHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
     },
     {
@@ -9541,10 +9541,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileHide",
+      "prop": "desktopHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
       "isCommon": true
     },
     {
@@ -9555,10 +9555,10 @@
       "isCommon": true
     },
     {
-      "prop": "desktopHide",
+      "prop": "mobileHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
     },
     {
@@ -10474,10 +10474,10 @@
       "isCommon": true
     },
     {
-      "prop": "mobileHide",
+      "prop": "desktopHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
       "isCommon": true
     },
     {
@@ -10488,10 +10488,10 @@
       "isCommon": true
     },
     {
-      "prop": "desktopHide",
+      "prop": "mobileHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
     },
     {
@@ -10889,10 +10889,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileHide",
+      "prop": "desktopHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
       "isCommon": true
     },
     {
@@ -10903,10 +10903,10 @@
       "isCommon": true
     },
     {
-      "prop": "desktopHide",
+      "prop": "mobileHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
     },
     {
@@ -12018,10 +12018,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileHide",
+      "prop": "desktopHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
       "isCommon": true
     },
     {
@@ -12032,10 +12032,10 @@
       "isCommon": true
     },
     {
-      "prop": "desktopHide",
+      "prop": "mobileHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
     },
     {
@@ -12706,10 +12706,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileHide",
+      "prop": "desktopHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
       "isCommon": true
     },
     {
@@ -12720,10 +12720,10 @@
       "isCommon": true
     },
     {
-      "prop": "desktopHide",
+      "prop": "mobileHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
     },
     {
@@ -13849,10 +13849,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileHide",
+      "prop": "desktopHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
       "isCommon": true
     },
     {
@@ -13863,10 +13863,10 @@
       "isCommon": true
     },
     {
-      "prop": "desktopHide",
+      "prop": "mobileHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
     },
     {
@@ -15223,10 +15223,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileHide",
+      "prop": "desktopHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
       "isCommon": true
     },
     {
@@ -15237,10 +15237,10 @@
       "isCommon": true
     },
     {
-      "prop": "desktopHide",
+      "prop": "mobileHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
     },
     {
@@ -16219,10 +16219,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileHide",
+      "prop": "desktopHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
       "isCommon": true
     },
     {
@@ -16233,10 +16233,10 @@
       "isCommon": true
     },
     {
-      "prop": "desktopHide",
+      "prop": "mobileHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
     },
     {
@@ -17292,10 +17292,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileHide",
+      "prop": "desktopHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
       "isCommon": true
     },
     {
@@ -17306,10 +17306,10 @@
       "isCommon": true
     },
     {
-      "prop": "desktopHide",
+      "prop": "mobileHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
     },
     {
@@ -17952,10 +17952,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileHide",
+      "prop": "desktopHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
       "isCommon": true
     },
     {
@@ -17966,10 +17966,10 @@
       "isCommon": true
     },
     {
-      "prop": "desktopHide",
+      "prop": "mobileHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
     },
     {
@@ -19081,10 +19081,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileHide",
+      "prop": "desktopHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
       "isCommon": true
     },
     {
@@ -19095,10 +19095,10 @@
       "isCommon": true
     },
     {
-      "prop": "desktopHide",
+      "prop": "mobileHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
     },
     {
@@ -20455,10 +20455,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileHide",
+      "prop": "desktopHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
       "isCommon": true
     },
     {
@@ -20469,10 +20469,10 @@
       "isCommon": true
     },
     {
-      "prop": "desktopHide",
+      "prop": "mobileHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
     },
     {
@@ -21234,10 +21234,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileHide",
+      "prop": "desktopHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
       "isCommon": true
     },
     {
@@ -21248,10 +21248,10 @@
       "isCommon": true
     },
     {
-      "prop": "desktopHide",
+      "prop": "mobileHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
     },
     {
@@ -22363,10 +22363,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileHide",
+      "prop": "desktopHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
       "isCommon": true
     },
     {
@@ -22377,10 +22377,10 @@
       "isCommon": true
     },
     {
-      "prop": "desktopHide",
+      "prop": "mobileHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
     },
     {
@@ -23072,10 +23072,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileHide",
+      "prop": "desktopHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
       "isCommon": true
     },
     {
@@ -23086,10 +23086,10 @@
       "isCommon": true
     },
     {
-      "prop": "desktopHide",
+      "prop": "mobileHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
     },
     {
@@ -24061,10 +24061,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileHide",
+      "prop": "desktopHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
       "isCommon": true
     },
     {
@@ -24075,10 +24075,10 @@
       "isCommon": true
     },
     {
-      "prop": "desktopHide",
+      "prop": "mobileHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
     },
     {
@@ -24287,7 +24287,7 @@
     {
       "prop": "overflowAuto",
       "category": "Overflow",
-      "isDefault": true,
+      "isDefault": false,
       "description": "Auto overflow - show scrollbars if needed",
       "isCommon": true
     },
@@ -25001,7 +25001,7 @@
     {
       "prop": "clampHeight",
       "category": "Clamp Height",
-      "isDefault": true,
+      "isDefault": false,
       "description": "Clamp to a size-dependent maximum height (uses --max-height CSS variable)",
       "isCommon": false
     }
@@ -25043,10 +25043,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileHide",
+      "prop": "desktopHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
       "isCommon": true
     },
     {
@@ -25057,10 +25057,10 @@
       "isCommon": true
     },
     {
-      "prop": "desktopHide",
+      "prop": "mobileHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
     },
     {
@@ -25463,10 +25463,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileStack",
+      "prop": "desktopStack",
       "category": "Breakpoint",
       "isDefault": false,
-      "description": "Stack into a column at mobile width and below (max-mobile: 48rem)",
+      "description": "Stack into a column at desktop width and below (max-desktop: 80rem)",
       "isCommon": false
     },
     {
@@ -25477,10 +25477,10 @@
       "isCommon": false
     },
     {
-      "prop": "desktopStack",
+      "prop": "mobileStack",
       "category": "Breakpoint",
       "isDefault": false,
-      "description": "Stack into a column at desktop width and below (max-desktop: 80rem)",
+      "description": "Stack into a column at mobile width and below (max-mobile: 48rem)",
       "isCommon": false
     },
     {
@@ -25920,10 +25920,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileHide",
+      "prop": "desktopHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
       "isCommon": true
     },
     {
@@ -25934,10 +25934,10 @@
       "isCommon": true
     },
     {
-      "prop": "desktopHide",
+      "prop": "mobileHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
     },
     {
@@ -26592,10 +26592,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileStack",
+      "prop": "desktopStack",
       "category": "Breakpoint",
       "isDefault": false,
-      "description": "Stack into a column at mobile width and below (max-mobile: 48rem)",
+      "description": "Stack into a column at desktop width and below (max-desktop: 80rem)",
       "isCommon": false
     },
     {
@@ -26606,10 +26606,10 @@
       "isCommon": false
     },
     {
-      "prop": "desktopStack",
+      "prop": "mobileStack",
       "category": "Breakpoint",
       "isDefault": false,
-      "description": "Stack into a column at desktop width and below (max-desktop: 80rem)",
+      "description": "Stack into a column at mobile width and below (max-mobile: 48rem)",
       "isCommon": false
     },
     {
@@ -27028,10 +27028,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileHide",
+      "prop": "desktopHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
       "isCommon": true
     },
     {
@@ -27042,10 +27042,10 @@
       "isCommon": true
     },
     {
-      "prop": "desktopHide",
+      "prop": "mobileHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
     },
     {
@@ -27772,10 +27772,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileHide",
+      "prop": "desktopHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
       "isCommon": true
     },
     {
@@ -27786,10 +27786,10 @@
       "isCommon": true
     },
     {
-      "prop": "desktopHide",
+      "prop": "mobileHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
     },
     {
@@ -28192,10 +28192,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileStack",
+      "prop": "desktopStack",
       "category": "Breakpoint",
       "isDefault": false,
-      "description": "Stack into a column at mobile width and below (max-mobile: 48rem)",
+      "description": "Stack into a column at desktop width and below (max-desktop: 80rem)",
       "isCommon": false
     },
     {
@@ -28206,10 +28206,10 @@
       "isCommon": false
     },
     {
-      "prop": "desktopStack",
+      "prop": "mobileStack",
       "category": "Breakpoint",
       "isDefault": false,
-      "description": "Stack into a column at desktop width and below (max-desktop: 80rem)",
+      "description": "Stack into a column at mobile width and below (max-mobile: 48rem)",
       "isCommon": false
     },
     {
@@ -28915,10 +28915,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileHide",
+      "prop": "desktopHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
       "isCommon": true
     },
     {
@@ -28929,10 +28929,10 @@
       "isCommon": true
     },
     {
-      "prop": "desktopHide",
+      "prop": "mobileHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
     },
     {
@@ -29225,10 +29225,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileHide",
+      "prop": "desktopHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
       "isCommon": true
     },
     {
@@ -29239,10 +29239,10 @@
       "isCommon": true
     },
     {
-      "prop": "desktopHide",
+      "prop": "mobileHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
     },
     {
@@ -30214,10 +30214,10 @@
       "isCommon": false
     },
     {
-      "prop": "mobileHide",
+      "prop": "desktopHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
       "isCommon": true
     },
     {
@@ -30228,10 +30228,10 @@
       "isCommon": true
     },
     {
-      "prop": "desktopHide",
+      "prop": "mobileHide",
       "category": "Hide",
       "isDefault": false,
-      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
     },
     {
