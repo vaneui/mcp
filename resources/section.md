@@ -24,6 +24,10 @@ Sizes (`xs`, `sm`, `md` default, `lg`, `xl`) control padding and gap.
 
 ```tsx demo
 <Col>
+  <Section xs border>
+    <Text fontSemibold>Extra Small Section</Text>
+    <Text>Tightest padding</Text>
+  </Section>
   <Section sm border>
     <Text fontSemibold>Small Section</Text>
     <Text>Compact padding</Text>
@@ -35,6 +39,10 @@ Sizes (`xs`, `sm`, `md` default, `lg`, `xl`) control padding and gap.
   <Section lg border>
     <Text fontSemibold>Large Section</Text>
     <Text>Generous padding</Text>
+  </Section>
+  <Section xl border>
+    <Text fontSemibold>Extra Large Section</Text>
+    <Text>Widest padding</Text>
   </Section>
 </Col>
 ```
@@ -82,6 +90,18 @@ Use `filled` for solid backgrounds (`outline` is the default), and `shadow` for 
     <Title>Shadow Section</Title>
     <Text>Elevated with drop shadow</Text>
   </Section>
+</Col>
+```
+
+## Shapes
+
+Section is `sharp` by default, since a full-bleed band should meet the viewport edge without a radius. `rounded` suits a section used as an inset panel.
+
+```tsx demo
+<Col>
+  <Section border>Sharp, the default</Section>
+  <Section rounded border>Rounded</Section>
+  <Section pill border>Pill</Section>
 </Col>
 ```
 

@@ -39,6 +39,10 @@ The size prop scales both text and cell padding, and it cascades from the table 
 
 ```tsx demo
 <Stack>
+  <Table xs>
+    <Thead><Tr><Th scope="col">Size</Th><Th scope="col" textRight>Value</Th></Tr></Thead>
+    <Tbody><Tr><Td>xs table</Td><Td textRight>tightest</Td></Tr></Tbody>
+  </Table>
   <Table sm>
     <Thead><Tr><Th scope="col">Size</Th><Th scope="col" textRight>Value</Th></Tr></Thead>
     <Tbody><Tr><Td>sm table</Td><Td textRight>compact</Td></Tr></Tbody>
@@ -51,7 +55,28 @@ The size prop scales both text and cell padding, and it cascades from the table 
     <Thead><Tr><Th scope="col">Size</Th><Th scope="col" textRight>Value</Th></Tr></Thead>
     <Tbody><Tr><Td>lg table</Td><Td textRight>spacious</Td></Tr></Tbody>
   </Table>
+  <Table xl>
+    <Thead><Tr><Th scope="col">Size</Th><Th scope="col" textRight>Value</Th></Tr></Thead>
+    <Tbody><Tr><Td>xl table</Td><Td textRight>widest</Td></Tr></Tbody>
+  </Table>
 </Stack>
+```
+
+## Appearances and variants
+
+An appearance on `Table` cascades to its rows and cells. `outline` (the default) colours the borders; `filled` fills the surface instead.
+
+```tsx demo
+<Col>
+  <Table success>
+    <Thead><Tr><Th scope="col">Check</Th><Th scope="col" textRight>Result</Th></Tr></Thead>
+    <Tbody><Tr><Td>outline success</Td><Td textRight>borders take the colour</Td></Tr></Tbody>
+  </Table>
+  <Table filled secondary>
+    <Thead><Tr><Th scope="col">Check</Th><Th scope="col" textRight>Result</Th></Tr></Thead>
+    <Tbody><Tr><Td>filled secondary</Td><Td textRight>surface takes the colour</Td></Tr></Tbody>
+  </Table>
+</Col>
 ```
 
 ## Per-cell and per-row size

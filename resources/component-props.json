@@ -11228,6 +11228,48 @@
       "isDefault": false,
       "description": "Align text to the reading-direction end (right in LTR, left in RTL)",
       "isCommon": false
+    },
+    {
+      "prop": "textInput",
+      "category": "Control",
+      "isDefault": false,
+      "description": "Render a text input (the default control kind); pair with `type` for a specific input type",
+      "isCommon": false
+    },
+    {
+      "prop": "textarea",
+      "category": "Control",
+      "isDefault": false,
+      "description": "Render a multi-line textarea",
+      "isCommon": false
+    },
+    {
+      "prop": "select",
+      "category": "Control",
+      "isDefault": false,
+      "description": "Render a select; pass the options as children",
+      "isCommon": false
+    },
+    {
+      "prop": "checkbox",
+      "category": "Control",
+      "isDefault": false,
+      "description": "Render a checkbox, laid out inline with its label",
+      "isCommon": false
+    },
+    {
+      "prop": "switch",
+      "category": "Control",
+      "isDefault": false,
+      "description": "Render a switch, laid out inline with its label",
+      "isCommon": false
+    },
+    {
+      "prop": "radiogroup",
+      "category": "Control",
+      "isDefault": false,
+      "description": "Render a radio group; pass the radios as children",
+      "isCommon": false
     }
   ],
   "grid": [
@@ -14278,7 +14320,7 @@
     {
       "prop": "outline",
       "category": "Variant",
-      "isDefault": false,
+      "isDefault": true,
       "description": "Outline variant - transparent background with border and colored text (default)",
       "isCommon": false
     },
@@ -17660,6 +17702,13 @@
       "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
+      "isCommon": false
+    },
+    {
+      "prop": "disabled",
+      "category": "Disabled",
+      "isDefault": false,
+      "description": "Disable the component — reduces opacity, changes cursor to not-allowed, and prevents interaction",
       "isCommon": false
     }
   ],
@@ -22811,27 +22860,6 @@
       "isCommon": false
     },
     {
-      "prop": "pill",
-      "category": "Shape",
-      "isDefault": false,
-      "description": "Fully rounded corners (circular)",
-      "isCommon": false
-    },
-    {
-      "prop": "sharp",
-      "category": "Shape",
-      "isDefault": false,
-      "description": "No rounded corners (square)",
-      "isCommon": false
-    },
-    {
-      "prop": "rounded",
-      "category": "Shape",
-      "isDefault": true,
-      "description": "Medium rounded corners (default)",
-      "isCommon": false
-    },
-    {
       "prop": "filled",
       "category": "Variant",
       "isDefault": false,
@@ -26491,27 +26519,6 @@
       "category": "Padding",
       "isDefault": false,
       "description": "Disable internal padding",
-      "isCommon": false
-    },
-    {
-      "prop": "pill",
-      "category": "Shape",
-      "isDefault": false,
-      "description": "Fully rounded corners (circular)",
-      "isCommon": false
-    },
-    {
-      "prop": "sharp",
-      "category": "Shape",
-      "isDefault": false,
-      "description": "No rounded corners (square)",
-      "isCommon": false
-    },
-    {
-      "prop": "rounded",
-      "category": "Shape",
-      "isDefault": true,
-      "description": "Medium rounded corners (default)",
       "isCommon": false
     },
     {
@@ -31471,8 +31478,29 @@
     {
       "prop": "inheritAppearance",
       "category": "Appearance",
-      "isDefault": false,
+      "isDefault": true,
       "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
+      "isCommon": false
+    },
+    {
+      "prop": "filled",
+      "category": "Variant",
+      "isDefault": false,
+      "description": "Filled variant - solid background with contrasting text color",
+      "isCommon": false
+    },
+    {
+      "prop": "outline",
+      "category": "Variant",
+      "isDefault": true,
+      "description": "Outline variant - transparent background with border and colored text (default)",
+      "isCommon": false
+    },
+    {
+      "prop": "ghost",
+      "category": "Variant",
+      "isDefault": false,
+      "description": "Ghost variant - transparent background, no border, appearance-colored text, tinted hover background",
       "isCommon": false
     },
     {
@@ -37703,27 +37731,6 @@
       "category": "Padding",
       "isDefault": false,
       "description": "Disable internal padding",
-      "isCommon": false
-    },
-    {
-      "prop": "pill",
-      "category": "Shape",
-      "isDefault": false,
-      "description": "Fully rounded corners (circular)",
-      "isCommon": false
-    },
-    {
-      "prop": "sharp",
-      "category": "Shape",
-      "isDefault": false,
-      "description": "No rounded corners (square)",
-      "isCommon": false
-    },
-    {
-      "prop": "rounded",
-      "category": "Shape",
-      "isDefault": true,
-      "description": "Medium rounded corners (default)",
       "isCommon": false
     },
     {

@@ -45,6 +45,42 @@ Labels default to `inheritAppearance`: they take their color from the surroundin
 </Row>
 ```
 
+## Variants
+
+Label never paints a surface, so the variant only picks which colour of the appearance the text is painted in. `outline`, the default, uses the appearance's own colour. `filled` uses the "on this fill" colour, for a label sitting on a filled surface of the same appearance. For a filled pill beside a field, reach for `Badge` or `Chip` instead.
+
+```tsx demo
+<Col>
+  <Row flexWrap>
+    <Label success>outline success</Label>
+    <Label danger>outline danger</Label>
+  </Row>
+  <Card success filled wFit>
+    <Label success filled>filled success, on a matching filled Card</Label>
+  </Card>
+</Col>
+```
+
+## Disabled
+
+`disabled` dims the label, and a Label containing a disabled control dims with it, so you only have to disable the field itself.
+
+```tsx demo
+<Col>
+  <Label disabled>Explicitly disabled label</Label>
+  <Label>
+    Email
+    <Input disabled placeholder="you@example.com" />
+  </Label>
+  <Label row itemsCenter>
+    <Checkbox disabled />
+    Subscribe to product updates
+  </Label>
+</Col>
+```
+
+The dimming applies once: a disabled control inside a dimmed Label is not faded a second time.
+
 ## With Input
 
 Wrap an `Input` inside a `Label` to make the label clickable and associate them implicitly. No `htmlFor`/`id` wiring required.

@@ -17,6 +17,40 @@ Field wires a control to its label, help text and error message. It generates on
 
 `Label` on its own associates text with a control, but nothing links help text or an error message to it. That is what Field adds: without it, a screen reader announces that a control is invalid and never says why.
 
+## Rendering the control
+
+Field can render the control itself instead of wrapping one passed as a child. Pass `type` (a control kind such as `select`, or a native input type such as `email` or `date`) or one of six booleans: `textInput`, `textarea`, `select`, `checkbox`, `switch`, `radiogroup`. Naming none of them keeps the children mode above unchanged.
+
+```tsx demo
+<Col>
+  <Field type="email" label="Email" description="We never share it." placeholder="you@company.com"/>
+  <Field select label="Region" description="Sets your default currency.">
+    <option>Cyprus</option>
+    <option>Estonia</option>
+    <option>Portugal</option>
+  </Field>
+</Col>
+```
+
+Children still reach the rendered control, so an `<option>` works with `select` and a `<Radio>` works with `radiogroup`, the same way they do when passed to a standalone `Select` or `RadioGroup`.
+
+In this self-rendering mode, surface props (`appearance`, `variant`, `shape`, `border`, `ring`, `shadow`, `transparent`) route to the control rather than the wrapper, and native attributes such as `placeholder` or `defaultValue` go to the control too. Layout props and `className` stay on the wrapper, and `ref` points at the control. Field's own size still becomes the control's default, the same as in children mode.
+
+```tsx demo
+<Field type="text" filled danger label="Name" description="Filled and danger route to the input, not the wrapper."/>
+```
+
+## Checkbox and switch
+
+`checkbox` and `switch` lay out inline: the control first, the label beside it, with the description and error below the row. Any explicit direction prop (`row`, `column`, `rowReverse` or `columnReverse`) drops the inline row and falls back to the plain stacked layout used by every other control.
+
+```tsx demo
+<Col>
+  <Field checkbox label="Subscribe to the newsletter" description="One email a month."/>
+  <Field switch label="Beta features"/>
+</Col>
+```
+
 ## Error state
 
 Passing `error` renders the message and marks the control invalid, so the danger cue and the message can never disagree. You do not set `invalid` yourself.
@@ -24,7 +58,7 @@ Passing `error` renders the message and marks the control invalid, so the danger
 ```tsx demo
 <Col>
   <Field label="Display name" error="This name is already taken.">
-    <Input defaultValue="evgenii"/>
+    <Input defaultValue="alex.rivera"/>
   </Field>
 
   <Field
@@ -38,6 +72,8 @@ Passing `error` renders the message and marks the control invalid, so the danger
 ```
 
 When both `description` and `error` are present, the control is described by both, in that order.
+
+An invalid control gets a danger border and ring plus `aria-invalid="true"`, and on `Input` a trailing alert icon, so the state is never signalled by colour alone.
 
 ## Any control
 
@@ -78,6 +114,9 @@ Field's size becomes the control's default, so you set it once. An explicit size
 
 ```tsx demo
 <Col>
+  <Field xs label="Extra small">
+    <Input placeholder="xs"/>
+  </Field>
   <Field sm label="Small">
     <Input placeholder="sm"/>
   </Field>
@@ -86,6 +125,27 @@ Field's size becomes the control's default, so you set it once. An explicit size
   </Field>
   <Field lg label="Large">
     <Input placeholder="lg"/>
+  </Field>
+  <Field xl label="Extra large">
+    <Input placeholder="xl"/>
+  </Field>
+</Col>
+```
+
+## Shape, variant and appearance
+
+Field is a layout wrapper, so it takes the same surface props as `Col`: it paints nothing by default (`sharp`, `outline`, no padding), and an appearance only shows once you give it a surface with `filled` or `border`. Useful for marking a field block that needs attention without touching the control inside it.
+
+```tsx demo
+<Col>
+  <Field label="Default" description="No surface of its own.">
+    <Input placeholder="you@company.com"/>
+  </Field>
+  <Field rounded border danger padding label="Bordered danger" description="A border plus an appearance.">
+    <Input placeholder="you@company.com"/>
+  </Field>
+  <Field rounded filled secondary padding label="Filled secondary" description="A surface plus an appearance.">
+    <Input placeholder="you@company.com"/>
   </Field>
 </Col>
 ```

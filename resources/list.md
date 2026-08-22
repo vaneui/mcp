@@ -69,6 +69,26 @@ Lists use `inheritAppearance` appearance by default: they inherit color from the
 </Col>
 ```
 
+## Variants
+
+List is `outline` and transparent by default, so an appearance colours the text and the list paints nothing behind it. List is the one typography component that still wires a background mapper, so clearing `transparent` lets `filled` paint the appearance's surface behind the whole list. Left alone, `filled` only switches the text to the "on this fill" colour, for a list sitting on a filled surface of the same appearance.
+
+```tsx demo
+<Col>
+  <List info>
+    <ListItem>outline info, on the page surface</ListItem>
+  </List>
+  <List danger filled transparent={false}>
+    <ListItem>filled danger, with the surface switched on</ListItem>
+  </List>
+  <Card info filled>
+    <List info filled>
+      <ListItem>filled info, on a matching filled Card</ListItem>
+    </List>
+  </Card>
+</Col>
+```
+
 ## List style types
 
 List supports six marker types: `listDisc` (default for unordered), `listDecimal` (default for ordered), `listCircle`, `listSquare`, `listLowerAlpha`, and `listLowerRoman`. Setting `listDecimal`, `listLowerAlpha`, or `listLowerRoman` switches the element from `<ul>` to `<ol>`.

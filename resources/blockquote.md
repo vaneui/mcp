@@ -46,6 +46,22 @@ Apply appearance props to color the blockquote. The default is `inheritAppearanc
 </Col>
 ```
 
+## Variants
+
+Blockquote is `outline` by default: an accent border in the appearance's colour, and no background of its own. `filled` paints no surface either. It switches the quote to the "on this fill" colour and drops the accent border, for a quote sitting on a filled surface of the same appearance.
+
+```tsx demo
+<Col>
+  <Blockquote info>outline info, on the page surface</Blockquote>
+  <Blockquote danger>outline danger, on the page surface</Blockquote>
+  <Card info filled>
+    <Blockquote info filled>filled info, on a matching filled Card</Blockquote>
+  </Card>
+</Col>
+```
+
+To put a surface behind a quote, nest it in a filled `Card` rather than reaching for `filled` on the Blockquote itself.
+
 ## Italic
 
 Italic is not a default. Opt in with the `italic` prop for traditional quotation styling.

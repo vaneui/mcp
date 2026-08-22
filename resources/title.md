@@ -42,6 +42,23 @@ By default, Title uses the `inheritAppearance` appearance: it inherits color fro
 </Col>
 ```
 
+## Variants
+
+Headings never paint a background, so the variant only picks which colour of the appearance the heading is painted in. `outline`, the default, uses the appearance's own colour. `filled` uses the "on this fill" colour, for a heading sitting on a filled surface of the same appearance.
+
+```tsx demo
+<Col>
+  <Title info>outline info, on the page surface</Title>
+  <Title danger>outline danger, on the page surface</Title>
+  <Card info filled>
+    <Title info filled>filled info, on a matching filled Card</Title>
+  </Card>
+  <Card danger filled>
+    <Title danger filled>filled danger, on a matching filled Card</Title>
+  </Card>
+</Col>
+```
+
 ## Title vs PageTitle vs SectionTitle
 
 Three heading components for a clean semantic hierarchy. Use them together so the document outline matches the visual hierarchy.
