@@ -121,7 +121,7 @@ Returns a JSON array of `{ prop, category, isDefault, description, isCommon }` r
 
 ## Available resources
 
-Each documentation file is exposed as a resource named `vaneui://docs/<slug>`, where `<slug>` is the source filename minus the `.md` extension. All resources have `mimeType: text/markdown`.
+Each documentation file is exposed as a resource named `vaneui://docs/<slug>`, where `<slug>` is the lowercased source filename minus the `.md` extension. All resources have `mimeType: text/markdown`.
 
 Examples:
 
