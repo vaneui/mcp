@@ -9,6 +9,10 @@ on:
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      # id-token: write — npm trusted publishing (OIDC), no NPM_TOKEN needed
+      id-token: write
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -23,19 +27,9 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      # Fail fast if the npm token is missing/expired/lacks publish rights for
-      # @vaneui/mcp — otherwise we'd waste the build only to fail at the publish
-      # step with a misleading 404. npm whoami exits non-zero on bad tokens.
-      - name: Verify npm Auth
-        run: |
-          npm whoami
-          echo "✅ npm auth OK"
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
       # Generate pre-release version with timestamp and commit SHA, matching the
       # shared VaneUI alpha versioning scheme (<base>-alpha.<timestamp>.<sha>).
-      # Base version is kept in lockstep with @vaneui/ui and @vaneui/md (0.9.0).
+      # Base version is kept in lockstep with @vaneui/ui and @vaneui/md.
       - name: Generate Pre-release Version
         id: version
         run: |
@@ -72,8 +66,6 @@ jobs:
         # `sync:strict`, which fails in CI because the sibling vaneui/ and
         # vaneui-web/ repos aren't checked out.
         run: npm publish --access public --tag alpha --ignore-scripts
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Report Success
         run: |

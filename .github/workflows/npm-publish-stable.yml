@@ -9,6 +9,10 @@ on:
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      # id-token: write — npm trusted publishing (OIDC), no NPM_TOKEN needed
+      id-token: write
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -41,17 +45,6 @@ jobs:
             echo "version=$VERSION" >> $GITHUB_OUTPUT
           fi
 
-      # Fail fast if the npm token is missing/expired/lacks publish rights for
-      # @vaneui/mcp — npm publish on a bad token returns a misleading 404
-      # instead of 401, which is hard to diagnose. npm whoami fails clearly.
-      - name: Verify npm Auth
-        if: steps.check_version.outputs.should_publish == 'true'
-        run: |
-          npm whoami
-          echo "✅ npm auth OK"
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
       # Compile TypeScript using the committed resources/ corpus. We do NOT
       # re-sync here: the sync scripts need the sibling vaneui/ and vaneui-web/
       # checkouts, which aren't present in CI. resources/ is committed to git
@@ -78,8 +71,6 @@ jobs:
         # checked out.
         if: steps.check_version.outputs.should_publish == 'true'
         run: npm publish --access public --ignore-scripts
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Report Success
         if: steps.check_version.outputs.should_publish == 'true'
