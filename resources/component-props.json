@@ -43,6 +43,34 @@
       "isCommon": false
     },
     {
+      "prop": "fontSans",
+      "category": "Font Family",
+      "isDefault": true,
+      "description": "Sans-serif font family (default) — emits font-sans",
+      "isCommon": false
+    },
+    {
+      "prop": "fontSerif",
+      "category": "Font Family",
+      "isDefault": false,
+      "description": "Serif font family — emits font-serif",
+      "isCommon": false
+    },
+    {
+      "prop": "fontMono",
+      "category": "Font Family",
+      "isDefault": false,
+      "description": "Monospace font family — emits font-mono",
+      "isCommon": false
+    },
+    {
+      "prop": "fontHeading",
+      "category": "Font Family",
+      "isDefault": false,
+      "description": "Heading font family (defaults to sans, customizable via --font-heading) — emits font-heading",
+      "isCommon": false
+    },
+    {
       "prop": "xs",
       "category": "Size",
       "isDefault": false,
@@ -5804,6 +5832,13 @@
       "category": "Disabled",
       "isDefault": false,
       "description": "Disable the component — reduces opacity, changes cursor to not-allowed, and prevents interaction",
+      "isCommon": false
+    },
+    {
+      "prop": "readOnly",
+      "category": "Read Only",
+      "isDefault": false,
+      "description": "Render the field read-only — mutes it (lighter than disabled) and sets a default cursor; the value stays selectable and submittable",
       "isCommon": false
     }
   ],
@@ -18713,6 +18748,13 @@
       "isDefault": false,
       "description": "Disable focus-visible outline",
       "isCommon": true
+    },
+    {
+      "prop": "disabled",
+      "category": "Disabled",
+      "isDefault": false,
+      "description": "Disable the component — reduces opacity, changes cursor to not-allowed, and prevents interaction",
+      "isCommon": false
     }
   ],
   "list": [
@@ -25670,7 +25712,7 @@
     {
       "prop": "fontSans",
       "category": "Font Family",
-      "isDefault": false,
+      "isDefault": true,
       "description": "Sans-serif font family (default) — emits font-sans",
       "isCommon": false
     },
@@ -27508,6 +27550,13 @@
       "category": "Disabled",
       "isDefault": false,
       "description": "Disable the component — reduces opacity, changes cursor to not-allowed, and prevents interaction",
+      "isCommon": false
+    },
+    {
+      "prop": "readOnly",
+      "category": "Read Only",
+      "isDefault": false,
+      "description": "Render the field read-only — mutes it (lighter than disabled) and sets a default cursor; the value stays selectable and submittable",
       "isCommon": false
     }
   ],
@@ -33291,6 +33340,13 @@
       "isDefault": false,
       "description": "Disable the component — reduces opacity, changes cursor to not-allowed, and prevents interaction",
       "isCommon": false
+    },
+    {
+      "prop": "readOnly",
+      "category": "Read Only",
+      "isDefault": false,
+      "description": "Render the field read-only — mutes it (lighter than disabled) and sets a default cursor; the value stays selectable and submittable",
+      "isCommon": false
     }
   ],
   "table": [
@@ -33593,6 +33649,34 @@
       "category": "Text Align",
       "isDefault": false,
       "description": "Align text to the reading-direction end (right in LTR, left in RTL)",
+      "isCommon": false
+    },
+    {
+      "prop": "fontSans",
+      "category": "Font Family",
+      "isDefault": true,
+      "description": "Sans-serif font family (default) — emits font-sans",
+      "isCommon": false
+    },
+    {
+      "prop": "fontSerif",
+      "category": "Font Family",
+      "isDefault": false,
+      "description": "Serif font family — emits font-serif",
+      "isCommon": false
+    },
+    {
+      "prop": "fontMono",
+      "category": "Font Family",
+      "isDefault": false,
+      "description": "Monospace font family — emits font-mono",
+      "isCommon": false
+    },
+    {
+      "prop": "fontHeading",
+      "category": "Font Family",
+      "isDefault": false,
+      "description": "Heading font family (defaults to sans, customizable via --font-heading) — emits font-heading",
       "isCommon": false
     },
     {
@@ -36882,7 +36966,7 @@
     {
       "prop": "fontSans",
       "category": "Font Family",
-      "isDefault": false,
+      "isDefault": true,
       "description": "Sans-serif font family (default) — emits font-sans",
       "isCommon": false
     },
