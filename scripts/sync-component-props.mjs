@@ -141,7 +141,8 @@ async function collectComponentMd(webRoot) {
     if (!(await pathExists(full))) continue;
     const entries = await readdir(full, { withFileTypes: true });
     for (const ent of entries) {
-      if (!ent.isFile() || !ent.name.endsWith(".md")) continue;
+      // `_`-prefixed files are partials that pages include, not component pages.
+      if (!ent.isFile() || !ent.name.endsWith(".md") || ent.name.startsWith("_")) continue;
       const srcPath = join(full, ent.name);
       const text = await readFile(srcPath, "utf8");
       const fm = parseFrontmatter(text);

@@ -7,7 +7,12 @@
 //   2. The sibling `vaneui-web/` repo (app/docs/data/**.md) — narrative guides
 //      AND per-component reference (one .md per component, with frontmatter).
 //
-// Each source MD file is copied verbatim into resources/ keyed by basename.
+// Each vaneui MD file is copied verbatim into resources/ keyed by basename.
+// Each vaneui-web page is written with its `{% include "x.md" %}` tags expanded
+// through vaneui-web's own helper (lib/docs/includes.mjs, which needs that
+// checkout's node_modules), so a resource holds the page as vaneui.com renders
+// it. Files and directories whose name starts with `_` are partials that pages
+// include, never pages, so they get no resource of their own.
 // Filenames are globally unique across categories, so the corpus is flat:
 // `resources/button.md`, `resources/installation.md`, `resources/common-props.md`,
 // etc. The MCP URI for each is `vaneui://docs/<basename-without-.md>`.
@@ -24,9 +29,9 @@
 //                     Defaults to `../vaneui-web` (sibling of the vaneui-mcp repo).
 //
 // Run via: npm run sync  (lenient)  or  npm run sync:strict  (strict).
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, join, resolve, basename } from "node:path";
-import { mkdir, copyFile, rm, readdir, access, stat } from "node:fs/promises";
+import { mkdir, copyFile, rm, readdir, access, writeFile } from "node:fs/promises";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -60,8 +65,9 @@ function fail(msg) {
   console.warn(msg);
 }
 
-// Recursively collect all *.md files under `dir`.
-async function collectMd(dir) {
+// Recursively collect all *.md files under `dir`. With `skipPartials`, files
+// and directories whose name starts with `_` are left out.
+async function collectMd(dir, { skipPartials = false } = {}) {
   const out = [];
   let entries;
   try {
@@ -70,9 +76,10 @@ async function collectMd(dir) {
     return out;
   }
   for (const ent of entries) {
+    if (skipPartials && ent.name.startsWith("_")) continue;
     const full = join(dir, ent.name);
     if (ent.isDirectory()) {
-      const nested = await collectMd(full);
+      const nested = await collectMd(full, { skipPartials });
       out.push(...nested);
     } else if (ent.isFile() && ent.name.endsWith(".md")) {
       out.push(full);
@@ -83,8 +90,9 @@ async function collectMd(dir) {
 
 // Copy a list of source MD files into resources/. Detects duplicate basenames
 // across the input list and aborts (in strict mode) so a silent overwrite never
-// happens.
-async function syncMd(rootLabel, files) {
+// happens. With `read`, each file's text comes from `read(path)` instead of a
+// plain copy.
+async function syncMd(rootLabel, files, read) {
   const seen = new Map(); // dest basename -> source path
   let written = 0;
   for (const from of files) {
@@ -97,7 +105,8 @@ async function syncMd(rootLabel, files) {
     }
     seen.set(dest, from);
     const to = join(RESOURCES_DIR, dest);
-    await copyFile(from, to);
+    if (read) await writeFile(to, read(from));
+    else await copyFile(from, to);
     written++;
   }
   console.log(`[sync] ${rootLabel}: ${written} markdown files`);
@@ -140,11 +149,21 @@ async function main() {
   if (!(await pathExists(webDocsRoot))) {
     fail(`[sync] vaneui-web: missing docs root at ${webDocsRoot}`);
   }
-  const webFiles = (await collectMd(webDocsRoot)).sort();
+  const webFiles = (await collectMd(webDocsRoot, { skipPartials: true })).sort();
   if (webFiles.length === 0) {
     fail(`[sync] vaneui-web: no markdown files found under ${webDocsRoot}`);
   }
-  const wroteWeb = await syncMd("vaneui-web", webFiles);
+  // vaneui-web's include helper resolves @vaneui/md/include from its own
+  // node_modules. A missing include throws, which stops the sync.
+  const includesHelper = join(WEB_ROOT, "lib", "docs", "includes.mjs");
+  let readPage;
+  if (await pathExists(includesHelper)) {
+    const { readDocMarkdown } = await import(pathToFileURL(includesHelper).href);
+    readPage = (file) => readDocMarkdown(file, { dataDir: webDocsRoot });
+  } else {
+    fail(`[sync] vaneui-web: missing ${includesHelper}; pages are copied without expanding their includes`);
+  }
+  const wroteWeb = await syncMd("vaneui-web", webFiles, readPage);
 
   const entries = await readdir(RESOURCES_DIR);
   const total = wroteVaneui + wroteWeb;
