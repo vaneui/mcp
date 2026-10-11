@@ -37610,7 +37610,7 @@
     {
       "prop": "primary",
       "category": "Appearance",
-      "isDefault": false,
+      "isDefault": true,
       "description": "Primary color appearance (gray)",
       "isCommon": false
     },
@@ -37624,7 +37624,7 @@
     {
       "prop": "secondary",
       "category": "Appearance",
-      "isDefault": true,
+      "isDefault": false,
       "description": "Secondary color appearance (gray)",
       "isCommon": false
     },

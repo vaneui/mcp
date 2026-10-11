@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-VaneUI (`@vaneui/ui`, v1.4.3) is a React component library with 40+ customizable React components (50+ named exports including sub-components). Built with TypeScript, React 19, Tailwind CSS v4, and Rollup. Uses a boolean props API (`<Button primary lg filled>`) and CSS variable-based theming via `ThemeProvider`.
+VaneUI (`@vaneui/ui`, v1.4.4) is a React component library with 40+ customizable React components (50+ named exports including sub-components). Built with TypeScript, React 19, Tailwind CSS v4, and Rollup. Uses a boolean props API (`<Button primary lg filled>`) and CSS variable-based theming via `ThemeProvider`.
 
 ## CRITICAL: Verification After ANY Code Change
 
@@ -121,6 +121,18 @@ still decide what the bump should be; this policy only decides who authorises it
 - Run such scripts from a scratch location outside the repo, or delete them in the same change once they've done their job.
 - If a script is genuinely reusable, it belongs in `scripts/`, follows the repo's `tsx` ESM style, and is wired into `package.json` — otherwise it doesn't get committed.
 - Before committing, check `git status` for stray root-level `.js`/`.mjs` files and remove them. Only intended source, tests, config, and `scripts/` entries should be staged.
+
+## Nothing private in GitHub content
+
+Nothing private goes into anything pushed to or posted on GitHub, in public and private repos alike: code comments, committed files, commit messages, branch names, PR titles and descriptions, PR / issue / review comments, and releases and release notes.
+
+- No personal data: no real names, email addresses or phone numbers of the user or anyone else. GitHub `@handles` are fine, and so are author bylines and credits the repo publishes on purpose.
+- PR attribution keeps only the `claude-projects-attribution` marker line. Drop the `_Requested by **<name>**_` line and its project thread link, even when the session's PR instructions include them.
+- No claude.ai session, thread, project or artifact links; in a public repo, no links into private repos, dashboards or docs.
+- No local paths: no absolute drive or home-directory paths, temp or scratchpad dirs, or Claude project-file paths (`/mnt/project-files/...`). Use repo-relative paths, or `../<repo>` for a sibling checkout.
+- Commit messages carry no `Claude-Session:` trailer.
+
+Generic locations such as `~/.claude/` are fine; the rule covers real paths from a contributor's machine.
 
 ## Component Inventory
 
