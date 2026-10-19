@@ -11,7 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      # id-token: write — npm trusted publishing (OIDC), no NPM_TOKEN needed
+      # id-token: write — npm trusted publishing (OIDC), no NPM_TOKEN needed,
+      # and the MCP Registry login below (github-oidc), no registry secret needed
       id-token: write
     steps:
       - name: Checkout Code
@@ -72,6 +73,52 @@ jobs:
         if: steps.check_version.outputs.should_publish == 'true'
         run: npm publish --access public --ignore-scripts
 
+      # MCP Registry: publish server.json as io.github.vaneui/mcp. The registry
+      # stores metadata only and checks that the npm package's `mcpName`
+      # matches server.json's `name`, so this has to run after npm publish.
+      # Steps follow https://modelcontextprotocol.io/registry/github-actions
+      - name: Sync server.json Version
+        if: steps.check_version.outputs.should_publish == 'true'
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          PACKAGE_NAME=$(node -p "require('./package.json').name")
+          jq --arg v "$VERSION" --arg name "$PACKAGE_NAME" \
+            '.version = $v | .packages |= map(if .identifier == $name then .version = $v else . end)' \
+            server.json > server.tmp && mv server.tmp server.json
+          cat server.json
+
+      # The registry reads the package from npm, so wait until npm serves the
+      # new version with its mcpName.
+      - name: Wait for npm to Serve the New Version
+        if: steps.check_version.outputs.should_publish == 'true'
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          PACKAGE_NAME=$(node -p "require('./package.json').name")
+          MCP_NAME=$(node -p "require('./package.json').mcpName")
+          for i in $(seq 1 18); do
+            if [ "$(npm view "$PACKAGE_NAME@$VERSION" mcpName 2>/dev/null)" = "$MCP_NAME" ]; then
+              echo "npm serves $PACKAGE_NAME@$VERSION with mcpName $MCP_NAME"
+              exit 0
+            fi
+            echo "Waiting for npm to serve $PACKAGE_NAME@$VERSION ($i/18)"
+            sleep 10
+          done
+          echo "❌ npm does not serve $PACKAGE_NAME@$VERSION with mcpName $MCP_NAME after 3 minutes."
+          exit 1
+
+      - name: Install mcp-publisher
+        if: steps.check_version.outputs.should_publish == 'true'
+        run: |
+          curl -fsSL "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_$(uname -s | tr '[:upper:]' '[:lower:]')_$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/').tar.gz" | tar xz mcp-publisher
+
+      - name: Log in to the MCP Registry
+        if: steps.check_version.outputs.should_publish == 'true'
+        run: ./mcp-publisher login github-oidc
+
+      - name: Publish to the MCP Registry
+        if: steps.check_version.outputs.should_publish == 'true'
+        run: ./mcp-publisher publish
+
       - name: Report Success
         if: steps.check_version.outputs.should_publish == 'true'
         run: |
@@ -79,3 +126,4 @@ jobs:
           echo "📦 Version: ${{ steps.check_version.outputs.version }}"
           echo "🏷️  Tag: latest"
           echo "📥 Install with: npm install @vaneui/mcp@latest"
+          echo "🗂️  MCP Registry: io.github.vaneui/mcp"
