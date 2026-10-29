@@ -7,7 +7,8 @@
 //   2. The sibling `vaneui-web/` repo (app/docs/data/**.md) — narrative guides
 //      AND per-component reference (one .md per component, with frontmatter).
 //
-// Each vaneui MD file is copied verbatim into resources/ keyed by basename.
+// Each vaneui MD file is copied verbatim into resources/ keyed by basename,
+// except that CLAUDE.md loses its MAINTAINER_SECTIONS.
 // Each vaneui-web page is written with its `{% include "x.md" %}` tags expanded
 // through vaneui-web's own helper (lib/docs/includes.mjs, which needs that
 // checkout's node_modules), so a resource holds the page as vaneui.com renders
@@ -32,6 +33,7 @@
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, join, resolve, basename } from "node:path";
 import { mkdir, copyFile, rm, readdir, access, writeFile } from "node:fs/promises";
+import { readFileSync } from "node:fs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -47,6 +49,23 @@ const WEB_ROOT = process.env.VANEUI_WEB_PATH
 const RESOURCES_DIR = join(PKG_ROOT, "resources");
 
 const STRICT = process.argv.includes("--strict");
+
+// CLAUDE.md sections about contributing to the vaneui repo itself; they would steer the agents of apps that use VaneUI.
+const MAINTAINER_SECTIONS = new Set(["Nothing private in GitHub content", "Attribution"]);
+
+// Drops each `## ` section whose title is in `names`, up to the next `## ` heading outside a code fence.
+function stripSections(text, names) {
+  const out = [];
+  let skip = false;
+  let inFence = false;
+  for (const line of text.split("\n")) {
+    if (/^(```|~~~)/.test(line)) inFence = !inFence;
+    const heading = !inFence && /^## (.+?)\s*$/.exec(line);
+    if (heading) skip = names.has(heading[1]);
+    if (!skip) out.push(line);
+  }
+  return out.join("\n");
+}
 
 async function pathExists(p) {
   try {
@@ -139,7 +158,11 @@ async function main() {
   if (vaneuiFiles.length === 0) {
     fail(`[sync] vaneui: no markdown files found`);
   }
-  const wroteVaneui = await syncMd("vaneui", vaneuiFiles);
+  const readVaneui = (file) => {
+    const text = readFileSync(file, "utf8");
+    return file === vaneuiClaude ? stripSections(text, MAINTAINER_SECTIONS) : text;
+  };
+  const wroteVaneui = await syncMd("vaneui", vaneuiFiles, readVaneui);
 
   // Source 2: sibling vaneui-web repo. app/docs/data/**/*.md.
   if (!(await pathExists(WEB_ROOT))) {
