@@ -127,6 +127,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
+    },
+    {
       "prop": "itemsStart",
       "category": "Items",
       "isDefault": true,
@@ -883,6 +904,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
+    },
+    {
       "prop": "hFit",
       "category": "Height",
       "isDefault": false,
@@ -981,6 +1023,27 @@
       "isDefault": false,
       "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
+    },
+    {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -2026,6 +2089,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
+    },
+    {
       "prop": "hFit",
       "category": "Height",
       "isDefault": true,
@@ -2390,6 +2474,27 @@
       "isDefault": false,
       "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
+    },
+    {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -3015,6 +3120,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
+    },
+    {
       "prop": "hFit",
       "category": "Height",
       "isDefault": false,
@@ -3134,6 +3260,27 @@
       "isDefault": false,
       "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
+    },
+    {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -4179,6 +4326,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
+    },
+    {
       "prop": "hFit",
       "category": "Height",
       "isDefault": true,
@@ -4340,6 +4508,27 @@
       "isDefault": false,
       "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
+    },
+    {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -5105,6 +5294,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
+    },
+    {
       "prop": "hFit",
       "category": "Height",
       "isDefault": false,
@@ -5322,6 +5532,27 @@
       "isDefault": false,
       "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
+    },
+    {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -6024,6 +6255,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
+    },
+    {
       "prop": "hFit",
       "category": "Height",
       "isDefault": false,
@@ -6136,6 +6388,27 @@
       "isDefault": false,
       "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
+    },
+    {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -7179,6 +7452,27 @@
       "isDefault": false,
       "description": "Set width to 100vw (viewport width), removes max-width constraint",
       "isCommon": true
+    },
+    {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
     },
     {
       "prop": "hFit",
@@ -7302,6 +7596,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
+    },
+    {
       "prop": "itemsStart",
       "category": "Items",
       "isDefault": false,
@@ -8345,6 +8660,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
+    },
+    {
       "prop": "hFit",
       "category": "Height",
       "isDefault": true,
@@ -8464,6 +8800,27 @@
       "isDefault": false,
       "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
+    },
+    {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -9229,6 +9586,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
+    },
+    {
       "prop": "hFit",
       "category": "Height",
       "isDefault": false,
@@ -9439,6 +9817,27 @@
       "isDefault": false,
       "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
+    },
+    {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -10118,6 +10517,27 @@
       "isDefault": false,
       "description": "Set width to 100vw (viewport width), removes max-width constraint",
       "isCommon": true
+    },
+    {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
     },
     {
       "prop": "hFit",
@@ -10400,6 +10820,27 @@
       "isDefault": false,
       "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
+    },
+    {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -10864,6 +11305,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
+    },
+    {
       "prop": "hFit",
       "category": "Height",
       "isDefault": false,
@@ -10962,6 +11424,27 @@
       "isDefault": false,
       "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
+    },
+    {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -11720,6 +12203,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
+    },
+    {
       "prop": "hFit",
       "category": "Height",
       "isDefault": false,
@@ -11902,6 +12406,27 @@
       "isDefault": false,
       "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
+    },
+    {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -12583,6 +13108,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
+    },
+    {
       "prop": "hFit",
       "category": "Height",
       "isDefault": false,
@@ -12905,6 +13451,27 @@
       "isDefault": false,
       "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
+    },
+    {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -13243,6 +13810,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
+    },
+    {
       "prop": "hFit",
       "category": "Height",
       "isDefault": false,
@@ -13355,6 +13943,27 @@
       "isDefault": false,
       "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
+    },
+    {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -14400,6 +15009,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
+    },
+    {
       "prop": "hFit",
       "category": "Height",
       "isDefault": true,
@@ -14519,6 +15149,27 @@
       "isDefault": false,
       "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
+    },
+    {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -15151,6 +15802,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
+    },
+    {
       "prop": "hFit",
       "category": "Height",
       "isDefault": false,
@@ -15249,6 +15921,27 @@
       "isDefault": false,
       "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
+    },
+    {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -16308,6 +17001,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
+    },
+    {
       "prop": "hFit",
       "category": "Height",
       "isDefault": false,
@@ -16427,6 +17141,27 @@
       "isDefault": false,
       "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
+    },
+    {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -17472,6 +18207,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
+    },
+    {
       "prop": "hFit",
       "category": "Height",
       "isDefault": true,
@@ -17836,6 +18592,27 @@
       "isDefault": false,
       "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
+    },
+    {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -18531,6 +19308,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
+    },
+    {
       "prop": "hFit",
       "category": "Height",
       "isDefault": false,
@@ -18874,6 +19672,27 @@
       "isDefault": false,
       "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
+    },
+    {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -19497,6 +20316,27 @@
       "isDefault": false,
       "description": "Set width to 100vw (viewport width), removes max-width constraint",
       "isCommon": true
+    },
+    {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
     },
     {
       "prop": "hFit",
@@ -19956,6 +20796,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
+    },
+    {
       "prop": "itemsStart",
       "category": "Items",
       "isDefault": false,
@@ -20472,6 +21333,27 @@
       "isDefault": false,
       "description": "Set width to 100vw (viewport width), removes max-width constraint",
       "isCommon": true
+    },
+    {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
     },
     {
       "prop": "hFit",
@@ -20616,6 +21498,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
+    },
+    {
       "prop": "itemsStart",
       "category": "Items",
       "isDefault": false,
@@ -21657,6 +22560,27 @@
       "isDefault": false,
       "description": "Set width to 100vw (viewport width), removes max-width constraint",
       "isCommon": true
+    },
+    {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
     },
     {
       "prop": "hFit",
@@ -21780,6 +22704,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
+    },
+    {
       "prop": "itemsStart",
       "category": "Items",
       "isDefault": false,
@@ -22821,6 +23766,27 @@
       "isDefault": false,
       "description": "Set width to 100vw (viewport width), removes max-width constraint",
       "isCommon": true
+    },
+    {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
     },
     {
       "prop": "hFit",
@@ -23189,6 +24155,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
+    },
+    {
       "prop": "itemsStart",
       "category": "Items",
       "isDefault": false,
@@ -23882,6 +24869,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
+    },
+    {
       "prop": "hFit",
       "category": "Height",
       "isDefault": false,
@@ -23980,6 +24988,27 @@
       "isDefault": false,
       "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
+    },
+    {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -25025,6 +26054,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
+    },
+    {
       "prop": "hFit",
       "category": "Height",
       "isDefault": false,
@@ -25158,6 +26208,27 @@
       "isDefault": false,
       "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
+    },
+    {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -25524,6 +26595,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
+    },
+    {
       "prop": "hFit",
       "category": "Height",
       "isDefault": false,
@@ -25867,6 +26959,27 @@
       "isDefault": false,
       "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
+    },
+    {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -26492,6 +27605,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
+    },
+    {
       "prop": "hFit",
       "category": "Height",
       "isDefault": false,
@@ -26856,6 +27990,27 @@
       "isDefault": false,
       "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
+    },
+    {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -27642,6 +28797,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
+    },
+    {
       "prop": "hFit",
       "category": "Height",
       "isDefault": false,
@@ -28064,6 +29240,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
+    },
+    {
       "prop": "flex1",
       "category": "Flex",
       "isDefault": false,
@@ -28104,6 +29301,27 @@
       "isDefault": false,
       "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
+    },
+    {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
     },
     {
       "prop": "margin",
@@ -28204,6 +29422,27 @@
       "isDefault": false,
       "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
+    },
+    {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -28906,6 +30145,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
+    },
+    {
       "prop": "hFit",
       "category": "Height",
       "isDefault": false,
@@ -29018,6 +30278,27 @@
       "isDefault": false,
       "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
+    },
+    {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -29781,6 +31062,27 @@
       "isDefault": false,
       "description": "Set width to 100vw (viewport width), removes max-width constraint",
       "isCommon": true
+    },
+    {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
     },
     {
       "prop": "hFit",
@@ -29995,6 +31297,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
+    },
+    {
       "prop": "itemsStart",
       "category": "Items",
       "isDefault": true,
@@ -30756,6 +32079,27 @@
       "isDefault": false,
       "description": "Set width to 100vw (viewport width), removes max-width constraint",
       "isCommon": true
+    },
+    {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
     },
     {
       "prop": "hFit",
@@ -31201,6 +32545,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
+    },
+    {
       "prop": "itemsStart",
       "category": "Items",
       "isDefault": false,
@@ -31824,6 +33189,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
+    },
+    {
       "prop": "hFit",
       "category": "Height",
       "isDefault": false,
@@ -31943,6 +33329,27 @@
       "isDefault": false,
       "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
+    },
+    {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -33002,6 +34409,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
+    },
+    {
       "prop": "hFit",
       "category": "Height",
       "isDefault": false,
@@ -33284,6 +34712,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
+    },
+    {
       "prop": "margin",
       "category": "Margin",
       "isDefault": false,
@@ -33382,6 +34831,27 @@
       "isDefault": false,
       "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
+    },
+    {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -34147,6 +35617,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
+    },
+    {
       "prop": "hFit",
       "category": "Height",
       "isDefault": false,
@@ -34357,6 +35848,27 @@
       "isDefault": false,
       "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
+    },
+    {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -35059,6 +36571,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
+    },
+    {
       "prop": "hFit",
       "category": "Height",
       "isDefault": false,
@@ -35334,6 +36867,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
+    },
+    {
       "prop": "margin",
       "category": "Margin",
       "isDefault": false,
@@ -35465,6 +37019,27 @@
       "isDefault": false,
       "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
+    },
+    {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
     },
     {
       "prop": "responsiveSizing",
@@ -35775,6 +37350,27 @@
       "isDefault": false,
       "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
+    },
+    {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -36400,6 +37996,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
+    },
+    {
       "prop": "hFit",
       "category": "Height",
       "isDefault": false,
@@ -36519,6 +38136,27 @@
       "isDefault": false,
       "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
+    },
+    {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -37578,6 +39216,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
+    },
+    {
       "prop": "hFit",
       "category": "Height",
       "isDefault": false,
@@ -37942,6 +39601,27 @@
       "isDefault": false,
       "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
+    },
+    {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -38567,6 +40247,27 @@
       "isCommon": true
     },
     {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
+    },
+    {
       "prop": "hFit",
       "category": "Height",
       "isDefault": false,
@@ -38931,6 +40632,27 @@
       "isDefault": false,
       "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
       "isCommon": true
+    },
+    {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -39715,6 +41437,27 @@
       "isDefault": false,
       "description": "Set width to 100vw (viewport width), removes max-width constraint",
       "isCommon": true
+    },
+    {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": false
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": false
     },
     {
       "prop": "hFit",

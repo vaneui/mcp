@@ -2,15 +2,13 @@
 
 ## Project Overview
 
-VaneUI (`@vaneui/ui`, v1.4.5) is a React component library with 40+ customizable React components (50+ named exports including sub-components). Built with TypeScript, React 19, Tailwind CSS v4, and Rollup. Uses a boolean props API (`<Button primary lg filled>`) and CSS variable-based theming via `ThemeProvider`.
+VaneUI (`@vaneui/ui`, v1.4.6) is a React component library with 40+ customizable React components (50+ named exports including sub-components). Built with TypeScript, React 19, Tailwind CSS v4, and Rollup. Uses a boolean props API (`<Button primary lg filled>`) and CSS variable-based theming via `ThemeProvider`.
 
 ## CRITICAL: Verification After ANY Code Change
 
 **After making ANY code changes** (new features, bug fixes, refactoring, import changes, theme updates, etc.), you MUST run the full verification pipeline. Do NOT report work as complete until all checks pass.
 
 ```bash
-cd C:/GitHub/vaneui
-
 npm run type-check    # TypeScript type validation
 npm run lint          # ESLint — zero errors required
 npm test              # Jest — all tests must pass
@@ -122,18 +120,6 @@ still decide what the bump should be; this policy only decides who authorises it
 - If a script is genuinely reusable, it belongs in `scripts/`, follows the repo's `tsx` ESM style, and is wired into `package.json` — otherwise it doesn't get committed.
 - Before committing, check `git status` for stray root-level `.js`/`.mjs` files and remove them. Only intended source, tests, config, and `scripts/` entries should be staged.
 
-## Nothing private in GitHub content
-
-Nothing private goes into anything pushed to or posted on GitHub, in public and private repos alike: code comments, committed files, commit messages, branch names, PR titles and descriptions, PR / issue / review comments, and releases and release notes.
-
-- No personal data: no real names, email addresses or phone numbers of the user or anyone else. GitHub `@handles` are fine, and so are author bylines and credits the repo publishes on purpose.
-- PR attribution keeps only the `claude-projects-attribution` marker line. Drop the `_Requested by **<name>**_` line and its project thread link, even when the session's PR instructions include them.
-- No claude.ai session, thread, project or artifact links; in a public repo, no links into private repos, dashboards or docs.
-- No local paths: no absolute drive or home-directory paths, temp or scratchpad dirs, or Claude project-file paths (`/mnt/project-files/...`). Use repo-relative paths, or `../<repo>` for a sibling checkout.
-- Commit messages carry no `Claude-Session:` trailer.
-
-Generic locations such as `~/.claude/` are fine; the rule covers real paths from a contributor's machine.
-
 ## Component Inventory
 
 | Category | Components | `data-vane-type` |
@@ -165,7 +151,8 @@ Additional toggle props: `gap`/`noGap`, `padding`/`noPadding`, `shadow`/`noShado
 Layout extras: `divided` (Grid2–6: 1px lines instead of the gap), `strongBorder` (border in the appearance's strong color), `pointerEvents*` and `whitespace*` on layout components. NavLink takes `indicatorStart` (rail, accent mark when active or `aria-selected`) or `indicatorBottom` (tab bar).
 
 **Breakpoints** (layout components): `mobileStack`, `tabletStack`, `desktopStack`
-**Hide**: `mobileHide`, `tabletHide`, `desktopHide`
+**Hide**: `mobileHide`, `tabletHide`, `desktopHide`; **Show** (only below the width): `mobileShow`, `tabletShow`, `desktopShow`
+**Responsive width** (full width below the width): `mobileWFull`, `tabletWFull`, `desktopWFull`
 
 ## Key Defaults (Do NOT Redundantly Specify)
 
@@ -259,11 +246,9 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for architecture details, CSS variable 
 
 ---
 
-## Reference Implementations
+## Third-party UI frameworks
 
-When adding or refactoring a component, study mature implementation patterns — props API, accessibility, theming, responsive behavior — before writing VaneUI code, then re-express them in VaneUI's conventions (boolean props API, Tailwind CSS v4, ThemeProvider, TypeScript strict mode). Pointers to the local reference repositories are maintained at the workspace level (`C:\GitHub\CLAUDE.md`), not in this repo.
-
-> **Do not name third-party UI frameworks anywhere in this repository** — not in source, comments, tests, CSS, or docs. See the workspace `CLAUDE.md` rule for details.
+**Do not name third-party UI frameworks anywhere in this repository**: not in source, comments, tests, CSS, or docs. Describe the technical behavior generically instead.
 
 ---
 
