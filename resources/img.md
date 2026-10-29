@@ -5,6 +5,8 @@ sourceUrl: https://github.com/vaneui/vaneui/blob/main/src/components/ui/img/Img.
 since: 0.9.0
 ---
 
+Img is for photos, screenshots, avatars and other content images. It renders a native `<img>` element and takes no children, so an image that needs a title or caption next to it goes in a [Card](/docs/layout-components/card) or a [Col](/docs/layout-components/col) together with its text. For an icon, use [Icon](/docs/basic-components/icon), which wraps an inline SVG in a `<span>` rather than loading an image file.
+
 ```tsx setup
 const placeholderSrc = "https://placehold.co/300x200/e2e8f0/64748b?text=Image";
 const portraitSrc = "https://placehold.co/200x300/cbd5e1/475569?text=Portrait";
@@ -154,6 +156,17 @@ Control how an image fills a sized container with `objectCover` (default), `obje
       <Text sm secondary>Early morning hike through the pine forest.</Text>
     </Stack>
   </Card>
+</Row>
+```
+
+## Keeping its size in a row with noShrink
+
+In a flex [Row](/docs/layout-components/row), an image is a flex item that can give up width when the row runs out of room. `noShrink` sets `flex-shrink: 0`, so a logo or an avatar keeps its size and the text beside it gives way instead. Here the row also takes `whitespaceNowrap` and `overflowHidden`, so the label stays on one line and clips at the row's edge. `noShrink` on Img needs `@vaneui/ui` 1.4.5 or later.
+
+```tsx demo
+<Row whitespaceNowrap overflowHidden className="max-w-80">
+  <Img noShrink pill src={avatarSrc} alt="" width={32} height={32}/>
+  <Text sm>A long label that stays on one line and clips at the edge of its row</Text>
 </Row>
 ```
 

@@ -5,6 +5,8 @@ sourceUrl: https://github.com/vaneui/vaneui/blob/main/src/components/ui/row/Row.
 since: 0.9.0
 ---
 
+Row suits content that sits side by side at its natural width: a toolbar, a set of tags, an icon beside its label. When the children should share equal column widths instead, a [Grid](/docs/layout-components/grid) component such as Grid3 sizes them. For a vertical group, use [Col](/docs/layout-components/col), or [Stack](/docs/layout-components/stack) when the group also needs its own padding.
+
 ## Basic usage
 
 A horizontal flex container. `Row` defaults to `gap`, `itemsCenter`, `noPadding`, `noBorder`, `noInsetRing`, `outline`, and `sharp`: you don't need to pass these explicitly. Pass `href` to render `Row` as `<a>` instead of `<div>`. A focus-visible outline auto-enables when `href` is set.
@@ -266,11 +268,11 @@ Add `href` to render the Row as an `<a>` tag, useful for clickable list rows. A 
 
 ```tsx demo
 <Col>
-  <Row href="#inbox" justifyBetween padding border rounded>
+  <Row href="#as-link" justifyBetween padding border rounded>
     <Text fontSemibold>Inbox</Text>
     <Badge primary filled>12</Badge>
   </Row>
-  <Row href="#drafts" justifyBetween padding border rounded>
+  <Row href="#as-link" justifyBetween padding border rounded>
     <Text fontSemibold>Drafts</Text>
     <Badge secondary>3</Badge>
   </Row>

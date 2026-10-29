@@ -683,7 +683,42 @@
       "prop": "shadow",
       "category": "Shadow",
       "isDefault": false,
-      "description": "Enable drop shadow",
+      "description": "Enable drop shadow at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXs",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowSm",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowMd",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Medium drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowLg",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Large drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXl",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-large drop shadow, whatever the component's size",
       "isCommon": true
     },
     {
@@ -1483,7 +1518,42 @@
       "prop": "shadow",
       "category": "Shadow",
       "isDefault": false,
-      "description": "Enable drop shadow",
+      "description": "Enable drop shadow at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXs",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowSm",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowMd",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Medium drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowLg",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Large drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXl",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-large drop shadow, whatever the component's size",
       "isCommon": true
     },
     {
@@ -3601,7 +3671,42 @@
       "prop": "shadow",
       "category": "Shadow",
       "isDefault": false,
-      "description": "Enable drop shadow",
+      "description": "Enable drop shadow at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXs",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowSm",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowMd",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Medium drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowLg",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Large drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXl",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-large drop shadow, whatever the component's size",
       "isCommon": true
     },
     {
@@ -4793,7 +4898,42 @@
       "prop": "shadow",
       "category": "Shadow",
       "isDefault": false,
-      "description": "Enable drop shadow",
+      "description": "Enable drop shadow at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXs",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowSm",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowMd",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Medium drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowLg",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Large drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXl",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-large drop shadow, whatever the component's size",
       "isCommon": true
     },
     {
@@ -4836,6 +4976,13 @@
       "category": "Shape",
       "isDefault": true,
       "description": "Medium rounded corners (default)",
+      "isCommon": false
+    },
+    {
+      "prop": "strongBorder",
+      "category": "Strong Border",
+      "isDefault": false,
+      "description": "Paint the border in the appearance's strong color instead of its soft one",
       "isCommon": false
     },
     {
@@ -5047,6 +5194,62 @@
       "isDefault": true,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
       "isCommon": false
+    },
+    {
+      "prop": "pointerEventsNone",
+      "category": "Pointer Events",
+      "isDefault": false,
+      "description": "Disable pointer events - clicks pass through the element",
+      "isCommon": true
+    },
+    {
+      "prop": "pointerEventsAuto",
+      "category": "Pointer Events",
+      "isDefault": false,
+      "description": "Enable pointer events (default browser behavior)",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespaceNowrap",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "No wrap - text stays on single line",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespaceNormal",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Normal wrapping - default browser behavior",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePre",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve whitespace and line breaks",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePreWrap",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve whitespace, wrap text",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePreLine",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve line breaks, collapse spaces, wrap text",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespaceBreakSpaces",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve whitespace incl. trailing spaces, wrap text (white-space: break-spaces)",
+      "isCommon": true
     },
     {
       "prop": "focusVisible",
@@ -5607,7 +5810,42 @@
       "prop": "shadow",
       "category": "Shadow",
       "isDefault": false,
-      "description": "Enable drop shadow",
+      "description": "Enable drop shadow at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXs",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowSm",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowMd",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Medium drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowLg",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Large drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXl",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-large drop shadow, whatever the component's size",
       "isCommon": true
     },
     {
@@ -6435,7 +6673,42 @@
       "prop": "shadow",
       "category": "Shadow",
       "isDefault": false,
-      "description": "Enable drop shadow",
+      "description": "Enable drop shadow at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXs",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowSm",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowMd",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Medium drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowLg",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Large drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXl",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-large drop shadow, whatever the component's size",
       "isCommon": true
     },
     {
@@ -7564,7 +7837,42 @@
       "prop": "shadow",
       "category": "Shadow",
       "isDefault": false,
-      "description": "Enable drop shadow",
+      "description": "Enable drop shadow at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXs",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowSm",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowMd",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Medium drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowLg",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Large drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXl",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-large drop shadow, whatever the component's size",
       "isCommon": true
     },
     {
@@ -8763,7 +9071,42 @@
       "prop": "shadow",
       "category": "Shadow",
       "isDefault": false,
-      "description": "Enable drop shadow",
+      "description": "Enable drop shadow at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXs",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowSm",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowMd",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Medium drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowLg",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Large drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXl",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-large drop shadow, whatever the component's size",
       "isCommon": true
     },
     {
@@ -8806,6 +9149,13 @@
       "category": "Shape",
       "isDefault": false,
       "description": "Medium rounded corners (default)",
+      "isCommon": false
+    },
+    {
+      "prop": "strongBorder",
+      "category": "Strong Border",
+      "isDefault": false,
+      "description": "Paint the border in the appearance's strong color instead of its soft one",
       "isCommon": false
     },
     {
@@ -8961,6 +9311,62 @@
       "isDefault": false,
       "description": "Align text to the reading-direction end (right in LTR, left in RTL)",
       "isCommon": false
+    },
+    {
+      "prop": "pointerEventsNone",
+      "category": "Pointer Events",
+      "isDefault": false,
+      "description": "Disable pointer events - clicks pass through the element",
+      "isCommon": true
+    },
+    {
+      "prop": "pointerEventsAuto",
+      "category": "Pointer Events",
+      "isDefault": false,
+      "description": "Enable pointer events (default browser behavior)",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespaceNowrap",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "No wrap - text stays on single line",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespaceNormal",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Normal wrapping - default browser behavior",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePre",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve whitespace and line breaks",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePreWrap",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve whitespace, wrap text",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePreLine",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve line breaks, collapse spaces, wrap text",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespaceBreakSpaces",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve whitespace incl. trailing spaces, wrap text (white-space: break-spaces)",
+      "isCommon": true
     },
     {
       "prop": "focusVisible",
@@ -9637,6 +10043,13 @@
       "isCommon": true
     },
     {
+      "prop": "strongBorder",
+      "category": "Strong Border",
+      "isDefault": false,
+      "description": "Paint the border in the appearance's strong color instead of its soft one",
+      "isCommon": false
+    },
+    {
       "prop": "pill",
       "category": "Shape",
       "isDefault": false,
@@ -9749,6 +10162,62 @@
       "isCommon": false
     },
     {
+      "prop": "pointerEventsNone",
+      "category": "Pointer Events",
+      "isDefault": false,
+      "description": "Disable pointer events - clicks pass through the element",
+      "isCommon": true
+    },
+    {
+      "prop": "pointerEventsAuto",
+      "category": "Pointer Events",
+      "isDefault": false,
+      "description": "Enable pointer events (default browser behavior)",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespaceNowrap",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "No wrap - text stays on single line",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespaceNormal",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Normal wrapping - default browser behavior",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePre",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve whitespace and line breaks",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePreWrap",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve whitespace, wrap text",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePreLine",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve line breaks, collapse spaces, wrap text",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespaceBreakSpaces",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve whitespace incl. trailing spaces, wrap text (white-space: break-spaces)",
+      "isCommon": true
+    },
+    {
       "prop": "desktopStack",
       "category": "Breakpoint",
       "isDefault": false,
@@ -9773,7 +10242,42 @@
       "prop": "shadow",
       "category": "Shadow",
       "isDefault": false,
-      "description": "Enable drop shadow",
+      "description": "Enable drop shadow at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXs",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowSm",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowMd",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Medium drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowLg",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Large drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXl",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-large drop shadow, whatever the component's size",
       "isCommon": true
     },
     {
@@ -11065,7 +11569,42 @@
       "prop": "shadow",
       "category": "Shadow",
       "isDefault": false,
-      "description": "Enable drop shadow",
+      "description": "Enable drop shadow at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXs",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowSm",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowMd",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Medium drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowLg",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Large drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXl",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-large drop shadow, whatever the component's size",
       "isCommon": true
     },
     {
@@ -11967,6 +12506,13 @@
       "isCommon": true
     },
     {
+      "prop": "strongBorder",
+      "category": "Strong Border",
+      "isDefault": false,
+      "description": "Paint the border in the appearance's strong color instead of its soft one",
+      "isCommon": false
+    },
+    {
       "prop": "pill",
       "category": "Shape",
       "isDefault": false,
@@ -12076,6 +12622,69 @@
       "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
+      "isCommon": false
+    },
+    {
+      "prop": "pointerEventsNone",
+      "category": "Pointer Events",
+      "isDefault": false,
+      "description": "Disable pointer events - clicks pass through the element",
+      "isCommon": true
+    },
+    {
+      "prop": "pointerEventsAuto",
+      "category": "Pointer Events",
+      "isDefault": false,
+      "description": "Enable pointer events (default browser behavior)",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespaceNowrap",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "No wrap - text stays on single line",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespaceNormal",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Normal wrapping - default browser behavior",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePre",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve whitespace and line breaks",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePreWrap",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve whitespace, wrap text",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePreLine",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve line breaks, collapse spaces, wrap text",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespaceBreakSpaces",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve whitespace incl. trailing spaces, wrap text (white-space: break-spaces)",
+      "isCommon": true
+    },
+    {
+      "prop": "divided",
+      "category": "Divided",
+      "isDefault": false,
+      "description": "Draw 1px divider-colored lines between and around cells (replaces the gap)",
       "isCommon": false
     }
   ],
@@ -12560,7 +13169,42 @@
       "prop": "shadow",
       "category": "Shadow",
       "isDefault": false,
-      "description": "Enable drop shadow",
+      "description": "Enable drop shadow at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXs",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowSm",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowMd",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Medium drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowLg",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Large drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXl",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-large drop shadow, whatever the component's size",
       "isCommon": true
     },
     {
@@ -13248,7 +13892,42 @@
       "prop": "shadow",
       "category": "Shadow",
       "isDefault": false,
-      "description": "Enable drop shadow",
+      "description": "Enable drop shadow at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXs",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowSm",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowMd",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Medium drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowLg",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Large drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXl",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-large drop shadow, whatever the component's size",
       "isCommon": true
     },
     {
@@ -14150,6 +14829,13 @@
       "isCommon": true
     },
     {
+      "prop": "noShrink",
+      "category": "Shrink",
+      "isDefault": false,
+      "description": "Prevent the flex item from shrinking below its content size (= `shrink-0`)",
+      "isCommon": false
+    },
+    {
       "prop": "primary",
       "category": "Appearance",
       "isDefault": false,
@@ -14286,7 +14972,42 @@
       "prop": "shadow",
       "category": "Shadow",
       "isDefault": false,
-      "description": "Enable drop shadow",
+      "description": "Enable drop shadow at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXs",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowSm",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowMd",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Medium drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowLg",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Large drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXl",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-large drop shadow, whatever the component's size",
       "isCommon": true
     },
     {
@@ -15065,7 +15786,42 @@
       "prop": "shadow",
       "category": "Shadow",
       "isDefault": false,
-      "description": "Enable drop shadow",
+      "description": "Enable drop shadow at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXs",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowSm",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowMd",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Medium drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowLg",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Large drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXl",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-large drop shadow, whatever the component's size",
       "isCommon": true
     },
     {
@@ -16208,7 +16964,42 @@
       "prop": "shadow",
       "category": "Shadow",
       "isDefault": false,
-      "description": "Enable drop shadow",
+      "description": "Enable drop shadow at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXs",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowSm",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowMd",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Medium drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowLg",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Large drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXl",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-large drop shadow, whatever the component's size",
       "isCommon": true
     },
     {
@@ -17582,7 +18373,42 @@
       "prop": "shadow",
       "category": "Shadow",
       "isDefault": false,
-      "description": "Enable drop shadow",
+      "description": "Enable drop shadow at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXs",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowSm",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowMd",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Medium drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowLg",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Large drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXl",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-large drop shadow, whatever the component's size",
       "isCommon": true
     },
     {
@@ -20325,7 +21151,42 @@
       "prop": "shadow",
       "category": "Shadow",
       "isDefault": false,
-      "description": "Enable drop shadow",
+      "description": "Enable drop shadow at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXs",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowSm",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowMd",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Medium drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowLg",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Large drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXl",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-large drop shadow, whatever the component's size",
       "isCommon": true
     },
     {
@@ -21454,7 +22315,42 @@
       "prop": "shadow",
       "category": "Shadow",
       "isDefault": false,
-      "description": "Enable drop shadow",
+      "description": "Enable drop shadow at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXs",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowSm",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowMd",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Medium drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowLg",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Large drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXl",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-large drop shadow, whatever the component's size",
       "isCommon": true
     },
     {
@@ -22828,7 +23724,42 @@
       "prop": "shadow",
       "category": "Shadow",
       "isDefault": true,
-      "description": "Enable drop shadow",
+      "description": "Enable drop shadow at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXs",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowSm",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowMd",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Medium drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowLg",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Large drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXl",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-large drop shadow, whatever the component's size",
       "isCommon": true
     },
     {
@@ -23586,7 +24517,42 @@
       "prop": "shadow",
       "category": "Shadow",
       "isDefault": false,
-      "description": "Enable drop shadow",
+      "description": "Enable drop shadow at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXs",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowSm",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowMd",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Medium drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowLg",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Large drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXl",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-large drop shadow, whatever the component's size",
       "isCommon": true
     },
     {
@@ -24119,6 +25085,20 @@
       "category": "Inherit Size",
       "isDefault": false,
       "description": "Keep own font-size; do not inherit from parent",
+      "isCommon": false
+    },
+    {
+      "prop": "indicatorStart",
+      "category": "Indicator",
+      "isDefault": false,
+      "description": "1px rail on the start edge that turns into a 2px accent mark when active or selected",
+      "isCommon": false
+    },
+    {
+      "prop": "indicatorBottom",
+      "category": "Indicator",
+      "isDefault": false,
+      "description": "1px accent bar on the bottom edge while active, for tab bars",
       "isCommon": false
     }
   ],
@@ -26490,7 +27470,42 @@
       "prop": "shadow",
       "category": "Shadow",
       "isDefault": true,
-      "description": "Enable drop shadow",
+      "description": "Enable drop shadow at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXs",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowSm",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowMd",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Medium drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowLg",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Large drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXl",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-large drop shadow, whatever the component's size",
       "isCommon": true
     },
     {
@@ -26778,6 +27793,358 @@
       "category": "Clamp Height",
       "isDefault": false,
       "description": "Clamp to a size-dependent maximum height (uses --max-height CSS variable)",
+      "isCommon": false
+    }
+  ],
+  "progress": [
+    {
+      "prop": "xs",
+      "category": "Size",
+      "isDefault": false,
+      "description": "Extra small size",
+      "isCommon": false
+    },
+    {
+      "prop": "sm",
+      "category": "Size",
+      "isDefault": false,
+      "description": "Small size",
+      "isCommon": false
+    },
+    {
+      "prop": "md",
+      "category": "Size",
+      "isDefault": true,
+      "description": "Medium size (default)",
+      "isCommon": false
+    },
+    {
+      "prop": "lg",
+      "category": "Size",
+      "isDefault": false,
+      "description": "Large size",
+      "isCommon": false
+    },
+    {
+      "prop": "xl",
+      "category": "Size",
+      "isDefault": false,
+      "description": "Extra large size",
+      "isCommon": false
+    },
+    {
+      "prop": "primary",
+      "category": "Appearance",
+      "isDefault": true,
+      "description": "Primary color appearance (gray)",
+      "isCommon": false
+    },
+    {
+      "prop": "accent",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Accent color appearance (rose)",
+      "isCommon": false
+    },
+    {
+      "prop": "secondary",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Secondary color appearance (gray)",
+      "isCommon": false
+    },
+    {
+      "prop": "tertiary",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Tertiary color appearance",
+      "isCommon": false
+    },
+    {
+      "prop": "success",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Success color appearance (green)",
+      "isCommon": false
+    },
+    {
+      "prop": "danger",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Danger color appearance (red)",
+      "isCommon": false
+    },
+    {
+      "prop": "warning",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Warning color appearance (amber)",
+      "isCommon": false
+    },
+    {
+      "prop": "info",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Info color appearance (cyan)",
+      "isCommon": false
+    },
+    {
+      "prop": "inheritAppearance",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
+      "isCommon": false
+    },
+    {
+      "prop": "pill",
+      "category": "Shape",
+      "isDefault": true,
+      "description": "Fully rounded corners (circular)",
+      "isCommon": false
+    },
+    {
+      "prop": "sharp",
+      "category": "Shape",
+      "isDefault": false,
+      "description": "No rounded corners (square)",
+      "isCommon": false
+    },
+    {
+      "prop": "rounded",
+      "category": "Shape",
+      "isDefault": false,
+      "description": "Medium rounded corners (default)",
+      "isCommon": false
+    },
+    {
+      "prop": "transition",
+      "category": "Transition",
+      "isDefault": true,
+      "description": "Enable smooth transitions between states",
+      "isCommon": true
+    },
+    {
+      "prop": "noTransition",
+      "category": "Transition",
+      "isDefault": false,
+      "description": "Disable transitions for instant state changes",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowAuto",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Auto overflow - show scrollbars if needed",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowHidden",
+      "category": "Overflow",
+      "isDefault": true,
+      "description": "Hidden overflow - clip content without scrollbars",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowClip",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Clip overflow - hard clip without scrollbars",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowVisible",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Visible overflow - content extends beyond bounds",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowScroll",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Scroll overflow - always show scrollbars",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowXAuto",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Auto overflow on X-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowYAuto",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Auto overflow on Y-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowXHidden",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Hidden overflow on X-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowYHidden",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Hidden overflow on Y-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowXClip",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Clip overflow on X-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowYClip",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Clip overflow on Y-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowXVisible",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Visible overflow on X-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowYVisible",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Visible overflow on Y-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowXScroll",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Scroll overflow on X-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowYScroll",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Scroll overflow on Y-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "wFull",
+      "category": "Width",
+      "isDefault": true,
+      "description": "Set width to 100%",
+      "isCommon": true
+    },
+    {
+      "prop": "wFit",
+      "category": "Width",
+      "isDefault": false,
+      "description": "Set width to fit-content",
+      "isCommon": true
+    },
+    {
+      "prop": "wAuto",
+      "category": "Width",
+      "isDefault": false,
+      "description": "Set width to auto",
+      "isCommon": true
+    },
+    {
+      "prop": "wScreen",
+      "category": "Width",
+      "isDefault": false,
+      "description": "Set width to 100vw (viewport width), removes max-width constraint",
+      "isCommon": true
+    },
+    {
+      "prop": "flex1",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Take up remaining space (= `flex-1`, i.e. `flex: 1 1 0%`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexAuto",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Grow but respect intrinsic size (= `flex-auto`, i.e. `flex: 1 1 auto`)",
+      "isCommon": false
+    },
+    {
+      "prop": "flexNone",
+      "category": "Flex",
+      "isDefault": false,
+      "description": "Don't grow and don't shrink (= `flex-none`, i.e. `flex: none`)",
+      "isCommon": false
+    },
+    {
+      "prop": "desktopHide",
+      "category": "Hide",
+      "isDefault": false,
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "isCommon": true
+    },
+    {
+      "prop": "tabletHide",
+      "category": "Hide",
+      "isDefault": false,
+      "description": "Hide element on tablet devices and below (max-tablet: 64rem)",
+      "isCommon": true
+    },
+    {
+      "prop": "mobileHide",
+      "category": "Hide",
+      "isDefault": false,
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "isCommon": true
+    },
+    {
+      "prop": "margin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable margin on all sides",
+      "isCommon": false
+    },
+    {
+      "prop": "marginX",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only horizontal (inline) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginY",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only vertical (block) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginT",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only top margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginB",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only bottom margin",
+      "isCommon": false
+    },
+    {
+      "prop": "noMargin",
+      "category": "Margin",
+      "isDefault": true,
+      "description": "Disable margin (reset to 0)",
       "isCommon": false
     }
   ],
@@ -27325,7 +28692,42 @@
       "prop": "shadow",
       "category": "Shadow",
       "isDefault": false,
-      "description": "Enable drop shadow",
+      "description": "Enable drop shadow at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXs",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowSm",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowMd",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Medium drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowLg",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Large drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXl",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-large drop shadow, whatever the component's size",
       "isCommon": true
     },
     {
@@ -28244,7 +29646,42 @@
       "prop": "shadow",
       "category": "Shadow",
       "isDefault": false,
-      "description": "Enable drop shadow",
+      "description": "Enable drop shadow at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXs",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowSm",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowMd",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Medium drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowLg",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Large drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXl",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-large drop shadow, whatever the component's size",
       "isCommon": true
     },
     {
@@ -28287,6 +29724,13 @@
       "category": "Shape",
       "isDefault": false,
       "description": "Medium rounded corners (default)",
+      "isCommon": false
+    },
+    {
+      "prop": "strongBorder",
+      "category": "Strong Border",
+      "isDefault": false,
+      "description": "Paint the border in the appearance's strong color instead of its soft one",
       "isCommon": false
     },
     {
@@ -28421,6 +29865,62 @@
       "isDefault": false,
       "description": "Align text to the reading-direction end (right in LTR, left in RTL)",
       "isCommon": false
+    },
+    {
+      "prop": "pointerEventsNone",
+      "category": "Pointer Events",
+      "isDefault": false,
+      "description": "Disable pointer events - clicks pass through the element",
+      "isCommon": true
+    },
+    {
+      "prop": "pointerEventsAuto",
+      "category": "Pointer Events",
+      "isDefault": false,
+      "description": "Enable pointer events (default browser behavior)",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespaceNowrap",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "No wrap - text stays on single line",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespaceNormal",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Normal wrapping - default browser behavior",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePre",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve whitespace and line breaks",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePreWrap",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve whitespace, wrap text",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePreLine",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve line breaks, collapse spaces, wrap text",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespaceBreakSpaces",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve whitespace incl. trailing spaces, wrap text (white-space: break-spaces)",
+      "isCommon": true
     },
     {
       "prop": "focusVisible",
@@ -29030,7 +30530,42 @@
       "prop": "shadow",
       "category": "Shadow",
       "isDefault": false,
-      "description": "Enable drop shadow",
+      "description": "Enable drop shadow at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXs",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowSm",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowMd",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Medium drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowLg",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Large drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXl",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-large drop shadow, whatever the component's size",
       "isCommon": true
     },
     {
@@ -29073,6 +30608,13 @@
       "category": "Shape",
       "isDefault": false,
       "description": "Medium rounded corners (default)",
+      "isCommon": false
+    },
+    {
+      "prop": "strongBorder",
+      "category": "Strong Border",
+      "isDefault": false,
+      "description": "Paint the border in the appearance's strong color instead of its soft one",
       "isCommon": false
     },
     {
@@ -29298,6 +30840,62 @@
       "isDefault": true,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
       "isCommon": false
+    },
+    {
+      "prop": "pointerEventsNone",
+      "category": "Pointer Events",
+      "isDefault": false,
+      "description": "Disable pointer events - clicks pass through the element",
+      "isCommon": true
+    },
+    {
+      "prop": "pointerEventsAuto",
+      "category": "Pointer Events",
+      "isDefault": false,
+      "description": "Enable pointer events (default browser behavior)",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespaceNowrap",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "No wrap - text stays on single line",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespaceNormal",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Normal wrapping - default browser behavior",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePre",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve whitespace and line breaks",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePreWrap",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve whitespace, wrap text",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePreLine",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve line breaks, collapse spaces, wrap text",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespaceBreakSpaces",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve whitespace incl. trailing spaces, wrap text (white-space: break-spaces)",
+      "isCommon": true
     }
   ],
   "section-title": [
@@ -30882,7 +32480,42 @@
       "prop": "shadow",
       "category": "Shadow",
       "isDefault": false,
-      "description": "Enable drop shadow",
+      "description": "Enable drop shadow at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXs",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowSm",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowMd",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Medium drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowLg",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Large drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXl",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-large drop shadow, whatever the component's size",
       "isCommon": true
     },
     {
@@ -32377,7 +34010,42 @@
       "prop": "shadow",
       "category": "Shadow",
       "isDefault": false,
-      "description": "Enable drop shadow",
+      "description": "Enable drop shadow at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXs",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowSm",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowMd",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Medium drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowLg",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Large drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXl",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-large drop shadow, whatever the component's size",
       "isCommon": true
     },
     {
@@ -32420,6 +34088,13 @@
       "category": "Shape",
       "isDefault": false,
       "description": "Medium rounded corners (default)",
+      "isCommon": false
+    },
+    {
+      "prop": "strongBorder",
+      "category": "Strong Border",
+      "isDefault": false,
+      "description": "Paint the border in the appearance's strong color instead of its soft one",
       "isCommon": false
     },
     {
@@ -32554,6 +34229,62 @@
       "isDefault": false,
       "description": "Align text to the reading-direction end (right in LTR, left in RTL)",
       "isCommon": false
+    },
+    {
+      "prop": "pointerEventsNone",
+      "category": "Pointer Events",
+      "isDefault": false,
+      "description": "Disable pointer events - clicks pass through the element",
+      "isCommon": true
+    },
+    {
+      "prop": "pointerEventsAuto",
+      "category": "Pointer Events",
+      "isDefault": false,
+      "description": "Enable pointer events (default browser behavior)",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespaceNowrap",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "No wrap - text stays on single line",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespaceNormal",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Normal wrapping - default browser behavior",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePre",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve whitespace and line breaks",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePreWrap",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve whitespace, wrap text",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespacePreLine",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve line breaks, collapse spaces, wrap text",
+      "isCommon": true
+    },
+    {
+      "prop": "whitespaceBreakSpaces",
+      "category": "Whitespace",
+      "isDefault": false,
+      "description": "Preserve whitespace incl. trailing spaces, wrap text (white-space: break-spaces)",
+      "isCommon": true
     },
     {
       "prop": "focusVisible",
@@ -33114,7 +34845,42 @@
       "prop": "shadow",
       "category": "Shadow",
       "isDefault": false,
-      "description": "Enable drop shadow",
+      "description": "Enable drop shadow at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXs",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowSm",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowMd",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Medium drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowLg",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Large drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXl",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-large drop shadow, whatever the component's size",
       "isCommon": true
     },
     {
@@ -35290,7 +37056,42 @@
       "prop": "shadow",
       "category": "Shadow",
       "isDefault": false,
-      "description": "Enable drop shadow",
+      "description": "Enable drop shadow at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXs",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowSm",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowMd",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Medium drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowLg",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Large drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXl",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-large drop shadow, whatever the component's size",
       "isCommon": true
     },
     {
@@ -37744,7 +39545,42 @@
       "prop": "shadow",
       "category": "Shadow",
       "isDefault": true,
-      "description": "Enable drop shadow",
+      "description": "Enable drop shadow at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXs",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowSm",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Small drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowMd",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Medium drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowLg",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Large drop shadow, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "shadowXl",
+      "category": "Shadow",
+      "isDefault": false,
+      "description": "Extra-large drop shadow, whatever the component's size",
       "isCommon": true
     },
     {

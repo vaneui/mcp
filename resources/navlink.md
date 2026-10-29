@@ -5,6 +5,8 @@ sourceUrl: https://github.com/vaneui/vaneui/blob/main/src/components/ui/navLink/
 since: 0.9.0
 ---
 
+NavLink is one entry in a sidebar or a tab bar and points at one destination. For a link inside a sentence, use [Link](/docs/typography-components/link); for a list of actions that opens from a trigger, use [Menu](/docs/overlay-components/menu). In its `<button>` form (no `href`), NavLink defaults to `type="button"`, so a click inside a `<form>` does not submit the form.
+
 ## Basic usage
 
 NavLink renders as an `<a>` when `href` is provided. Defaults to `sm` size, `primary` appearance, `outline` variant, `wFull` and `textLeft` layout, ideal for stacking inside a sidebar `Col`.
@@ -146,6 +148,44 @@ NavLink is `wFull` so sidebar items fill the column. In a horizontal nav or a ta
   <NavLink href="#" wFit>Shipping</NavLink>
 </Row>
 ```
+
+## Indicator lines with indicatorStart and indicatorBottom
+
+To mark the current item with a line as well as a tint, add `indicatorStart` or `indicatorBottom`. `indicatorStart` draws a 1px rail on the start edge of every link, and on the `active` link it turns into a 2px mark in the accent color. Stacked links join their rails into one line down the sidebar.
+
+```tsx demo
+<Col noGap className="w-56">
+  <NavLink href="#" indicatorStart ghost sharp secondary>Installation</NavLink>
+  <NavLink href="#" indicatorStart ghost sharp active>Core concepts</NavLink>
+  <NavLink href="#" indicatorStart ghost sharp secondary>Theming</NavLink>
+</Col>
+```
+
+`indicatorBottom` draws an accent bar under the active link only, for a tab bar. Put the tabs in a [Row](/docs/layout-components/row) with `noGap` and `borderB`, so the bar sits on the row's bottom border.
+
+```tsx demo
+<Row noGap borderB>
+  <NavLink href="#" indicatorBottom ghost sharp active wFit>Docs</NavLink>
+  <NavLink href="#" indicatorBottom ghost sharp secondary wFit>Playground</NavLink>
+  <NavLink href="#" indicatorBottom ghost sharp secondary wFit>Changelog</NavLink>
+</Row>
+```
+
+Both indicators are inset shadows, so the text does not move when the active item changes. Inside a `dir="rtl"` container, the start rail moves to the right edge. The examples pair the indicators with `ghost` and `sharp`, so the lines meet square corners, and with `secondary` on the inactive links. The indicator props need `@vaneui/ui` 1.4.5 or later.
+
+## Selected options in a listbox
+
+A NavLink with `aria-selected="true"` takes the hover fill, so the highlighted option in a listbox, such as a search result picked with the arrow keys, stays visible while the pointer is elsewhere. Give the container `role="listbox"` and each NavLink `role="option"`. With `indicatorStart`, the selected option also gets the accent mark.
+
+```tsx demo
+<Col noGap role="listbox" aria-label="Search results" className="w-56">
+  <NavLink role="option" aria-selected="true" indicatorStart ghost sharp>Button</NavLink>
+  <NavLink role="option" aria-selected="false" indicatorStart ghost sharp secondary>Badge</NavLink>
+  <NavLink role="option" aria-selected="false" indicatorStart ghost sharp secondary>Card</NavLink>
+</Col>
+```
+
+In a search box built as a combobox, keyboard focus stays in the input, and `aria-activedescendant` on the input names the selected option's `id`. `MenuItem` takes the same fill for `aria-selected="true"`, but its fixed `role="menuitem"` has no selected state, so use NavLink for options.
 
 ## Keyboard focus
 

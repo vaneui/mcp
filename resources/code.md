@@ -5,6 +5,8 @@ sourceUrl: https://github.com/vaneui/vaneui/blob/main/src/components/ui/code/Cod
 since: 0.9.0
 ---
 
+Code sets apart the parts of a sentence that a reader would type or copy, such as a package name, a hook or a prop value. It renders a native `<code>` whose text does not wrap, so it suits short snippets rather than multi-line listings. For keys the reader presses, use [Kbd](/docs/basic-components/kbd), and for a phrase that only needs emphasis, a [Mark](/docs/basic-components/mark) highlight.
+
 ## Basic usage
 
 Inline code snippets with default styling. `Code` aligns to the surrounding text's baseline, so it lines up with the text it's inlined in. Pass `href` to render `Code` as `<a>` instead of `<code>`. A focus-visible outline auto-enables when `href` is set.
@@ -113,8 +115,8 @@ Add `href` to render the `Code` element as an `<a>` tag. A keyboard focus-visibl
 ```tsx demo
 <Col>
   <Text>Install <Code href="https://npmjs.com/package/@vaneui/ui" target="_blank" rel="noopener noreferrer">@vaneui/ui</Code> from npm.</Text>
-  <Text>The <Code href="#useState" info>useState</Code> hook returns a value and a setter.</Text>
-  <Text>See the <Code href="#install" filled success>install guide</Code> for setup steps.</Text>
+  <Text>The <Code href="https://react.dev/reference/react/useState" target="_blank" rel="noopener noreferrer" info>useState</Code> hook returns a value and a setter.</Text>
+  <Text>See the <Code href="/docs/getting-started/installation" filled success>install guide</Code> for setup steps.</Text>
 </Col>
 ```
 
