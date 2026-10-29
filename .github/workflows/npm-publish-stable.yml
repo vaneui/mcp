@@ -46,6 +46,20 @@ jobs:
             echo "version=$VERSION" >> $GITHUB_OUTPUT
           fi
 
+      # Checked apart from npm, so pushing prod again finishes a run whose registry publish failed
+      - name: Check if Version is in the MCP Registry
+        id: check_registry
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          MCP_NAME=$(node -p "encodeURIComponent(require('./package.json').mcpName)")
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" "https://registry.modelcontextprotocol.io/v0/servers/$MCP_NAME/versions/$VERSION")
+          echo "MCP Registry status for $VERSION: $STATUS"
+          if [ "$STATUS" = "200" ]; then
+            echo "should_publish=false" >> $GITHUB_OUTPUT
+          else
+            echo "should_publish=true" >> $GITHUB_OUTPUT
+          fi
+
       # Compile TypeScript using the committed resources/ corpus. We do NOT
       # re-sync here: the sync scripts need the sibling vaneui/ and vaneui-web/
       # checkouts, which aren't present in CI. resources/ is committed to git
@@ -78,7 +92,7 @@ jobs:
       # matches server.json's `name`, so this has to run after npm publish.
       # Steps follow https://modelcontextprotocol.io/registry/github-actions
       - name: Sync server.json Version
-        if: steps.check_version.outputs.should_publish == 'true'
+        if: steps.check_registry.outputs.should_publish == 'true'
         run: |
           VERSION=$(node -p "require('./package.json').version")
           PACKAGE_NAME=$(node -p "require('./package.json').name")
@@ -90,33 +104,34 @@ jobs:
       # The registry reads the package from npm, so wait until npm serves the
       # new version with its mcpName.
       - name: Wait for npm to Serve the New Version
-        if: steps.check_version.outputs.should_publish == 'true'
+        if: steps.check_registry.outputs.should_publish == 'true'
         run: |
           VERSION=$(node -p "require('./package.json').version")
           PACKAGE_NAME=$(node -p "require('./package.json').name")
           MCP_NAME=$(node -p "require('./package.json').mcpName")
-          for i in $(seq 1 18); do
-            if [ "$(npm view "$PACKAGE_NAME@$VERSION" mcpName 2>/dev/null)" = "$MCP_NAME" ]; then
+          # The npm CDN can serve a cached packument for about 5 minutes
+          for i in $(seq 1 60); do
+            if [ "$(npm view "$PACKAGE_NAME@$VERSION" mcpName --prefer-online 2>/dev/null)" = "$MCP_NAME" ]; then
               echo "npm serves $PACKAGE_NAME@$VERSION with mcpName $MCP_NAME"
               exit 0
             fi
-            echo "Waiting for npm to serve $PACKAGE_NAME@$VERSION ($i/18)"
+            echo "Waiting for npm to serve $PACKAGE_NAME@$VERSION ($i/60)"
             sleep 10
           done
-          echo "❌ npm does not serve $PACKAGE_NAME@$VERSION with mcpName $MCP_NAME after 3 minutes."
+          echo "❌ npm does not serve $PACKAGE_NAME@$VERSION with mcpName $MCP_NAME after 10 minutes."
           exit 1
 
       - name: Install mcp-publisher
-        if: steps.check_version.outputs.should_publish == 'true'
+        if: steps.check_registry.outputs.should_publish == 'true'
         run: |
           curl -fsSL "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_$(uname -s | tr '[:upper:]' '[:lower:]')_$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/').tar.gz" | tar xz mcp-publisher
 
       - name: Log in to the MCP Registry
-        if: steps.check_version.outputs.should_publish == 'true'
+        if: steps.check_registry.outputs.should_publish == 'true'
         run: ./mcp-publisher login github-oidc
 
       - name: Publish to the MCP Registry
-        if: steps.check_version.outputs.should_publish == 'true'
+        if: steps.check_registry.outputs.should_publish == 'true'
         run: ./mcp-publisher publish
 
       - name: Report Success
