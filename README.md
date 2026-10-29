@@ -142,8 +142,8 @@ This section is for contributors and maintainers working on the server itself.
 
 The doc corpus is bundled from two sibling repos at build time:
 
-- **`vaneui/`** — API reference and agent-facing rules (`CLAUDE.md` + `.claude/rules/*.md`).
-- **`vaneui-web/`** — narrative guides and per-component reference, authored as plain markdown under `app/docs/data/**/*.md` (one file per component, with frontmatter).
+- **`vaneui/`** (a checkout of [vaneui/vaneui](https://github.com/vaneui/vaneui)) — API reference and agent-facing rules (`CLAUDE.md` + `.claude/rules/*.md`).
+- **`vaneui-web/`** (a checkout of [vaneui/web](https://github.com/vaneui/web)) — narrative guides and per-component reference, authored as plain markdown under `app/docs/data/**/*.md` (one file per component, with frontmatter).
 
 Each `.md` file goes into `resources/` keyed by its basename (filenames are globally unique, so the corpus is flat). Files from `vaneui/` are copied verbatim. `vaneui-web/` pages are written with their `{% include "x.md" %}` tags expanded through vaneui-web's own include helper (`lib/docs/includes.mjs`), so each resource matches the page on vaneui.com. Files and directories whose name starts with `_` are partials that pages include, so they get no resource of their own. `scripts/sync-component-props.mjs` additionally reads each component's `componentKey` frontmatter and joins it with `@vaneui/ui`'s exported metadata to produce `resources/component-props.json`.
 
