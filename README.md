@@ -111,13 +111,26 @@ Returns up to 50 hits, each containing `uri`, `slug`, `lineNumber`, and a short 
 
 ### `get_component_props`
 
-Returns the structured prop / category / default / description table for a single component, derived directly from `@vaneui/ui`'s `ComponentCategories`, `ComponentKeys`, `defaultTheme`, and `PropDescriptions`.
+Returns a component's boolean props as plain text, one line per category, with the default marked `*`. Props in one category are alternatives. The data comes from `@vaneui/ui`'s `ComponentCategories`, `ComponentKeys`, `defaultTheme`, and `PropDescriptions`.
 
 | Param | Type | Notes |
 |-------|------|-------|
-| `slug` | string | Required. The component slug, matching the resource basename — e.g. `button`, `card`, `icon-button`, `page-title`. |
+| `slug` | string | Required. The component slug, matching the resource basename, e.g. `button`, `card`, `icon-button`, `page-title`. `common` lists the shared layout props. |
+| `detail` | `"compact"` \| `"full"` | Optional. Defaults to `"compact"`. |
 
-Returns a JSON array of `{ prop, category, isDefault, description, isCommon }` rows. Use this when you need the exact prop list for a component (selecting between common layout props vs component-specific props, finding which prop is the default in a category, etc.).
+The shared layout props (display, gap, justify, border, width and the rest) are the same on most components, so `compact` output leaves them out: it lists the component's own props, then names the shared categories the component takes and its shared defaults. Call it with `slug: "common"` once to get those props. `full` adds a description to every prop and lists the shared props too.
+
+```text
+card boolean props. Props in one category are alternatives; * marks the default. Descriptions: call again with detail "full".
+Size: xs sm md* lg xl
+Appearance: primary* accent secondary tertiary success danger warning info inheritAppearance
+Variant: filled outline* ghost
+...
+Shared layout props (get_component_props "common" lists them): Hide, Show, Items, Justify, ...
+Shared defaults: flex gap column border responsiveSizing
+```
+
+Props that take a value, such as Field's `label` or Modal's `title`, are not boolean category props: read them in the component's doc, `vaneui://docs/<slug>`.
 
 ## Available resources
 
@@ -145,7 +158,7 @@ The doc corpus is bundled from two sibling repos at build time:
 - **`vaneui/`** (a checkout of [vaneui/vaneui](https://github.com/vaneui/vaneui)) — API reference and agent-facing rules (`CLAUDE.md` + `.claude/rules/*.md`).
 - **`vaneui-web/`** (a checkout of [vaneui/web](https://github.com/vaneui/web)) — narrative guides and per-component reference, authored as plain markdown under `app/docs/data/**/*.md` (one file per component, with frontmatter).
 
-Each `.md` file goes into `resources/` keyed by its basename (filenames are globally unique, so the corpus is flat). Files from `vaneui/` are copied verbatim. `vaneui-web/` pages are written with their `{% include "x.md" %}` tags expanded through vaneui-web's own include helper (`lib/docs/includes.mjs`), so each resource matches the page on vaneui.com. Files and directories whose name starts with `_` are partials that pages include, so they get no resource of their own. `scripts/sync-component-props.mjs` additionally reads each component's `componentKey` frontmatter and joins it with `@vaneui/ui`'s exported metadata to produce `resources/component-props.json`.
+Each `.md` file goes into `resources/` keyed by its basename (filenames are globally unique, so the corpus is flat). Files from `vaneui/` are copied verbatim. `vaneui-web/` pages are written with their `{% include "x.md" %}` tags expanded through vaneui-web's own include helper (`lib/docs/includes.mjs`), so each resource matches the page on vaneui.com. Files and directories whose name starts with `_` are partials that pages include, so they get no resource of their own. `scripts/sync-component-props.mjs` additionally reads each component's `componentKey` frontmatter and joins it with `@vaneui/ui`'s exported metadata to produce `resources/component-props.json`. It marks a prop as shared (`isCommon`) when its category is in `vaneui-web/app/docs/commonCategories.ts`, the same split the props tables on vaneui.com use.
 
 ### Building
 
@@ -158,6 +171,10 @@ npm start           # run the built server over stdio
 ```
 
 Point a client at the local build with `node /absolute/path/to/vaneui-mcp/dist/server.js` as the command.
+
+### Testing
+
+`npm test` compiles `src/` and runs the tool tests in `test/` with `node --test`.
 
 ### Re-syncing the corpus (maintainers)
 

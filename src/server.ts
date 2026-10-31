@@ -16,7 +16,7 @@ import {
   slugFromUri,
   uriFor,
 } from "./resources.js";
-import { getComponentProps, searchDocs } from "./tools.js";
+import { formatComponentProps, searchDocs } from "./tools.js";
 
 function readPackageVersion(): string {
   const here = dirname(fileURLToPath(import.meta.url));
@@ -116,22 +116,26 @@ async function main(): Promise<void> {
     "get_component_props",
     {
       description:
-        "Return the structured prop / category / default / description rows for a single VaneUI component, derived from `ComponentCategories`, `ComponentKeys`, `defaultTheme`, and `PropDescriptions`. Use this to look up the exact prop list, find which prop is the default in a category, or distinguish common layout props from component-specific ones. The slug matches the resource basename — `button`, `card`, `icon-button`, `page-title`, etc.",
+        "Return a VaneUI component's boolean props, one line per category, default marked `*`. By default (`compact`) it lists the component's own props and names the shared layout categories it takes; slug `common` lists those once. detail `full` adds descriptions and every shared prop. Value props such as `label` or `title` are in `vaneui://docs/<slug>`. The slug is the resource basename: `button`, `card`, `icon-button`, etc.",
       inputSchema: {
         slug: z
           .string()
           .min(1)
-          .describe("Component slug (e.g. `button`, `card`, `icon-button`, `page-title`)."),
+          .describe("Component slug, or `common` for the shared layout props."),
+        detail: z
+          .enum(["compact", "full"])
+          .optional()
+          .describe("`compact` (default) or `full`."),
       },
     },
-    async ({ slug }) => {
+    async ({ slug, detail }) => {
       try {
-        const rows = await getComponentProps({ slug });
+        const text = await formatComponentProps({ slug, detail });
         return {
           content: [
             {
               type: "text",
-              text: JSON.stringify(rows, null, 2),
+              text,
             },
           ],
         };
