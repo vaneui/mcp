@@ -263,7 +263,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -1161,7 +1161,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -2612,7 +2612,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -3398,7 +3398,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -4646,7 +4646,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -5670,7 +5670,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -6526,7 +6526,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -7732,7 +7732,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -8938,7 +8938,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -9955,7 +9955,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -10958,7 +10958,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -11562,7 +11562,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -12544,7 +12544,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -13589,7 +13589,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -14081,7 +14081,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -15287,7 +15287,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -16059,7 +16059,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -17279,7 +17279,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -18730,7 +18730,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -19810,7 +19810,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -20932,7 +20932,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -21634,7 +21634,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -22840,7 +22840,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -24291,7 +24291,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -25126,7 +25126,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -26346,7 +26346,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -27097,7 +27097,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -28128,7 +28128,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -29560,7 +29560,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -30416,7 +30416,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -31433,7 +31433,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -32681,7 +32681,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -33467,7 +33467,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -34969,7 +34969,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -35986,7 +35986,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -37488,7 +37488,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -38274,7 +38274,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -39739,7 +39739,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
@@ -40770,7 +40770,7 @@
       "prop": "sticky",
       "category": "Position",
       "isDefault": false,
-      "description": "Sticky positioning",
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
       "isCommon": true
     },
     {
