@@ -46,6 +46,7 @@
     "sync": "node scripts/sync-docs.mjs && node scripts/sync-component-props.mjs",
     "sync:strict": "node scripts/sync-docs.mjs --strict && node scripts/sync-component-props.mjs --strict",
     "build": "tsc",
+    "test": "tsc && node --test test/*.test.mjs",
     "build:full": "npm run sync && tsc",
     "start": "node dist/server.js",
     "prepublishOnly": "npm run sync:strict && tsc"

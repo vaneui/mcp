@@ -50,37 +50,19 @@ const WEB_ROOT = process.env.VANEUI_WEB_PATH
 
 const STRICT = process.argv.includes("--strict");
 
-// Mirror of vaneui-web/app/docs/commonCategories.ts. Hard-coded here because
-// the 26-element list rarely changes; if it does, update both files together.
-const COMMON_DOC_CATEGORIES = new Set([
-  "hide",
-  "items",
-  "justify",
-  "position",
-  "display",
-  "overflow",
-  "wrap",
-  "gap",
-  "flexDirection",
-  "reverse",
-  "border",
-  "shadow",
-  "ring",
-  "focusVisible",
-  "cursor",
-  "transition",
-  "whitespace",
-  "width",
-  "height",
-  "transparent",
-  "responsive",
-  "objectFit",
-  "blur",
-  "pointerEvents",
-  "minWidth",
-  "maxHeight",
-  "orientation",
-]);
+// Categories documented once on the common-props page instead of on every
+// component page. Read from vaneui-web/app/docs/commonCategories.ts so the
+// split matches the props tables on vaneui.com.
+async function readCommonCategories(webRoot) {
+  const path = join(webRoot, "app", "docs", "commonCategories.ts");
+  const text = await readFile(path, "utf8");
+  const list = text.match(/new Set<[^>]*>\(\[([\s\S]*?)\]\)/);
+  const keys = list ? [...list[1].matchAll(/['"]([A-Za-z0-9]+)['"]/g)].map((m) => m[1]) : [];
+  if (keys.length === 0) {
+    throw new Error(`no categories found in ${path}`);
+  }
+  return new Set(keys);
+}
 
 const COMPONENT_DIRS = [
   "basic-components",
@@ -218,6 +200,14 @@ async function main() {
     return;
   }
 
+  let commonCategories;
+  try {
+    commonCategories = await readCommonCategories(WEB_ROOT);
+  } catch (err) {
+    fail(`[sync-component-props] could not read the common categories: ${err instanceof Error ? err.message : String(err)}`);
+    return;
+  }
+
   const components = await collectComponentMd(WEB_ROOT);
   if (components.length === 0) {
     fail(`[sync-component-props] no component MD files found under vaneui-web.`);
@@ -241,7 +231,7 @@ async function main() {
       const catMeta = PropDescriptions[catKey];
       const categoryName = catMeta?.name ?? catKey;
       const propDescs = catMeta?.props ?? {};
-      const isCommon = COMMON_DOC_CATEGORIES.has(catKey);
+      const isCommon = commonCategories.has(catKey);
       for (const prop of propKeys) {
         rows.push({
           prop,

@@ -117,8 +117,19 @@ async function loadComponentProps(): Promise<ComponentPropsIndex> {
   return componentPropsCache;
 }
 
+/** Slug that lists the shared layout props instead of one component's own props */
+export const COMMON_SLUG = "common";
+
+export type PropsDetail = "compact" | "full";
+
 export interface GetComponentPropsArgs {
   slug: string;
+  detail?: PropsDetail;
+}
+
+function knownSlugsError(slug: string, index: ComponentPropsIndex): Error {
+  const known = [COMMON_SLUG, ...Object.keys(index).sort()].join(", ");
+  return new Error(`Unknown component slug "${slug}". Known slugs: ${known}.`);
 }
 
 export async function getComponentProps(
@@ -129,12 +140,77 @@ export async function getComponentProps(
     throw new Error("`slug` must be a non-empty string.");
   }
   const index = await loadComponentProps();
+  if (slug === COMMON_SLUG) return commonRows(index);
   const rows = index[slug];
-  if (!rows) {
-    const known = Object.keys(index).sort().join(", ");
-    throw new Error(
-      `Unknown component slug "${slug}". Known slugs: ${known}.`,
-    );
-  }
+  if (!rows) throw knownSlugsError(slug, index);
   return rows;
+}
+
+/** One row per shared prop, in the order components first list them */
+function commonRows(index: ComponentPropsIndex): ComponentPropRow[] {
+  const seen = new Map<string, ComponentPropRow>();
+  for (const rows of Object.values(index)) {
+    for (const row of rows) {
+      if (row.isCommon && !seen.has(row.prop)) seen.set(row.prop, { ...row, isDefault: false });
+    }
+  }
+  return [...seen.values()];
+}
+
+function groupByCategory(rows: ComponentPropRow[]): Map<string, ComponentPropRow[]> {
+  const groups = new Map<string, ComponentPropRow[]>();
+  for (const row of rows) {
+    const group = groups.get(row.category);
+    if (group) group.push(row);
+    else groups.set(row.category, [row]);
+  }
+  return groups;
+}
+
+const mark = (row: ComponentPropRow): string => (row.isDefault ? `${row.prop}*` : row.prop);
+
+function formatGroups(rows: ComponentPropRow[], detail: PropsDetail): string[] {
+  const lines: string[] = [];
+  for (const [category, group] of groupByCategory(rows)) {
+    if (detail === "compact") {
+      lines.push(`${category}: ${group.map(mark).join(" ")}`);
+    } else {
+      lines.push(category);
+      for (const row of group) lines.push(`  ${mark(row)}: ${row.description}`);
+    }
+  }
+  return lines;
+}
+
+/**
+ * Plain-text prop list for an agent. Each category is one line of alternatives with the
+ * default marked `*`. Compact output leaves out descriptions and the shared layout props
+ * that most components take: it names their categories and defaults instead.
+ */
+export async function formatComponentProps(args: GetComponentPropsArgs): Promise<string> {
+  const detail: PropsDetail = args.detail ?? "compact";
+  const rows = await getComponentProps(args);
+  const slug = args.slug.trim();
+  const more = detail === "compact" ? ` Descriptions: call again with detail "full".` : "";
+
+  if (slug === COMMON_SLUG) {
+    return [
+      `Shared layout props, taken by most VaneUI components (each component's own list names the categories it takes). Props in one category are alternatives.${more}`,
+      ...formatGroups(rows, detail),
+    ].join("\n");
+  }
+
+  const own = rows.filter((row) => !row.isCommon);
+  const shared = rows.filter((row) => row.isCommon);
+  const lines = [
+    `${slug} boolean props. Props in one category are alternatives; * marks the default.${more}`,
+    ...formatGroups(detail === "compact" ? own : rows, detail),
+  ];
+  if (detail === "compact" && shared.length > 0) {
+    const categories = [...groupByCategory(shared).keys()].join(", ");
+    lines.push(`Shared layout props (get_component_props "${COMMON_SLUG}" lists them): ${categories}`);
+    const defaults = shared.filter((row) => row.isDefault).map((row) => row.prop);
+    if (defaults.length > 0) lines.push(`Shared defaults: ${defaults.join(" ")}`);
+  }
+  return lines.join("\n");
 }

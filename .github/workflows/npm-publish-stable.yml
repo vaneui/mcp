@@ -74,6 +74,10 @@ jobs:
           echo "❌ Build failed! Cannot proceed with stable release publication."
           exit 1
 
+      - name: Run Tests
+        if: steps.check_version.outputs.should_publish == 'true'
+        run: npm test
+
       # Best Practice: Verify what will be in the package before publishing
       - name: Verify Package Contents
         if: steps.check_version.outputs.should_publish == 'true'

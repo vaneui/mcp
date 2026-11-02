@@ -56,6 +56,9 @@ jobs:
           echo "❌ Build failed! Cannot proceed with pre-release publication."
           exit 1
 
+      - name: Run Tests
+        run: npm test
+
       # Best Practice: Verify what will be in the package before publishing
       - name: Verify Package Contents
         run: npm pack --dry-run

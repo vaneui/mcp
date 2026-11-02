@@ -131,21 +131,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -908,21 +908,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -964,7 +964,7 @@
       "category": "Responsive Sizing",
       "isDefault": true,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     }
   ],
   "badge": [
@@ -1029,21 +1029,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -2093,21 +2093,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -2149,7 +2149,7 @@
       "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "disabled",
@@ -2480,21 +2480,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -3124,21 +3124,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -3173,7 +3173,7 @@
       "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "inheritSize",
@@ -3266,21 +3266,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -4330,21 +4330,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -4386,7 +4386,7 @@
       "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "disabled",
@@ -4514,21 +4514,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -5298,21 +5298,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -5403,7 +5403,7 @@
       "category": "Responsive Sizing",
       "isDefault": true,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "pointerEventsNone",
@@ -5538,21 +5538,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -5867,42 +5867,42 @@
       "category": "Align Self",
       "isDefault": false,
       "description": "Use the parent's align-items value (align-self: auto)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "alignSelfStart",
       "category": "Align Self",
       "isDefault": false,
       "description": "Align this item to the start of the cross axis (align-self: flex-start)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "alignSelfEnd",
       "category": "Align Self",
       "isDefault": false,
       "description": "Align this item to the end of the cross axis (align-self: flex-end)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "alignSelfCenter",
       "category": "Align Self",
       "isDefault": false,
       "description": "Center this item on the cross axis (align-self: center)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "alignSelfStretch",
       "category": "Align Self",
       "isDefault": false,
       "description": "Stretch this item to fill the cross axis (align-self: stretch)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "alignSelfBaseline",
       "category": "Align Self",
       "isDefault": false,
       "description": "Align this item to its baseline (align-self: baseline)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "primary",
@@ -6259,21 +6259,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -6315,7 +6315,7 @@
       "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "disabled",
@@ -6394,21 +6394,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -7458,21 +7458,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -7514,7 +7514,7 @@
       "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "disabled",
@@ -7600,21 +7600,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -8664,21 +8664,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -8720,7 +8720,7 @@
       "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "disabled",
@@ -8806,21 +8806,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -9590,21 +9590,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -9646,7 +9646,7 @@
       "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "textLeft",
@@ -9823,21 +9823,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -10523,21 +10523,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -10579,7 +10579,7 @@
       "category": "Responsive Sizing",
       "isDefault": true,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "pointerEventsNone",
@@ -10826,21 +10826,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -11309,21 +11309,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -11365,7 +11365,7 @@
       "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     }
   ],
   "field": [
@@ -11430,21 +11430,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -12207,21 +12207,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -12263,7 +12263,7 @@
       "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "textLeft",
@@ -12412,21 +12412,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -13112,21 +13112,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -13168,7 +13168,7 @@
       "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "pointerEventsNone",
@@ -13457,21 +13457,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -13814,21 +13814,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -13949,21 +13949,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -15013,21 +15013,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -15069,7 +15069,7 @@
       "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "disabled",
@@ -15155,21 +15155,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -15806,21 +15806,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -15862,7 +15862,7 @@
       "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     }
   ],
   "input": [
@@ -15927,21 +15927,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -17005,21 +17005,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -17061,7 +17061,7 @@
       "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "invalid",
@@ -17147,21 +17147,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -18211,21 +18211,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -18267,7 +18267,7 @@
       "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "disabled",
@@ -18598,21 +18598,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -19312,21 +19312,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -19361,7 +19361,7 @@
       "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "disabled",
@@ -19678,21 +19678,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -20322,21 +20322,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -20371,7 +20371,7 @@
       "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "inheritSize",
@@ -20800,21 +20800,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -21339,21 +21339,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -21395,7 +21395,7 @@
       "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "inheritSize",
@@ -21502,21 +21502,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -22566,21 +22566,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -22622,7 +22622,7 @@
       "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "disabled",
@@ -22708,21 +22708,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -23772,21 +23772,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -23828,7 +23828,7 @@
       "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "disabled",
@@ -24159,21 +24159,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -24873,21 +24873,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -24929,7 +24929,7 @@
       "category": "Responsive Sizing",
       "isDefault": true,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     }
   ],
   "navlink": [
@@ -24994,21 +24994,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -26058,21 +26058,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -26114,7 +26114,7 @@
       "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "disabled",
@@ -26214,21 +26214,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -26599,21 +26599,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -26655,7 +26655,7 @@
       "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     }
   ],
   "page-title": [
@@ -26965,21 +26965,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -27609,21 +27609,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -27658,7 +27658,7 @@
       "category": "Responsive Sizing",
       "isDefault": true,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "inheritSize",
@@ -27996,21 +27996,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -28416,77 +28416,77 @@
       "category": "Align Self",
       "isDefault": false,
       "description": "Use the parent's align-items value (align-self: auto)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "alignSelfStart",
       "category": "Align Self",
       "isDefault": false,
       "description": "Align this item to the start of the cross axis (align-self: flex-start)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "alignSelfEnd",
       "category": "Align Self",
       "isDefault": false,
       "description": "Align this item to the end of the cross axis (align-self: flex-end)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "alignSelfCenter",
       "category": "Align Self",
       "isDefault": false,
       "description": "Center this item on the cross axis (align-self: center)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "alignSelfStretch",
       "category": "Align Self",
       "isDefault": false,
       "description": "Stretch this item to fill the cross axis (align-self: stretch)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "alignSelfBaseline",
       "category": "Align Self",
       "isDefault": false,
       "description": "Align this item to its baseline (align-self: baseline)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "justifySelfAuto",
       "category": "Justify Self",
       "isDefault": false,
       "description": "Use the parent's justify-items value (justify-self: auto)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "justifySelfStart",
       "category": "Justify Self",
       "isDefault": false,
       "description": "Align this item to the start of the inline axis (justify-self: start)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "justifySelfEnd",
       "category": "Justify Self",
       "isDefault": false,
       "description": "Align this item to the end of the inline axis (justify-self: end)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "justifySelfCenter",
       "category": "Justify Self",
       "isDefault": false,
       "description": "Center this item on the inline axis (justify-self: center)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "justifySelfStretch",
       "category": "Justify Self",
       "isDefault": false,
       "description": "Stretch this item to fill the inline axis (justify-self: stretch)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "primary",
@@ -28801,21 +28801,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -28857,7 +28857,7 @@
       "category": "Responsive Sizing",
       "isDefault": true,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "placeTop",
@@ -28962,14 +28962,14 @@
       "category": "Constrain Width",
       "isDefault": false,
       "description": "Constrain to a size-dependent minimum width (uses --popup-min-w CSS variable)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "clampHeight",
       "category": "Clamp Height",
       "isDefault": false,
       "description": "Clamp to a size-dependent maximum height (uses --max-height CSS variable)",
-      "isCommon": false
+      "isCommon": true
     }
   ],
   "progress": [
@@ -29244,21 +29244,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "flex1",
@@ -29307,21 +29307,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "margin",
@@ -29428,21 +29428,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -29757,42 +29757,42 @@
       "category": "Align Self",
       "isDefault": false,
       "description": "Use the parent's align-items value (align-self: auto)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "alignSelfStart",
       "category": "Align Self",
       "isDefault": false,
       "description": "Align this item to the start of the cross axis (align-self: flex-start)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "alignSelfEnd",
       "category": "Align Self",
       "isDefault": false,
       "description": "Align this item to the end of the cross axis (align-self: flex-end)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "alignSelfCenter",
       "category": "Align Self",
       "isDefault": false,
       "description": "Center this item on the cross axis (align-self: center)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "alignSelfStretch",
       "category": "Align Self",
       "isDefault": false,
       "description": "Stretch this item to fill the cross axis (align-self: stretch)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "alignSelfBaseline",
       "category": "Align Self",
       "isDefault": false,
       "description": "Align this item to its baseline (align-self: baseline)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "primary",
@@ -30149,21 +30149,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -30205,7 +30205,7 @@
       "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "disabled",
@@ -30284,21 +30284,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -31068,21 +31068,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -31124,7 +31124,7 @@
       "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "textLeft",
@@ -31301,21 +31301,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -32085,21 +32085,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -32183,7 +32183,7 @@
       "category": "Responsive Sizing",
       "isDefault": true,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "pointerEventsNone",
@@ -32549,21 +32549,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -33193,21 +33193,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -33242,7 +33242,7 @@
       "category": "Responsive Sizing",
       "isDefault": true,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "inheritSize",
@@ -33335,21 +33335,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -34413,21 +34413,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -34469,7 +34469,7 @@
       "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "invalid",
@@ -34716,21 +34716,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "margin",
@@ -34837,21 +34837,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -35621,21 +35621,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -35677,7 +35677,7 @@
       "category": "Responsive Sizing",
       "isDefault": true,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "textLeft",
@@ -35854,21 +35854,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -36183,42 +36183,42 @@
       "category": "Align Self",
       "isDefault": false,
       "description": "Use the parent's align-items value (align-self: auto)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "alignSelfStart",
       "category": "Align Self",
       "isDefault": false,
       "description": "Align this item to the start of the cross axis (align-self: flex-start)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "alignSelfEnd",
       "category": "Align Self",
       "isDefault": false,
       "description": "Align this item to the end of the cross axis (align-self: flex-end)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "alignSelfCenter",
       "category": "Align Self",
       "isDefault": false,
       "description": "Center this item on the cross axis (align-self: center)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "alignSelfStretch",
       "category": "Align Self",
       "isDefault": false,
       "description": "Stretch this item to fill the cross axis (align-self: stretch)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "alignSelfBaseline",
       "category": "Align Self",
       "isDefault": false,
       "description": "Align this item to its baseline (align-self: baseline)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "primary",
@@ -36575,21 +36575,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -36631,7 +36631,7 @@
       "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "disabled",
@@ -36871,21 +36871,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "margin",
@@ -37025,28 +37025,28 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "responsiveSizing",
       "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     }
   ],
   "text": [
@@ -37356,21 +37356,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -38000,21 +38000,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -38049,7 +38049,7 @@
       "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "inheritSize",
@@ -38142,21 +38142,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -39220,21 +39220,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -39276,7 +39276,7 @@
       "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "invalid",
@@ -39607,21 +39607,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -40251,21 +40251,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -40300,7 +40300,7 @@
       "category": "Responsive Sizing",
       "isDefault": true,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "inheritSize",
@@ -40638,21 +40638,21 @@
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileShow",
       "category": "Show",
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "itemsStart",
@@ -41058,77 +41058,77 @@
       "category": "Align Self",
       "isDefault": false,
       "description": "Use the parent's align-items value (align-self: auto)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "alignSelfStart",
       "category": "Align Self",
       "isDefault": false,
       "description": "Align this item to the start of the cross axis (align-self: flex-start)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "alignSelfEnd",
       "category": "Align Self",
       "isDefault": false,
       "description": "Align this item to the end of the cross axis (align-self: flex-end)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "alignSelfCenter",
       "category": "Align Self",
       "isDefault": false,
       "description": "Center this item on the cross axis (align-self: center)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "alignSelfStretch",
       "category": "Align Self",
       "isDefault": false,
       "description": "Stretch this item to fill the cross axis (align-self: stretch)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "alignSelfBaseline",
       "category": "Align Self",
       "isDefault": false,
       "description": "Align this item to its baseline (align-self: baseline)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "justifySelfAuto",
       "category": "Justify Self",
       "isDefault": false,
       "description": "Use the parent's justify-items value (justify-self: auto)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "justifySelfStart",
       "category": "Justify Self",
       "isDefault": false,
       "description": "Align this item to the start of the inline axis (justify-self: start)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "justifySelfEnd",
       "category": "Justify Self",
       "isDefault": false,
       "description": "Align this item to the end of the inline axis (justify-self: end)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "justifySelfCenter",
       "category": "Justify Self",
       "isDefault": false,
       "description": "Center this item on the inline axis (justify-self: center)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "justifySelfStretch",
       "category": "Justify Self",
       "isDefault": false,
       "description": "Stretch this item to fill the inline axis (justify-self: stretch)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "primary",
@@ -41443,21 +41443,21 @@
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "tabletWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "mobileWFull",
       "category": "Responsive Width",
       "isDefault": false,
       "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "hFit",
@@ -41499,7 +41499,7 @@
       "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "placeTop",
@@ -41604,14 +41604,14 @@
       "category": "Constrain Width",
       "isDefault": false,
       "description": "Constrain to a size-dependent minimum width (uses --popup-min-w CSS variable)",
-      "isCommon": false
+      "isCommon": true
     },
     {
       "prop": "clampHeight",
       "category": "Clamp Height",
       "isDefault": false,
       "description": "Clamp to a size-dependent maximum height (uses --max-height CSS variable)",
-      "isCommon": false
+      "isCommon": true
     }
   ]
 }
