@@ -1,6 +1,7 @@
 src/
 scripts/
-tsconfig.json
+test/
+tsconfig*.json
 .gitignore
 node_modules/
 *.log

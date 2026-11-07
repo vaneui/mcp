@@ -1,0 +1,9 @@
+{
+  // Compiles src/ to dist/, the code the npm package ships.
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "rootDir": "src"
+  },
+  "include": ["src"]
+}

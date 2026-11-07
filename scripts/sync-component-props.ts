@@ -31,10 +31,38 @@
 // Env:
 //   VANEUI_PATH       Override the vaneui sibling location (default ../vaneui).
 //   VANEUI_WEB_PATH   Override the vaneui-web sibling location (default ../vaneui-web).
+//
+// Node 24 runs this TypeScript file directly (type stripping), no build step needed.
 
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, join, resolve, basename } from "node:path";
 import { readFile, readdir, access, writeFile, mkdir } from "node:fs/promises";
+import type { ComponentPropRow } from "../src/tools.js";
+
+// The parts of the built @vaneui/ui dist this script reads. Typed loosely: the
+// checks in main() catch a dist that lacks them.
+type KeyLists = Record<string, readonly string[] | undefined>;
+
+interface VaneuiIndexModule {
+  ComponentCategories?: KeyLists;
+  ComponentKeys?: KeyLists;
+  defaultTheme?: Record<string, unknown>;
+}
+
+interface PropCategoryDescription {
+  name?: string;
+  props?: Record<string, { description?: string } | undefined>;
+}
+
+interface VaneuiPropsModule {
+  PropDescriptions?: Record<string, PropCategoryDescription | undefined>;
+}
+
+interface ComponentMd {
+  slug: string;
+  componentKey: string;
+  srcPath: string;
+}
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -53,7 +81,7 @@ const STRICT = process.argv.includes("--strict");
 // Categories documented once on the common-props page instead of on every
 // component page. Read from vaneui-web/app/docs/commonCategories.ts so the
 // split matches the props tables on vaneui.com.
-async function readCommonCategories(webRoot) {
+async function readCommonCategories(webRoot: string): Promise<Set<string>> {
   const path = join(webRoot, "app", "docs", "commonCategories.ts");
   const text = await readFile(path, "utf8");
   const list = text.match(/new Set<[^>]*>\(\[([\s\S]*?)\]\)/);
@@ -72,7 +100,7 @@ const COMPONENT_DIRS = [
   "typography-components",
 ];
 
-async function pathExists(p) {
+async function pathExists(p: string): Promise<boolean> {
   try {
     await access(p);
     return true;
@@ -81,7 +109,7 @@ async function pathExists(p) {
   }
 }
 
-function fail(msg) {
+function fail(msg: string): void {
   if (STRICT) {
     console.error(msg);
     process.exit(1);
@@ -91,12 +119,12 @@ function fail(msg) {
 
 // Lightweight YAML frontmatter parser — only extracts simple `key: value` lines
 // from the leading `---\n...\n---\n` block. Sufficient for our schema.
-function parseFrontmatter(text) {
+function parseFrontmatter(text: string): Record<string, string> {
   if (!text.startsWith("---")) return {};
   const end = text.indexOf("\n---", 3);
   if (end === -1) return {};
   const block = text.slice(3, end).trim();
-  const out = {};
+  const out: Record<string, string> = {};
   for (const line of block.split(/\r?\n/)) {
     const m = line.match(/^([a-zA-Z0-9_-]+)\s*:\s*(.*?)\s*$/);
     if (!m) continue;
@@ -115,8 +143,8 @@ function parseFrontmatter(text) {
 
 // Walk vaneui-web/app/docs/data/{component-dirs}/*.md and return an array of
 // { slug, componentKey, srcPath } objects.
-async function collectComponentMd(webRoot) {
-  const result = [];
+async function collectComponentMd(webRoot: string): Promise<ComponentMd[]> {
+  const result: ComponentMd[] = [];
   const dataRoot = join(webRoot, "app", "docs", "data");
   for (const dir of COMPONENT_DIRS) {
     const full = join(dataRoot, dir);
@@ -142,26 +170,27 @@ async function collectComponentMd(webRoot) {
 
 // Mirror of getDefaults() in vaneui-web/app/docs/DocsPropsTable.tsx — handles
 // compound components whose theme is split across sub-keys.
-function getDefaults(themeNode) {
+function getDefaults(themeNode: unknown): Record<string, unknown> {
   if (!themeNode || typeof themeNode !== "object") return {};
-  const candidates = [
-    themeNode.main,
-    themeNode.content,
-    themeNode.root,
-    themeNode.item,
-    themeNode.input,
-    themeNode, // direct ComponentTheme (badge, divider, container, ...)
+  const node = themeNode as Record<string, unknown>;
+  const candidates: unknown[] = [
+    node.main,
+    node.content,
+    node.root,
+    node.item,
+    node.input,
+    node, // direct ComponentTheme (badge, divider, container, ...)
   ];
   for (const c of candidates) {
     if (c && typeof c === "object" && "defaults" in c) {
       const d = c.defaults;
-      if (d && typeof d === "object") return d;
+      if (d && typeof d === "object") return d as Record<string, unknown>;
     }
   }
   return {};
 }
 
-async function main() {
+async function main(): Promise<void> {
   if (!(await pathExists(REPO_ROOT))) {
     fail(`[sync-component-props] vaneui not found at ${REPO_ROOT}. Pass VANEUI_PATH or check out vaneui as a sibling repo.`);
     return;
@@ -181,7 +210,8 @@ async function main() {
     return;
   }
 
-  let mod, propsMod;
+  let mod: VaneuiIndexModule;
+  let propsMod: VaneuiPropsModule;
   try {
     mod = await import(pathToFileURL(vaneuiEsm).href);
     propsMod = await import(pathToFileURL(vaneuiPropsEsm).href);
@@ -200,7 +230,7 @@ async function main() {
     return;
   }
 
-  let commonCategories;
+  let commonCategories: Set<string>;
   try {
     commonCategories = await readCommonCategories(WEB_ROOT);
   } catch (err) {
@@ -214,7 +244,7 @@ async function main() {
     return;
   }
 
-  const out = {};
+  const out: Record<string, ComponentPropRow[]> = {};
   let totalRows = 0;
   for (const { slug, componentKey } of components) {
     const cats = ComponentCategories[componentKey];
@@ -225,7 +255,7 @@ async function main() {
     const themeNode = defaultTheme[componentKey];
     const defaults = getDefaults(themeNode);
 
-    const rows = [];
+    const rows: ComponentPropRow[] = [];
     for (const catKey of cats) {
       const propKeys = ComponentKeys[catKey] ?? [];
       const catMeta = PropDescriptions[catKey];

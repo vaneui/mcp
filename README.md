@@ -158,15 +158,18 @@ The doc corpus is bundled from two sibling repos at build time:
 - **`vaneui/`** (a checkout of [vaneui/vaneui](https://github.com/vaneui/vaneui)) — API reference and agent-facing rules (`CLAUDE.md` + `.claude/rules/*.md`).
 - **`vaneui-web/`** (a checkout of [vaneui/web](https://github.com/vaneui/web)) — narrative guides and per-component reference, authored as plain markdown under `app/docs/data/**/*.md` (one file per component, with frontmatter).
 
-Each `.md` file goes into `resources/` keyed by its basename (filenames are globally unique, so the corpus is flat). Files from `vaneui/` are copied verbatim. `vaneui-web/` pages are written with their `{% include "x.md" %}` tags expanded through vaneui-web's own include helper (`lib/docs/includes.mjs`), so each resource matches the page on vaneui.com. Files and directories whose name starts with `_` are partials that pages include, so they get no resource of their own. `scripts/sync-component-props.mjs` additionally reads each component's `componentKey` frontmatter and joins it with `@vaneui/ui`'s exported metadata to produce `resources/component-props.json`. It marks a prop as shared (`isCommon`) when its category is in `vaneui-web/app/docs/commonCategories.ts`, the same split the props tables on vaneui.com use.
+Each `.md` file goes into `resources/` keyed by its basename (filenames are globally unique, so the corpus is flat). Files from `vaneui/` are copied verbatim. `vaneui-web/` pages are written with their `{% include "x.md" %}` tags expanded through vaneui-web's own include helper (`lib/docs/includes.mjs`), so each resource matches the page on vaneui.com. Files and directories whose name starts with `_` are partials that pages include, so they get no resource of their own. `scripts/sync-component-props.ts` additionally reads each component's `componentKey` frontmatter and joins it with `@vaneui/ui`'s exported metadata to produce `resources/component-props.json`. It marks a prop as shared (`isCommon`) when its category is in `vaneui-web/app/docs/commonCategories.ts`, the same split the props tables on vaneui.com use.
 
 ### Building
+
+Everything in this repo is TypeScript. `src/` compiles to `dist/`, which is what the npm package ships. The sync scripts in `scripts/` and the tests in `test/` are `.ts` files that Node 24 runs directly (type stripping), so they need no build step.
 
 `resources/` is **committed to git**, so a fresh clone already has everything the server needs to run.
 
 ```bash
 npm install
-npm run build       # tsc only — uses the committed resources/
+npm run build       # compile src/ to dist/ (tsconfig.build.json), using the committed resources/
+npm run typecheck   # type-check src/, scripts/ and test/ (tsconfig.json)
 npm start           # run the built server over stdio
 ```
 
@@ -174,14 +177,14 @@ Point a client at the local build with `node /absolute/path/to/vaneui-mcp/dist/s
 
 ### Testing
 
-`npm test` compiles `src/` and runs the tool tests in `test/` with `node --test`.
+`npm test` compiles `src/`, type-checks the whole repo and runs the tool tests in `test/` with `node --test` against the compiled `dist/`.
 
 ### Re-syncing the corpus (maintainers)
 
 The sync scripts expect `vaneui/` and `vaneui-web/` as **sibling folders** of this repo (resolved as `../vaneui` and `../vaneui-web`). Override with `VANEUI_PATH` / `VANEUI_WEB_PATH` env vars if they live elsewhere. Run `npm install` in `vaneui-web/` first, because its include helper loads `@vaneui/md` from there. A missing or cyclic include stops the sync.
 
 ```bash
-npm run build:full  # re-sync resources/ from the sibling repos, then tsc
+npm run build:full  # re-sync resources/ from the sibling repos, then build
 ```
 
 - `npm run sync` — lenient sync: copies every `.md` from both sources into `resources/` and writes `component-props.json`. ⚠️ Wipes `resources/` first; if a sibling repo is missing you'll get a partial bundle. Prefer `build:full`.
