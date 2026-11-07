@@ -1,11 +1,13 @@
 {
+  // Type-checks everything (src, scripts, test) without emitting: `npm run typecheck`.
+  // The published build compiles src/ only, through tsconfig.build.json.
   "compilerOptions": {
     "target": "ES2022",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "lib": ["ES2022"],
     "outDir": "dist",
-    "rootDir": "src",
+    "noEmit": true,
     "declaration": false,
     "sourceMap": false,
     "esModuleInterop": true,
@@ -13,7 +15,11 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    // scripts/ and test/ run as .ts straight in Node (type stripping), which
+    // needs syntax it can erase and type-only imports marked `type`.
+    "erasableSyntaxOnly": true,
+    "verbatimModuleSyntax": true
   },
-  "include": ["src"]
+  "include": ["src", "scripts", "test"]
 }

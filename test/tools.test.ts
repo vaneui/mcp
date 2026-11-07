@@ -1,10 +1,17 @@
-// Runs against the compiled dist/ (npm test builds first).
+// Runs against the compiled dist/ (npm test builds first), so it tests the code
+// that ships; the types come from src/. Node runs this file directly (type stripping).
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { COMMON_SLUG, formatComponentProps, getComponentProps } from "../dist/tools.js";
+import type * as Tools from "../src/tools.js";
+import type { ComponentPropRow } from "../src/tools.js";
 
-const index = JSON.parse(readFileSync(new URL("../resources/component-props.json", import.meta.url), "utf8"));
+const tools: typeof Tools = await import(new URL("../dist/tools.js", import.meta.url).href);
+const { COMMON_SLUG, formatComponentProps, getComponentProps } = tools;
+
+const index: Record<string, ComponentPropRow[]> = JSON.parse(
+  readFileSync(new URL("../resources/component-props.json", import.meta.url), "utf8"),
+);
 const slugs = Object.keys(index);
 
 test("compact output lists own props by category with the default marked", async () => {
@@ -43,7 +50,7 @@ test("full output has descriptions and the shared props", async () => {
 test("the common slug lists each shared prop once, with no defaults", async () => {
   const text = await formatComponentProps({ slug: COMMON_SLUG });
   assert.match(text, /^Justify: .*\bjustifyBetween\b/m);
-  assert.equal(text.match(/\bjustifyBetween\b/g).length, 1);
+  assert.equal(text.match(/\bjustifyBetween\b/g)?.length, 1);
   assert.doesNotMatch(text, /\*/);
   const rows = await getComponentProps({ slug: COMMON_SLUG });
   assert.ok(rows.every((row) => row.isCommon));

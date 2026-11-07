@@ -43,13 +43,14 @@
     "node": "24.x"
   },
   "scripts": {
-    "sync": "node scripts/sync-docs.mjs && node scripts/sync-component-props.mjs",
-    "sync:strict": "node scripts/sync-docs.mjs --strict && node scripts/sync-component-props.mjs --strict",
-    "build": "tsc",
-    "test": "tsc && node --test test/*.test.mjs",
-    "build:full": "npm run sync && tsc",
+    "sync": "node scripts/sync-docs.ts && node scripts/sync-component-props.ts",
+    "sync:strict": "node scripts/sync-docs.ts --strict && node scripts/sync-component-props.ts --strict",
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc",
+    "test": "npm run build && npm run typecheck && node --test test/*.test.ts",
+    "build:full": "npm run sync && npm run build",
     "start": "node dist/server.js",
-    "prepublishOnly": "npm run sync:strict && tsc"
+    "prepublishOnly": "npm run sync:strict && npm run build"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.29.0"

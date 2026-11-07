@@ -29,11 +29,21 @@
 //   VANEUI_WEB_PATH   Absolute or relative path to the vaneui-web checkout.
 //                     Defaults to `../vaneui-web` (sibling of the vaneui-mcp repo).
 //
-// Run via: npm run sync  (lenient)  or  npm run sync:strict  (strict).
+// Run via: npm run sync  (lenient)  or  npm run sync:strict  (strict). Node 24
+// runs this TypeScript file directly (type stripping), no build step needed.
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, join, resolve, basename } from "node:path";
 import { mkdir, copyFile, rm, readdir, access, writeFile } from "node:fs/promises";
-import { readFileSync } from "node:fs";
+import { readFileSync, type Dirent } from "node:fs";
+
+// The part of vaneui-web's lib/docs/includes.mjs this script calls. It returns
+// null when the file does not exist.
+interface IncludesHelper {
+  readDocMarkdown(file: string, options: { dataDir: string }): string | null;
+}
+
+// Returns the text a resource gets for one source markdown file.
+type ReadMarkdown = (file: string) => string;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -54,8 +64,8 @@ const STRICT = process.argv.includes("--strict");
 const MAINTAINER_SECTIONS = new Set(["Nothing private in GitHub content", "Attribution"]);
 
 // Drops each `## ` section whose title is in `names`, up to the next `## ` heading outside a code fence.
-function stripSections(text, names) {
-  const out = [];
+function stripSections(text: string, names: ReadonlySet<string>): string {
+  const out: string[] = [];
   let skip = false;
   let inFence = false;
   for (const line of text.split("\n")) {
@@ -67,7 +77,7 @@ function stripSections(text, names) {
   return out.join("\n");
 }
 
-async function pathExists(p) {
+async function pathExists(p: string): Promise<boolean> {
   try {
     await access(p);
     return true;
@@ -76,7 +86,7 @@ async function pathExists(p) {
   }
 }
 
-function fail(msg) {
+function fail(msg: string): void {
   if (STRICT) {
     console.error(msg);
     process.exit(1);
@@ -86,9 +96,9 @@ function fail(msg) {
 
 // Recursively collect all *.md files under `dir`. With `skipPartials`, files
 // and directories whose name starts with `_` are left out.
-async function collectMd(dir, { skipPartials = false } = {}) {
-  const out = [];
-  let entries;
+async function collectMd(dir: string, { skipPartials = false }: { skipPartials?: boolean } = {}): Promise<string[]> {
+  const out: string[] = [];
+  let entries: Dirent[];
   try {
     entries = await readdir(dir, { withFileTypes: true });
   } catch {
@@ -111,8 +121,8 @@ async function collectMd(dir, { skipPartials = false } = {}) {
 // across the input list and aborts (in strict mode) so a silent overwrite never
 // happens. With `read`, each file's text comes from `read(path)` instead of a
 // plain copy.
-async function syncMd(rootLabel, files, read) {
-  const seen = new Map(); // dest basename -> source path
+async function syncMd(rootLabel: string, files: string[], read?: ReadMarkdown): Promise<number> {
+  const seen = new Map<string, string>(); // dest basename -> source path
   let written = 0;
   for (const from of files) {
     // Lowercase the basename so URI slugs are uniform (CLAUDE.md -> claude.md).
@@ -132,7 +142,7 @@ async function syncMd(rootLabel, files, read) {
   return written;
 }
 
-async function main() {
+async function main(): Promise<void> {
   // Start clean so removed source files don't linger in resources/.
   await rm(RESOURCES_DIR, { recursive: true, force: true });
   await mkdir(RESOURCES_DIR, { recursive: true });
@@ -143,7 +153,7 @@ async function main() {
   }
   const vaneuiClaude = join(REPO_ROOT, "CLAUDE.md");
   const vaneuiRulesDir = join(REPO_ROOT, ".claude", "rules");
-  const vaneuiFiles = [];
+  const vaneuiFiles: string[] = [];
   if (await pathExists(vaneuiClaude)) {
     vaneuiFiles.push(vaneuiClaude);
   } else {
@@ -158,7 +168,7 @@ async function main() {
   if (vaneuiFiles.length === 0) {
     fail(`[sync] vaneui: no markdown files found`);
   }
-  const readVaneui = (file) => {
+  const readVaneui: ReadMarkdown = (file) => {
     const text = readFileSync(file, "utf8");
     return file === vaneuiClaude ? stripSections(text, MAINTAINER_SECTIONS) : text;
   };
@@ -179,10 +189,14 @@ async function main() {
   // vaneui-web's include helper resolves @vaneui/md/include from its own
   // node_modules. A missing include throws, which stops the sync.
   const includesHelper = join(WEB_ROOT, "lib", "docs", "includes.mjs");
-  let readPage;
+  let readPage: ReadMarkdown | undefined;
   if (await pathExists(includesHelper)) {
-    const { readDocMarkdown } = await import(pathToFileURL(includesHelper).href);
-    readPage = (file) => readDocMarkdown(file, { dataDir: webDocsRoot });
+    const { readDocMarkdown }: IncludesHelper = await import(pathToFileURL(includesHelper).href);
+    readPage = (file) => {
+      const text = readDocMarkdown(file, { dataDir: webDocsRoot });
+      if (text === null) throw new Error(`[sync] vaneui-web: ${file} disappeared during the sync`);
+      return text;
+    };
   } else {
     fail(`[sync] vaneui-web: missing ${includesHelper}; pages are copied without expanding their includes`);
   }
