@@ -2,13 +2,15 @@
 // Copies VaneUI markdown docs into mcp/resources/.
 //
 // Sources (both required — MD-first docs are now authored directly):
-//   1. The sibling `vaneui/` repo (CLAUDE.md + .claude/rules/*.md) — API
-//      reference and agent-facing rules.
+//   1. The sibling `vaneui/` repo (CLAUDE.md + .claude/rules/*.md) — the parts
+//      written for people who use the library: an allow-list of rule files
+//      and of CLAUDE.md sections, kept in consumer-docs.ts.
 //   2. The sibling `vaneui-web/` repo (app/docs/data/**.md) — narrative guides
 //      AND per-component reference (one .md per component, with frontmatter).
 //
-// Each vaneui MD file is copied verbatim into resources/ keyed by basename,
-// except that CLAUDE.md loses its MAINTAINER_SECTIONS.
+// Each allow-listed vaneui rule file is copied verbatim into resources/ keyed
+// by basename; CLAUDE.md keeps only its allow-listed sections. Rule files and
+// sections that are not on the allow-list are left out and named in the log.
 // Each vaneui-web page is written with its `{% include "x.md" %}` tags expanded
 // through vaneui-web's own helper (lib/docs/includes.mjs, which needs that
 // checkout's node_modules), so a resource holds the page as vaneui.com renders
@@ -19,9 +21,10 @@
 // etc. The MCP URI for each is `vaneui://docs/<basename-without-.md>`.
 //
 // Flags:
-//   --strict   Exit 1 if any source root is missing OR if no MD files are
-//              found in either source. Used by `prepublishOnly` so we never
-//              ship a tarball with partial docs.
+//   --strict   Exit 1 if any source root is missing, if no MD files are
+//              found in either source, or if an allow-listed rule file or
+//              CLAUDE.md section is gone (renamed upstream). Used by
+//              `prepublishOnly` so we never ship a tarball with partial docs.
 //
 // Env:
 //   VANEUI_PATH       Absolute or relative path to the vaneui checkout.
@@ -35,6 +38,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, join, resolve, basename } from "node:path";
 import { mkdir, copyFile, rm, readdir, access, writeFile } from "node:fs/promises";
 import { readFileSync, type Dirent } from "node:fs";
+import { CONSUMER_CLAUDE_SECTIONS, CONSUMER_RULE_FILES, keepSections, selectFiles } from "./consumer-docs.ts";
 
 // The part of vaneui-web's lib/docs/includes.mjs this script calls. It returns
 // null when the file does not exist.
@@ -59,23 +63,6 @@ const WEB_ROOT = process.env.VANEUI_WEB_PATH
 const RESOURCES_DIR = join(PKG_ROOT, "resources");
 
 const STRICT = process.argv.includes("--strict");
-
-// CLAUDE.md sections about contributing to the vaneui repo itself; they would steer the agents of apps that use VaneUI.
-const MAINTAINER_SECTIONS = new Set(["Nothing private in GitHub content", "Attribution"]);
-
-// Drops each `## ` section whose title is in `names`, up to the next `## ` heading outside a code fence.
-function stripSections(text: string, names: ReadonlySet<string>): string {
-  const out: string[] = [];
-  let skip = false;
-  let inFence = false;
-  for (const line of text.split("\n")) {
-    if (/^(```|~~~)/.test(line)) inFence = !inFence;
-    const heading = !inFence && /^## (.+?)\s*$/.exec(line);
-    if (heading) skip = names.has(heading[1]);
-    if (!skip) out.push(line);
-  }
-  return out.join("\n");
-}
 
 async function pathExists(p: string): Promise<boolean> {
   try {
@@ -160,8 +147,14 @@ async function main(): Promise<void> {
     fail(`[sync] vaneui: missing CLAUDE.md at ${vaneuiClaude}`);
   }
   if (await pathExists(vaneuiRulesDir)) {
-    const rules = (await collectMd(vaneuiRulesDir)).sort();
-    vaneuiFiles.push(...rules);
+    const rules = selectFiles((await collectMd(vaneuiRulesDir)).sort(), CONSUMER_RULE_FILES);
+    for (const file of rules.missing) {
+      fail(`[sync] vaneui: ${file} is on the allow-list but not in ${vaneuiRulesDir}. If it was renamed, update scripts/consumer-docs.ts.`);
+    }
+    if (rules.skipped.length > 0) {
+      console.log(`[sync] vaneui: left out rule files that are not on the allow-list: ${rules.skipped.map((file) => basename(file)).join(", ")}`);
+    }
+    vaneuiFiles.push(...rules.kept);
   } else {
     fail(`[sync] vaneui: missing rules dir at ${vaneuiRulesDir}`);
   }
@@ -170,7 +163,15 @@ async function main(): Promise<void> {
   }
   const readVaneui: ReadMarkdown = (file) => {
     const text = readFileSync(file, "utf8");
-    return file === vaneuiClaude ? stripSections(text, MAINTAINER_SECTIONS) : text;
+    if (file !== vaneuiClaude) return text;
+    const sections = keepSections(text, CONSUMER_CLAUDE_SECTIONS);
+    for (const title of sections.missing) {
+      fail(`[sync] vaneui: CLAUDE.md has no "## ${title}" section, which is on the allow-list. If it was renamed, update scripts/consumer-docs.ts.`);
+    }
+    if (sections.dropped.length > 0) {
+      console.log(`[sync] vaneui: left out CLAUDE.md sections that are not on the allow-list: ${sections.dropped.join(", ")}`);
+    }
+    return sections.text;
   };
   const wroteVaneui = await syncMd("vaneui", vaneuiFiles, readVaneui);
 

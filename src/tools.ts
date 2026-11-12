@@ -1,83 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
-import { DOCS, RESOURCES_DIR, readDoc, uriFor, type DocEntry } from "./resources.js";
-
-export const MAX_RESULTS = 50;
-/** snippet radius around the match, in characters */
-const SNIPPET_RADIUS = 80;
-
-export interface SearchHit {
-  uri: string;
-  slug: string;
-  lineNumber: number;
-  snippet: string;
-}
-
-export interface SearchArgs {
-  query: string;
-  regex?: boolean;
-}
-
-function buildMatcher(query: string, regex: boolean): RegExp {
-  if (regex) {
-    // "g" so we can iterate all matches on a line, "i" for case-insensitive.
-    return new RegExp(query, "gi");
-  }
-  const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  return new RegExp(escaped, "gi");
-}
-
-function snippetAround(line: string, matchStart: number, matchEnd: number): string {
-  const start = Math.max(0, matchStart - SNIPPET_RADIUS);
-  const end = Math.min(line.length, matchEnd + SNIPPET_RADIUS);
-  const prefix = start > 0 ? "..." : "";
-  const suffix = end < line.length ? "..." : "";
-  return (prefix + line.slice(start, end) + suffix).replace(/\s+/g, " ").trim();
-}
-
-async function searchOne(entry: DocEntry, matcher: RegExp): Promise<SearchHit[]> {
-  const text = await readDoc(entry);
-  const lines = text.split(/\r?\n/);
-  const hits: SearchHit[] = [];
-  for (let i = 0; i < lines.length; i++) {
-    matcher.lastIndex = 0;
-    const line = lines[i];
-    const m = matcher.exec(line);
-    if (!m) continue;
-    hits.push({
-      uri: uriFor(entry.slug),
-      slug: entry.slug,
-      lineNumber: i + 1,
-      snippet: snippetAround(line, m.index, m.index + m[0].length),
-    });
-  }
-  return hits;
-}
-
-export async function searchDocs(args: SearchArgs): Promise<SearchHit[]> {
-  const query = (args.query ?? "").trim();
-  if (!query) {
-    throw new Error("`query` must be a non-empty string.");
-  }
-
-  let matcher: RegExp;
-  try {
-    matcher = buildMatcher(query, args.regex === true);
-  } catch (err) {
-    const msg = err instanceof Error ? err.message : String(err);
-    throw new Error(`Invalid regex: ${msg}`);
-  }
-
-  const results: SearchHit[] = [];
-  for (const doc of DOCS) {
-    const hits = await searchOne(doc, matcher);
-    for (const h of hits) {
-      results.push(h);
-      if (results.length >= MAX_RESULTS) return results;
-    }
-  }
-  return results;
-}
+import { RESOURCES_DIR } from "./resources.js";
+import { didYouMean, matchSlug, splitReference } from "./slugs.js";
 
 export interface ComponentPropRow {
   prop: string;
@@ -127,23 +51,28 @@ export interface GetComponentPropsArgs {
   detail?: PropsDetail;
 }
 
-function knownSlugsError(slug: string, index: ComponentPropsIndex): Error {
-  const known = [COMMON_SLUG, ...Object.keys(index).sort()].join(", ");
-  return new Error(`Unknown component slug "${slug}". Known slugs: ${known}.`);
+/**
+ * The slug a caller means: `common` or a component of the index. Case, separators, a
+ * `.md` ending and a path before the name are ignored, as in get_doc.
+ */
+function resolveSlug(input: string, index: ComponentPropsIndex): string {
+  const slug = (input ?? "").trim();
+  if (!slug) {
+    throw new Error("`slug` must be a non-empty string.");
+  }
+  const known = [COMMON_SLUG, ...Object.keys(index).sort()];
+  const match = matchSlug(slug, known);
+  if (match) return match;
+  const close = didYouMean(splitReference(slug).name, known);
+  throw new Error(`Unknown component slug "${slug}".${close} Known slugs: ${known.join(", ")}.`);
 }
 
 export async function getComponentProps(
   args: GetComponentPropsArgs,
 ): Promise<ComponentPropRow[]> {
-  const slug = (args.slug ?? "").trim();
-  if (!slug) {
-    throw new Error("`slug` must be a non-empty string.");
-  }
   const index = await loadComponentProps();
-  if (slug === COMMON_SLUG) return commonRows(index);
-  const rows = index[slug];
-  if (!rows) throw knownSlugsError(slug, index);
-  return rows;
+  const slug = resolveSlug(args.slug, index);
+  return slug === COMMON_SLUG ? commonRows(index) : index[slug];
 }
 
 /** One row per shared prop, in the order components first list them */
@@ -189,8 +118,8 @@ function formatGroups(rows: ComponentPropRow[], detail: PropsDetail): string[] {
  */
 export async function formatComponentProps(args: GetComponentPropsArgs): Promise<string> {
   const detail: PropsDetail = args.detail ?? "compact";
-  const rows = await getComponentProps(args);
-  const slug = args.slug.trim();
+  const slug = resolveSlug(args.slug, await loadComponentProps());
+  const rows = await getComponentProps({ slug });
   const more = detail === "compact" ? ` Descriptions: call again with detail "full".` : "";
 
   if (slug === COMMON_SLUG) {

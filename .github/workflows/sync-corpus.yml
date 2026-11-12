@@ -1,0 +1,179 @@
+name: Sync the Docs Corpus
+
+# Rebuilds resources/ from vaneui/vaneui at `prod` (the released library) and
+# vaneui/web at `main` (the deployed docs site).
+# When the corpus changed, it opens one pull request or updates the open one.
+on:
+  # Off the top of the hour: GitHub delays or drops scheduled runs at :00 under load.
+  schedule:
+    - cron: '23 4 * * *'
+  workflow_dispatch:
+
+# Each job asks for what it needs.
+permissions: {}
+
+concurrency:
+  group: sync-corpus
+  cancel-in-progress: false
+
+env:
+  SYNC_BRANCH: chore/sync-corpus
+
+jobs:
+  # Installs and runs code from three repos, so it gets read access only and
+  # hands the synced corpus to the next job as an artifact.
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    outputs:
+      changed: ${{ steps.diff.outputs.changed }}
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          path: mcp
+          persist-credentials: false
+
+      # `prod` is the last stable release. `main` can hold props that are not on npm
+      # yet, and the corpus must describe what `npm install @vaneui/ui` gives.
+      - name: Checkout vaneui/vaneui
+        uses: actions/checkout@v4
+        with:
+          repository: vaneui/vaneui
+          ref: prod
+          path: vaneui
+          persist-credentials: false
+
+      - name: Checkout vaneui/web
+        uses: actions/checkout@v4
+        with:
+          repository: vaneui/web
+          ref: main
+          path: web
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: 'npm'
+          cache-dependency-path: |
+            mcp/package-lock.json
+            vaneui/package-lock.json
+            web/package-lock.json
+
+      # sync-component-props reads the prop metadata from the built @vaneui/ui (dist/esm).
+      - name: Build @vaneui/ui
+        working-directory: vaneui
+        run: |
+          npm ci
+          npm run build
+
+      # sync-docs expands each page's includes through the docs site's helper,
+      # which loads @vaneui/md from the site's node_modules. Nothing is built.
+      - name: Install the Docs Site's Dependencies
+        working-directory: web
+        run: npm ci --ignore-scripts
+
+      - name: Install Dependencies
+        working-directory: mcp
+        run: npm ci
+
+      - name: Sync the Corpus
+        working-directory: mcp
+        env:
+          VANEUI_PATH: ${{ github.workspace }}/vaneui
+          VANEUI_WEB_PATH: ${{ github.workspace }}/web
+        run: npm run sync:strict
+
+      # Runs against the fresh corpus: a sync that breaks search, get_doc or
+      # the corpus allow-list stops here and opens no pull request.
+      - name: Run Tests
+        working-directory: mcp
+        run: npm test
+
+      - name: Check for Corpus Changes
+        id: diff
+        working-directory: mcp
+        run: |
+          if [ -z "$(git status --porcelain -- resources)" ]; then
+            echo "The corpus is up to date."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git status --short -- resources
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Upload the Corpus
+        if: steps.diff.outputs.changed == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: corpus
+          path: mcp/resources
+          if-no-files-found: error
+          retention-days: 1
+
+  # Runs no project code: it commits the synced corpus to one branch and opens
+  # or updates its pull request. A run started from another branch than main
+  # stops after the sync job, as a dry run.
+  pull-request:
+    needs: sync
+    if: needs.sync.outputs.changed == 'true' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write # push the sync branch
+      pull-requests: write # open or update the pull request
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Start from an empty folder so pages removed upstream are removed here.
+      - name: Remove the Old Corpus
+        run: rm -rf resources
+
+      - name: Download the Corpus
+        uses: actions/download-artifact@v4
+        with:
+          name: corpus
+          path: resources
+
+      - name: Commit and Push the Sync Branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$SYNC_BRANCH"
+          git add --all resources
+          git commit -m "chore: re-sync the docs corpus"
+          # The branch already holds this corpus on top of the current main: leave it alone.
+          if git fetch --depth=1 origin "$SYNC_BRANCH" 2>/dev/null && git diff --quiet FETCH_HEAD HEAD; then
+            echo "The sync branch is up to date."
+          else
+            git push --force origin "$SYNC_BRANCH"
+          fi
+
+      - name: Open or Update the Pull Request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          {
+            echo "Automated re-sync of \`resources/\` from vaneui/vaneui at \`prod\` and vaneui/web at \`main\`."
+            echo
+            echo "\`npm run sync:strict\` and \`npm test\` passed on this corpus in [the workflow run]($RUN_URL) that last updated this pull request. Check that the diff is content drift only, then merge."
+            echo
+            echo "Checks do not start by themselves on a pull request opened by GitHub Actions. Close and reopen it to run them."
+            echo
+            echo '```'
+            git diff --stat HEAD~1 HEAD -- resources
+            echo '```'
+          } > "$RUNNER_TEMP/body.md"
+          number=$(gh pr list --head "$SYNC_BRANCH" --base main --state open --json number --jq '.[].number' | head -n 1)
+          if [ -n "$number" ]; then
+            gh pr edit "$number" --body-file "$RUNNER_TEMP/body.md"
+            echo "Updated pull request #$number."
+          else
+            gh pr create --base main --head "$SYNC_BRANCH" --title "chore: re-sync the docs corpus" --body-file "$RUNNER_TEMP/body.md"
+          fi
