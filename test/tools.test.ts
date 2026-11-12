@@ -63,3 +63,19 @@ test("getComponentProps still returns the raw rows", async () => {
 test("an unknown slug names the known ones, common included", async () => {
   await assert.rejects(formatComponentProps({ slug: "nope" }), /Known slugs: common, alert, /);
 });
+
+test("a component slug may be written as a component name, a file name or a docs link", async () => {
+  const expected = await formatComponentProps({ slug: "icon-button" });
+  for (const slug of ["IconButton", "iconButton", "Icon-Button", "icon-button.md", "/docs/basic-components/icon-button", "vaneui://docs/icon-button"]) {
+    assert.equal(await formatComponentProps({ slug }), expected, slug);
+  }
+  assert.match(await formatComponentProps({ slug: "Button" }), /^button boolean props\./);
+  assert.equal(await formatComponentProps({ slug: "Common" }), await formatComponentProps({ slug: COMMON_SLUG }));
+  assert.deepEqual(await getComponentProps({ slug: "NavLink" }), index.navlink);
+});
+
+test("an unknown slug suggests the closest components before the full list", async () => {
+  await assert.rejects(formatComponentProps({ slug: "grid3" }), /Unknown component slug "grid3"\. Did you mean: grid\? Known slugs: common, alert, /);
+  await assert.rejects(formatComponentProps({ slug: "menu-item" }), /Did you mean: menu\? Known slugs: /);
+  await assert.rejects(formatComponentProps({ slug: "buton" }), /Did you mean: button\? Known slugs: /);
+});

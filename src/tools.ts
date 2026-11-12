@@ -1,6 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { RESOURCES_DIR } from "./resources.js";
+import { didYouMean, matchSlug, splitReference } from "./slugs.js";
 
 export interface ComponentPropRow {
   prop: string;
@@ -50,23 +51,28 @@ export interface GetComponentPropsArgs {
   detail?: PropsDetail;
 }
 
-function knownSlugsError(slug: string, index: ComponentPropsIndex): Error {
-  const known = [COMMON_SLUG, ...Object.keys(index).sort()].join(", ");
-  return new Error(`Unknown component slug "${slug}". Known slugs: ${known}.`);
+/**
+ * The slug a caller means: `common` or a component of the index. Case, separators, a
+ * `.md` ending and a path before the name are ignored, as in get_doc.
+ */
+function resolveSlug(input: string, index: ComponentPropsIndex): string {
+  const slug = (input ?? "").trim();
+  if (!slug) {
+    throw new Error("`slug` must be a non-empty string.");
+  }
+  const known = [COMMON_SLUG, ...Object.keys(index).sort()];
+  const match = matchSlug(slug, known);
+  if (match) return match;
+  const close = didYouMean(splitReference(slug).name, known);
+  throw new Error(`Unknown component slug "${slug}".${close} Known slugs: ${known.join(", ")}.`);
 }
 
 export async function getComponentProps(
   args: GetComponentPropsArgs,
 ): Promise<ComponentPropRow[]> {
-  const slug = (args.slug ?? "").trim();
-  if (!slug) {
-    throw new Error("`slug` must be a non-empty string.");
-  }
   const index = await loadComponentProps();
-  if (slug === COMMON_SLUG) return commonRows(index);
-  const rows = index[slug];
-  if (!rows) throw knownSlugsError(slug, index);
-  return rows;
+  const slug = resolveSlug(args.slug, index);
+  return slug === COMMON_SLUG ? commonRows(index) : index[slug];
 }
 
 /** One row per shared prop, in the order components first list them */
@@ -112,8 +118,8 @@ function formatGroups(rows: ComponentPropRow[], detail: PropsDetail): string[] {
  */
 export async function formatComponentProps(args: GetComponentPropsArgs): Promise<string> {
   const detail: PropsDetail = args.detail ?? "compact";
-  const rows = await getComponentProps(args);
-  const slug = args.slug.trim();
+  const slug = resolveSlug(args.slug, await loadComponentProps());
+  const rows = await getComponentProps({ slug });
   const more = detail === "compact" ? ` Descriptions: call again with detail "full".` : "";
 
   if (slug === COMMON_SLUG) {

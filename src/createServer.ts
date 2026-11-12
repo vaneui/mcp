@@ -165,7 +165,7 @@ export function createServer(): McpServer {
         slug: z
           .string()
           .min(1)
-          .describe("Component slug, or `common` for the shared layout props."),
+          .describe("Component slug, or `common` for the shared layout props. A component name (`IconButton`) works too."),
         detail: z
           .enum(["compact", "full"])
           .optional()

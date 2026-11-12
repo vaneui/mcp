@@ -161,6 +161,16 @@ test("an unknown section is an error that lists the page's sections", async () =
   assert.match(miss.text, /^get_doc failed: No section "size" in "modal"\. Did you mean: sizes\? Sections: intro, basic-usage, /);
 });
 
+test("get_component_props takes the same slug spellings and suggests on a miss", async () => {
+  const props = await call("get_component_props", { slug: "IconButton" });
+  assert.equal(props.isError, false, props.text);
+  assert.match(props.text, /^icon-button boolean props\./);
+
+  const miss = await call("get_component_props", { slug: "ModalHeader" });
+  assert.equal(miss.isError, true);
+  assert.match(miss.text, /^get_component_props failed: Unknown component slug "ModalHeader"\. Did you mean: modal\? Known slugs: common, alert, /);
+});
+
 test("the server rejects a call without a slug or with a limit out of range", async () => {
   const missing = await call("get_doc", {});
   assert.equal(missing.isError, true);
