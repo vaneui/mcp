@@ -78,3 +78,15 @@ test("get_component_props answers over stdio", async () => {
   assert.equal(isError, false);
   assert.match(texts[0], /^button boolean props\./);
 });
+
+test("get_doc returns a page outline, then the section a search result names", async () => {
+  const page = await call("get_doc", { slug: "modal" });
+  assert.equal(page.isError, false, page.texts[0]);
+  assert.match(page.texts[0], /^# Modal\n/);
+  assert.match(page.texts[0], /^- basic-usage: Basic usage$/m);
+
+  const [hit] = await search({ query: "modal focus trap" });
+  const section = await call("get_doc", { slug: hit.slug, section: hit.section });
+  assert.equal(section.isError, false, section.texts[0]);
+  assert.ok(section.texts[0].includes(`## ${hit.heading}`));
+});
