@@ -12,6 +12,7 @@ const { createServer }: typeof CreateServer = await import(new URL("../dist/crea
 const resourcesDir = new URL("../resources/", import.meta.url);
 const pages = readdirSync(resourcesDir)
   .filter((file) => file.endsWith(".md"))
+  .sort()
   .map((file) => file.replace(/\.md$/, ""));
 
 const client = new Client({ name: "server-test", version: "0.0.0" });
@@ -141,9 +142,10 @@ test("the section may be given as its heading, and `intro` is the outline", asyn
 test("an unknown slug is an error that suggests the closest pages and lists them all", async () => {
   const sub = await call("get_doc", { slug: "ModalHeader" });
   assert.equal(sub.isError, true);
-  assert.match(sub.text, /^get_doc failed: No VaneUI doc "ModalHeader"\. Did you mean: modal\? Pages: alert, badge, /);
-  assert.match(sub.text, /search_docs finds the page for a topic\.$/);
-  for (const page of pages) assert.ok(sub.text.includes(page), `${page} missing from the page list`);
+  assert.equal(
+    sub.text,
+    `get_doc failed: No VaneUI doc "ModalHeader". Did you mean: modal? Pages: ${pages.join(", ")}. search_docs finds the page for a topic.`,
+  );
 
   assert.match((await call("get_doc", { slug: "buton" })).text, /Did you mean: button\?/);
   assert.match((await call("get_doc", { slug: "grid3" })).text, /Did you mean: grid\?/);
