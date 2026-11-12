@@ -16,7 +16,8 @@ import {
   slugFromUri,
   uriFor,
 } from "./resources.js";
-import { formatComponentProps, searchDocs } from "./tools.js";
+import { DEFAULT_LIMIT, MAX_PER_PAGE, MAX_RESULTS, searchDocs } from "./search.js";
+import { formatComponentProps } from "./tools.js";
 
 function readPackageVersion(): string {
   const here = dirname(fileURLToPath(import.meta.url));
@@ -69,21 +70,28 @@ async function main(): Promise<void> {
     "search_docs",
     {
       description:
-        "Search the VaneUI markdown docs (component usage, prop-to-Tailwind mapping, patterns, testing, etc.) for a substring or regex. Returns up to 50 matches with URI, line number, and a short snippet. Use this before guessing prop names, defaults, or class mappings.",
+        "Search the VaneUI docs (component pages, guides, usage rules, prop-to-Tailwind mapping). Give a few words or an exact name such as `themeDefaults`. Results are doc sections, best first: sections that hold every word come before sections that hold some, and a word in a heading or page title counts more than one in the text. Returns a JSON array of up to `limit` sections, each with `slug`, `section`, `heading`, `lineNumber` and a short `snippet`, and says when more sections matched than were returned. Use this before guessing prop names, defaults, or class mappings.",
       inputSchema: {
         query: z
           .string()
           .min(1)
-          .describe("Text to search for (case-insensitive)."),
+          .describe("Words or a name to search for (case-insensitive)."),
         regex: z
           .boolean()
           .optional()
-          .describe("If true, interpret `query` as a JavaScript regex. Defaults to false (literal substring)."),
+          .describe("If true, interpret `query` as a JavaScript regex, matched line by line. Defaults to false (words)."),
+        limit: z
+          .number()
+          .int()
+          .min(1)
+          .max(MAX_RESULTS)
+          .optional()
+          .describe(`Most sections to return. Defaults to ${DEFAULT_LIMIT}.`),
       },
     },
-    async ({ query, regex }) => {
+    async ({ query, regex, limit }) => {
       try {
-        const hits = await searchDocs({ query, regex });
+        const { hits, total } = await searchDocs({ query, regex, limit });
         if (hits.length === 0) {
           return {
             content: [
@@ -94,14 +102,19 @@ async function main(): Promise<void> {
             ],
           };
         }
-        return {
-          content: [
-            {
-              type: "text",
-              text: JSON.stringify(hits, null, 2),
-            },
-          ],
-        };
+        const content: { type: "text"; text: string }[] = [
+          {
+            type: "text",
+            text: JSON.stringify(hits, null, 2),
+          },
+        ];
+        if (total > hits.length) {
+          content.push({
+            type: "text",
+            text: `Showing the best ${hits.length} of ${total} matching sections (at most ${MAX_PER_PAGE} per page). Narrow the query or raise \`limit\` (up to ${MAX_RESULTS}) to see others.`,
+          });
+        }
+        return { content };
       } catch (err) {
         const message = err instanceof Error ? err.message : String(err);
         return {
