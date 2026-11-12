@@ -1,6 +1,7 @@
 name: Sync the Docs Corpus
 
-# Rebuilds resources/ from the main branches of vaneui/vaneui and vaneui/web.
+# Rebuilds resources/ from vaneui/vaneui at `prod` (the released library) and
+# vaneui/web at `main` (the deployed docs site).
 # When the corpus changed, it opens one pull request or updates the open one.
 on:
   # Off the top of the hour: GitHub delays or drops scheduled runs at :00 under load.
@@ -35,11 +36,13 @@ jobs:
           path: mcp
           persist-credentials: false
 
+      # `prod` is the last stable release. `main` can hold props that are not on npm
+      # yet, and the corpus must describe what `npm install @vaneui/ui` gives.
       - name: Checkout vaneui/vaneui
         uses: actions/checkout@v4
         with:
           repository: vaneui/vaneui
-          ref: main
+          ref: prod
           path: vaneui
           persist-credentials: false
 
@@ -157,7 +160,7 @@ jobs:
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           {
-            echo "Automated re-sync of \`resources/\` from the \`main\` branches of vaneui/vaneui and vaneui/web."
+            echo "Automated re-sync of \`resources/\` from vaneui/vaneui at \`prod\` and vaneui/web at \`main\`."
             echo
             echo "\`npm run sync:strict\` and \`npm test\` passed on this corpus in [the workflow run]($RUN_URL) that last updated this pull request. Check that the diff is content drift only, then merge."
             echo
