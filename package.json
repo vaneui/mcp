@@ -40,7 +40,7 @@
     "LICENSE"
   ],
   "engines": {
-    "node": "24.x"
+    "node": ">=20"
   },
   "scripts": {
     "sync": "node scripts/sync-docs.ts && node scripts/sync-component-props.ts",
