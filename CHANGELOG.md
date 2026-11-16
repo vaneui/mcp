@@ -9,6 +9,10 @@ commits.
 
 ## Unreleased
 
+## 1.3.0
+
+`2026-11-16`
+
 Search that ranks its results, a tool that reads a docs page, a corpus that holds only what
 helps a project using VaneUI, and a wider Node range.
 
@@ -23,7 +27,7 @@ helps a project using VaneUI, and a wider Node range.
   link with a `#fragment` opens that section. An unknown page, section or component comes
   back with the closest names before the full list.
 - `search_docs` takes an optional `limit` (1 to 50, 10 by default).
-- Two docs pages from the re-sync: `ai-assistants` and `nextjs`.
+- Three docs pages from the re-sync: `ai-assistants`, `nextjs` and `forms`.
 
 ### Changed
 
@@ -41,8 +45,8 @@ helps a project using VaneUI, and a wider Node range.
   file or overview section stays out until it is added to the list.
 - `engines.node` is `>=20` (was `24.x`), so `npx @vaneui/mcp` no longer warns or fails on
   Node 20, 22 and versions after 24.
-- The corpus is re-synced from the current docs. A scheduled workflow now re-syncs it daily
-  and opens a pull request when the docs changed.
+- The corpus is re-synced from the docs of `@vaneui/ui` 1.6.0. A scheduled workflow now
+  re-syncs it daily and opens a pull request when the docs changed.
 
 ### Removed
 
@@ -56,6 +60,10 @@ helps a project using VaneUI, and a wider Node range.
 
 - `zod` is a declared dependency. The server imports it, but it was installed only because
   the MCP SDK depends on it.
+- The corpus sync takes a guide that sits beside the component pages, such as the Forms
+  guide. Before, a page without a `componentKey` stopped a strict sync, so the corpus could
+  not be re-synced once the docs had such a page. A component page that lost its
+  `componentKey` still stops it.
 
 ### Security
 
