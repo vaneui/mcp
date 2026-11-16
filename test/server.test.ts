@@ -88,8 +88,9 @@ test("get_doc with a section returns that section in full, value props and code 
   assert.match(text, /`focusTrap`/);
   assert.doesNotMatch(text, /^## Customizing$/m);
 
+  // The sample's other attributes belong to the docs and change with them.
   const usage = await getDoc({ slug: "modal", section: "basic-usage" });
-  assert.match(usage, /```tsx demo\n[\s\S]*<Modal open=\{open\} onClose=\{\(\) => setOpen\(false\)\}>[\s\S]*```/);
+  assert.match(usage, /```tsx demo\n[\s\S]*<Modal open=\{open\}[^>]*>[\s\S]*```/);
   assert.doesNotMatch(usage, /^## Compound Modal$/m);
 });
 

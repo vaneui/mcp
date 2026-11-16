@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-VaneUI (`@vaneui/ui`, v1.5.0) is a React component library with 40+ customizable React components (50+ named exports including sub-components). Built with TypeScript, React 19, Tailwind CSS v4, and Rollup. Uses a boolean props API (`<Button primary lg filled>`) and CSS variable-based theming via `ThemeProvider`.
+VaneUI (`@vaneui/ui`, v1.6.0) is a React component library with 40+ customizable React components (50+ named exports including sub-components). Built with TypeScript, React 19, Tailwind CSS v4, and Rollup. Uses a boolean props API (`<Button primary lg filled>`) and CSS variable-based theming via `ThemeProvider`.
 
 ## Component Inventory
 
@@ -67,5 +67,7 @@ Layout extras: `divided` (Grid2–6: 1px lines instead of the gap), `strongBorde
 ## Exports
 
 - `@vaneui/ui` — All components + ThemeProvider + useTheme + defaultTheme + types
-- `@vaneui/ui/vars` — CSS variables (`vars.css`)
-- `@vaneui/ui/css` — Pre-built component styles (`ui.css`)
+- `@vaneui/ui/vars` — CSS variables and component rules (`vars.css`), for a Tailwind v4 build
+- `@vaneui/ui/tokens` — Design tokens and the `mobile` / `tablet` / `desktop` breakpoints (`tokens.css`); import it next to `vars` in a Tailwind v4 build, or the responsive props emit no CSS
+- `@vaneui/ui/css` — Pre-built component styles (`ui.css`), self-contained
+- `@vaneui/ui/{component}` — Per-component entry points (`@vaneui/ui/button`, `@vaneui/ui/alert`, ...). The `exports` map in `package.json` is written by hand: a new component directory needs its entry there, and `export-surface.test.ts` fails until it has one
