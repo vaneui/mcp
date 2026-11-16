@@ -19,7 +19,9 @@
     // scripts/ and test/ run as .ts straight in Node (type stripping), which
     // needs syntax it can erase and type-only imports marked `type`.
     "erasableSyntaxOnly": true,
-    "verbatimModuleSyntax": true
+    "verbatimModuleSyntax": true,
+    // A script imports another by its real file name (`./consumer-docs.ts`).
+    "allowImportingTsExtensions": true
   },
   "include": ["src", "scripts", "test"]
 }

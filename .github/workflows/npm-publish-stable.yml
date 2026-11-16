@@ -6,11 +6,24 @@ on:
     branches:
       - prod
 
+permissions:
+  contents: read
+
+# One stable publish at a time. A run in progress is never cancelled: stopping between
+# `npm publish` and the steps after it would leave a version on npm with no tag and no
+# registry entry.
+concurrency:
+  group: publish-stable
+  cancel-in-progress: false
+
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
+    # Includes the wait of up to 10 minutes for npm to serve the new version.
+    timeout-minutes: 30
     permissions:
-      contents: read
+      # contents: write — required to push the version tag and create the GitHub release
+      contents: write
       # id-token: write — npm trusted publishing (OIDC), no NPM_TOKEN needed,
       # and the MCP Registry login below (github-oidc), no registry secret needed
       id-token: write
@@ -34,16 +47,18 @@ jobs:
         run: |
           VERSION=$(node -p "require('./package.json').version")
           PACKAGE_NAME=$(node -p "require('./package.json').name")
-          PUBLISHED_VERSION=$(npm view $PACKAGE_NAME version 2>/dev/null || echo "none")
+          # Ask for this exact version: comparing with `latest` misses a version that was
+          # published and then superseded.
+          PUBLISHED_VERSION=$(npm view "$PACKAGE_NAME@$VERSION" version 2>/dev/null || true)
           echo "Local version: $VERSION"
-          echo "Published version: $PUBLISHED_VERSION"
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "package=$PACKAGE_NAME" >> $GITHUB_OUTPUT
           if [ "$VERSION" = "$PUBLISHED_VERSION" ]; then
-            echo "Version $VERSION is already published. Skipping."
+            echo "Version $VERSION is already published. Skipping the publish steps."
             echo "should_publish=false" >> $GITHUB_OUTPUT
           else
             echo "Version $VERSION is new. Proceeding to publish."
             echo "should_publish=true" >> $GITHUB_OUTPUT
-            echo "version=$VERSION" >> $GITHUB_OUTPUT
           fi
 
       # Checked apart from npm, so pushing prod again finishes a run whose registry publish failed
@@ -59,6 +74,31 @@ jobs:
           else
             echo "should_publish=true" >> $GITHUB_OUTPUT
           fi
+
+      # The publisher runs while this job holds the registry login, so it is a fixed
+      # release checked against its published SHA-256, not whatever `latest` points at.
+      # It is fetched before anything is published: a bad download or a stale pin stops
+      # the run while nothing has gone out. To update, change the version and both
+      # digests from the release's checksums file.
+      - name: Install mcp-publisher
+        if: steps.check_registry.outputs.should_publish == 'true'
+        env:
+          MCP_PUBLISHER_VERSION: v1.8.5
+          MCP_PUBLISHER_SHA256_AMD64: 2d151ac57275c9a6684d9d22b1cba81058bab195ea0a162e8fce3c6a5ec32812
+          MCP_PUBLISHER_SHA256_ARM64: 229109df1507bba326d48d3de01da3ddb07efe8e2cbcdd2966898b2158fad2bf
+        run: |
+          case "$(uname -m)" in
+            x86_64) ARCH=amd64; SHA256=$MCP_PUBLISHER_SHA256_AMD64 ;;
+            aarch64) ARCH=arm64; SHA256=$MCP_PUBLISHER_SHA256_ARM64 ;;
+            *) echo "::error::No pinned mcp-publisher build for $(uname -m)"; exit 1 ;;
+          esac
+          ARCHIVE="mcp-publisher_linux_${ARCH}.tar.gz"
+          # Kept outside the checkout so nothing extra sits in the tree that gets packed.
+          cd "$RUNNER_TEMP"
+          curl -fsSL -o "$ARCHIVE" "https://github.com/modelcontextprotocol/registry/releases/download/${MCP_PUBLISHER_VERSION}/${ARCHIVE}"
+          echo "${SHA256}  ${ARCHIVE}" | sha256sum --check --strict
+          tar xzf "$ARCHIVE" mcp-publisher
+          rm "$ARCHIVE"
 
       # Compile TypeScript using the committed resources/ corpus. We do NOT
       # re-sync here: the sync scripts need the sibling vaneui/ and vaneui-web/
@@ -90,6 +130,52 @@ jobs:
         # checked out.
         if: steps.check_version.outputs.should_publish == 'true'
         run: npm publish --access public --ignore-scripts
+
+      # Tag the published commit and create a GitHub release so every npm version maps
+      # to a commit. Both steps key on what is missing, not on whether this run
+      # published: if a publish succeeded and the tag step failed, the re-run finds the
+      # version on npm, skips the publish and still creates the tag and the release.
+      # They run before the MCP Registry steps so a registry failure cannot skip them.
+      - name: Check Git Tag and GitHub Release
+        id: check_release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VERSION=${{ steps.check_version.outputs.version }}
+          if git ls-remote --exit-code --tags origin "refs/tags/v$VERSION" >/dev/null 2>&1; then
+            echo "tag_exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "tag_exists=false" >> $GITHUB_OUTPUT
+          fi
+          if gh release view "v$VERSION" >/dev/null 2>&1; then
+            echo "release_exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "release_exists=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create Git Tag
+        if: steps.check_release.outputs.tag_exists == 'false'
+        run: |
+          VERSION=${{ steps.check_version.outputs.version }}
+          PACKAGE_NAME=${{ steps.check_version.outputs.package }}
+          # Tag the commit npm recorded for this version. That is this commit, unless a
+          # later push to prod left the version unchanged; right after a publish the
+          # registry may not answer yet, and then this commit is the published one.
+          TARGET=$(npm view "$PACKAGE_NAME@$VERSION" gitHead 2>/dev/null || true)
+          TARGET="${TARGET:-$GITHUB_SHA}"
+          if [ "$TARGET" != "$GITHUB_SHA" ]; then
+            git fetch --depth=1 origin "$TARGET"
+          fi
+          git tag "v$VERSION" "$TARGET"
+          git push origin "v$VERSION"
+
+      - name: Create GitHub Release
+        if: steps.check_release.outputs.release_exists == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VERSION=${{ steps.check_version.outputs.version }}
+          gh release create "v$VERSION" --title "v$VERSION" --generate-notes --verify-tag
 
       # MCP Registry: publish server.json as io.github.vaneui/mcp. The registry
       # stores metadata only and checks that the npm package's `mcpName`
@@ -125,18 +211,15 @@ jobs:
           echo "❌ npm does not serve $PACKAGE_NAME@$VERSION with mcpName $MCP_NAME after 10 minutes."
           exit 1
 
-      - name: Install mcp-publisher
-        if: steps.check_registry.outputs.should_publish == 'true'
-        run: |
-          curl -fsSL "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_$(uname -s | tr '[:upper:]' '[:lower:]')_$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/').tar.gz" | tar xz mcp-publisher
-
       - name: Log in to the MCP Registry
         if: steps.check_registry.outputs.should_publish == 'true'
-        run: ./mcp-publisher login github-oidc
+        run: |
+          "$RUNNER_TEMP/mcp-publisher" login github-oidc
 
       - name: Publish to the MCP Registry
         if: steps.check_registry.outputs.should_publish == 'true'
-        run: ./mcp-publisher publish
+        run: |
+          "$RUNNER_TEMP/mcp-publisher" publish
 
       - name: Report Success
         if: steps.check_version.outputs.should_publish == 'true'

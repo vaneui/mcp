@@ -6,9 +6,20 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+
+# One pre-release publish at a time, in push order, so `alpha` never ends up on the
+# older of two quick pushes. A run in progress is never cancelled mid-publish; GitHub
+# keeps only the newest waiting run.
+concurrency:
+  group: publish-alpha
+  cancel-in-progress: false
+
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     permissions:
       contents: read
       # id-token: write — npm trusted publishing (OIDC), no NPM_TOKEN needed
@@ -28,14 +39,22 @@ jobs:
         run: npm ci
 
       # Generate pre-release version with timestamp and commit SHA, matching the
-      # shared VaneUI alpha versioning scheme (<base>-alpha.<timestamp>.<sha>).
-      # Base version is kept in lockstep with @vaneui/ui and @vaneui/md.
+      # shared VaneUI alpha versioning scheme (<base>-alpha.<timestamp>.g<sha>).
       - name: Generate Pre-release Version
         id: version
         run: |
           BASE_VERSION=$(node -p "require('./package.json').version")
+          PACKAGE_NAME=$(node -p "require('./package.json').name")
+          # A pre-release of a version that is already on npm would sort below it
+          # (1.2.0-alpha.x < 1.2.0), so builds made after a stable release are
+          # pre-releases of the next patch.
+          if [ -n "$(npm view "$PACKAGE_NAME@$BASE_VERSION" version 2>/dev/null || true)" ]; then
+            BASE_VERSION=$(node -p "const [major, minor, patch] = process.argv[1].split('.').map(Number); [major, minor, patch + 1].join('.')" "$BASE_VERSION")
+          fi
           TIMESTAMP=$(date +%Y%m%d%H%M%S)
-          SHORT_SHA=$(git rev-parse --short HEAD)
+          # The `g` prefix keeps the identifier valid: an all-digit short SHA with a
+          # leading zero is not a legal semver pre-release identifier.
+          SHORT_SHA="g$(git rev-parse --short HEAD)"
           PRE_VERSION="${BASE_VERSION}-alpha.${TIMESTAMP}.${SHORT_SHA}"
           echo "Pre-release version: $PRE_VERSION"
           echo "version=$PRE_VERSION" >> $GITHUB_OUTPUT
