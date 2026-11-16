@@ -13,6 +13,8 @@
 // frontmatter `componentKey: <camelCaseKey>` line. We collect every MD under
 // vaneui-web/app/docs/data/{basic,layout,navigation,overlay,typography}-components
 // and map slug = filename-without-.md  ->  componentKey from frontmatter.
+// A page without frontmatter is a guide that sits beside the component pages and is
+// left out (scripts/component-pages.ts).
 //
 // Output: resources/component-props.json with shape
 //   {
@@ -25,8 +27,8 @@
 //
 // Flags:
 //   --strict   Exit 1 if vaneui or vaneui-web is missing, if vaneui's dist
-//              hasn't been built, or if any frontmatter componentKey doesn't
-//              exist in @vaneui/ui's ComponentCategories.
+//              hasn't been built, if a page has frontmatter without a componentKey,
+//              or if a componentKey doesn't exist in @vaneui/ui's ComponentCategories.
 //
 // Env:
 //   VANEUI_PATH       Override the vaneui sibling location (default ../vaneui).
@@ -38,6 +40,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, join, resolve, basename } from "node:path";
 import { readFile, readdir, access, writeFile, mkdir } from "node:fs/promises";
 import type { ComponentPropRow } from "../src/tools.js";
+import { classifyComponentDirPage } from "./component-pages.ts";
 
 // The parts of the built @vaneui/ui dist this script reads. Typed loosely: the
 // checks in main() catch a dist that lacks them.
@@ -117,30 +120,6 @@ function fail(msg: string): void {
   console.warn(msg);
 }
 
-// Lightweight YAML frontmatter parser — only extracts simple `key: value` lines
-// from the leading `---\n...\n---\n` block. Sufficient for our schema.
-function parseFrontmatter(text: string): Record<string, string> {
-  if (!text.startsWith("---")) return {};
-  const end = text.indexOf("\n---", 3);
-  if (end === -1) return {};
-  const block = text.slice(3, end).trim();
-  const out: Record<string, string> = {};
-  for (const line of block.split(/\r?\n/)) {
-    const m = line.match(/^([a-zA-Z0-9_-]+)\s*:\s*(.*?)\s*$/);
-    if (!m) continue;
-    let value = m[2];
-    // Strip surrounding quotes if any.
-    if (
-      (value.startsWith("'") && value.endsWith("'")) ||
-      (value.startsWith('"') && value.endsWith('"'))
-    ) {
-      value = value.slice(1, -1);
-    }
-    out[m[1]] = value;
-  }
-  return out;
-}
-
 // Walk vaneui-web/app/docs/data/{component-dirs}/*.md and return an array of
 // { slug, componentKey, srcPath } objects.
 async function collectComponentMd(webRoot: string): Promise<ComponentMd[]> {
@@ -155,14 +134,17 @@ async function collectComponentMd(webRoot: string): Promise<ComponentMd[]> {
       if (!ent.isFile() || !ent.name.endsWith(".md") || ent.name.startsWith("_")) continue;
       const srcPath = join(full, ent.name);
       const text = await readFile(srcPath, "utf8");
-      const fm = parseFrontmatter(text);
-      const componentKey = fm.componentKey;
+      const page = classifyComponentDirPage(text);
       const slug = basename(ent.name, ".md").toLowerCase();
-      if (!componentKey) {
+      if (page.kind === "guide") {
+        console.log(`[sync-component-props] ${dir}/${ent.name}: a guide without frontmatter, no props to extract`);
+        continue;
+      }
+      if (page.kind === "missing-key") {
         fail(`[sync-component-props] ${dir}/${ent.name}: missing 'componentKey' frontmatter — skipping`);
         continue;
       }
-      result.push({ slug, componentKey, srcPath });
+      result.push({ slug, componentKey: page.componentKey, srcPath });
     }
   }
   return result.sort((a, b) => a.slug.localeCompare(b.slug));
