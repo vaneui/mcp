@@ -9,6 +9,20 @@ commits.
 
 ## Unreleased
 
+## 1.3.1
+
+`2026-11-19`
+
+### Added
+
+- Two docs pages from the re-sync: `vite` (the Vite setup guide) and `markdown` (rendering
+  Markdown with `@vaneui/md`).
+
+### Changed
+
+- Docs corpus re-synced for `@vaneui/ui` 1.6.2. The Table page and the usage guide say that a
+  filled Table draws its row lines in the divider color of a fill.
+
 ## 1.3.0
 
 `2026-11-16`
