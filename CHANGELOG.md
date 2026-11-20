@@ -9,6 +9,15 @@ commits.
 
 ## Unreleased
 
+## 1.3.3
+
+`2026-11-20`
+
+### Changed
+
+- Docs corpus re-synced for `@vaneui/ui` 1.6.3. The Alert page and the usage guide describe
+  the new Alert sizes, the message block that fills the row, and where an action goes.
+
 ## 1.3.2
 
 `2026-11-20`
