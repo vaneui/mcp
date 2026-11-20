@@ -9,6 +9,18 @@ commits.
 
 ## Unreleased
 
+## 1.3.4
+
+`2026-11-20`
+
+### Changed
+
+- Docs corpus re-synced for `@vaneui/ui` 1.7.1. The pages and the usage guide describe the
+  text of Button, Badge, Chip and the other boxed components centered by its capital height
+  (1.7.0), and the 1.7.1 sizes: `Input`, `Textarea`, `Select`, `Field`, `Badge` and `Table`
+  default to `sm`, `Icon` sizes are 12 to 32px, and the parts of a Card and a Modal sit one
+  inset apart.
+
 ## 1.3.3
 
 `2026-11-20`

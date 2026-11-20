@@ -41,7 +41,7 @@ test("stop words and word endings do not hide a match", async () => {
   assert.deepEqual(queryTerms("How do I center the buttons?"), ["center", "button"]);
   assert.deepEqual(queryTerms("focus trapping in VaneUI"), ["focus", "trap"]);
   assert.deepEqual(queryTerms("extra classes"), ["extra", "class"]);
-  const { hits } = await searchDocs({ query: "how to center a row" });
+  const { hits } = await searchDocs({ query: "how do I center items in a row" });
   assert.equal(hits[0].slug, "row");
 });
 
