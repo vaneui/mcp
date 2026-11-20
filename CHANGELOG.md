@@ -9,6 +9,12 @@ commits.
 
 ## Unreleased
 
+### Changed
+
+- The package's `homepage` is now `https://vaneui.com/`, so the Homepage link on the npm page
+  opens the VaneUI site. Before, it opened this repository's README on GitHub. The repository
+  link still points at GitHub.
+
 ## 1.3.1
 
 `2026-11-19`
