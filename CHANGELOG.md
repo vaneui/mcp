@@ -9,6 +9,10 @@ commits.
 
 ## Unreleased
 
+## 1.3.2
+
+`2026-11-20`
+
 ### Changed
 
 - The package's `homepage` is now `https://vaneui.com/`, so the Homepage link on the npm page
