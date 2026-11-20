@@ -978,14 +978,14 @@
     {
       "prop": "sm",
       "category": "Size",
-      "isDefault": false,
+      "isDefault": true,
       "description": "Small size",
       "isCommon": false
     },
     {
       "prop": "md",
       "category": "Size",
-      "isDefault": true,
+      "isDefault": false,
       "description": "Medium size (default)",
       "isCommon": false
     },
@@ -11379,14 +11379,14 @@
     {
       "prop": "sm",
       "category": "Size",
-      "isDefault": false,
+      "isDefault": true,
       "description": "Small size",
       "isCommon": false
     },
     {
       "prop": "md",
       "category": "Size",
-      "isDefault": true,
+      "isDefault": false,
       "description": "Medium size (default)",
       "isCommon": false
     },
@@ -15876,14 +15876,14 @@
     {
       "prop": "sm",
       "category": "Size",
-      "isDefault": false,
+      "isDefault": true,
       "description": "Small size",
       "isCommon": false
     },
     {
       "prop": "md",
       "category": "Size",
-      "isDefault": true,
+      "isDefault": false,
       "description": "Medium size (default)",
       "isCommon": false
     },
@@ -33284,14 +33284,14 @@
     {
       "prop": "sm",
       "category": "Size",
-      "isDefault": false,
+      "isDefault": true,
       "description": "Small size",
       "isCommon": false
     },
     {
       "prop": "md",
       "category": "Size",
-      "isDefault": true,
+      "isDefault": false,
       "description": "Medium size (default)",
       "isCommon": false
     },
@@ -36659,14 +36659,14 @@
     {
       "prop": "sm",
       "category": "Size",
-      "isDefault": false,
+      "isDefault": true,
       "description": "Small size",
       "isCommon": false
     },
     {
       "prop": "md",
       "category": "Size",
-      "isDefault": true,
+      "isDefault": false,
       "description": "Medium size (default)",
       "isCommon": false
     },
@@ -38091,14 +38091,14 @@
     {
       "prop": "sm",
       "category": "Size",
-      "isDefault": false,
+      "isDefault": true,
       "description": "Small size",
       "isCommon": false
     },
     {
       "prop": "md",
       "category": "Size",
-      "isDefault": true,
+      "isDefault": false,
       "description": "Medium size (default)",
       "isCommon": false
     },
