@@ -9,6 +9,10 @@ commits.
 
 ## Unreleased
 
+## 1.3.5
+
+`2026-11-21`
+
 ### Changed
 
 - The README, which npm shows on the package page, links to the AI assistants setup guide, the
