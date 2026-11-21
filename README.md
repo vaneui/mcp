@@ -8,6 +8,8 @@ A [Model Context Protocol](https://modelcontextprotocol.io) server that exposes 
 
 It serves the full component reference, getting-started and customization guides, and a structured prop table for every component, through three tools: `search_docs`, `get_doc` and `get_component_props`.
 
+**[Setup guide](https://vaneui.com/docs/getting-started/ai-assistants)** · **[VaneUI docs](https://vaneui.com/docs)** · **[llms.txt](https://vaneui.com/llms.txt)** · **[vaneui.com](https://vaneui.com)**
+
 ## Requirements
 
 - **Node.js 20 or later** (the `npx` command below downloads and runs the server for you).
@@ -79,6 +81,8 @@ Or add to `.vscode/mcp.json` (note VS Code uses the `servers` key):
 ### Other clients
 
 Any client that accepts a stdio MCP server works. Use `npx` as the command and `-y @vaneui/mcp` as the args, following that client's config format.
+
+An assistant without MCP support can read the same docs as plain text: [vaneui.com/llms.txt](https://vaneui.com/llms.txt) lists every page, and [vaneui.com/llms-full.txt](https://vaneui.com/llms-full.txt) has all of them in one file. [Use VaneUI with AI coding assistants](https://vaneui.com/docs/getting-started/ai-assistants) covers both routes.
 
 ## How to use it
 
@@ -156,7 +160,7 @@ Sections (call get_doc again with one of these ids as `section`):
 - accessibility-and-advanced-props: Accessibility and advanced props
 ```
 
-With `section` it returns that section in full, with its subsections and code examples. Section ids are the heading anchors of the page on vaneui.com.
+With `section` it returns that section in full, with its subsections and code examples. Section ids are the heading anchors of the page on [vaneui.com](https://vaneui.com/docs).
 
 The slug is matched loosely, so the forms a model meets all work: a component name (`IconButton`), a file name (`icon-button.md`), a docs link (`/docs/basic-components/icon-button`) or a resource URI (`vaneui://docs/icon-button`). A docs link with a `#fragment` opens that section. An unknown page or section is a tool error that names the closest matches and lists what exists:
 
@@ -201,6 +205,13 @@ Examples:
 - `vaneui://docs/button`, `vaneui://docs/card`, `vaneui://docs/modal`, ...: one per component.
 
 The corpus holds what helps a project that uses VaneUI. The rule files the vaneui repo keeps for work on the library itself (component internals, CSS conventions, tests, playground) are not part of it.
+
+## Links
+
+- [Use VaneUI with AI coding assistants](https://vaneui.com/docs/getting-started/ai-assistants) on vaneui.com
+- [VaneUI documentation](https://vaneui.com/docs)
+- [`@vaneui/ui` on npm](https://www.npmjs.com/package/@vaneui/ui)
+- [Changelog](https://github.com/vaneui/mcp/blob/main/CHANGELOG.md)
 
 ---
 

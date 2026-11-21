@@ -9,6 +9,12 @@ commits.
 
 ## Unreleased
 
+### Changed
+
+- The README, which npm shows on the package page, links to the AI assistants setup guide, the
+  docs, `llms.txt` and `llms-full.txt` on vaneui.com, and says how an assistant without MCP
+  support reads the docs. Before, it linked to vaneui.com once, from the word VaneUI.
+
 ## 1.3.4
 
 `2026-11-20`
