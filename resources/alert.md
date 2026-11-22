@@ -109,6 +109,8 @@ Alert is `rounded` by default. `sharp` suits an alert pinned to the edge of a pa
 
 The size prop sets the text, radius, padding, gap and icon together. Alert text runs one step below body text, so `md` renders 14px text, and the radius matches an Input of the same size. Text placed directly in the Alert is centered by the height of its capital letters, in the `<span class="vane-text-run">` that [How Button centers its label](/docs/basic-components/button#how-button-centers-its-label) explains.
 
+A `Text` that carries the message, on its own or in a `Col`, follows the Alert's size too: an unsized `Text` takes the Alert's text size, and `<Text sm>` sits one step below it. This needs `@vaneui/ui` 1.7.2 or later. Before it, such a `Text` stayed at 16px at every Alert size.
+
 | Size | Text | Radius | Padding | Gap | Icon |
 |------|------|--------|---------|-----|------|
 | `xs` | 12px | 6px | 8px | 6px | 17px |
@@ -126,3 +128,17 @@ The size prop sets the text, radius, padding, gap and icon together. Alert text 
   <Alert xl>Extra large</Alert>
 </Col>
 ```
+
+## Frequently asked questions
+
+### How do I make an Alert dismissible?
+
+Alert has no close button of its own. Put an `IconButton` with an `aria-label`, such as `aria-label="Dismiss"`, after the message, and remove the Alert from your state in its `onClick`. Wrap the message in a `Text` so it takes the free width and the button sits at the end edge, as in [With a title and actions](#with-a-title-and-actions). Inside a form, give the IconButton `type="button"`.
+
+### How do I stack an Alert's button under the message on phones?
+
+Pass `mobileStack`. An Alert is a flex row and takes the same breakpoint props as `Row`, so below 768px the message and the button stack into a column, and the default `itemsStart` aligns them at the start edge. Use `tabletStack` to stack below 1024px. With your own Tailwind build, the breakpoint props need the `@vaneui/ui/tokens` import.
+
+### Can I use Alert as a toast?
+
+Alert is an inline message: it renders in the page flow where you place it, and VaneUI ships no toast container. For toasts, render Alerts inside a fixed container of your own. While a [Modal](/docs/overlay-components/modal#content-outside-the-dialog-that-stays-usable) is open, that container becomes inert with the rest of the page, unless it is a child of `<body>` that carries the `data-vane-overlay` attribute.
