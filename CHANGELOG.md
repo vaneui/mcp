@@ -9,6 +9,31 @@ commits.
 
 ## Unreleased
 
+## 1.3.6
+
+`2026-11-22`
+
+### Added
+
+- Six docs pages from the re-sync: `tailwind-to-props` (Tailwind CSS classes to VaneUI props),
+  `responsive-sections`, `light-dark-tailwind-v4`, `oklch-color-scales`,
+  `color-contrast-light-dark` and `markdown-react-components`.
+
+### Changed
+
+- Docs corpus re-synced for `@vaneui/ui` 1.7.2. The Alert page and the usage guide say that a
+  `Text` message follows the Alert's size, and the Table page says which row, section and cell
+  props need 1.7.2. The component pages end with the FAQ sections from vaneui.com.
+- The npm page shows the README again. A pre-release published after 1.3.5 left it without
+  one; pre-releases now stop once their version is on npm.
+
+### Fixed
+
+- `search_docs` puts the sections of a page the query names first: "modal focus trap" opens on
+  the Modal page. With the FAQ sections of this re-sync, an Overlay answer whose heading holds
+  "trap focus" came first. A query in quotes, such as `"focus trap"`, ranks the sections that
+  hold the phrase first.
+
 ## 1.3.5
 
 `2026-11-21`
