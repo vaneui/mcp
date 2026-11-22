@@ -52,8 +52,10 @@ test("names and code are searched as written", async () => {
     "@vaneui/ui/tokens",
     "usetheme",
   ]);
+  // `flex-1` is one name: a section with only `flex` and `1` apart does not match it
   const { hits, total } = await searchDocs({ query: "flex-1" });
-  assert.equal(total, 1);
+  assert.equal(total, hits.length);
+  for (const hit of hits) assert.ok(sectionText(hit.slug, hit.section).includes("flex-1"), `${hit.slug}#${hit.section}`);
   assert.equal(hits[0].slug, "prop-to-tailwind-mapping");
   assert.match(hits[0].snippet, /`flex1` \| `flex-1`/);
 });

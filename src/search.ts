@@ -51,6 +51,8 @@ interface Match {
   score: number;
   /** every word of the query was found in the section or its page title and parent headings */
   complete: boolean;
+  /** the section is on a page the query names, as `modal` names the Modal page */
+  named: boolean;
 }
 
 /** Where on a line the query matches, and how well (higher is better). */
@@ -160,10 +162,12 @@ function count(haystack: string, needle: string, max: number): number {
  * Ranks sections for a plain-text query. Each word counts by where it is found: the
  * section heading most, then the page title, the parent headings and the section text.
  * Rare words weigh more than common ones, and a query found as a whole phrase adds to
- * the score.
+ * the score. A query in quotes counts as complete only where the phrase is.
  */
 function termMatcher(query: string, entries: IndexedSection[]): Matcher {
   const phrase = lower(query.replace(/^["'`\s]+|["'`\s]+$/g, ""));
+  // A query in quotes asks for the words in that order: only a section with the phrase is complete.
+  const quoted = /^\s*(["'`]).+\1\s*$/.test(query) && phrase.includes(" ");
   const queryKey = compact(query);
   const terms = queryWords(query).map(({ text, plain }) => {
     const containing = entries.filter((entry) => entry.heading.includes(text) || entry.body.includes(text)).length;
@@ -197,7 +201,9 @@ function termMatcher(query: string, entries: IndexedSection[]): Matcher {
       let score = 0;
       let own = false;
       let complete = true;
+      let named = false;
       for (const term of terms) {
+        if (isPage(entry, term)) named = true;
         const title = inTitle(entry, term);
         // The intro stands for the page: a query that names the page finds it as a heading.
         const heading = entry.isIntro ? (isPage(entry, term) ? title : 0) : inText(entry.heading, term);
@@ -209,11 +215,13 @@ function termMatcher(query: string, entries: IndexedSection[]): Matcher {
         score += term.weight * (4 * heading + 3 * title + parents + body);
       }
       if (!own) return null;
+      const hasPhrase = entry.heading.includes(phrase) || entry.body.includes(phrase);
       if (terms.length > 1 || phrase !== terms[0].text) {
         if (entry.heading.includes(phrase)) score += 2 * totalWeight;
-        else if (entry.body.includes(phrase)) score += totalWeight;
+        else if (hasPhrase) score += totalWeight;
       }
-      return { score, complete };
+      if (quoted && !hasPhrase) complete = false;
+      return { score, complete, named };
     },
     locate(line) {
       const text = line.toLowerCase();
@@ -259,7 +267,7 @@ function regexMatcher(pattern: RegExp): Matcher {
         if (hits >= 5) break;
       }
       if (heading === 0 && hits === 0) return null;
-      return { score: 4 * heading + 3 * title + (hits > 0 ? 1 + 0.25 * (hits - 1) : 0), complete: true };
+      return { score: 4 * heading + 3 * title + (hits > 0 ? 1 + 0.25 * (hits - 1) : 0), complete: true, named: false };
     },
     locate(line) {
       pattern.lastIndex = 0;
@@ -308,8 +316,9 @@ function toHit(entry: IndexedSection, matcher: Matcher): SearchHit {
 
 /**
  * Searches the corpus section by section and returns the best matches first: sections
- * that hold every word of the query before sections that hold some, then by score, then
- * in corpus order. At most `MAX_PER_PAGE` sections of one page are returned.
+ * that hold every word of the query before sections that hold some, then sections of a
+ * page the query names, then by score, then in corpus order. At most `MAX_PER_PAGE`
+ * sections of one page are returned.
  */
 export async function searchDocs(args: SearchArgs): Promise<SearchResult> {
   const query = (args.query ?? "").trim();
@@ -338,7 +347,11 @@ export async function searchDocs(args: SearchArgs): Promise<SearchResult> {
     if (result) matched.push({ entry, ...result });
   }
   matched.sort(
-    (a, b) => Number(b.complete) - Number(a.complete) || b.score - a.score || a.entry.order - b.entry.order,
+    (a, b) =>
+      Number(b.complete) - Number(a.complete) ||
+      Number(b.named) - Number(a.named) ||
+      b.score - a.score ||
+      a.entry.order - b.entry.order,
   );
 
   const hits: SearchHit[] = [];

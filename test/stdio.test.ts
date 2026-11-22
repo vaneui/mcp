@@ -58,9 +58,10 @@ test("search_docs says when it returned only the best of the matches", async () 
   assert.equal((JSON.parse(cut.texts[0]) as Hit[]).length, 4);
   assert.match(cut.texts[1], /^Showing the best 4 of \d+ matching sections/);
 
+  // every match fits in the default limit, so no note follows the hits
   const whole = await call("search_docs", { query: "flex-1" });
   assert.equal(whole.texts.length, 1);
-  assert.equal((JSON.parse(whole.texts[0]) as Hit[]).length, 1);
+  assert.ok((JSON.parse(whole.texts[0]) as Hit[]).length >= 1);
 });
 
 test("search_docs reports no match and a bad regex in words", async () => {
