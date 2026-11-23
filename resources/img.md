@@ -136,28 +136,41 @@ Control how an image fills a sized container with `objectCover` (default), `obje
 </Row>
 ```
 
-## Inside a Card
+## Aspect ratio
 
-`Img` composes naturally inside `Card` for media tiles. Use `wFull` so the image spans the card width.
+`aspectSquare` and `aspectVideo` fix the shape of the image at 1:1 and 16:9: set the width, and the height follows. With `objectCover`, the default, the photo is cropped to fill that shape, so a gallery of photos of different sizes lines up. `aspectAuto` goes back to the photo's own shape. These props need `@vaneui/ui` 1.8.0 or later.
 
 ```tsx demo
-<Row flexWrap>
-  <Card noPadding overflowHidden className="w-[240px]">
-    <Img sharp wFull src={placeholderSrc} alt="Sunset over the harbor" className="h-[140px]" />
-    <Stack>
+<Row flexWrap itemsStart>
+  <Img aspectSquare src={placeholderSrc} alt="Square crop" className="w-32" />
+  <Img aspectVideo src={portraitSrc} alt="16:9 crop of a portrait photo" className="w-56" />
+</Row>
+```
+
+## Inside a Card
+
+For a media tile, put the `Img` first in a Card built from parts and the text in a `CardBody`. A Card of parts has no inset of its own, so the image sits on the Card's top edge: it takes the Card's corners there, less the border, and is square where it meets the body. Use `wFull` so the image spans the card width. An `Img` that closes the Card takes the bottom corners the same way.
+
+```tsx demo
+<Row flexWrap itemsStart>
+  <Card className="w-[240px]">
+    <Img wFull src={placeholderSrc} alt="Sunset over the harbor" className="h-[140px]" />
+    <CardBody>
       <Title sm>Harbor Sunset</Title>
       <Text sm secondary>Captured last weekend on a walk along the pier.</Text>
-    </Stack>
+    </CardBody>
   </Card>
-  <Card noPadding overflowHidden className="w-[240px]">
-    <Img sharp wFull src={placeholderSrc} alt="Forest trail at dawn" className="h-[140px]" />
-    <Stack>
+  <Card className="w-[240px]">
+    <Img wFull src={placeholderSrc} alt="Forest trail at dawn" className="h-[140px]" />
+    <CardBody>
       <Title sm>Forest Trail</Title>
       <Text sm secondary>Early morning hike through the pine forest.</Text>
-    </Stack>
+    </CardBody>
   </Card>
 </Row>
 ```
+
+An `Img` inside a padded Card keeps its own corners on all four sides, as do a `sharp` or `pill` Img and one with a radius class of your own. The edge corners need `@vaneui/ui` 1.8.0 or later; on earlier releases, give the Card `noPadding` and `overflowHidden` and the Img `sharp`.
 
 ## Keeping its size in a row with noShrink
 
@@ -187,7 +200,7 @@ In a flex [Row](/docs/layout-components/row), an image is a flex item that can g
 
 ### How do I make a round avatar?
 
-Add `pill` and give the image the same width and height in CSS, for example `style={{ width: 40, height: 40 }}` or `className="size-10"`. `objectCover`, a default, crops a photo that is not square to fill the circle. The `width` and `height` attributes alone are not enough under Tailwind's base styles, which set `height: auto` on images and so keep the photo's own proportions.
+Use [Avatar](/docs/basic-components/avatar). It sizes the circle with the size prop, crops the photo to fill it, and falls back to the initials of `name` when the image is missing or fails to load. For a round Img of your own, add `pill` and `aspectSquare` and set a width, for example `<Img pill aspectSquare className="w-10" />`. `objectCover`, a default, crops a photo that is not square to fill the circle.
 
 ### How do I add a caption to an image?
 

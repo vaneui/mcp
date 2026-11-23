@@ -148,6 +148,13 @@
       "isCommon": true
     },
     {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
+    },
+    {
       "prop": "itemsStart",
       "category": "Items",
       "isDefault": true,
@@ -480,7 +487,42 @@
       "prop": "gap",
       "category": "Gap",
       "isDefault": true,
-      "description": "Enable gap spacing between children",
+      "description": "Enable gap spacing between children, at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXs",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapSm",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapMd",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Medium gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapLg",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Large gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXl",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-large gap, whatever the component's size",
       "isCommon": true
     },
     {
@@ -967,6 +1009,701 @@
       "isCommon": true
     }
   ],
+  "avatar": [
+    {
+      "prop": "xs",
+      "category": "Size",
+      "isDefault": false,
+      "description": "Extra small size",
+      "isCommon": false
+    },
+    {
+      "prop": "sm",
+      "category": "Size",
+      "isDefault": false,
+      "description": "Small size",
+      "isCommon": false
+    },
+    {
+      "prop": "md",
+      "category": "Size",
+      "isDefault": true,
+      "description": "Medium size (default)",
+      "isCommon": false
+    },
+    {
+      "prop": "lg",
+      "category": "Size",
+      "isDefault": false,
+      "description": "Large size",
+      "isCommon": false
+    },
+    {
+      "prop": "xl",
+      "category": "Size",
+      "isDefault": false,
+      "description": "Extra large size",
+      "isCommon": false
+    },
+    {
+      "prop": "desktopHide",
+      "category": "Hide",
+      "isDefault": false,
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "isCommon": true
+    },
+    {
+      "prop": "tabletHide",
+      "category": "Hide",
+      "isDefault": false,
+      "description": "Hide element on tablet devices and below (max-tablet: 64rem)",
+      "isCommon": true
+    },
+    {
+      "prop": "mobileHide",
+      "category": "Hide",
+      "isDefault": false,
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "isCommon": true
+    },
+    {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": true
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": true
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": true
+    },
+    {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
+    },
+    {
+      "prop": "itemsStart",
+      "category": "Items",
+      "isDefault": false,
+      "description": "Align items to start (top/left)",
+      "isCommon": true
+    },
+    {
+      "prop": "itemsEnd",
+      "category": "Items",
+      "isDefault": false,
+      "description": "Align items to end (bottom/right)",
+      "isCommon": true
+    },
+    {
+      "prop": "itemsCenter",
+      "category": "Items",
+      "isDefault": true,
+      "description": "Align items to center",
+      "isCommon": true
+    },
+    {
+      "prop": "itemsBaseline",
+      "category": "Items",
+      "isDefault": false,
+      "description": "Align items to baseline",
+      "isCommon": true
+    },
+    {
+      "prop": "itemsStretch",
+      "category": "Items",
+      "isDefault": false,
+      "description": "Stretch items to fill container",
+      "isCommon": true
+    },
+    {
+      "prop": "justifyStart",
+      "category": "Justify",
+      "isDefault": false,
+      "description": "Pack items toward the start of the main axis",
+      "isCommon": true
+    },
+    {
+      "prop": "justifyEnd",
+      "category": "Justify",
+      "isDefault": false,
+      "description": "Pack items toward the end of the main axis",
+      "isCommon": true
+    },
+    {
+      "prop": "justifyCenter",
+      "category": "Justify",
+      "isDefault": true,
+      "description": "Center items along the main axis",
+      "isCommon": true
+    },
+    {
+      "prop": "justifyBetween",
+      "category": "Justify",
+      "isDefault": false,
+      "description": "Distribute items with space between them",
+      "isCommon": true
+    },
+    {
+      "prop": "justifyAround",
+      "category": "Justify",
+      "isDefault": false,
+      "description": "Distribute items with space around them",
+      "isCommon": true
+    },
+    {
+      "prop": "justifyEvenly",
+      "category": "Justify",
+      "isDefault": false,
+      "description": "Distribute items with equal space around them",
+      "isCommon": true
+    },
+    {
+      "prop": "justifyStretch",
+      "category": "Justify",
+      "isDefault": false,
+      "description": "Stretch items to fill the main axis",
+      "isCommon": true
+    },
+    {
+      "prop": "justifyBaseline",
+      "category": "Justify",
+      "isDefault": false,
+      "description": "Align items along their baseline on main axis",
+      "isCommon": true
+    },
+    {
+      "prop": "relative",
+      "category": "Position",
+      "isDefault": true,
+      "description": "Relative positioning",
+      "isCommon": true
+    },
+    {
+      "prop": "absolute",
+      "category": "Position",
+      "isDefault": false,
+      "description": "Absolute positioning",
+      "isCommon": true
+    },
+    {
+      "prop": "fixed",
+      "category": "Position",
+      "isDefault": false,
+      "description": "Fixed positioning",
+      "isCommon": true
+    },
+    {
+      "prop": "sticky",
+      "category": "Position",
+      "isDefault": false,
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
+      "isCommon": true
+    },
+    {
+      "prop": "static",
+      "category": "Position",
+      "isDefault": false,
+      "description": "Static positioning",
+      "isCommon": true
+    },
+    {
+      "prop": "inline",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Inline display - flows with text",
+      "isCommon": true
+    },
+    {
+      "prop": "block",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Block display - takes full width, new line",
+      "isCommon": true
+    },
+    {
+      "prop": "inlineBlock",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Inline-block display - inline but with block properties",
+      "isCommon": true
+    },
+    {
+      "prop": "flex",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Flex display - flexbox container",
+      "isCommon": true
+    },
+    {
+      "prop": "inlineFlex",
+      "category": "Display",
+      "isDefault": true,
+      "description": "Inline-flex display - inline flexbox container",
+      "isCommon": true
+    },
+    {
+      "prop": "grid",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Grid display - CSS grid container",
+      "isCommon": true
+    },
+    {
+      "prop": "inlineGrid",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Inline-grid display - inline grid container",
+      "isCommon": true
+    },
+    {
+      "prop": "contents",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Contents display - element's box is removed, children display as if parent didn't exist",
+      "isCommon": true
+    },
+    {
+      "prop": "table",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Table display - behaves like table element",
+      "isCommon": true
+    },
+    {
+      "prop": "tableCell",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Table-cell display - behaves like td element",
+      "isCommon": true
+    },
+    {
+      "prop": "hidden",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Hidden display - element is not visible",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowAuto",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Auto overflow - show scrollbars if needed",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowHidden",
+      "category": "Overflow",
+      "isDefault": true,
+      "description": "Hidden overflow - clip content without scrollbars",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowClip",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Clip overflow - hard clip without scrollbars",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowVisible",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Visible overflow - content extends beyond bounds",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowScroll",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Scroll overflow - always show scrollbars",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowXAuto",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Auto overflow on X-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowYAuto",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Auto overflow on Y-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowXHidden",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Hidden overflow on X-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowYHidden",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Hidden overflow on Y-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowXClip",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Clip overflow on X-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowYClip",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Clip overflow on Y-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowXVisible",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Visible overflow on X-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowYVisible",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Visible overflow on Y-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowXScroll",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Scroll overflow on X-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowYScroll",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Scroll overflow on Y-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "noShrink",
+      "category": "Shrink",
+      "isDefault": true,
+      "description": "Prevent the flex item from shrinking below its content size (= `shrink-0`)",
+      "isCommon": false
+    },
+    {
+      "prop": "primary",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Primary color appearance (gray)",
+      "isCommon": false
+    },
+    {
+      "prop": "accent",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Accent color appearance (rose)",
+      "isCommon": false
+    },
+    {
+      "prop": "secondary",
+      "category": "Appearance",
+      "isDefault": true,
+      "description": "Secondary color appearance (gray)",
+      "isCommon": false
+    },
+    {
+      "prop": "tertiary",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Tertiary color appearance",
+      "isCommon": false
+    },
+    {
+      "prop": "success",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Success color appearance (green)",
+      "isCommon": false
+    },
+    {
+      "prop": "danger",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Danger color appearance (red)",
+      "isCommon": false
+    },
+    {
+      "prop": "warning",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Warning color appearance (amber)",
+      "isCommon": false
+    },
+    {
+      "prop": "info",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Info color appearance (cyan)",
+      "isCommon": false
+    },
+    {
+      "prop": "inheritAppearance",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
+      "isCommon": false
+    },
+    {
+      "prop": "filled",
+      "category": "Variant",
+      "isDefault": false,
+      "description": "Filled variant - solid background with contrasting text color",
+      "isCommon": false
+    },
+    {
+      "prop": "outline",
+      "category": "Variant",
+      "isDefault": true,
+      "description": "Outline variant - transparent background with border and colored text (default)",
+      "isCommon": false
+    },
+    {
+      "prop": "ghost",
+      "category": "Variant",
+      "isDefault": false,
+      "description": "Ghost variant - transparent background, no border, appearance-colored text, tinted hover background",
+      "isCommon": false
+    },
+    {
+      "prop": "border",
+      "category": "Border",
+      "isDefault": true,
+      "description": "Enable border on all sides",
+      "isCommon": true
+    },
+    {
+      "prop": "borderT",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on top",
+      "isCommon": true
+    },
+    {
+      "prop": "borderB",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on bottom",
+      "isCommon": true
+    },
+    {
+      "prop": "borderL",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on left",
+      "isCommon": true
+    },
+    {
+      "prop": "borderR",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on right",
+      "isCommon": true
+    },
+    {
+      "prop": "borderX",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on left and right",
+      "isCommon": true
+    },
+    {
+      "prop": "borderY",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on top and bottom",
+      "isCommon": true
+    },
+    {
+      "prop": "borderStart",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-start side (left in LTR, right in RTL)",
+      "isCommon": true
+    },
+    {
+      "prop": "borderEnd",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Enable border on the inline-end side (right in LTR, left in RTL)",
+      "isCommon": true
+    },
+    {
+      "prop": "noBorder",
+      "category": "Border",
+      "isDefault": false,
+      "description": "Disable all borders",
+      "isCommon": true
+    },
+    {
+      "prop": "insetRing",
+      "category": "Ring",
+      "isDefault": false,
+      "description": "Enable the inset ring — emits ring-inset",
+      "isCommon": true
+    },
+    {
+      "prop": "noInsetRing",
+      "category": "Ring",
+      "isDefault": true,
+      "description": "Disable the inset ring",
+      "isCommon": true
+    },
+    {
+      "prop": "pill",
+      "category": "Shape",
+      "isDefault": true,
+      "description": "Fully rounded corners (circular)",
+      "isCommon": false
+    },
+    {
+      "prop": "sharp",
+      "category": "Shape",
+      "isDefault": false,
+      "description": "No rounded corners (square)",
+      "isCommon": false
+    },
+    {
+      "prop": "rounded",
+      "category": "Shape",
+      "isDefault": false,
+      "description": "Medium rounded corners (default)",
+      "isCommon": false
+    },
+    {
+      "prop": "fontThin",
+      "category": "Font Weight",
+      "isDefault": false,
+      "description": "Thin font weight (100) — emits font-thin",
+      "isCommon": false
+    },
+    {
+      "prop": "fontExtralight",
+      "category": "Font Weight",
+      "isDefault": false,
+      "description": "Extra light font weight (200) — emits font-extralight",
+      "isCommon": false
+    },
+    {
+      "prop": "fontLight",
+      "category": "Font Weight",
+      "isDefault": false,
+      "description": "Light font weight (300) — emits font-light",
+      "isCommon": false
+    },
+    {
+      "prop": "fontNormal",
+      "category": "Font Weight",
+      "isDefault": false,
+      "description": "Normal font weight (400) — emits font-normal",
+      "isCommon": false
+    },
+    {
+      "prop": "fontMedium",
+      "category": "Font Weight",
+      "isDefault": true,
+      "description": "Medium font weight (500) — emits font-medium",
+      "isCommon": false
+    },
+    {
+      "prop": "fontSemibold",
+      "category": "Font Weight",
+      "isDefault": false,
+      "description": "Semibold font weight (600) — emits font-semibold",
+      "isCommon": false
+    },
+    {
+      "prop": "fontBold",
+      "category": "Font Weight",
+      "isDefault": false,
+      "description": "Bold font weight (700) — emits font-bold",
+      "isCommon": false
+    },
+    {
+      "prop": "fontExtrabold",
+      "category": "Font Weight",
+      "isDefault": false,
+      "description": "Extra bold font weight (800) — emits font-extrabold",
+      "isCommon": false
+    },
+    {
+      "prop": "fontBlack",
+      "category": "Font Weight",
+      "isDefault": false,
+      "description": "Black font weight (900) — emits font-black",
+      "isCommon": false
+    },
+    {
+      "prop": "margin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable margin on all sides",
+      "isCommon": false
+    },
+    {
+      "prop": "marginX",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only horizontal (inline) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginY",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only vertical (block) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginT",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only top margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginB",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only bottom margin",
+      "isCommon": false
+    },
+    {
+      "prop": "noMargin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Disable margin (reset to 0)",
+      "isCommon": false
+    }
+  ],
   "badge": [
     {
       "prop": "xs",
@@ -1044,6 +1781,13 @@
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
       "isCommon": true
+    },
+    {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -1378,7 +2122,42 @@
       "prop": "gap",
       "category": "Gap",
       "isDefault": true,
-      "description": "Enable gap spacing between children",
+      "description": "Enable gap spacing between children, at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXs",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapSm",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapMd",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Medium gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapLg",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Large gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXl",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-large gap, whatever the component's size",
       "isCommon": true
     },
     {
@@ -2171,6 +2950,13 @@
       "isDefault": false,
       "description": "Keep own font-size; do not inherit from parent",
       "isCommon": false
+    },
+    {
+      "prop": "dot",
+      "category": "Dot",
+      "isDefault": false,
+      "description": "Status dot before the text, in the text color; with no children only the dot shows",
+      "isCommon": false
     }
   ],
   "blockquote": [
@@ -2495,6 +3281,13 @@
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
       "isCommon": true
+    },
+    {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -3202,6 +3995,624 @@
       "isDefault": false,
       "description": "Keep own text color; do not inherit from parent",
       "isCommon": false
+    },
+    {
+      "prop": "srOnly",
+      "category": "Sr Only",
+      "isDefault": false,
+      "description": "Hide visually and keep it for screen readers (sr-only)",
+      "isCommon": false
+    }
+  ],
+  "breadcrumb": [
+    {
+      "prop": "xs",
+      "category": "Size",
+      "isDefault": false,
+      "description": "Extra small size",
+      "isCommon": false
+    },
+    {
+      "prop": "sm",
+      "category": "Size",
+      "isDefault": true,
+      "description": "Small size",
+      "isCommon": false
+    },
+    {
+      "prop": "md",
+      "category": "Size",
+      "isDefault": false,
+      "description": "Medium size (default)",
+      "isCommon": false
+    },
+    {
+      "prop": "lg",
+      "category": "Size",
+      "isDefault": false,
+      "description": "Large size",
+      "isCommon": false
+    },
+    {
+      "prop": "xl",
+      "category": "Size",
+      "isDefault": false,
+      "description": "Extra large size",
+      "isCommon": false
+    },
+    {
+      "prop": "desktopHide",
+      "category": "Hide",
+      "isDefault": false,
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "isCommon": true
+    },
+    {
+      "prop": "tabletHide",
+      "category": "Hide",
+      "isDefault": false,
+      "description": "Hide element on tablet devices and below (max-tablet: 64rem)",
+      "isCommon": true
+    },
+    {
+      "prop": "mobileHide",
+      "category": "Hide",
+      "isDefault": false,
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "isCommon": true
+    },
+    {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": true
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": true
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": true
+    },
+    {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
+    },
+    {
+      "prop": "itemsStart",
+      "category": "Items",
+      "isDefault": false,
+      "description": "Align items to start (top/left)",
+      "isCommon": true
+    },
+    {
+      "prop": "itemsEnd",
+      "category": "Items",
+      "isDefault": false,
+      "description": "Align items to end (bottom/right)",
+      "isCommon": true
+    },
+    {
+      "prop": "itemsCenter",
+      "category": "Items",
+      "isDefault": false,
+      "description": "Align items to center",
+      "isCommon": true
+    },
+    {
+      "prop": "itemsBaseline",
+      "category": "Items",
+      "isDefault": false,
+      "description": "Align items to baseline",
+      "isCommon": true
+    },
+    {
+      "prop": "itemsStretch",
+      "category": "Items",
+      "isDefault": false,
+      "description": "Stretch items to fill container",
+      "isCommon": true
+    },
+    {
+      "prop": "justifyStart",
+      "category": "Justify",
+      "isDefault": false,
+      "description": "Pack items toward the start of the main axis",
+      "isCommon": true
+    },
+    {
+      "prop": "justifyEnd",
+      "category": "Justify",
+      "isDefault": false,
+      "description": "Pack items toward the end of the main axis",
+      "isCommon": true
+    },
+    {
+      "prop": "justifyCenter",
+      "category": "Justify",
+      "isDefault": false,
+      "description": "Center items along the main axis",
+      "isCommon": true
+    },
+    {
+      "prop": "justifyBetween",
+      "category": "Justify",
+      "isDefault": false,
+      "description": "Distribute items with space between them",
+      "isCommon": true
+    },
+    {
+      "prop": "justifyAround",
+      "category": "Justify",
+      "isDefault": false,
+      "description": "Distribute items with space around them",
+      "isCommon": true
+    },
+    {
+      "prop": "justifyEvenly",
+      "category": "Justify",
+      "isDefault": false,
+      "description": "Distribute items with equal space around them",
+      "isCommon": true
+    },
+    {
+      "prop": "justifyStretch",
+      "category": "Justify",
+      "isDefault": false,
+      "description": "Stretch items to fill the main axis",
+      "isCommon": true
+    },
+    {
+      "prop": "justifyBaseline",
+      "category": "Justify",
+      "isDefault": false,
+      "description": "Align items along their baseline on main axis",
+      "isCommon": true
+    },
+    {
+      "prop": "relative",
+      "category": "Position",
+      "isDefault": false,
+      "description": "Relative positioning",
+      "isCommon": true
+    },
+    {
+      "prop": "absolute",
+      "category": "Position",
+      "isDefault": false,
+      "description": "Absolute positioning",
+      "isCommon": true
+    },
+    {
+      "prop": "fixed",
+      "category": "Position",
+      "isDefault": false,
+      "description": "Fixed positioning",
+      "isCommon": true
+    },
+    {
+      "prop": "sticky",
+      "category": "Position",
+      "isDefault": false,
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
+      "isCommon": true
+    },
+    {
+      "prop": "static",
+      "category": "Position",
+      "isDefault": false,
+      "description": "Static positioning",
+      "isCommon": true
+    },
+    {
+      "prop": "inline",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Inline display - flows with text",
+      "isCommon": true
+    },
+    {
+      "prop": "block",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Block display - takes full width, new line",
+      "isCommon": true
+    },
+    {
+      "prop": "inlineBlock",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Inline-block display - inline but with block properties",
+      "isCommon": true
+    },
+    {
+      "prop": "flex",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Flex display - flexbox container",
+      "isCommon": true
+    },
+    {
+      "prop": "inlineFlex",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Inline-flex display - inline flexbox container",
+      "isCommon": true
+    },
+    {
+      "prop": "grid",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Grid display - CSS grid container",
+      "isCommon": true
+    },
+    {
+      "prop": "inlineGrid",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Inline-grid display - inline grid container",
+      "isCommon": true
+    },
+    {
+      "prop": "contents",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Contents display - element's box is removed, children display as if parent didn't exist",
+      "isCommon": true
+    },
+    {
+      "prop": "table",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Table display - behaves like table element",
+      "isCommon": true
+    },
+    {
+      "prop": "tableCell",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Table-cell display - behaves like td element",
+      "isCommon": true
+    },
+    {
+      "prop": "hidden",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Hidden display - element is not visible",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowAuto",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Auto overflow - show scrollbars if needed",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowHidden",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Hidden overflow - clip content without scrollbars",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowClip",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Clip overflow - hard clip without scrollbars",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowVisible",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Visible overflow - content extends beyond bounds",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowScroll",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Scroll overflow - always show scrollbars",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowXAuto",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Auto overflow on X-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowYAuto",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Auto overflow on Y-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowXHidden",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Hidden overflow on X-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowYHidden",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Hidden overflow on Y-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowXClip",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Clip overflow on X-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowYClip",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Clip overflow on Y-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowXVisible",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Visible overflow on X-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowYVisible",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Visible overflow on Y-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowXScroll",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Scroll overflow on X-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowYScroll",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Scroll overflow on Y-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "primary",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Primary color appearance (gray)",
+      "isCommon": false
+    },
+    {
+      "prop": "accent",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Accent color appearance (rose)",
+      "isCommon": false
+    },
+    {
+      "prop": "secondary",
+      "category": "Appearance",
+      "isDefault": true,
+      "description": "Secondary color appearance (gray)",
+      "isCommon": false
+    },
+    {
+      "prop": "tertiary",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Tertiary color appearance",
+      "isCommon": false
+    },
+    {
+      "prop": "success",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Success color appearance (green)",
+      "isCommon": false
+    },
+    {
+      "prop": "danger",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Danger color appearance (red)",
+      "isCommon": false
+    },
+    {
+      "prop": "warning",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Warning color appearance (amber)",
+      "isCommon": false
+    },
+    {
+      "prop": "info",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Info color appearance (cyan)",
+      "isCommon": false
+    },
+    {
+      "prop": "inheritAppearance",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
+      "isCommon": false
+    },
+    {
+      "prop": "filled",
+      "category": "Variant",
+      "isDefault": false,
+      "description": "Filled variant - solid background with contrasting text color",
+      "isCommon": false
+    },
+    {
+      "prop": "outline",
+      "category": "Variant",
+      "isDefault": true,
+      "description": "Outline variant - transparent background with border and colored text (default)",
+      "isCommon": false
+    },
+    {
+      "prop": "ghost",
+      "category": "Variant",
+      "isDefault": false,
+      "description": "Ghost variant - transparent background, no border, appearance-colored text, tinted hover background",
+      "isCommon": false
+    },
+    {
+      "prop": "margin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable margin on all sides",
+      "isCommon": false
+    },
+    {
+      "prop": "marginX",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only horizontal (inline) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginY",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only vertical (block) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginT",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only top margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginB",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only bottom margin",
+      "isCommon": false
+    },
+    {
+      "prop": "noMargin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Disable margin (reset to 0)",
+      "isCommon": false
+    },
+    {
+      "prop": "fontSans",
+      "category": "Font Family",
+      "isDefault": true,
+      "description": "Sans-serif font family (default) — emits font-sans",
+      "isCommon": false
+    },
+    {
+      "prop": "fontSerif",
+      "category": "Font Family",
+      "isDefault": false,
+      "description": "Serif font family — emits font-serif",
+      "isCommon": false
+    },
+    {
+      "prop": "fontMono",
+      "category": "Font Family",
+      "isDefault": false,
+      "description": "Monospace font family — emits font-mono",
+      "isCommon": false
+    },
+    {
+      "prop": "fontHeading",
+      "category": "Font Family",
+      "isDefault": false,
+      "description": "Heading font family (defaults to sans, customizable via --font-heading) — emits font-heading",
+      "isCommon": false
+    },
+    {
+      "prop": "fontThin",
+      "category": "Font Weight",
+      "isDefault": false,
+      "description": "Thin font weight (100) — emits font-thin",
+      "isCommon": false
+    },
+    {
+      "prop": "fontExtralight",
+      "category": "Font Weight",
+      "isDefault": false,
+      "description": "Extra light font weight (200) — emits font-extralight",
+      "isCommon": false
+    },
+    {
+      "prop": "fontLight",
+      "category": "Font Weight",
+      "isDefault": false,
+      "description": "Light font weight (300) — emits font-light",
+      "isCommon": false
+    },
+    {
+      "prop": "fontNormal",
+      "category": "Font Weight",
+      "isDefault": false,
+      "description": "Normal font weight (400) — emits font-normal",
+      "isCommon": false
+    },
+    {
+      "prop": "fontMedium",
+      "category": "Font Weight",
+      "isDefault": false,
+      "description": "Medium font weight (500) — emits font-medium",
+      "isCommon": false
+    },
+    {
+      "prop": "fontSemibold",
+      "category": "Font Weight",
+      "isDefault": false,
+      "description": "Semibold font weight (600) — emits font-semibold",
+      "isCommon": false
+    },
+    {
+      "prop": "fontBold",
+      "category": "Font Weight",
+      "isDefault": false,
+      "description": "Bold font weight (700) — emits font-bold",
+      "isCommon": false
+    },
+    {
+      "prop": "fontExtrabold",
+      "category": "Font Weight",
+      "isDefault": false,
+      "description": "Extra bold font weight (800) — emits font-extrabold",
+      "isCommon": false
+    },
+    {
+      "prop": "fontBlack",
+      "category": "Font Weight",
+      "isDefault": false,
+      "description": "Black font weight (900) — emits font-black",
+      "isCommon": false
     }
   ],
   "button": [
@@ -3281,6 +4692,13 @@
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
       "isCommon": true
+    },
+    {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -3615,7 +5033,42 @@
       "prop": "gap",
       "category": "Gap",
       "isDefault": true,
-      "description": "Enable gap spacing between children",
+      "description": "Enable gap spacing between children, at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXs",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapSm",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapMd",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Medium gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapLg",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Large gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXl",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-large gap, whatever the component's size",
       "isCommon": true
     },
     {
@@ -4531,6 +5984,13 @@
       "isCommon": true
     },
     {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
+    },
+    {
       "prop": "itemsStart",
       "category": "Items",
       "isDefault": false,
@@ -4863,7 +6323,42 @@
       "prop": "gap",
       "category": "Gap",
       "isDefault": true,
-      "description": "Enable gap spacing between children",
+      "description": "Enable gap spacing between children, at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXs",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapSm",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapMd",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Medium gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapLg",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Large gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXl",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-large gap, whatever the component's size",
       "isCommon": true
     },
     {
@@ -5462,6 +6957,27 @@
       "isCommon": true
     },
     {
+      "prop": "aspectSquare",
+      "category": "Aspect",
+      "isDefault": false,
+      "description": "Square box (aspect-ratio: 1 / 1)",
+      "isCommon": false
+    },
+    {
+      "prop": "aspectVideo",
+      "category": "Aspect",
+      "isDefault": false,
+      "description": "Video box (aspect-ratio: 16 / 9)",
+      "isCommon": false
+    },
+    {
+      "prop": "aspectAuto",
+      "category": "Aspect",
+      "isDefault": false,
+      "description": "The content's own ratio (aspect-ratio: auto)",
+      "isCommon": false
+    },
+    {
       "prop": "focusVisible",
       "category": "Focus Visible",
       "isDefault": false,
@@ -5553,6 +7069,13 @@
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
       "isCommon": true
+    },
+    {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -6411,6 +7934,13 @@
       "isCommon": true
     },
     {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
+    },
+    {
       "prop": "itemsStart",
       "category": "Items",
       "isDefault": false,
@@ -6743,7 +8273,42 @@
       "prop": "gap",
       "category": "Gap",
       "isDefault": true,
-      "description": "Enable gap spacing between children",
+      "description": "Enable gap spacing between children, at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXs",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapSm",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapMd",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Medium gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapLg",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Large gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXl",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-large gap, whatever the component's size",
       "isCommon": true
     },
     {
@@ -7617,6 +9182,13 @@
       "isCommon": true
     },
     {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
+    },
+    {
       "prop": "itemsStart",
       "category": "Items",
       "isDefault": false,
@@ -7949,7 +9521,42 @@
       "prop": "gap",
       "category": "Gap",
       "isDefault": false,
-      "description": "Enable gap spacing between children",
+      "description": "Enable gap spacing between children, at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXs",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapSm",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapMd",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Medium gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapLg",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Large gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXl",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-large gap, whatever the component's size",
       "isCommon": true
     },
     {
@@ -8823,6 +10430,13 @@
       "isCommon": true
     },
     {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
+    },
+    {
       "prop": "itemsStart",
       "category": "Items",
       "isDefault": false,
@@ -9155,7 +10769,42 @@
       "prop": "gap",
       "category": "Gap",
       "isDefault": true,
-      "description": "Enable gap spacing between children",
+      "description": "Enable gap spacing between children, at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXs",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapSm",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapMd",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Medium gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapLg",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Large gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXl",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-large gap, whatever the component's size",
       "isCommon": true
     },
     {
@@ -9747,6 +11396,27 @@
       "isCommon": true
     },
     {
+      "prop": "aspectSquare",
+      "category": "Aspect",
+      "isDefault": false,
+      "description": "Square box (aspect-ratio: 1 / 1)",
+      "isCommon": false
+    },
+    {
+      "prop": "aspectVideo",
+      "category": "Aspect",
+      "isDefault": false,
+      "description": "Video box (aspect-ratio: 16 / 9)",
+      "isCommon": false
+    },
+    {
+      "prop": "aspectAuto",
+      "category": "Aspect",
+      "isDefault": false,
+      "description": "The content's own ratio (aspect-ratio: auto)",
+      "isCommon": false
+    },
+    {
       "prop": "focusVisible",
       "category": "Focus Visible",
       "isDefault": false,
@@ -9838,6 +11508,13 @@
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
       "isCommon": true
+    },
+    {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -10172,7 +11849,42 @@
       "prop": "gap",
       "category": "Gap",
       "isDefault": true,
-      "description": "Enable gap spacing between children",
+      "description": "Enable gap spacing between children, at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXs",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapSm",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapMd",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Medium gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapLg",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Large gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXl",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-large gap, whatever the component's size",
       "isCommon": true
     },
     {
@@ -10843,6 +12555,13 @@
       "isCommon": true
     },
     {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
+    },
+    {
       "prop": "itemsStart",
       "category": "Items",
       "isDefault": false,
@@ -11447,6 +13166,13 @@
       "isCommon": true
     },
     {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
+    },
+    {
       "prop": "itemsStart",
       "category": "Items",
       "isDefault": true,
@@ -11779,7 +13505,42 @@
       "prop": "gap",
       "category": "Gap",
       "isDefault": true,
-      "description": "Enable gap spacing between children",
+      "description": "Enable gap spacing between children, at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXs",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapSm",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapMd",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Medium gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapLg",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Large gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXl",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-large gap, whatever the component's size",
       "isCommon": true
     },
     {
@@ -12429,6 +14190,13 @@
       "isCommon": true
     },
     {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
+    },
+    {
       "prop": "itemsStart",
       "category": "Items",
       "isDefault": false,
@@ -12761,7 +14529,42 @@
       "prop": "gap",
       "category": "Gap",
       "isDefault": true,
-      "description": "Enable gap spacing between children",
+      "description": "Enable gap spacing between children, at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXs",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapSm",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapMd",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Medium gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapLg",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Large gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXl",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-large gap, whatever the component's size",
       "isCommon": true
     },
     {
@@ -13474,6 +15277,13 @@
       "isCommon": true
     },
     {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
+    },
+    {
       "prop": "itemsStart",
       "category": "Items",
       "isDefault": false,
@@ -13966,6 +15776,13 @@
       "isCommon": true
     },
     {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
+    },
+    {
       "prop": "itemsStart",
       "category": "Items",
       "isDefault": false,
@@ -14298,7 +16115,42 @@
       "prop": "gap",
       "category": "Gap",
       "isDefault": false,
-      "description": "Enable gap spacing between children",
+      "description": "Enable gap spacing between children, at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXs",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapSm",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapMd",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Medium gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapLg",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Large gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXl",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-large gap, whatever the component's size",
       "isCommon": true
     },
     {
@@ -15172,6 +17024,13 @@
       "isCommon": true
     },
     {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
+    },
+    {
       "prop": "itemsStart",
       "category": "Items",
       "isDefault": false,
@@ -15774,6 +17633,27 @@
       "isCommon": true
     },
     {
+      "prop": "aspectSquare",
+      "category": "Aspect",
+      "isDefault": false,
+      "description": "Square box (aspect-ratio: 1 / 1)",
+      "isCommon": false
+    },
+    {
+      "prop": "aspectVideo",
+      "category": "Aspect",
+      "isDefault": false,
+      "description": "Video box (aspect-ratio: 16 / 9)",
+      "isCommon": false
+    },
+    {
+      "prop": "aspectAuto",
+      "category": "Aspect",
+      "isDefault": false,
+      "description": "The content's own ratio (aspect-ratio: auto)",
+      "isCommon": false
+    },
+    {
       "prop": "wFull",
       "category": "Width",
       "isDefault": false,
@@ -15942,6 +17822,13 @@
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
       "isCommon": true
+    },
+    {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -16276,7 +18163,42 @@
       "prop": "gap",
       "category": "Gap",
       "isDefault": false,
-      "description": "Enable gap spacing between children",
+      "description": "Enable gap spacing between children, at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXs",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapSm",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapMd",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Medium gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapLg",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Large gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXl",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-large gap, whatever the component's size",
       "isCommon": true
     },
     {
@@ -17164,6 +19086,13 @@
       "isCommon": true
     },
     {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
+    },
+    {
       "prop": "itemsStart",
       "category": "Items",
       "isDefault": false,
@@ -17496,7 +19425,42 @@
       "prop": "gap",
       "category": "Gap",
       "isDefault": false,
-      "description": "Enable gap spacing between children",
+      "description": "Enable gap spacing between children, at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXs",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapSm",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapMd",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Medium gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapLg",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Large gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXl",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-large gap, whatever the component's size",
       "isCommon": true
     },
     {
@@ -18615,6 +20579,13 @@
       "isCommon": true
     },
     {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
+    },
+    {
       "prop": "itemsStart",
       "category": "Items",
       "isDefault": true,
@@ -18947,7 +20918,42 @@
       "prop": "gap",
       "category": "Gap",
       "isDefault": true,
-      "description": "Enable gap spacing between children",
+      "description": "Enable gap spacing between children, at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXs",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapSm",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapMd",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Medium gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapLg",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Large gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXl",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-large gap, whatever the component's size",
       "isCommon": true
     },
     {
@@ -19369,6 +21375,13 @@
       "isDefault": false,
       "description": "Disable the component — reduces opacity, changes cursor to not-allowed, and prevents interaction",
       "isCommon": false
+    },
+    {
+      "prop": "srOnly",
+      "category": "Sr Only",
+      "isDefault": false,
+      "description": "Hide visually and keep it for screen readers (sr-only)",
+      "isCommon": false
     }
   ],
   "link": [
@@ -19693,6 +21706,13 @@
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
       "isCommon": true
+    },
+    {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -20402,6 +22422,13 @@
       "isCommon": false
     },
     {
+      "prop": "srOnly",
+      "category": "Sr Only",
+      "isDefault": false,
+      "description": "Hide visually and keep it for screen readers (sr-only)",
+      "isCommon": false
+    },
+    {
       "prop": "focusVisible",
       "category": "Focus Visible",
       "isDefault": true,
@@ -20729,7 +22756,42 @@
       "prop": "gap",
       "category": "Gap",
       "isDefault": true,
-      "description": "Enable gap spacing between children",
+      "description": "Enable gap spacing between children, at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXs",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapSm",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapMd",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Medium gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapLg",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Large gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXl",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-large gap, whatever the component's size",
       "isCommon": true
     },
     {
@@ -20815,6 +22877,13 @@
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
       "isCommon": true
+    },
+    {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -21519,6 +23588,13 @@
       "isCommon": true
     },
     {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
+    },
+    {
       "prop": "itemsStart",
       "category": "Items",
       "isDefault": false,
@@ -21851,7 +23927,42 @@
       "prop": "gap",
       "category": "Gap",
       "isDefault": false,
-      "description": "Enable gap spacing between children",
+      "description": "Enable gap spacing between children, at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXs",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapSm",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapMd",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Medium gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapLg",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Large gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXl",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-large gap, whatever the component's size",
       "isCommon": true
     },
     {
@@ -22725,6 +24836,13 @@
       "isCommon": true
     },
     {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
+    },
+    {
       "prop": "itemsStart",
       "category": "Items",
       "isDefault": false,
@@ -23057,7 +25175,42 @@
       "prop": "gap",
       "category": "Gap",
       "isDefault": true,
-      "description": "Enable gap spacing between children",
+      "description": "Enable gap spacing between children, at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXs",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapSm",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapMd",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Medium gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapLg",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Large gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXl",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-large gap, whatever the component's size",
       "isCommon": true
     },
     {
@@ -24176,6 +26329,13 @@
       "isCommon": true
     },
     {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
+    },
+    {
       "prop": "itemsStart",
       "category": "Items",
       "isDefault": false,
@@ -24508,7 +26668,42 @@
       "prop": "gap",
       "category": "Gap",
       "isDefault": true,
-      "description": "Enable gap spacing between children",
+      "description": "Enable gap spacing between children, at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXs",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapSm",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapMd",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Medium gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapLg",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Large gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXl",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-large gap, whatever the component's size",
       "isCommon": true
     },
     {
@@ -25011,6 +27206,13 @@
       "isCommon": true
     },
     {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
+    },
+    {
       "prop": "itemsStart",
       "category": "Items",
       "isDefault": false,
@@ -25343,7 +27545,42 @@
       "prop": "gap",
       "category": "Gap",
       "isDefault": true,
-      "description": "Enable gap spacing between children",
+      "description": "Enable gap spacing between children, at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXs",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapSm",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapMd",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Medium gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapLg",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Large gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXl",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-large gap, whatever the component's size",
       "isCommon": true
     },
     {
@@ -26231,6 +28468,13 @@
       "isCommon": true
     },
     {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
+    },
+    {
       "prop": "itemsStart",
       "category": "Items",
       "isDefault": false,
@@ -26982,6 +29226,13 @@
       "isCommon": true
     },
     {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
+    },
+    {
       "prop": "itemsStart",
       "category": "Items",
       "isDefault": false,
@@ -27687,6 +29938,13 @@
       "isDefault": false,
       "description": "Keep own text color; do not inherit from parent",
       "isCommon": false
+    },
+    {
+      "prop": "srOnly",
+      "category": "Sr Only",
+      "isDefault": false,
+      "description": "Hide visually and keep it for screen readers (sr-only)",
+      "isCommon": false
     }
   ],
   "popup": [
@@ -28011,6 +30269,13 @@
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
       "isCommon": true
+    },
+    {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -28345,7 +30610,42 @@
       "prop": "gap",
       "category": "Gap",
       "isDefault": true,
-      "description": "Enable gap spacing between children",
+      "description": "Enable gap spacing between children, at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXs",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapSm",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapMd",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Medium gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapLg",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Large gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXl",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-large gap, whatever the component's size",
       "isCommon": true
     },
     {
@@ -29324,6 +31624,13 @@
       "isCommon": true
     },
     {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
+    },
+    {
       "prop": "margin",
       "category": "Margin",
       "isDefault": false,
@@ -29443,6 +31750,13 @@
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
       "isCommon": true
+    },
+    {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -30301,6 +32615,13 @@
       "isCommon": true
     },
     {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
+    },
+    {
       "prop": "itemsStart",
       "category": "Items",
       "isDefault": false,
@@ -30633,7 +32954,42 @@
       "prop": "gap",
       "category": "Gap",
       "isDefault": true,
-      "description": "Enable gap spacing between children",
+      "description": "Enable gap spacing between children, at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXs",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapSm",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapMd",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Medium gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapLg",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Large gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXl",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-large gap, whatever the component's size",
       "isCommon": true
     },
     {
@@ -31225,6 +33581,27 @@
       "isCommon": true
     },
     {
+      "prop": "aspectSquare",
+      "category": "Aspect",
+      "isDefault": false,
+      "description": "Square box (aspect-ratio: 1 / 1)",
+      "isCommon": false
+    },
+    {
+      "prop": "aspectVideo",
+      "category": "Aspect",
+      "isDefault": false,
+      "description": "Video box (aspect-ratio: 16 / 9)",
+      "isCommon": false
+    },
+    {
+      "prop": "aspectAuto",
+      "category": "Aspect",
+      "isDefault": false,
+      "description": "The content's own ratio (aspect-ratio: auto)",
+      "isCommon": false
+    },
+    {
       "prop": "focusVisible",
       "category": "Focus Visible",
       "isDefault": false,
@@ -31316,6 +33693,13 @@
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
       "isCommon": true
+    },
+    {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -31650,7 +34034,42 @@
       "prop": "gap",
       "category": "Gap",
       "isDefault": true,
-      "description": "Enable gap spacing between children",
+      "description": "Enable gap spacing between children, at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXs",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapSm",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapMd",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Medium gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapLg",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Large gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXl",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-large gap, whatever the component's size",
       "isCommon": true
     },
     {
@@ -32566,6 +34985,13 @@
       "isCommon": true
     },
     {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
+    },
+    {
       "prop": "itemsStart",
       "category": "Items",
       "isDefault": false,
@@ -33271,6 +35697,631 @@
       "isDefault": false,
       "description": "Keep own text color; do not inherit from parent",
       "isCommon": false
+    },
+    {
+      "prop": "srOnly",
+      "category": "Sr Only",
+      "isDefault": false,
+      "description": "Hide visually and keep it for screen readers (sr-only)",
+      "isCommon": false
+    }
+  ],
+  "segmented-control": [
+    {
+      "prop": "xs",
+      "category": "Size",
+      "isDefault": false,
+      "description": "Extra small size",
+      "isCommon": false
+    },
+    {
+      "prop": "sm",
+      "category": "Size",
+      "isDefault": true,
+      "description": "Small size",
+      "isCommon": false
+    },
+    {
+      "prop": "md",
+      "category": "Size",
+      "isDefault": false,
+      "description": "Medium size (default)",
+      "isCommon": false
+    },
+    {
+      "prop": "lg",
+      "category": "Size",
+      "isDefault": false,
+      "description": "Large size",
+      "isCommon": false
+    },
+    {
+      "prop": "xl",
+      "category": "Size",
+      "isDefault": false,
+      "description": "Extra large size",
+      "isCommon": false
+    },
+    {
+      "prop": "desktopHide",
+      "category": "Hide",
+      "isDefault": false,
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "isCommon": true
+    },
+    {
+      "prop": "tabletHide",
+      "category": "Hide",
+      "isDefault": false,
+      "description": "Hide element on tablet devices and below (max-tablet: 64rem)",
+      "isCommon": true
+    },
+    {
+      "prop": "mobileHide",
+      "category": "Hide",
+      "isDefault": false,
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "isCommon": true
+    },
+    {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": true
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": true
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": true
+    },
+    {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
+    },
+    {
+      "prop": "itemsStart",
+      "category": "Items",
+      "isDefault": false,
+      "description": "Align items to start (top/left)",
+      "isCommon": true
+    },
+    {
+      "prop": "itemsEnd",
+      "category": "Items",
+      "isDefault": false,
+      "description": "Align items to end (bottom/right)",
+      "isCommon": true
+    },
+    {
+      "prop": "itemsCenter",
+      "category": "Items",
+      "isDefault": false,
+      "description": "Align items to center",
+      "isCommon": true
+    },
+    {
+      "prop": "itemsBaseline",
+      "category": "Items",
+      "isDefault": false,
+      "description": "Align items to baseline",
+      "isCommon": true
+    },
+    {
+      "prop": "itemsStretch",
+      "category": "Items",
+      "isDefault": true,
+      "description": "Stretch items to fill container",
+      "isCommon": true
+    },
+    {
+      "prop": "justifyStart",
+      "category": "Justify",
+      "isDefault": false,
+      "description": "Pack items toward the start of the main axis",
+      "isCommon": true
+    },
+    {
+      "prop": "justifyEnd",
+      "category": "Justify",
+      "isDefault": false,
+      "description": "Pack items toward the end of the main axis",
+      "isCommon": true
+    },
+    {
+      "prop": "justifyCenter",
+      "category": "Justify",
+      "isDefault": false,
+      "description": "Center items along the main axis",
+      "isCommon": true
+    },
+    {
+      "prop": "justifyBetween",
+      "category": "Justify",
+      "isDefault": false,
+      "description": "Distribute items with space between them",
+      "isCommon": true
+    },
+    {
+      "prop": "justifyAround",
+      "category": "Justify",
+      "isDefault": false,
+      "description": "Distribute items with space around them",
+      "isCommon": true
+    },
+    {
+      "prop": "justifyEvenly",
+      "category": "Justify",
+      "isDefault": false,
+      "description": "Distribute items with equal space around them",
+      "isCommon": true
+    },
+    {
+      "prop": "justifyStretch",
+      "category": "Justify",
+      "isDefault": false,
+      "description": "Stretch items to fill the main axis",
+      "isCommon": true
+    },
+    {
+      "prop": "justifyBaseline",
+      "category": "Justify",
+      "isDefault": false,
+      "description": "Align items along their baseline on main axis",
+      "isCommon": true
+    },
+    {
+      "prop": "relative",
+      "category": "Position",
+      "isDefault": false,
+      "description": "Relative positioning",
+      "isCommon": true
+    },
+    {
+      "prop": "absolute",
+      "category": "Position",
+      "isDefault": false,
+      "description": "Absolute positioning",
+      "isCommon": true
+    },
+    {
+      "prop": "fixed",
+      "category": "Position",
+      "isDefault": false,
+      "description": "Fixed positioning",
+      "isCommon": true
+    },
+    {
+      "prop": "sticky",
+      "category": "Position",
+      "isDefault": false,
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
+      "isCommon": true
+    },
+    {
+      "prop": "static",
+      "category": "Position",
+      "isDefault": false,
+      "description": "Static positioning",
+      "isCommon": true
+    },
+    {
+      "prop": "inline",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Inline display - flows with text",
+      "isCommon": true
+    },
+    {
+      "prop": "block",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Block display - takes full width, new line",
+      "isCommon": true
+    },
+    {
+      "prop": "inlineBlock",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Inline-block display - inline but with block properties",
+      "isCommon": true
+    },
+    {
+      "prop": "flex",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Flex display - flexbox container",
+      "isCommon": true
+    },
+    {
+      "prop": "inlineFlex",
+      "category": "Display",
+      "isDefault": true,
+      "description": "Inline-flex display - inline flexbox container",
+      "isCommon": true
+    },
+    {
+      "prop": "grid",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Grid display - CSS grid container",
+      "isCommon": true
+    },
+    {
+      "prop": "inlineGrid",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Inline-grid display - inline grid container",
+      "isCommon": true
+    },
+    {
+      "prop": "contents",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Contents display - element's box is removed, children display as if parent didn't exist",
+      "isCommon": true
+    },
+    {
+      "prop": "table",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Table display - behaves like table element",
+      "isCommon": true
+    },
+    {
+      "prop": "tableCell",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Table-cell display - behaves like td element",
+      "isCommon": true
+    },
+    {
+      "prop": "hidden",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Hidden display - element is not visible",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowAuto",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Auto overflow - show scrollbars if needed",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowHidden",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Hidden overflow - clip content without scrollbars",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowClip",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Clip overflow - hard clip without scrollbars",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowVisible",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Visible overflow - content extends beyond bounds",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowScroll",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Scroll overflow - always show scrollbars",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowXAuto",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Auto overflow on X-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowYAuto",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Auto overflow on Y-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowXHidden",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Hidden overflow on X-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowYHidden",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Hidden overflow on Y-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowXClip",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Clip overflow on X-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowYClip",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Clip overflow on Y-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowXVisible",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Visible overflow on X-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowYVisible",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Visible overflow on Y-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowXScroll",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Scroll overflow on X-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowYScroll",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Scroll overflow on Y-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "primary",
+      "category": "Appearance",
+      "isDefault": true,
+      "description": "Primary color appearance (gray)",
+      "isCommon": false
+    },
+    {
+      "prop": "accent",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Accent color appearance (rose)",
+      "isCommon": false
+    },
+    {
+      "prop": "secondary",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Secondary color appearance (gray)",
+      "isCommon": false
+    },
+    {
+      "prop": "tertiary",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Tertiary color appearance",
+      "isCommon": false
+    },
+    {
+      "prop": "success",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Success color appearance (green)",
+      "isCommon": false
+    },
+    {
+      "prop": "danger",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Danger color appearance (red)",
+      "isCommon": false
+    },
+    {
+      "prop": "warning",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Warning color appearance (amber)",
+      "isCommon": false
+    },
+    {
+      "prop": "info",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Info color appearance (cyan)",
+      "isCommon": false
+    },
+    {
+      "prop": "inheritAppearance",
+      "category": "Appearance",
+      "isDefault": false,
+      "description": "Inherit appearance from parent — suppresses own data-appearance/data-variant, uses parent's CSS variables",
+      "isCommon": false
+    },
+    {
+      "prop": "filled",
+      "category": "Variant",
+      "isDefault": false,
+      "description": "Filled variant - solid background with contrasting text color",
+      "isCommon": false
+    },
+    {
+      "prop": "outline",
+      "category": "Variant",
+      "isDefault": true,
+      "description": "Outline variant - transparent background with border and colored text (default)",
+      "isCommon": false
+    },
+    {
+      "prop": "ghost",
+      "category": "Variant",
+      "isDefault": false,
+      "description": "Ghost variant - transparent background, no border, appearance-colored text, tinted hover background",
+      "isCommon": false
+    },
+    {
+      "prop": "pill",
+      "category": "Shape",
+      "isDefault": false,
+      "description": "Fully rounded corners (circular)",
+      "isCommon": false
+    },
+    {
+      "prop": "sharp",
+      "category": "Shape",
+      "isDefault": false,
+      "description": "No rounded corners (square)",
+      "isCommon": false
+    },
+    {
+      "prop": "rounded",
+      "category": "Shape",
+      "isDefault": true,
+      "description": "Medium rounded corners (default)",
+      "isCommon": false
+    },
+    {
+      "prop": "padding",
+      "category": "Padding",
+      "isDefault": true,
+      "description": "Enable internal padding",
+      "isCommon": false
+    },
+    {
+      "prop": "paddingX",
+      "category": "Padding",
+      "isDefault": false,
+      "description": "Enable only horizontal padding",
+      "isCommon": false
+    },
+    {
+      "prop": "paddingY",
+      "category": "Padding",
+      "isDefault": false,
+      "description": "Enable only vertical padding",
+      "isCommon": false
+    },
+    {
+      "prop": "noPadding",
+      "category": "Padding",
+      "isDefault": false,
+      "description": "Disable internal padding",
+      "isCommon": false
+    },
+    {
+      "prop": "margin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable margin on all sides",
+      "isCommon": false
+    },
+    {
+      "prop": "marginX",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only horizontal (inline) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginY",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only vertical (block) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginT",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only top margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginB",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only bottom margin",
+      "isCommon": false
+    },
+    {
+      "prop": "noMargin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Disable margin (reset to 0)",
+      "isCommon": false
+    },
+    {
+      "prop": "wFull",
+      "category": "Width",
+      "isDefault": false,
+      "description": "Set width to 100%",
+      "isCommon": true
+    },
+    {
+      "prop": "wFit",
+      "category": "Width",
+      "isDefault": false,
+      "description": "Set width to fit-content",
+      "isCommon": true
+    },
+    {
+      "prop": "wAuto",
+      "category": "Width",
+      "isDefault": false,
+      "description": "Set width to auto",
+      "isCommon": true
+    },
+    {
+      "prop": "wScreen",
+      "category": "Width",
+      "isDefault": false,
+      "description": "Set width to 100vw (viewport width), removes max-width constraint",
+      "isCommon": true
+    },
+    {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": true
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": true
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": true
     }
   ],
   "select": [
@@ -33350,6 +36401,13 @@
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
       "isCommon": true
+    },
+    {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -33684,7 +36742,42 @@
       "prop": "gap",
       "category": "Gap",
       "isDefault": false,
-      "description": "Enable gap spacing between children",
+      "description": "Enable gap spacing between children, at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXs",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapSm",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapMd",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Medium gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapLg",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Large gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXl",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-large gap, whatever the component's size",
       "isCommon": true
     },
     {
@@ -34493,6 +37586,568 @@
       "isCommon": false
     }
   ],
+  "skeleton": [
+    {
+      "prop": "xs",
+      "category": "Size",
+      "isDefault": false,
+      "description": "Extra small size",
+      "isCommon": false
+    },
+    {
+      "prop": "sm",
+      "category": "Size",
+      "isDefault": false,
+      "description": "Small size",
+      "isCommon": false
+    },
+    {
+      "prop": "md",
+      "category": "Size",
+      "isDefault": true,
+      "description": "Medium size (default)",
+      "isCommon": false
+    },
+    {
+      "prop": "lg",
+      "category": "Size",
+      "isDefault": false,
+      "description": "Large size",
+      "isCommon": false
+    },
+    {
+      "prop": "xl",
+      "category": "Size",
+      "isDefault": false,
+      "description": "Extra large size",
+      "isCommon": false
+    },
+    {
+      "prop": "desktopHide",
+      "category": "Hide",
+      "isDefault": false,
+      "description": "Hide element on desktop devices and below (max-desktop: 80rem)",
+      "isCommon": true
+    },
+    {
+      "prop": "tabletHide",
+      "category": "Hide",
+      "isDefault": false,
+      "description": "Hide element on tablet devices and below (max-tablet: 64rem)",
+      "isCommon": true
+    },
+    {
+      "prop": "mobileHide",
+      "category": "Hide",
+      "isDefault": false,
+      "description": "Hide element on mobile devices and below (max-mobile: 48rem)",
+      "isCommon": true
+    },
+    {
+      "prop": "desktopShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on desktop and below, below 1280px (hidden from 80rem up)",
+      "isCommon": true
+    },
+    {
+      "prop": "tabletShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on tablet and below, below 1024px (hidden from 64rem up)",
+      "isCommon": true
+    },
+    {
+      "prop": "mobileShow",
+      "category": "Show",
+      "isDefault": false,
+      "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
+      "isCommon": true
+    },
+    {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": true,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
+    },
+    {
+      "prop": "itemsStart",
+      "category": "Items",
+      "isDefault": false,
+      "description": "Align items to start (top/left)",
+      "isCommon": true
+    },
+    {
+      "prop": "itemsEnd",
+      "category": "Items",
+      "isDefault": false,
+      "description": "Align items to end (bottom/right)",
+      "isCommon": true
+    },
+    {
+      "prop": "itemsCenter",
+      "category": "Items",
+      "isDefault": false,
+      "description": "Align items to center",
+      "isCommon": true
+    },
+    {
+      "prop": "itemsBaseline",
+      "category": "Items",
+      "isDefault": false,
+      "description": "Align items to baseline",
+      "isCommon": true
+    },
+    {
+      "prop": "itemsStretch",
+      "category": "Items",
+      "isDefault": false,
+      "description": "Stretch items to fill container",
+      "isCommon": true
+    },
+    {
+      "prop": "justifyStart",
+      "category": "Justify",
+      "isDefault": false,
+      "description": "Pack items toward the start of the main axis",
+      "isCommon": true
+    },
+    {
+      "prop": "justifyEnd",
+      "category": "Justify",
+      "isDefault": false,
+      "description": "Pack items toward the end of the main axis",
+      "isCommon": true
+    },
+    {
+      "prop": "justifyCenter",
+      "category": "Justify",
+      "isDefault": false,
+      "description": "Center items along the main axis",
+      "isCommon": true
+    },
+    {
+      "prop": "justifyBetween",
+      "category": "Justify",
+      "isDefault": false,
+      "description": "Distribute items with space between them",
+      "isCommon": true
+    },
+    {
+      "prop": "justifyAround",
+      "category": "Justify",
+      "isDefault": false,
+      "description": "Distribute items with space around them",
+      "isCommon": true
+    },
+    {
+      "prop": "justifyEvenly",
+      "category": "Justify",
+      "isDefault": false,
+      "description": "Distribute items with equal space around them",
+      "isCommon": true
+    },
+    {
+      "prop": "justifyStretch",
+      "category": "Justify",
+      "isDefault": false,
+      "description": "Stretch items to fill the main axis",
+      "isCommon": true
+    },
+    {
+      "prop": "justifyBaseline",
+      "category": "Justify",
+      "isDefault": false,
+      "description": "Align items along their baseline on main axis",
+      "isCommon": true
+    },
+    {
+      "prop": "relative",
+      "category": "Position",
+      "isDefault": false,
+      "description": "Relative positioning",
+      "isCommon": true
+    },
+    {
+      "prop": "absolute",
+      "category": "Position",
+      "isDefault": false,
+      "description": "Absolute positioning",
+      "isCommon": true
+    },
+    {
+      "prop": "fixed",
+      "category": "Position",
+      "isDefault": false,
+      "description": "Fixed positioning",
+      "isCommon": true
+    },
+    {
+      "prop": "sticky",
+      "category": "Position",
+      "isDefault": false,
+      "description": "Sticky positioning at the top edge; set --sticky-top to stick below a fixed header",
+      "isCommon": true
+    },
+    {
+      "prop": "static",
+      "category": "Position",
+      "isDefault": false,
+      "description": "Static positioning",
+      "isCommon": true
+    },
+    {
+      "prop": "inline",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Inline display - flows with text",
+      "isCommon": true
+    },
+    {
+      "prop": "block",
+      "category": "Display",
+      "isDefault": true,
+      "description": "Block display - takes full width, new line",
+      "isCommon": true
+    },
+    {
+      "prop": "inlineBlock",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Inline-block display - inline but with block properties",
+      "isCommon": true
+    },
+    {
+      "prop": "flex",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Flex display - flexbox container",
+      "isCommon": true
+    },
+    {
+      "prop": "inlineFlex",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Inline-flex display - inline flexbox container",
+      "isCommon": true
+    },
+    {
+      "prop": "grid",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Grid display - CSS grid container",
+      "isCommon": true
+    },
+    {
+      "prop": "inlineGrid",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Inline-grid display - inline grid container",
+      "isCommon": true
+    },
+    {
+      "prop": "contents",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Contents display - element's box is removed, children display as if parent didn't exist",
+      "isCommon": true
+    },
+    {
+      "prop": "table",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Table display - behaves like table element",
+      "isCommon": true
+    },
+    {
+      "prop": "tableCell",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Table-cell display - behaves like td element",
+      "isCommon": true
+    },
+    {
+      "prop": "hidden",
+      "category": "Display",
+      "isDefault": false,
+      "description": "Hidden display - element is not visible",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowAuto",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Auto overflow - show scrollbars if needed",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowHidden",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Hidden overflow - clip content without scrollbars",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowClip",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Clip overflow - hard clip without scrollbars",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowVisible",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Visible overflow - content extends beyond bounds",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowScroll",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Scroll overflow - always show scrollbars",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowXAuto",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Auto overflow on X-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowYAuto",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Auto overflow on Y-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowXHidden",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Hidden overflow on X-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowYHidden",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Hidden overflow on Y-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowXClip",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Clip overflow on X-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowYClip",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Clip overflow on Y-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowXVisible",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Visible overflow on X-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowYVisible",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Visible overflow on Y-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowXScroll",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Scroll overflow on X-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "overflowYScroll",
+      "category": "Overflow",
+      "isDefault": false,
+      "description": "Scroll overflow on Y-axis only",
+      "isCommon": true
+    },
+    {
+      "prop": "noShrink",
+      "category": "Shrink",
+      "isDefault": false,
+      "description": "Prevent the flex item from shrinking below its content size (= `shrink-0`)",
+      "isCommon": false
+    },
+    {
+      "prop": "pill",
+      "category": "Shape",
+      "isDefault": false,
+      "description": "Fully rounded corners (circular)",
+      "isCommon": false
+    },
+    {
+      "prop": "sharp",
+      "category": "Shape",
+      "isDefault": false,
+      "description": "No rounded corners (square)",
+      "isCommon": false
+    },
+    {
+      "prop": "rounded",
+      "category": "Shape",
+      "isDefault": true,
+      "description": "Medium rounded corners (default)",
+      "isCommon": false
+    },
+    {
+      "prop": "wFull",
+      "category": "Width",
+      "isDefault": true,
+      "description": "Set width to 100%",
+      "isCommon": true
+    },
+    {
+      "prop": "wFit",
+      "category": "Width",
+      "isDefault": false,
+      "description": "Set width to fit-content",
+      "isCommon": true
+    },
+    {
+      "prop": "wAuto",
+      "category": "Width",
+      "isDefault": false,
+      "description": "Set width to auto",
+      "isCommon": true
+    },
+    {
+      "prop": "wScreen",
+      "category": "Width",
+      "isDefault": false,
+      "description": "Set width to 100vw (viewport width), removes max-width constraint",
+      "isCommon": true
+    },
+    {
+      "prop": "desktopWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on desktop and below, below 1280px (max-desktop: 80rem)",
+      "isCommon": true
+    },
+    {
+      "prop": "tabletWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on tablet and below, below 1024px (max-tablet: 64rem)",
+      "isCommon": true
+    },
+    {
+      "prop": "mobileWFull",
+      "category": "Responsive Width",
+      "isDefault": false,
+      "description": "Set width to 100% on mobile, below 768px (max-mobile: 48rem)",
+      "isCommon": true
+    },
+    {
+      "prop": "hFit",
+      "category": "Height",
+      "isDefault": false,
+      "description": "Set height to fit-content",
+      "isCommon": true
+    },
+    {
+      "prop": "hFull",
+      "category": "Height",
+      "isDefault": false,
+      "description": "Set height to 100%",
+      "isCommon": true
+    },
+    {
+      "prop": "hAuto",
+      "category": "Height",
+      "isDefault": false,
+      "description": "Set height to auto",
+      "isCommon": true
+    },
+    {
+      "prop": "hScreen",
+      "category": "Height",
+      "isDefault": false,
+      "description": "Set height to 100vh (viewport height), removes max-height constraint",
+      "isCommon": true
+    },
+    {
+      "prop": "aspectSquare",
+      "category": "Aspect",
+      "isDefault": false,
+      "description": "Square box (aspect-ratio: 1 / 1)",
+      "isCommon": false
+    },
+    {
+      "prop": "aspectVideo",
+      "category": "Aspect",
+      "isDefault": false,
+      "description": "Video box (aspect-ratio: 16 / 9)",
+      "isCommon": false
+    },
+    {
+      "prop": "aspectAuto",
+      "category": "Aspect",
+      "isDefault": false,
+      "description": "The content's own ratio (aspect-ratio: auto)",
+      "isCommon": false
+    },
+    {
+      "prop": "margin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable margin on all sides",
+      "isCommon": false
+    },
+    {
+      "prop": "marginX",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only horizontal (inline) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginY",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only vertical (block) margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginT",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only top margin",
+      "isCommon": false
+    },
+    {
+      "prop": "marginB",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Enable only bottom margin",
+      "isCommon": false
+    },
+    {
+      "prop": "noMargin",
+      "category": "Margin",
+      "isDefault": false,
+      "description": "Disable margin (reset to 0)",
+      "isCommon": false
+    }
+  ],
   "spinner": [
     {
       "prop": "xs",
@@ -34733,6 +38388,13 @@
       "isCommon": true
     },
     {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
+    },
+    {
       "prop": "margin",
       "category": "Margin",
       "isDefault": false,
@@ -34852,6 +38514,13 @@
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
       "isCommon": true
+    },
+    {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -35186,7 +38855,42 @@
       "prop": "gap",
       "category": "Gap",
       "isDefault": true,
-      "description": "Enable gap spacing between children",
+      "description": "Enable gap spacing between children, at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXs",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapSm",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapMd",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Medium gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapLg",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Large gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXl",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-large gap, whatever the component's size",
       "isCommon": true
     },
     {
@@ -35778,6 +39482,27 @@
       "isCommon": true
     },
     {
+      "prop": "aspectSquare",
+      "category": "Aspect",
+      "isDefault": false,
+      "description": "Square box (aspect-ratio: 1 / 1)",
+      "isCommon": false
+    },
+    {
+      "prop": "aspectVideo",
+      "category": "Aspect",
+      "isDefault": false,
+      "description": "Video box (aspect-ratio: 16 / 9)",
+      "isCommon": false
+    },
+    {
+      "prop": "aspectAuto",
+      "category": "Aspect",
+      "isDefault": false,
+      "description": "The content's own ratio (aspect-ratio: auto)",
+      "isCommon": false
+    },
+    {
       "prop": "focusVisible",
       "category": "Focus Visible",
       "isDefault": false,
@@ -35869,6 +39594,13 @@
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
       "isCommon": true
+    },
+    {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -37042,11 +40774,32 @@
       "isCommon": true
     },
     {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
+    },
+    {
       "prop": "responsiveSizing",
       "category": "Responsive Sizing",
       "isDefault": false,
       "description": "Enable responsive sizing - uses breakpoint-specific classes for font size, padding, and gap",
       "isCommon": true
+    },
+    {
+      "prop": "striped",
+      "category": "Striped",
+      "isDefault": false,
+      "description": "Body rows on alternating backgrounds",
+      "isCommon": false
+    },
+    {
+      "prop": "hoverable",
+      "category": "Hoverable",
+      "isDefault": false,
+      "description": "The body row under the pointer takes a hover background",
+      "isCommon": false
     }
   ],
   "text": [
@@ -37371,6 +41124,13 @@
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
       "isCommon": true
+    },
+    {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -38078,6 +41838,13 @@
       "isDefault": false,
       "description": "Keep own text color; do not inherit from parent",
       "isCommon": false
+    },
+    {
+      "prop": "srOnly",
+      "category": "Sr Only",
+      "isDefault": false,
+      "description": "Hide visually and keep it for screen readers (sr-only)",
+      "isCommon": false
     }
   ],
   "textarea": [
@@ -38157,6 +41924,13 @@
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
       "isCommon": true
+    },
+    {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -38491,7 +42265,42 @@
       "prop": "gap",
       "category": "Gap",
       "isDefault": false,
-      "description": "Enable gap spacing between children",
+      "description": "Enable gap spacing between children, at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXs",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapSm",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapMd",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Medium gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapLg",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Large gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXl",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-large gap, whatever the component's size",
       "isCommon": true
     },
     {
@@ -39298,6 +43107,41 @@
       "isDefault": false,
       "description": "Render the field read-only — mutes it (lighter than disabled) and sets a default cursor; the value stays selectable and submittable",
       "isCommon": false
+    },
+    {
+      "prop": "resizeY",
+      "category": "Resize",
+      "isDefault": true,
+      "description": "Resize handle drags vertically (the default)",
+      "isCommon": false
+    },
+    {
+      "prop": "resizeX",
+      "category": "Resize",
+      "isDefault": false,
+      "description": "Resize handle drags horizontally",
+      "isCommon": false
+    },
+    {
+      "prop": "resize",
+      "category": "Resize",
+      "isDefault": false,
+      "description": "Resize handle drags in both directions",
+      "isCommon": false
+    },
+    {
+      "prop": "resizeNone",
+      "category": "Resize",
+      "isDefault": false,
+      "description": "No resize handle",
+      "isCommon": false
+    },
+    {
+      "prop": "autosize",
+      "category": "Autosize",
+      "isDefault": false,
+      "description": "Grow and shrink with the content, with no resize handle (field-sizing: content)",
+      "isCommon": false
     }
   ],
   "title": [
@@ -39622,6 +43466,13 @@
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
       "isCommon": true
+    },
+    {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -40329,6 +44180,13 @@
       "isDefault": false,
       "description": "Keep own text color; do not inherit from parent",
       "isCommon": false
+    },
+    {
+      "prop": "srOnly",
+      "category": "Sr Only",
+      "isDefault": false,
+      "description": "Hide visually and keep it for screen readers (sr-only)",
+      "isCommon": false
     }
   ],
   "tooltip": [
@@ -40653,6 +44511,13 @@
       "isDefault": false,
       "description": "Show element only on mobile, below 768px (hidden from 48rem up)",
       "isCommon": true
+    },
+    {
+      "prop": "skeleton",
+      "category": "Skeleton",
+      "isDefault": false,
+      "description": "Show the component as a loading placeholder in its own size and shape. On a container, every component inside it becomes a placeholder too",
+      "isCommon": false
     },
     {
       "prop": "itemsStart",
@@ -40987,7 +44852,42 @@
       "prop": "gap",
       "category": "Gap",
       "isDefault": false,
-      "description": "Enable gap spacing between children",
+      "description": "Enable gap spacing between children, at the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXs",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapSm",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Small gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapMd",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Medium gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapLg",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Large gap, whatever the component's size",
+      "isCommon": true
+    },
+    {
+      "prop": "gapXl",
+      "category": "Gap",
+      "isDefault": false,
+      "description": "Extra-large gap, whatever the component's size",
       "isCommon": true
     },
     {
