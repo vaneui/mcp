@@ -9,6 +9,24 @@ commits.
 
 ## Unreleased
 
+## 1.3.7
+
+`2026-11-23`
+
+### Added
+
+- Four docs pages from the re-sync, with their prop tables in `get_component_props`: `avatar`
+  (Avatar and AvatarGroup), `breadcrumb` (Breadcrumb and BreadcrumbItem), `segmented-control`
+  (SegmentedControl and SegmentedControlItem) and `skeleton` (the `skeleton` prop and the
+  Skeleton box).
+
+### Changed
+
+- Docs corpus re-synced for `@vaneui/ui` 1.8.0. The pages and the usage guide describe the
+  `skeleton` prop, `startSection` and `endSection` on fields, Textarea `autosize`, Table
+  `striped` and `hoverable`, Badge `dot`, Progress `indeterminate`, `srOnly`, the aspect props,
+  `gapXs` to `gapXl`, the gentler Card, Modal and Img corners and the `--br-scale` variable.
+
 ## 1.3.6
 
 `2026-11-22`
