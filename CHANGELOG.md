@@ -9,6 +9,17 @@ commits.
 
 ## Unreleased
 
+## 1.3.8
+
+`2026-11-25`
+
+### Changed
+
+- Docs corpus re-synced for `@vaneui/ui` 1.8.2. The dark mode page, the CSS variables page and
+  the usage guide describe `--color-bg-raised`: in the dark scheme Cards, menus, modals, the
+  open Select list and outline Buttons sit one step above the page, and the primary hover and
+  pressed colors step above them.
+
 ## 1.3.7
 
 `2026-11-23`
