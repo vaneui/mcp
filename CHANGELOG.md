@@ -9,6 +9,17 @@ commits.
 
 ## Unreleased
 
+## 1.3.9
+
+`2026-11-26`
+
+### Changed
+
+- Docs corpus re-synced for `@vaneui/ui` 1.8.3. The Card, Modal, Title and Text pages and the
+  usage guide give the type sizes inside a Card or Modal (a `Title` 18px by default, an unsized
+  `Text`, `List` or `Blockquote` 14px), the Breadcrumb page its text sizes (12 to 20px, 14px by
+  default), and the Alert page uses a plain `Text` for a description instead of `Text sm`.
+
 ## 1.3.8
 
 `2026-11-25`
